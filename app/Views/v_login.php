@@ -8,7 +8,7 @@
   <div class="card header-card shape-rounded" data-card-height="150">
     <div class="card-overlay bg-highlight opacity-95"></div>
     <div class="card-overlay dark-mode-tint"></div>
-    <div class="card-bg preload-img" data-src="<?= base_url(); ?>themplate/code/images/pictures/20s.jpg"></div>
+    <div class="card-bg preload-img" data-src="themplate/code/images/pictures/20s.jpg"></div>
   </div>
 
   <?php $errors = session()->getFlashdata('errors');

@@ -39,7 +39,6 @@ class Filters extends BaseConfig
                 'except' =>
                 [
                     'login',    'login/*',
-                    'server',    'server/*',
                     '/', //Routing Ke Controller Home
                 ]
             ],
@@ -48,7 +47,6 @@ class Filters extends BaseConfig
                 'except' =>
                 [
                     'login',    'login/*',
-                    'server',    'server/*',
                     '/', //Routing Ke Controller Home
                 ]
             ],
@@ -64,7 +62,6 @@ class Filters extends BaseConfig
                     'logout', 'logout/*',
                     'superadmin', 'superadmin/*',
                     'karyawan', 'karyawan/*',
-                    'server',    'server/*',
                     '/', //Routing Ke Controller Home
                 ]
             ],
@@ -74,7 +71,6 @@ class Filters extends BaseConfig
                 [
                     'logout', 'logout/*',
                     'karyawan', 'karyawan/*',
-                    'server',    'server/*',
                     '/', //Routing Ke Controller Home
                 ]
             ],

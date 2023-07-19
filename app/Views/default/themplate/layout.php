@@ -7,12 +7,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
     <title>SMKN 1 TJT</title>
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>themplate/code/styles/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>themplate/code/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="themplate/code/styles/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="themplate/code/styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>themplate/code/fonts/css/fontawesome-all.min.css">
-    <link rel="manifest" href="<?= base_url(); ?>themplate/code/_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url(); ?>themplate/code/app/icons/icon-192x192.png">
+    <link rel="stylesheet" type="text/css" href="themplate/code/fonts/css/fontawesome-all.min.css">
+    <link rel="manifest" href="themplate/code/_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+    <link rel="apple-touch-icon" sizes="180x180" href="themplate/code/app/icons/icon-192x192.png">
 </head>
 
 <body class="theme-light" data-highlight="blue2">
@@ -97,7 +97,7 @@
         <div id="menu-highlights" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="510" data-menu-effect="menu-over">
             <div class="card header-card color-card shape-rounded" style="height:40%">
                 <div class="card-overlay bg-highlight opacity-95"></div>
-                <div class="card-bg preload-img" data-src="/themplate/code/images/pictures/20s.jpg"></div>
+                <div class="card-bg preload-img" data-src="themplate/code/images/pictures/20s.jpg"></div>
             </div>
 
             <div class="card bg-transparent mb-0">
@@ -213,7 +213,7 @@
             <div class="card header-card shape-rounded" data-card-height="200">
                 <div class="card-overlay bg-highlight opacity-95"></div>
                 <div class="card-overlay dark-mode-tint"></div>
-                <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+                <div class="card-bg preload-img" data-src="themplate/code/images/pictures/20s.jpg"></div>
             </div>
 
             <div class="mt-3 pt-1 pb-1">
@@ -245,7 +245,7 @@
             <div class="card header-card shape-rounded" data-card-height="200">
                 <div class="card-overlay bg-highlight opacity-95"></div>
                 <div class="card-overlay dark-mode-tint"></div>
-                <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+                <div class="card-bg preload-img" data-src="themplate/code/images/pictures/20s.jpg"></div>
             </div>
 
             <div class="mt-3 pt-1 pb-1">
@@ -276,7 +276,7 @@
             <div class="card header-card shape-rounded" data-card-height="200">
                 <div class="card-overlay bg-highlight opacity-95"></div>
                 <div class="card-overlay dark-mode-tint"></div>
-                <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+                <div class="card-bg preload-img" data-src="themplate/code/images/pictures/20s.jpg"></div>
             </div>
 
             <div class="mt-3 pt-1 pb-1">
@@ -307,7 +307,7 @@
             <div class="card header-card shape-rounded" data-card-height="200">
                 <div class="card-overlay bg-highlight opacity-95"></div>
                 <div class="card-overlay dark-mode-tint"></div>
-                <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+                <div class="card-bg preload-img" data-src="themplate/code/images/pictures/20s.jpg"></div>
             </div>
 
             <div class="mt-3 pt-1 pb-1">
@@ -338,7 +338,7 @@
             <div class="card header-card shape-rounded" data-card-height="200">
                 <div class="card-overlay bg-highlight opacity-95"></div>
                 <div class="card-overlay dark-mode-tint"></div>
-                <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+                <div class="card-bg preload-img" data-src="themplate/code/images/pictures/20s.jpg"></div>
             </div>
 
             <div class="mt-3 pt-1 pb-1">
@@ -645,11 +645,11 @@
                     You can direct to multiple languages of your page.
                 </p>
                 <div class="list-group list-custom-small">
-                    <a href="#"><img class="me-3 mt-n1" width="20" src="images/flags/United-States.png"><span>English</span><i class="fa fa-angle-right"></i></a>
-                    <a href="#"><img class="me-3 mt-n1" width="20" src="images/flags/India.png"><span>Indian</span><i class="fa fa-angle-right"></i></a>
-                    <a href="#"><img class="me-3 mt-n1" width="20" src="images/flags/Germany.png"><span>German</span><i class="fa fa-angle-right"></i></a>
-                    <a href="#"><img class="me-3 mt-n1" width="20" src="images/flags/Italy.png"><span>Italian</span><i class="fa fa-angle-right"></i></a>
-                    <a href="#" class="border-0"><img class="me-3 mt-n1" width="20" src="images/flags/Spain.png"><span>Spanish</span><i class="fa fa-angle-right"></i></a>
+                    <a href="#"><img class="me-3 mt-n1" width="20" src="themplate/code/images/flags/United-States.png"><span>English</span><i class="fa fa-angle-right"></i></a>
+                    <a href="#"><img class="me-3 mt-n1" width="20" src="themplate/code/images/flags/India.png"><span>Indian</span><i class="fa fa-angle-right"></i></a>
+                    <a href="#"><img class="me-3 mt-n1" width="20" src="themplate/code/images/flags/Germany.png"><span>German</span><i class="fa fa-angle-right"></i></a>
+                    <a href="#"><img class="me-3 mt-n1" width="20" src="themplate/code/images/flags/Italy.png"><span>Italian</span><i class="fa fa-angle-right"></i></a>
+                    <a href="#" class="border-0"><img class="me-3 mt-n1" width="20" src="themplate/code/images/flags/Spain.png"><span>Spanish</span><i class="fa fa-angle-right"></i></a>
                 </div>
                 <div class="clear"></div>
             </div>

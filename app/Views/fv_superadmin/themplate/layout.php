@@ -97,7 +97,7 @@
         <div id="menu-highlights" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="510" data-menu-effect="menu-over">
             <div class="card header-card color-card shape-rounded" style="height:40%">
                 <div class="card-overlay bg-highlight opacity-95"></div>
-                <div class="card-bg preload-img" data-src="/themplate/code/images/pictures/20s.jpg"></div>
+                <div class="card-bg preload-img" data-src="themplate/code/images/pictures/20s.jpg"></div>
             </div>
 
             <div class="card bg-transparent mb-0">
@@ -207,7 +207,7 @@
             <div class="card header-card shape-rounded" data-card-height="200">
                 <div class="card-overlay bg-highlight opacity-95"></div>
                 <div class="card-overlay dark-mode-tint"></div>
-                <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+                <div class="card-bg preload-img" data-src="themplate/code/images/pictures/20s.jpg"></div>
             </div>
 
             <div class="mt-3 pt-1 pb-1">
@@ -239,7 +239,7 @@
             <div class="card header-card shape-rounded" data-card-height="200">
                 <div class="card-overlay bg-highlight opacity-95"></div>
                 <div class="card-overlay dark-mode-tint"></div>
-                <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+                <div class="card-bg preload-img" data-src="themplate/code/images/pictures/20s.jpg"></div>
             </div>
 
             <div class="mt-3 pt-1 pb-1">
@@ -270,7 +270,7 @@
             <div class="card header-card shape-rounded" data-card-height="200">
                 <div class="card-overlay bg-highlight opacity-95"></div>
                 <div class="card-overlay dark-mode-tint"></div>
-                <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+                <div class="card-bg preload-img" data-src="themplate/code/images/pictures/20s.jpg"></div>
             </div>
 
             <div class="mt-3 pt-1 pb-1">
@@ -301,7 +301,7 @@
             <div class="card header-card shape-rounded" data-card-height="200">
                 <div class="card-overlay bg-highlight opacity-95"></div>
                 <div class="card-overlay dark-mode-tint"></div>
-                <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+                <div class="card-bg preload-img" data-src="themplate/code/images/pictures/20s.jpg"></div>
             </div>
 
             <div class="mt-3 pt-1 pb-1">
@@ -332,7 +332,7 @@
             <div class="card header-card shape-rounded" data-card-height="200">
                 <div class="card-overlay bg-highlight opacity-95"></div>
                 <div class="card-overlay dark-mode-tint"></div>
-                <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+                <div class="card-bg preload-img" data-src="themplate/code/images/pictures/20s.jpg"></div>
             </div>
 
             <div class="mt-3 pt-1 pb-1">
@@ -639,11 +639,11 @@
                     You can direct to multiple languages of your page.
                 </p>
                 <div class="list-group list-custom-small">
-                    <a href="#"><img class="me-3 mt-n1" width="20" src="images/flags/United-States.png"><span>English</span><i class="fa fa-angle-right"></i></a>
-                    <a href="#"><img class="me-3 mt-n1" width="20" src="images/flags/India.png"><span>Indian</span><i class="fa fa-angle-right"></i></a>
-                    <a href="#"><img class="me-3 mt-n1" width="20" src="images/flags/Germany.png"><span>German</span><i class="fa fa-angle-right"></i></a>
-                    <a href="#"><img class="me-3 mt-n1" width="20" src="images/flags/Italy.png"><span>Italian</span><i class="fa fa-angle-right"></i></a>
-                    <a href="#" class="border-0"><img class="me-3 mt-n1" width="20" src="images/flags/Spain.png"><span>Spanish</span><i class="fa fa-angle-right"></i></a>
+                    <a href="#"><img class="me-3 mt-n1" width="20" src="themplate/code/images/flags/United-States.png"><span>English</span><i class="fa fa-angle-right"></i></a>
+                    <a href="#"><img class="me-3 mt-n1" width="20" src="themplate/code/images/flags/India.png"><span>Indian</span><i class="fa fa-angle-right"></i></a>
+                    <a href="#"><img class="me-3 mt-n1" width="20" src="themplate/code/images/flags/Germany.png"><span>German</span><i class="fa fa-angle-right"></i></a>
+                    <a href="#"><img class="me-3 mt-n1" width="20" src="themplate/code/images/flags/Italy.png"><span>Italian</span><i class="fa fa-angle-right"></i></a>
+                    <a href="#" class="border-0"><img class="me-3 mt-n1" width="20" src="themplate/code/images/flags/Spain.png"><span>Spanish</span><i class="fa fa-angle-right"></i></a>
                 </div>
                 <div class="clear"></div>
             </div>
