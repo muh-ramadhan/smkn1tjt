@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Azures BootStrap</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">    
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+    
+<body class="theme-light">
+    
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+    
+<div id="page">
+    
+    <!-- header and footer bar go here-->
+    <div class="header header-fixed header-auto-show header-logo-app">
+        <a href="#" data-back-button class="header-title header-subtitle">Back to Pages</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+    </div>
+    <div id="footer-bar" class="footer-bar-5">
+        <a href="index-components.html"><i data-feather="heart" data-feather-line="1" data-feather-size="21" data-feather-color="red-dark" data-feather-bg="red-fade-light"></i><span>Features</span></a>
+        <a href="index-media.html"><i data-feather="image" data-feather-line="1" data-feather-size="21" data-feather-color="green-dark" data-feather-bg="green-fade-light"></i><span>Media</span></a>
+        <a href="index.html"><i data-feather="home" data-feather-line="1" data-feather-size="21" data-feather-color="blue-dark" data-feather-bg="blue-fade-light"></i><span>Home</span></a>
+        <a href="index-pages.html" class="active-nav"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown-dark" data-feather-bg="brown-fade-light"></i><span>Pages</span></a>
+        <a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="dark-dark" data-feather-bg="gray-fade-light"></i><span>Settings</span></a>
+    </div>
+    
+    <div class="page-content">
+        
+        <div class="page-title page-title-small">
+            <h2><a href="#" data-back-button><i class="fa fa-arrow-left"></i></a>Task Project - 1</h2>
+            <a href="#" data-menu="menu-main" class="bg-fade-highlight-light shadow-xl preload-img" data-src="images/avatars/5s.png"></a>
+        </div>
+        <div class="card header-card shape-rounded" data-card-height="150">
+            <div class="card-overlay bg-highlight opacity-95"></div>
+            <div class="card-overlay dark-mode-tint"></div>
+            <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+        </div>
+		
+		<div class="splide double-slider visible-slider slider-no-arrows slider-no-dots mb-4 pb-2" id="double-slider-1">
+			<div class="splide__track">
+				<div class="splide__list">
+					<div class="splide__slide ps-3">
+						<div class="bg-theme rounded-m shadow-m px-3">
+						<i class="mt-4 mb-4" data-feather="home" data-feather-line="1" data-feather-size="45" data-feather-color="blue-dark" data-feather-bg="blue-fade-light"></i>
+						<h5 class="font-16">Design Task Homepage</h5>
+						<p class="line-height-s font-10 mb-0 pb-3">
+							<span><i class="fa fa-flag color-red-dark pe-2 pt-2 font-9"></i>High Priority</span>
+						</p>
+						</div>
+					</div>
+					<div class="splide__slide ps-3">
+						<div class="bg-theme rounded-m shadow-m px-3">
+						<i class="mt-4 mb-4" data-feather="smartphone" data-feather-line="1" data-feather-size="45" data-feather-color="green-dark" data-feather-bg="green-fade-light"></i>
+						<h5 class="font-16">Create Tasklists</h5>
+						<p class="line-height-s font-10 mb-0 pb-3">
+							<span><i class="fa fa-flag color-blue-dark pe-2 pt-2 font-9"></i>Medium Priority</span>
+						</p>
+						</div>
+					</div>
+					<div class="splide__slide ps-3">
+						<div class="bg-theme rounded-m shadow-m px-3">
+						<i class="mt-4 mb-4" data-feather="coffee" data-feather-line="1" data-feather-size="45" data-feather-color="brown-dark"  data-feather-bg="brown-fade-light"></i>
+						<h5 class="font-16">Have a Coffee</h5>
+						<p class="line-height-s font-10 mb-0 pb-3">
+							<span><i class="fa fa-flag color-yellow-dark pe-2 pt-2 font-9"></i>Low Priority</span>
+						</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="content mb-2">
+			<h5 class="float-start font-16 font-500">Project Tasklist</h5>
+			<a class="float-end font-12 color-highlight mt-n1" href="#">View All</a>
+			<div class="clearfix"></div>
+		</div>
+		
+		<div class="card card-style">
+			<div class="content mb-3">			
+				<h5 class="font-12 font-600">Pending</h5>
+				<div class="form-check icon-check">
+					<input class="font-14 form-check-input" type="checkbox" value="" id="check2b">
+					<label class="font-14 form-check-label" for="check2b">Clean Code</label>
+					<i class="font-17 icon-check-1 far fa-circle color-gray-dark"></i>
+					<i class="font-17 icon-check-2 fa fa-check-circle color-green-dark"></i>
+					<span class="badge bg-blue-dark text-uppercase float-end mt-2 p-1 font-8">Your Task</span>
+				</div>
+				<div class="form-check icon-check">
+					<input class="font-14 form-check-input" type="checkbox" value="" id="check2a">
+					<label class="font-14 form-check-label" for="check2a">Create Pages</label>
+					<i class="font-17 icon-check-1 far fa-circle color-gray-dark"></i>
+					<i class="font-17 icon-check-2 fa fa-check-circle color-green-dark"></i>
+					<span class="badge bg-dark-dark text-uppercase float-end mt-2 p-1 font-8">Jack Son</span>
+				</div>
+				<div class="form-check icon-check">
+					<input class="font-14 form-check-input" type="checkbox" value="" id="check2c">
+					<label class="font-14 form-check-label" for="check2c">Connect to CMS</label>
+					<i class="font-17 icon-check-1 far fa-circle color-gray-dark"></i>
+					<i class="font-17 icon-check-2 fa fa-check-circle color-green-dark"></i>
+					<span class="badge bg-dark-dark text-uppercase float-end mt-2 p-1 font-8">Jane Doe</span>
+				</div>
+				<h5 class="font-12 font-600 pt-3">Completed</h5>
+				<div class="form-check icon-check">
+					<input class="font-14 form-check-input" type="checkbox" value="" id="check1a" checked>
+					<label class="font-14 form-check-label" for="check1a">Wireframe</label>
+					<i class="font-17 icon-check-1 far fa-circle color-gray-dark"></i>
+					<i class="font-17 icon-check-2 fa fa-check-circle color-green-dark"></i>
+					<span class="badge bg-green-dark text-uppercase float-end mt-2 p-1 font-8">APPROVED</span>
+				</div>
+				<div class="form-check icon-check">
+					<input class="font-14 form-check-input" type="checkbox" value="" id="check1b" checked>
+					<label class="font-14 form-check-label" for="check1b">Code Framework</label>
+					<i class="font-17 icon-check-1 far fa-circle color-gray-dark"></i>
+					<i class="font-17 icon-check-2 fa fa-check-circle color-green-dark"></i>
+					<span class="badge bg-green-dark text-uppercase float-end mt-2 p-1 font-8">APPROVED</span>
+				</div>
+				<div class="form-check icon-check">
+					<input class="font-14 form-check-input" type="checkbox" value="" id="check1c" checked>
+					<label class="font-14 form-check-label" for="check1c">Install Requisites</label>
+					<i class="font-17 icon-check-1 far fa-circle color-gray-dark"></i>
+					<i class="font-17 icon-check-2 fa fa-check-circle color-green-dark"></i>
+					<span class="badge bg-green-dark text-uppercase float-end mt-2 p-1 font-8">APPROVED</span>
+				</div>
+				<div class="form-check icon-check">
+					<input class="font-14 form-check-input" type="checkbox" value="" id="check1d" checked>
+					<label class="font-14 form-check-label" for="check1d">Develop Starter Page</label>
+					<i class="font-17 icon-check-1 far fa-circle color-gray-dark"></i>
+					<i class="font-17 icon-check-2 fa fa-check-circle color-green-dark"></i>
+					<span class="badge bg-green-dark text-uppercase float-end mt-2 p-1 font-8">APPROVED</span>
+				</div>
+				<h5 class="font-12 font-600 pt-3">Canceled</h5>
+				<div class="form-check icon-check">
+					<input class="font-14 form-check-input" type="checkbox" value="" id="check3a" checked>
+					<label class="font-14 form-check-label" for="check3a">Create Pages</label>
+					<i class="font-17 icon-check-1 fa fa-times-circle color-red-dark"></i>
+					<i class="font-17 icon-check-2 fa fa-times-circle color-red-dark"></i>
+					<span class="badge bg-red-dark text-uppercase float-end mt-2 p-1 font-8">By you</span>
+				</div>	
+
+			</div>
+		</div>
+		
+		<div class="content mb-2">
+			<h5 class="float-start font-16 font-500">Project Attachements</h5>
+			<a class="float-end font-12 color-highlight mt-n1" href="#">View All</a>
+			<div class="clearfix"></div>
+		</div>
+		<div class="card card-style pt-3">
+			<a href="#">
+				<div class="d-flex px-3 mb-3">
+					<div class="align-self-center">
+						<i class="fa fa-file-archive font-26 pe-3 pt-1 color-blue-dark"></i>
+					</div>
+					<div class="align-self-center me-auto">
+						<h4 class="font-13 mb-n1 mt-n1 font-600">Project Update.</h4>
+						<p class="mb-0 mt-n2"><a href="#" class="color-theme opacity-30 font-11 font-400">315kb, ZIP Archive</a></p>
+					</div>
+					<div class="align-self-center ms-auto">
+						<i class="fa fa-download font-16 opacity-30"></i>
+					</div>
+				</div>
+			</a>
+			<a href="#">
+				<div class="d-flex px-3 mb-3">
+					<div class="align-self-center">
+						<i class="fa fa-file-pdf font-26 pe-3 pt-1 color-red-dark"></i>
+					</div>
+					<div class="align-self-center me-auto">
+						<h4 class="font-13 mb-n1 mt-n1 font-600">Customer Briefing.</h4>
+						<p class="mb-0 mt-n2"><a href="#" class="color-theme opacity-30 font-11 font-400">315kb, ZIP Archive</a></p>
+					</div>
+					<div class="align-self-center ms-auto">
+						<i class="fa fa-download font-16 opacity-30"></i>
+					</div>
+				</div>
+			</a>
+			<a href="#">
+				<div class="d-flex px-3 mb-3">
+					<div class="align-self-center">
+						<i class="fa fa-file-alt font-26 pe-3 pt-1 color-gray-dark"></i>
+					</div>
+					<div class="align-self-center me-auto">
+						<h4 class="font-13 mb-n1 mt-n1 font-600">Product Licenses</h4>
+						<p class="mb-0 mt-n2"><a href="#" class="color-theme opacity-30 font-11 font-400">315kb, ZIP Archive</a></p>
+					</div>
+					<div class="align-self-center ms-auto">
+						<i class="fa fa-download font-16 opacity-30"></i>
+					</div>
+				</div>
+			</a>
+			<a href="#">
+				<div class="d-flex px-3 mb-3">
+					<div class="align-self-center">
+						<i class="fa fa-file-image font-26 pe-3 pt-1 color-green-dark"></i>
+					</div>
+					<div class="align-self-center me-auto">
+						<h4 class="font-13 mb-n1 mt-n1 font-600">Screenshot Design.</h4>
+						<p class="mb-0 mt-n2"><a href="#" class="color-theme opacity-30 font-11 font-400">315kb, ZIP Archive</a></p>
+					</div>
+					<div class="align-self-center ms-auto">
+						<i class="fa fa-download font-16 opacity-30"></i>
+					</div>
+				</div>
+			</a>
+		</div>
+		
+		<div class="content mb-2">
+			<h5 class="float-start font-16 font-500">Project Team</h5>
+			<a class="float-end font-12 color-highlight mt-n1" href="#">View All</a>
+			<div class="clearfix"></div>
+		</div>
+        <div class="card card-style">
+            <div class="content text-center">
+				<img src="images/avatars/5s.png" class="bg-blue-dark rounded-l mb-2 mt-2" alt="img" width="120">
+				<h4 class="mb-n1">John Doe</h4>
+				<p class="mb-3 font-11">Project Manager</p>
+				
+				<div class="d-flex">
+					<div class="m-auto">
+						<img src="images/avatars/1s.png" class="bg-red-dark rounded-m mb-2 mt-2" alt="img" width="50">
+						<h4 class="mb-n2 font-14">Jane</h4>
+						<p class="mb-0 font-9">Design</p>
+					</div>
+					<div class="m-auto">
+						<img src="images/avatars/4s.png" class="bg-green-dark rounded-m mb-2 mt-2" alt="img" width="50">
+						<h4 class="mb-n2 font-14">Joe</h4>
+						<p class="mb-0 font-9">Development</p>
+					</div>
+					<div class="m-auto">
+						<img src="images/avatars/8s.png" class="bg-teal-dark rounded-m mb-2 mt-2" alt="img" width="50">
+						<h4 class="mb-n2 font-14">Karine</h4>
+						<p class="mb-0 font-9">Support</p>
+					</div>
+					<div class="m-auto">
+						<img src="images/avatars/9s.png" class="bg-yellow-dark rounded-m mb-2 mt-2" alt="img" width="50">
+						<h4 class="mb-n2 font-14">Donnie</h4>
+						<p class="mb-0 font-9">Feedback</p>
+					</div>
+				</div>
+            </div>
+        </div>
+        
+    
+        <!-- footer and footer card-->
+        <div class="footer" data-menu-load="menu-footer.html"></div>  
+    </div>    
+    <!-- end of page content-->
+    
+    
+    <div id="menu-share" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-share.html"
+         data-menu-height="420" 
+         data-menu-effect="menu-over">
+    </div>    
+    
+    <div id="menu-highlights" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-colors.html"
+         data-menu-height="510" 
+         data-menu-effect="menu-over">        
+    </div>
+    
+    <div id="menu-main"
+         class="menu menu-box-right menu-box-detached rounded-m"
+         data-menu-width="260"
+         data-menu-load="menu-main.html"
+         data-menu-active="nav-pages"
+         data-menu-effect="menu-over">  
+    </div>
+    
+
+    
+</div>    
+
+
+
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</body>

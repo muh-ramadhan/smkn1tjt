@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="rtl">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Azures BootStrap</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">    
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+    
+<body class="theme-light">
+    
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+    
+<div id="page">
+    
+    <!-- header and footer bar go here-->
+    <div class="header header-fixed header-auto-show header-logo-app">
+        <a href="#" data-back-button class="header-title header-subtitle">Back to Pages</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-arrow-right"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+    </div>
+    <div id="footer-bar" class="footer-bar-5">
+        <a href="index-components.html"><i data-feather="heart" data-feather-line="1" data-feather-size="21" data-feather-color="red-dark" data-feather-bg="red-fade-light"></i><span>Features</span></a>
+        <a href="index-media.html"><i data-feather="image" data-feather-line="1" data-feather-size="21" data-feather-color="green-dark" data-feather-bg="green-fade-light"></i><span>Media</span></a>
+        <a href="index.html"><i data-feather="home" data-feather-line="1" data-feather-size="21" data-feather-color="blue-dark" data-feather-bg="blue-fade-light"></i><span>Home</span></a>
+        <a href="index-pages.html" class="active-nav"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown-dark" data-feather-bg="brown-fade-light"></i><span>Pages</span></a>
+        <a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="dark-dark" data-feather-bg="gray-fade-light"></i><span>Settings</span></a>
+    </div>
+    
+    <div class="page-content">
+        
+        <div class="page-title page-title-small">
+            <h2><a href="#" data-back-button><i class="fa fa-arrow-right"></i></a>Task Sort</h2>
+            <a href="#" data-menu="menu-main" class="bg-fade-highlight-light shadow-xl preload-img" data-src="images/avatars/5s.png"></a>
+        </div>
+        <div class="card header-card shape-rounded" data-card-height="120">
+            <div class="card-overlay bg-highlight opacity-95"></div>
+            <div class="card-overlay dark-mode-tint"></div>
+            <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+        </div>
+		
+		<div id="tab-group-1" class="card bg-transparent mb-0">
+			<div class="rounded-m overflow-hidden mx-3">
+				<div class="tab-controls tabs-large tabs-rounded" data-highlight="bg-dark-dark">
+					<a href="#" data-active data-bs-toggle="collapse" data-bs-target="#tab-1">Upcoming</a>
+					<a href="#" data-bs-toggle="collapse" data-bs-target="#tab-2">Complete</a>
+					<a href="#" data-bs-toggle="collapse" data-bs-target="#tab-3">Overdue</a>
+				</div>
+			</div>
+
+			<div data-bs-parent="#tab-group-1" class="collapse show" id="tab-1">
+				<div class="mt-3"></div>
+				<div class="card card-style mb-3">
+					<div class="content">
+						<h3>Task Upcoming 1</h3>
+						<p class="font-11 mt-n2 mb-0 opacity-50">1/25 Tasks Completed</p>
+						<p class="mb-0">
+							This project is to include the awesome task pack in Azures based on customer requests. We always listen
+							to feedback and we love updating our work.
+						</p>
+						
+						<div class="divider mb-3 mt-3"></div>
+						<div class="d-flex">
+							<div>
+								<img src="images/empty.png" data-src="images/avatars/3s.png" alt="img" width="40" class="bg-yellow-dark rounded-circle preload-img me-n3 border border-gray-light border-xs">
+								<img src="images/empty.png" data-src="images/avatars/4s.png" alt="img" width="40" class="bg-teal-dark rounded-circle preload-img me-n3 border border-gray-light border-xs">
+								<img src="images/empty.png" data-src="images/avatars/1s.png" alt="img" width="40" class="bg-red-dark rounded-circle preload-img me-n3 border border-gray-light border-xs">
+								<img src="images/empty.png" data-src="images/avatars/2s.png" alt="img" width="40" class="bg-blue-dark rounded-circle preload-img me-n3 border border-gray-light border-xs">
+							</div>
+							<div class="ms-auto align-self-center">
+								<span class="badge bg-teal-dark color-white font-10 mb-1 d-block">LOW</span>
+								<span class="badge bg-blue-dark color-white font-10 mb-1 d-block">PENDING</span>
+							</div>
+						</div>
+						
+						<div class="divider mt-3 mb-3"></div>
+						<div class="mb-3">
+							<div class="progress rounded-l" style="height:20px;">
+								<div class="progress-bar border-0 bg-blue-dark text-start ps-2" 
+									 role="progressbar" style="width: 55%" 
+									 aria-valuenow="10" aria-valuemin="0" 
+									 aria-valuemax="100">55% Complete
+								</div>
+							</div>
+						</div>
+						<div class="divider mt-3 mb-2"></div>
+						<div class="row mb-n2 color-theme">
+							<div class="col-6 font-10 text-start">
+								Start Time 09:00, 15th June
+							</div>
+							<div class="col-6 font-10 text-end">
+								Due Date: 17 June <span class="copyright-year"></span>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div class="card card-style mb-3">
+					<div class="content">
+						<h4>Task Upcoming 2</h4>
+						<p class="font-11 mt-n2 mb-2 opacity-50">1/25 Tasks Completed</p>
+										
+						<div class="mb-1">
+							<div class="progress rounded-xs" style="height:20px;">
+								<div class="progress-bar border-0 bg-blue-dark rounded-xs text-start ps-2" 
+									 role="progressbar" style="width: 50%" 
+									 aria-valuenow="10" aria-valuemin="0" 
+									 aria-valuemax="100">80% Complete
+								</div>
+							</div>
+						</div>
+						<div class="row mb-n2 color-theme">
+							<div class="col-3 font-10 text-start">
+								<span class="badge bg-gray-dark color-white font-10 mb-1">MEDIUM PRIORITY</span>
+							</div>
+							<div class="col-9 font-10 text-end">
+								<span><i class="fa fa-calendar opacity-30 pe-1"></i> 17 June <span class="copyright-year"></span></span>
+								<span class="ps-3"><i class="fa fa-user opacity-30 pe-1"></i>Team 2</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div data-bs-parent="#tab-group-1" class="collapse" id="tab-2">
+				<div class="mt-3"></div>
+				<div class="card card-style mb-3">
+					<div class="content">
+						<h4>Task Complete 1</h4>
+						<p class="font-11 mt-n2 mb-2 opacity-50">1/25 Tasks Completed</p>
+										
+						<div class="mb-1">
+							<div class="progress rounded-xs" style="height:20px;">
+								<div class="progress-bar border-0 bg-green-dark rounded-xs text-start ps-2" 
+									 role="progressbar" style="width: 80%" 
+									 aria-valuenow="10" aria-valuemin="0" 
+									 aria-valuemax="100">80% Complete
+								</div>
+							</div>
+						</div>
+						<div class="row mb-n2 color-theme">
+							<div class="col-3 font-10 text-start">
+								<span class="badge bg-gray-dark color-white font-10 mb-1">HIGH PRIORITY</span>
+							</div>
+							<div class="col-9 font-10 text-end">
+								<span><i class="fa fa-calendar opacity-30 pe-1"></i> 17 June <span class="copyright-year"></span></span>
+								<span class="ps-3"><i class="fa fa-user opacity-30 pe-1"></i>Team 5</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card card-style">
+					<div class="content">
+						<h3>Task Complete 2</h3>
+						<p class="font-11 mt-n2 mb-0 opacity-50">1/25 Tasks Completed</p>
+						<p class="mb-0">
+							This project is to include the awesome task pack in Azures based on customer requests. We always listen
+							to feedback and we love updating our work.
+						</p>
+						
+						<div class="divider mb-3 mt-3"></div>
+						<div class="d-flex">
+							<div>
+								<img src="images/empty.png" data-src="images/avatars/1s.png" alt="img" width="40" class="bg-red-dark rounded-circle preload-img me-n3 border border-gray-light border-xs">
+								<img src="images/empty.png" data-src="images/avatars/2s.png" alt="img" width="40" class="bg-blue-dark rounded-circle preload-img me-n3 border border-gray-light border-xs">
+								<img src="images/empty.png" data-src="images/avatars/3s.png" alt="img" width="40" class="bg-yellow-dark rounded-circle preload-img me-n3 border border-gray-light border-xs">
+								<img src="images/empty.png" data-src="images/avatars/4s.png" alt="img" width="40" class="bg-teal-dark rounded-circle preload-img me-n3 border border-gray-light border-xs">
+							</div>
+							<div class="ms-auto align-self-center">
+								<span class="badge bg-yellow-dark color-white font-10 mb-1 d-block">MEDIUM</span>
+								<span class="badge bg-green-dark color-white font-10 mb-1 d-block">COMPLETE</span>
+							</div>
+						</div>
+						
+						<div class="divider mt-3 mb-3"></div>
+						
+						<div class="mb-3">
+							<div class="progress rounded-l" style="height:20px;">
+								<div class="progress-bar border-0 bg-green-dark text-start ps-2" 
+									 role="progressbar" style="width: 100%" 
+									 aria-valuenow="10" aria-valuemin="0" 
+									 aria-valuemax="100">100% Complete
+								</div>
+							</div>
+						</div>
+						
+						<div class="divider mt-3 mb-2"></div>
+						<div class="row mb-n2 color-theme">
+							<div class="col-6 font-10 text-start">
+								Start Time 09:00, 15th June
+							</div>
+							<div class="col-6 font-10 text-end">
+								Due Date: 17 June <span class="copyright-year"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div data-bs-parent="#tab-group-1" class="collapse" id="tab-3">
+				<div class="mt-3"></div>
+				<div class="card card-style mb-3">
+					<div class="content">
+						<h3>Task Overdue 1</h3>
+						<p class="font-11 mt-n2 mb-0 opacity-50">1/25 Tasks Completed</p>
+						<p class="mb-0">
+							This project is to include the awesome task pack in Azures based on customer requests. We always listen
+							to feedback and we love updating our work.
+						</p>
+						
+						<div class="divider mb-3 mt-3"></div>
+						<div class="d-flex">
+							<div>
+								<img src="images/empty.png" data-src="images/avatars/2s.png" alt="img" width="40" class="bg-blue-dark rounded-circle preload-img me-n3 border border-gray-light border-xs">
+								<img src="images/empty.png" data-src="images/avatars/3s.png" alt="img" width="40" class="bg-yellow-dark rounded-circle preload-img me-n3 border border-gray-light border-xs">
+								<img src="images/empty.png" data-src="images/avatars/1s.png" alt="img" width="40" class="bg-red-dark rounded-circle preload-img me-n3 border border-gray-light border-xs">
+								<img src="images/empty.png" data-src="images/avatars/4s.png" alt="img" width="40" class="bg-teal-dark rounded-circle preload-img me-n3 border border-gray-light border-xs">
+							</div>
+							<div class="ms-auto align-self-center">
+								<span class="badge bg-red-dark color-white font-10 mb-1 d-block">HIGH</span>
+								<span class="badge bg-blue-dark color-white font-10 mb-1 d-block">PENDING</span>
+							</div>
+						</div>
+						
+						<div class="divider mt-3 mb-3"></div>
+						<div class="mb-3">
+							<div class="progress rounded-l" style="height:20px;">
+								<div class="progress-bar border-0 bg-red-dark text-start ps-2" 
+									 role="progressbar" style="width: 35%" 
+									 aria-valuenow="10" aria-valuemin="0" 
+									 aria-valuemax="100">35% Complete
+								</div>
+							</div>
+						</div>
+						<div class="divider mt-3 mb-2"></div>
+						<div class="row mb-n2 color-theme">
+							<div class="col-6 font-10 text-start">
+								Start Time 09:00, 15th June
+							</div>
+							<div class="col-6 font-10 text-end">
+								Due Date: 17 June <span class="copyright-year"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card card-style mb-3">
+					<div class="content">
+						<h4>Task Overdue 2</h4>
+						<p class="font-11 mt-n2 mb-2 opacity-50">1/25 Tasks Completed</p>
+										
+						<div class="mb-1">
+							<div class="progress rounded-xs" style="height:20px;">
+								<div class="progress-bar border-0 bg-red-dark rounded-xs text-start ps-2" 
+									 role="progressbar" style="width: 35%" 
+									 aria-valuenow="10" aria-valuemin="0" 
+									 aria-valuemax="100">35% Complete
+								</div>
+							</div>
+						</div>
+						<div class="row mb-n2 color-theme">
+							<div class="col-3 font-10 text-start">
+								<span class="badge bg-gray-dark color-white font-10 mb-1">LOW PRIORITY</span>
+							</div>
+							<div class="col-9 font-10 text-end">
+								<span><i class="fa fa-calendar opacity-30 pe-1"></i> 17 June <span class="copyright-year"></span></span>
+								<span class="ps-3"><i class="fa fa-user opacity-30 pe-1"></i>Team 3</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		
+		</div>
+		
+ 
+        <!-- footer and footer card-->
+        <div class="footer" data-menu-load="menu-footer.html"></div>  
+    </div>    
+    <!-- end of page content-->
+    
+    
+    <div id="menu-share" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-share.html"
+         data-menu-height="420" 
+         data-menu-effect="menu-over">
+    </div>    
+    
+    <div id="menu-highlights" 
+         class="menu menu-box-bottom menu-box-detached rounded-m" 
+         data-menu-load="menu-colors.html"
+         data-menu-height="510" 
+         data-menu-effect="menu-over">        
+    </div>
+    
+    <div id="menu-main"
+         class="menu menu-box-right menu-box-detached rounded-m"
+         data-menu-width="260"
+         data-menu-load="menu-main.html"
+         data-menu-active="nav-pages"
+         data-menu-effect="menu-over">  
+    </div>
+    
+
+    
+</div>    
+
+
+
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</body>
