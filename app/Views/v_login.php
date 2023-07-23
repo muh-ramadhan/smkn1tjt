@@ -39,8 +39,8 @@
       <?php echo form_open('login/auth'); ?>
       <div class="input-style no-borders has-icon validate-field mb-4">
         <i class="fa fa-user"></i>
-        <input name="nama_pengguna" type="name" class="form-control validate-name" id="form1a" placeholder="Nama Pengguna">
-        <label for="form1a" class="color-blue-dark font-10 mt-1">Nama Pengguna</label>
+        <input name="username" type="text" class="form-control validate-name" id="form1a" placeholder="Username">
+        <label for="form1a" class="color-blue-dark font-10 mt-1">Username</label>
         <i class="fa fa-times disabled invalid color-red-dark"></i>
         <i class="fa fa-check disabled valid color-green-dark"></i>
         <em>(wajib)</em>
@@ -48,8 +48,8 @@
 
       <div class="input-style no-borders has-icon validate-field mb-4">
         <i class="fa fa-lock"></i>
-        <input name="password" type="password" class="form-control validate-password" id="form3a" placeholder="Kata Sandi">
-        <label for="form3a" class="color-blue-dark font-10 mt-1">Kata Sandi</label>
+        <input name="password" type="password" class="form-control validate-password" id="form3a" placeholder="Password">
+        <label for="form3a" class="color-blue-dark font-10 mt-1">Password</label>
         <i class="fa fa-times disabled invalid color-red-dark"></i>
         <i class="fa fa-check disabled valid color-green-dark"></i>
         <em>(wajib)</em>

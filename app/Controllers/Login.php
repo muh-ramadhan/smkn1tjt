@@ -23,14 +23,14 @@ class Login extends BaseController
     public function auth()
     {
         if ($this->validate([
-            'nama_pengguna' => [
+            'username' => [
                 'label' => 'Nama Pengguna',
                 'rules' => 'required',
                 'errors'    => [
                     'required'  => '{field} Wajib Diisi'
                 ]
             ],
-            'kata_sandi' => [
+            'password' => [
                 'label' => 'Kata Sandi',
                 'rules' => 'required',
                 'errors'    => [
@@ -39,19 +39,19 @@ class Login extends BaseController
             ],
         ])) {
             //Jika Valid
-            $nama_pengguna = $this->request->getVar('nama_pengguna');
-            $kata_sandi = $this->request->getVar('kata_sandi');
+            $username = $this->request->getVar('username');
+            $password = $this->request->getVar('password');
             $cek = $this->LoginModel->where([
-                'nama_pengguna'  => $nama_pengguna,
-                'kata_sandi'  => $kata_sandi
+                'username'  => $username,
+                'password'  => $password
             ])
                 ->get()
                 ->getRowArray();
             if ($cek) {
                 //Periksa Data Jika Datanya Cocok
                 session()->set('log', true);
-                session()->set('id_karyawan', $cek['id_karyawan']);
-                session()->set('nama_pengguna', $cek['nama_pengguna']);
+                session()->set('id_pengguna', $cek['id_pengguna']);
+                session()->set('username', $cek['username']);
                 session()->set('level', $cek['level']);
                 //Login Direct Ke Halaman Beranda
                 //return redirect()->to(base_url('beranda'));

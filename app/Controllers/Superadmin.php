@@ -1,7 +1,11 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\KaryawanModel;
+use App\Models\PenggunaModel;
+use App\Models\AdminModel;
+use App\Models\OperatorModel;
+use App\Models\GuruModel;
+use App\Models\SiswaModel;
 use App\Models\LoginModel;
 use App\Models\TransaksiModel;
 use App\Models\PelangganModel;
@@ -10,7 +14,11 @@ class Superadmin extends BaseController
 {
     public function __construct()
     {
-		$this->KaryawanModel = new KaryawanModel();
+		$this->PenggunaModel = new PenggunaModel();
+		$this->AdminModel = new AdminModel();
+		$this->OperatorModel = new OperatorModel();
+		$this->GuruModel = new GuruModel();
+		$this->SiswaModel = new SiswaModel();
 		$this->LoginModel = new LoginModel();
 		$this->TransaksiModel = new TransaksiModel();
 		$this->PelangganModel = new PelangganModel();
@@ -131,82 +139,82 @@ class Superadmin extends BaseController
         return redirect()->to('Superadmin/DepotAir');
     }
 
-    public function Karyawan()
+    public function Pengguna()
     {
         $data = [
             'title' => 'Master Data',
-            'subtitle' => 'Karyawan',
-            'AmbilSemuaDataKaryawan' => $this->KaryawanModel->findAll(),
+            'subtitle' => 'Pengguna',
+            'AmbilSemuaDataPengguna' => $this->PenggunaModel->findAll(),
         ];
         return view('fv_superadmin/v_karyawan', $data);
     }
 
-    public function TambahDataKaryawan()
+    public function TambahDataPengguna()
     {
-        $KaryawanModel = new KaryawanModel();
+        $PenggunaModel = new PenggunaModel();
         $data = [
-            'nama_karyawan' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_karyawan'))), ' ', true),
+            'nama_lengkap' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_lengkap'))), ' ', true),
         ];
-        $KaryawanModel->insert($data);
-        $last_insert_id = $KaryawanModel->getInsertID();
+        $PenggunaModel->insert($data);
+        $last_insert_id = $PenggunaModel->getInsertID();
 
         $data = [
-            'id_karyawan' => $last_insert_id,
-            'nama_pengguna' => $this->request->getVar('nama_pengguna'),
-            'kata_sandi' => $this->request->getVar('kata_sandi'),
+            'id_pengguna' => $last_insert_id,
+            'username' => $this->request->getVar('username'),
+            'password' => $this->request->getVar('password'),
             'level' => 2,
         ];
         $LoginModel = new LoginModel();
         $LoginModel->insert($data);
 
         session()->setFlashdata('tambah', 'Data Berhasil Di Tambah');
-        return redirect()->to('Superadmin/Karyawan');
+        return redirect()->to('Superadmin/Pengguna');
     }
 
-    public function DetailKaryawan($id_karyawan)
+    public function DetailPengguna($id_pengguna)
     {
         $data = [
             'title' => 'Detail Data',
-            'subtitle' => 'Karyawan',
-            'AmbilDataDetailKaryawan'  =>  $this->KaryawanModel->where('id_karyawan', $id_karyawan)->get()->getRowArray(),
-            'AmbilDataDetailLogin'  => $this->LoginModel->where('id_karyawan', $id_karyawan)->get()->getRowArray(),
+            'subtitle' => 'Pengguna',
+            'AmbilDataDetailPengguna'  =>  $this->PenggunaModel->where('id_pengguna', $id_pengguna)->get()->getRowArray(),
+            'AmbilDataDetailLogin'  => $this->LoginModel->where('id_pengguna', $id_pengguna)->get()->getRowArray(),
         ];
         return view('fv_superadmin/v_detail_karyawan', $data);
     }
 
-    public function UbahDataKaryawan($id_karyawan)
+    public function UbahDataPengguna($id_pengguna)
     {
         $data = [
-            'id_karyawan' => $id_karyawan,
-            'nama_karyawan' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_karyawan'))), ' ', true),
+            'id_pengguna' => $id_pengguna,
+            'nama_lengkap' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_lengkap'))), ' ', true),
         ];
-        $this->KaryawanModel->update($id_karyawan, $data);
+        $this->PenggunaModel->update($id_pengguna, $data);
         
         session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
-        return redirect()->to('Superadmin/Karyawan');
+        return redirect()->to('Superadmin/Pengguna');
     }
 
-    public function UbahDataLoginKaryawan($id_karyawan)
+    public function UbahDataLoginPengguna($id_pengguna)
     {
         $data = [
-            'id_login' => $id_karyawan, //Primary
-            'nama_pengguna' => $this->request->getVar('nama_pengguna'),
-            'kata_sandi' => $this->request->getVar('kata_sandi'),
+            'id_login' => $id_pengguna, //Primary
+            'username' => $this->request->getVar('username'),
+            'password' => $this->request->getVar('password'),
             'level' => 2,
         ];
-        $this->LoginModel->update($id_karyawan, $data);
-        //dd($id_karyawan, $data);
+        $this->LoginModel->update($id_pengguna, $data);
+        //dd($id_pengguna, $data);
         
         session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
-        return redirect()->to('Superadmin/Karyawan');
+        return redirect()->to('Superadmin/Pengguna');
     }
 
-    public function HapusDataKaryawan($id_karyawan)
+    public function HapusDataPengguna($id_pengguna)
     {
-        $this->KaryawanModel->where('id_karyawan', $id_karyawan)->delete();
-        $this->LoginModel->where('id_karyawan', $id_karyawan)->delete();
+        $this->PenggunaModel->where('id_pengguna', $id_pengguna)->delete();
+        $this->LoginModel->where('id_pengguna', $id_pengguna)->delete();
         session()->setFlashdata('hapus', 'Data Berhasil Di Hapus');
-        return redirect()->to('Superadmin/Karyawan');
+        return redirect()->to('Superadmin/Pengguna');
     }
 
     public function Pelanggan()
