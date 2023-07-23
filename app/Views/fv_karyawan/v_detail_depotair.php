@@ -1,4 +1,4 @@
-<?= $this->extend('fv_karyawan/themplate/layout') ?>
+<?= $this->extend('fv_pengguna/themplate/layout') ?>
 <?= $this->section('content') ?>
 <section class="content">
     <div class="container-fluid">
@@ -107,7 +107,7 @@
                 </button>
             </div>
 
-            <?php echo form_open('Karyawan/TambahDataTransaksiPelanggan/' . $AmbilDataDetailDepotAir['id_pelanggan']) ?>
+            <?php echo form_open('Pengguna/TambahDataTransaksiPelanggan/' . $AmbilDataDetailDepotAir['id_pelanggan']) ?>
             <div class="modal-body">
                 <div class="form-group">
                     <label>Tanggal</label>

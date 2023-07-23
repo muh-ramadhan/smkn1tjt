@@ -2,20 +2,20 @@
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 
-//Importing Dalonet Utility Classes
-@import "dalonet/variables"; 
+//Importing Azures Utility Classes
+@import "azures/variables"; 
 
 //Importing Sturctural Elements
-@import "dalonet/typography";
-@import "dalonet/structure";
-@import "dalonet/logos";
-@import "dalonet/colors";
-@import "dalonet/header-bar";
-@import "dalonet/footer-bar";
-@import "dalonet/sidebar";
-@import "dalonet/shapes";
-@import "dalonet/menu";
-@import "dalonet/utilities";
+@import "azures/typography";
+@import "azures/structure";
+@import "azures/logos";
+@import "azures/colors";
+@import "azures/header-bar";
+@import "azures/footer-bar";
+@import "azures/sidebar";
+@import "azures/shapes";
+@import "azures/menu";
+@import "azures/utilities";
 
 //Importing Components
 @import "components/preloader";
@@ -58,7 +58,7 @@
 @import "pages/vcard";
 
 //Importing Dark and Color Scheme
-@import "dalonet/_dark";
+@import "azures/_dark";
 
 //Demo Aligns for Icons and Background Demo Images
 //Can be deleted to save space

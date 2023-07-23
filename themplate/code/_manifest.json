@@ -1,11 +1,11 @@
 {
 "version": "3.0",
 "lang" : "en",
-"name" : "Dalonet",
+"name" : "Azures",
 "scope" : "/",
 "display" : "fullscreen",
 "start_url" : "/index.html",
-"short_name" : "Dalonet",
+"short_name" : "Azures",
 "description" : "",
 "orientation" : "portrait",
 "background_color": "#000000",

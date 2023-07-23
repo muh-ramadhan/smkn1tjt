@@ -2,7 +2,7 @@
  * Countdown.js
  * Version: 2.0 - Vanilla JS build
  *
- * Copyright Dalonet 
+ * Copyright Enabled 
  * Released under the ThemeForest License. Usage prohibited otherwise.
  */
 function countdown(dateEnd) {

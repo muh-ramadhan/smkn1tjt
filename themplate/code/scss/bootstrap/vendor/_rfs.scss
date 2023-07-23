@@ -266,7 +266,7 @@ $rfs-mq-property-height: if($rfs-mode == max-media-query, max-height, min-height
           // Use negative value if needed
           $min-width: if($value < 0, -$min-width, $min-width);
 
-          // Use `vmin` if two-dimensional is dalonet
+          // Use `vmin` if two-dimensional is enabled
           $variable-unit: if($rfs-two-dimensional, vmin, vw);
 
           // Calculate the variable width between 0 and $rfs-breakpoint

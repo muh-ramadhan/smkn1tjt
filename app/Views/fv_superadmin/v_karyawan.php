@@ -76,15 +76,15 @@
                             </thead>
                             <tbody>
                                 <?php $no = 1;
-                                foreach ($AmbilSemuaDataKaryawan as $key => $value) { ?>
+                                foreach ($AmbilSemuaDataPengguna as $key => $value) { ?>
                                     <tr>
                                         <td><?= $no++ ?></td>
-                                        <td><?= $value['nama_karyawan'] ?></td>
+                                        <td><?= $value['nama_lengkap'] ?></td>
                                         <td>
-                                            <a class="btn btn-warning btn-sm" href="<?= base_url('Superadmin/DetailKaryawan/' . $value['id_karyawan']) ?>">
+                                            <a class="btn btn-warning btn-sm" href="<?= base_url('Superadmin/DetailPengguna/' . $value['id_pengguna']) ?>">
                                                 <i class="fas fa-edit"></i> Detail
                                             </a>
-                                            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#hapus<?= $value['id_karyawan'] ?>">
+                                            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#hapus<?= $value['id_pengguna'] ?>">
                                                 <i class="fas fa-trash"></i> Hapus
                                             </button>
                                         </td>
@@ -116,20 +116,20 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <?php echo form_open('Superadmin/TambahDataKaryawan') ?>
+            <?php echo form_open('Superadmin/TambahDataPengguna') ?>
             <?= csrf_field() ?>
             <div class="modal-body">
                 <div class="form-group">
-                    <label>Nama <?= $subtitle; ?></label>
-                    <input name="nama_karyawan" class="form-control" placeholder="Nama Karyawan" required>
+                    <label>Nama Lengkap <?= $subtitle; ?></label>
+                    <input name="nama_lengkap" class="form-control" placeholder="Nama Lengkap" required>
                 </div>
                 <div class="form-group">
-                    <label>Nama Pengguna</label>
-                    <input name="nama_pengguna" class="form-control" placeholder="Nama Pengguna" required>
+                    <label>Username</label>
+                    <input name="username" class="form-control" placeholder="Nama Pengguna" required>
                 </div>
                 <div class="form-group">
-                    <label>Kata Sandi</label>
-                    <input name="kata_sandi" class="form-control" placeholder="Kata Sandi" required>
+                    <label>Password</label>
+                    <input name="password" class="form-control" placeholder="Kata Sandi" required>
                 </div>
             </div>
             <div class="modal-footer justify-content-between">
@@ -143,8 +143,8 @@
 <!-- ./Modal Tambah -->
 
 <!-- Modal Hapus -->
-<?php foreach ($AmbilSemuaDataKaryawan as $key => $value) { ?>
-    <div class="modal fade" id="hapus<?= $value['id_karyawan'] ?>">
+<?php foreach ($AmbilSemuaDataPengguna as $key => $value) { ?>
+    <div class="modal fade" id="hapus<?= $value['id_pengguna'] ?>">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -154,11 +154,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Apakah Anda Ingin Menghapus <b><?= $subtitle; ?> <?= $value['nama_karyawan'] ?></b> ?
+                    Apakah Anda Ingin Menghapus <b><?= $subtitle; ?> <?= $value['nama_lengkap'] ?></b> ?
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Batal</button>
-                    <a href="<?= base_url('Superadmin/HapusDataKaryawan/' . $value['id_karyawan']) ?>" class="btn btn-primary btn-sm">Hapus</a>
+                    <a href="<?= base_url('Superadmin/HapusDataPengguna/' . $value['id_pengguna']) ?>" class="btn btn-primary btn-sm">Hapus</a>
                 </div>
             </div>
         </div>

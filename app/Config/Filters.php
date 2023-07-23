@@ -9,7 +9,10 @@ use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
 use App\Filters\FilterSuperadmin;
-use App\Filters\FilterKaryawan;
+use App\Filters\FilterAdmin;
+use App\Filters\FilterOperator;
+use App\Filters\FilterGuru;
+use App\Filters\FilterSiswa;
 
 class Filters extends BaseConfig
 {
@@ -24,7 +27,10 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         'filtersuperadmin'  => FilterSuperadmin::class,
-        'filterkaryawan'    => FilterKaryawan::class,
+        'filteradmin'    => FilterAdmin::class,
+        'filteroperator'    => FilterOperator::class,
+        'filterguru'    => FilterGuru::class,
+        'filtersiswa'    => FilterSiswa::class,
     ];
 
     /**
@@ -42,7 +48,31 @@ class Filters extends BaseConfig
                     '/', //Routing Ke Controller Home
                 ]
             ],
-            'filterkaryawan'    =>
+            'filteradmin'    =>
+            [
+                'except' =>
+                [
+                    'login',    'login/*',
+                    '/', //Routing Ke Controller Home
+                ]
+            ],
+            'filteroperator'    =>
+            [
+                'except' =>
+                [
+                    'login',    'login/*',
+                    '/', //Routing Ke Controller Home
+                ]
+            ],
+            'filterguru'    =>
+            [
+                'except' =>
+                [
+                    'login',    'login/*',
+                    '/', //Routing Ke Controller Home
+                ]
+            ],
+            'filtersiswa'    =>
             [
                 'except' =>
                 [
@@ -61,16 +91,46 @@ class Filters extends BaseConfig
                 [
                     'logout', 'logout/*',
                     'superadmin', 'superadmin/*',
-                    'karyawan', 'karyawan/*',
+                    'admin', 'admin/*',
+                    'operator', 'operator/*',
+                    'guru', 'guru/*',
+                    'siswa', 'siswa/*',
                     '/', //Routing Ke Controller Home
                 ]
             ],
-            'filterkaryawan'    =>
+            'filteradmin'    =>
             [
                 'except' =>
                 [
                     'logout', 'logout/*',
-                    'karyawan', 'karyawan/*',
+                    'admin', 'admin/*',
+                    '/', //Routing Ke Controller Home
+                ]
+            ],
+            'filteroperator'    =>
+            [
+                'except' =>
+                [
+                    'logout', 'logout/*',
+                    'operator', 'operator/*',
+                    '/', //Routing Ke Controller Home
+                ]
+            ],
+            'filterguru'    =>
+            [
+                'except' =>
+                [
+                    'logout', 'logout/*',
+                    'guru', 'guru/*',
+                    '/', //Routing Ke Controller Home
+                ]
+            ],
+            'filtersiswa'    =>
+            [
+                'except' =>
+                [
+                    'logout', 'logout/*',
+                    'siswa', 'siswa/*',
                     '/', //Routing Ke Controller Home
                 ]
             ],

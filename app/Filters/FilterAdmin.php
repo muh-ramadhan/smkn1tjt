@@ -6,7 +6,7 @@ use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 
-class FilterKaryawan implements FilterInterface
+class FilterAdmin implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
@@ -21,7 +21,7 @@ class FilterKaryawan implements FilterInterface
     {
         // Do something here
         if (session()->get('level') == 2) {
-            return redirect()->to(base_url('karyawan'));
+            return redirect()->to(base_url('admin'));
         }
     }
 }

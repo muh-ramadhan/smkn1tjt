@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     //Global Variables
     let isPWA = true;  // Enables or disables the service worker and PWA
     let isAJAX = true; // AJAX transitions. Requires local server or server
-    var pwaName = "Dalonet"; //Local Storage Names for PWA
+    var pwaName = "Azures"; //Local Storage Names for PWA
     var pwaRemind = 1; //Days to re-remind to add to home
     var pwaNoCache = false; //Requires server and HTTPS/SSL. Will clear cache with each visit
 
     //Setting Service Worker Locations scope = folder | location = service worker js location
-    var pwaScope = "/themplate/code/";
-    var pwaLocation = "/themplate/code/_service-worker.js";
+    var pwaScope = "/";
+    var pwaLocation = "/_service-worker.js";
 
     //Place all your custom Javascript functions and plugin calls below this line
     function init_template(){
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-		//OTP Boxes - Dalonet 3.9
+		//OTP Boxes - Azures 3.9
 		var otp = document.querySelectorAll('.otp');
 		if(otp[0]){
 			otp.forEach(el => {
@@ -504,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 loadHighlight.rel = "stylesheet";
                 loadHighlight.className = "page-highlight";
                 loadHighlight.type = "text/css";
-                loadHighlight.href = 'themplate/code/styles/highlights/highlight_' + highlight +'.css';
+                loadHighlight.href = 'styles/highlights/highlight_' + highlight +'.css';
                 document.getElementsByTagName("head")[0].appendChild(loadHighlight);
                 document.body.setAttribute('data-highlight', 'highlight-'+highlight)
                 localStorage.setItem(pwaName+'-Highlight', highlight)
@@ -515,7 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 loadHighlight.rel = "stylesheet";
                 loadHighlight.className = "page-highlight";
                 loadHighlight.type = "text/css";
-                loadHighlight.href = 'themplate/code/styles/highlights/highlight_' + rememberHighlight +'.css';
+                loadHighlight.href = 'styles/highlights/highlight_' + rememberHighlight +'.css';
                 if(!document.querySelectorAll('.page-highlight').length){
                     document.getElementsByTagName("head")[0].appendChild(loadHighlight);
                     document.body.setAttribute('data-highlight', 'highlight-'+rememberHighlight)

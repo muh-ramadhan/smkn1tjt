@@ -12,9 +12,9 @@ class LoginModel extends Model
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
-    protected $useSoftDeletes   = false;
+    protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_login', 'id_karyawan', 'nama_pengguna', 'kata_sandi', 'level'];
+    protected $allowedFields    = ['id_login', 'id_pengguna', 'username', 'password', 'level', 'deleted_at'];
 
     // Dates
     protected $useTimestamps = true;

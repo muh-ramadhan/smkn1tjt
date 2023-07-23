@@ -26,7 +26,7 @@ var pieDemoChart = new Chart(pieChart, {
             },
         },
         tooltips: {
-            dalonet: true
+            enabled: true
         },
         animation: {
             duration: 1500
@@ -57,7 +57,7 @@ var doughnutDemoChart = new Chart(doughnutChart, {
             },
         },
         tooltips: {
-            dalonet: true
+            enabled: true
         },
         animation: {
             duration: 1500
@@ -93,7 +93,7 @@ var polarDemoChart = new Chart(polarChart, {
             },
         },
         tooltips: {
-            dalonet: true
+            enabled: true
         },
         animation: {
             duration: 1500

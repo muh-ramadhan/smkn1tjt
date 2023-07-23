@@ -1,4 +1,4 @@
-<?= $this->extend('fv_karyawan/themplate/layout') ?>
+<?= $this->extend('fv_pengguna/themplate/layout') ?>
 <?= $this->section('content') ?>
 
 <section class="content">
@@ -98,7 +98,7 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a class="btn btn-warning btn-sm" href="<?= base_url('Karyawan/DetailDepotAir/' . $value['id_pelanggan']) ?>">
+                                            <a class="btn btn-warning btn-sm" href="<?= base_url('Pengguna/DetailDepotAir/' . $value['id_pelanggan']) ?>">
                                                 <i class="fas fa-edit"></i> Transaksi
                                             </a>
                                         </td>
@@ -131,7 +131,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <?php echo form_open('Karyawan/TambahDataDepotAir') ?>
+            <?php echo form_open('Pengguna/TambahDataDepotAir') ?>
             <?= csrf_field() ?>
             <div class="modal-body">
                 <div class="form-group">

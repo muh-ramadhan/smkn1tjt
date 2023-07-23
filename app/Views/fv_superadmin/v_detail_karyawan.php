@@ -13,12 +13,12 @@
                     <!-- /.card-header -->
                     <!-- form start -->
                     
-                <?php echo form_open('Superadmin/UbahDataKaryawan/' . $AmbilDataDetailKaryawan['id_karyawan']) ?>
+                <?php echo form_open('Superadmin/UbahDataPengguna/' . $AmbilDataDetailPengguna['id_pengguna']) ?>
                 <?= csrf_field() ?>
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="nama_karyawan">Nama Lengkap</label>
-                                <input type="text" name="nama_karyawan" value="<?= $AmbilDataDetailKaryawan['nama_karyawan'] ?>" class="form-control" placeholder="Nama Lengkap">
+                                <label for="nama_pengguna">Nama Lengkap</label>
+                                <input type="text" name="nama_lengkap" value="<?= $AmbilDataDetailPengguna['nama_lengkap'] ?>" class="form-control" placeholder="Nama Lengkap">
                             </div>
                         </div>
                         <!-- /.card-body -->
@@ -44,16 +44,16 @@
                     <!-- /.card-header -->
                     <!-- form start -->
 
-                    <?php echo form_open('Superadmin/UbahDataLoginKaryawan/' . $AmbilDataDetailLogin['id_login']) ?>
+                    <?php echo form_open('Superadmin/UbahDataLoginPengguna/' . $AmbilDataDetailLogin['id_login']) ?>
                 <?= csrf_field() ?>
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="nama_pengguna">Nama Pengguna</label>
-                                <input type="text" name="nama_pengguna" value="<?= $AmbilDataDetailLogin['nama_pengguna'] ?>" class="form-control" placeholder="Nama Pengguna">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" value="<?= $AmbilDataDetailLogin['username'] ?>" class="form-control" placeholder="Username">
                             </div>
                             <div class="form-group">
-                                <label for="kata_sandi">Kata Sandi</label>
-                                <input type="password" name="kata_sandi" value="<?= $AmbilDataDetailLogin['kata_sandi'] ?>" class="form-control" placeholder="Nama Pengguna">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" value="<?= $AmbilDataDetailLogin['password'] ?>" class="form-control" placeholder="Password">
                             </div>
                         </div>
                         <!-- /.card-body -->

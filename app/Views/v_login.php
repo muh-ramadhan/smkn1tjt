@@ -48,7 +48,7 @@
 
       <div class="input-style no-borders has-icon validate-field mb-4">
         <i class="fa fa-lock"></i>
-        <input name="kata_sandi" type="password" class="form-control validate-password" id="form3a" placeholder="Kata Sandi">
+        <input name="password" type="password" class="form-control validate-password" id="form3a" placeholder="Kata Sandi">
         <label for="form3a" class="color-blue-dark font-10 mt-1">Kata Sandi</label>
         <i class="fa fa-times disabled invalid color-red-dark"></i>
         <i class="fa fa-check disabled valid color-green-dark"></i>
