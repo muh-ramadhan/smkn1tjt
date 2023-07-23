@@ -1,0 +1,22 @@
+CRITICAL - 2023-07-23 18:58:22 --> Undefined array key "level"
+in APPPATH\Views\fv_superadmin\v_penggunaterhapus.php on line 87.
+ 1 APPPATH\Views\fv_superadmin\v_penggunaterhapus.php(87): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "level"', 'C:\\xampp\\htdocs\\smkn1tjt\\app\\Views\\fv_superadmin\\v_penggunaterhapus.php', 87)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\smkn1tjt\\app\\Views\\fv_superadmin\\v_penggunaterhapus.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('fv_superadmin/v_penggunaterhapus', [], true)
+ 5 APPPATH\Controllers\Superadmin.php(231): view('fv_superadmin/v_penggunaterhapus', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Superadmin->PenggunaTerhapus()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Superadmin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-23 19:01:07 --> Undefined array key "level"
+in APPPATH\Views\fv_superadmin\v_penggunaterhapus.php on line 86.
+ 1 APPPATH\Views\fv_superadmin\v_penggunaterhapus.php(86): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "level"', 'C:\\xampp\\htdocs\\smkn1tjt\\app\\Views\\fv_superadmin\\v_penggunaterhapus.php', 86)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\xampp\\htdocs\\smkn1tjt\\app\\Views\\fv_superadmin\\v_penggunaterhapus.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('fv_superadmin/v_penggunaterhapus', [], true)
+ 5 APPPATH\Controllers\Superadmin.php(231): view('fv_superadmin/v_penggunaterhapus', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Superadmin->PenggunaTerhapus()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Superadmin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

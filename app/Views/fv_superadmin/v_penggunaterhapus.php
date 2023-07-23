@@ -85,16 +85,16 @@
                                         <td>
                                             <?php foreach ($AmbilSemuaDataLoginTerhapus as $key => $valuex) : ?>
                                             <?php if ($valuex['level'] == 2) { ?>
-                                                <p>Admin</p>
+                                                Admin
                                             <?php } ?>
                                             <?php if ($valuex['level'] == 3) { ?>
-                                                <p>Operator</p>
+                                                Operator
                                             <?php } ?>
                                             <?php if ($valuex['level'] == 4) { ?>
-                                                <p>Guru</p>
+                                                Guru
                                             <?php } ?>
                                             <?php if ($valuex['level'] == 5) { ?>
-                                                <p>Siswa</p>
+                                                Siswa
                                             <?php } ?>
                                             <?php endforeach; ?>
                                         </td>

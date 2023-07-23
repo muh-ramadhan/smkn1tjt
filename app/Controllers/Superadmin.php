@@ -226,7 +226,7 @@ class Superadmin extends BaseController
             'title' => 'Beranda',
             'subtitle' => 'Depot Air',
             'AmbilSemuaDataPenggunaTerhapus' => $this->PenggunaModel->onlyDeleted()->findAll(),
-            'AmbilSemuaDataLoginTerhapus' => $this->PenggunaModel->findAll(),
+            'AmbilSemuaDataLoginTerhapus' => $this->LoginModel->onlyDeleted()->findAll(),
         ];
         return view('fv_superadmin/v_penggunaterhapus', $data);
     }
