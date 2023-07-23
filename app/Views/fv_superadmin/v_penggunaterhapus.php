@@ -66,43 +66,43 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Username</th>
-                                    <th>Nama Lengkap</th>
                                     <th>Hak Akses</th>
                                     <th>Pilihan</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $no = 1;
-                                foreach ($AmbilSemuaDataPenggunaTerhapus as $key => $value) { ?>
+                                foreach ($AmbilSemuaDataLoginTerhapus as $key => $valueLogin) { ?>
                                     <tr>
                                         <td><?= $no++ ?></td>
+                                        <td><?= $valueLogin['username'] ?></td>
                                         <td>
-                                            <?php foreach ($AmbilSemuaDataLoginTerhapus as $key => $valuex) : ?>
-                                                <?= $value['id_pengguna'] == $valuex['id_pengguna'] ? $valuex['username'] : null ?>
+                                            <?php foreach ($AmbilSemuaDataPengguna as $key => $valuePengguna) : ?>
+                                                <?= $valueLogin['id_pengguna'] == $valuePengguna['id_pengguna'] ? $valuePengguna['nama_lengkap'] : null ?>
                                             <?php endforeach; ?>
                                         </td>
-                                        <td><?= $value['nama_lengkap'] ?></td>
                                         <td>
-                                            <?php foreach ($AmbilSemuaDataLoginTerhapus as $key => $valuex) : ?>
-                                            <?php if ($valuex['level'] == 2) { ?>
+                                            <?php if ($valueLogin['level'] == 1) { ?>
+                                                Superadmin
+                                            <?php } ?>
+                                            <?php if ($valueLogin['level'] == 2) { ?>
                                                 Admin
                                             <?php } ?>
-                                            <?php if ($valuex['level'] == 3) { ?>
+                                            <?php if ($valueLogin['level'] == 3) { ?>
                                                 Operator
                                             <?php } ?>
-                                            <?php if ($valuex['level'] == 4) { ?>
+                                            <?php if ($valueLogin['level'] == 4) { ?>
                                                 Guru
                                             <?php } ?>
-                                            <?php if ($valuex['level'] == 5) { ?>
+                                            <?php if ($valueLogin['level'] == 5) { ?>
                                                 Siswa
                                             <?php } ?>
-                                            <?php endforeach; ?>
                                         </td>
                                         <td>
-                                            <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#restore<?= $value['id_pengguna'] ?>">
+                                            <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#restore<?= $valueLogin['id_pengguna'] ?>">
                                                 <i class="fas fa-check"></i> Restore
                                             </button>
-                                            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#purge<?= $value['id_pengguna'] ?>">
+                                            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#purge<?= $valueLogin['id_pengguna'] ?>">
                                                 <i class="fas fa-trash"></i> Purge
                                             </button>
                                         </td>
@@ -113,7 +113,6 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Username</th>
-                                    <th>Nama Lengkap</th>
                                     <th>Hak Akses</th>
                                     <th>Pilihan</th>
                                 </tr>
@@ -127,8 +126,8 @@
 </section>
 
 <!-- Modal Restore -->
-<?php foreach ($AmbilSemuaDataPenggunaTerhapus as $key => $value) { ?>
-    <div class="modal fade" id="purge<?= $value['id_pengguna'] ?>">
+<?php foreach ($AmbilSemuaDataLoginTerhapus as $key => $valueLogin) { ?>
+    <div class="modal fade" id="purge<?= $valueLogin['id_pengguna'] ?>">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -138,11 +137,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Apakah Anda Ingin Hapus Permanen <b><?= date("d/m/Y", strtotime($value['nama_lengkap'])); ?></b> ?
+                    Apakah Anda Ingin Hapus Permanen <b><?= $valueLogin['username']; ?></b> ?
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Batal</button>
-                    <a href="<?= base_url('Superadmin/HapusPenggunaTerhapus/' . $value['id_pengguna']) ?>" class="btn btn-danger btn-sm">Hapus</a>
+                    <a href="<?= base_url('Superadmin/HapusPenggunaTerhapus/' . $valueLogin['id_pengguna']) ?>" class="btn btn-danger btn-sm">Hapus</a>
                 </div>
             </div>
         </div>
@@ -151,8 +150,8 @@
 <!-- ./Modal Restore -->
 
 <!-- Modal Restore -->
-<?php foreach ($AmbilSemuaDataPenggunaTerhapus as $key => $value) { ?>
-    <div class="modal fade" id="restore<?= $value['id_pengguna'] ?>">
+<?php foreach ($AmbilSemuaDataLoginTerhapus as $key => $valueLogin) { ?>
+    <div class="modal fade" id="restore<?= $valueLogin['id_pengguna'] ?>">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -162,11 +161,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Apakah Anda Ingin Mengembalikan Pengguna <b><?=$value['nama_lengkap']; ?></b> ?
+                    Apakah Anda Ingin Mengembalikan Pengguna <b>idpengguna <?= $valueLogin['id_pengguna']; ?> idlogin  <?= $valueLogin['id_login']; ?></b> ?
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Batal</button>
-                    <a href="<?= base_url('Superadmin/KembalikanPenggunaTerhapus/' . $value['id_pengguna']) ?>" class="btn btn-success btn-sm">Restore</a>
+                    <a href="<?= base_url('Superadmin/KembalikanPenggunaTerhapus/' . $valueLogin['id_pengguna']) ?>" class="btn btn-success btn-sm">Restore</a>
                 </div>
             </div>
         </div>

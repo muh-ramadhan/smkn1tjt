@@ -225,23 +225,28 @@ class Superadmin extends BaseController
         $data = [
             'title' => 'Beranda',
             'subtitle' => 'Depot Air',
-            'AmbilSemuaDataPenggunaTerhapus' => $this->PenggunaModel->onlyDeleted()->findAll(),
             'AmbilSemuaDataLoginTerhapus' => $this->LoginModel->onlyDeleted()->findAll(),
+            'AmbilSemuaDataPengguna' => $this->PenggunaModel->onlyDeleted()->findAll(),
         ];
         return view('fv_superadmin/v_penggunaterhapus', $data);
     }
 
     public function KembalikanPenggunaTerhapus($id_pengguna)
     {
-        $data = [
-            'id_pengguna' => $id_pengguna,
+        $dataPengguna = [
             'deleted_at' =>  NULL,
         ];
-        $this->PenggunaModel->update($id_pengguna, $data);
-
+        $this->PenggunaModel->update($id_pengguna, $dataPengguna);
+    
+        $dataLogin = [
+            'deleted_at' =>  NULL,
+        ];
+        $this->LoginModel->update($id_pengguna, $dataLogin);
+    
         session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
         return redirect()->to('Superadmin/PenggunaTerhapus');
     }
+    
 
     public function HapusPenggunaTerhapus($id_pengguna)
     {
