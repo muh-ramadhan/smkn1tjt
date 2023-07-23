@@ -8,7 +8,7 @@ class LoginModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'tbl_login';
-    protected $primaryKey       = 'id_pengguna';
+    protected $primaryKey       = 'id_login';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
