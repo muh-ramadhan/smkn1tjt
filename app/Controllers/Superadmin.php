@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\PenggunaModel;
 use App\Models\AdminModel;
 use App\Models\OperatorModel;
@@ -14,14 +15,14 @@ class Superadmin extends BaseController
 {
     public function __construct()
     {
-		$this->PenggunaModel = new PenggunaModel();
-		$this->AdminModel = new AdminModel();
-		$this->OperatorModel = new OperatorModel();
-		$this->GuruModel = new GuruModel();
-		$this->SiswaModel = new SiswaModel();
-		$this->LoginModel = new LoginModel();
-		$this->TransaksiModel = new TransaksiModel();
-		$this->PelangganModel = new PelangganModel();
+        $this->PenggunaModel = new PenggunaModel();
+        $this->AdminModel = new AdminModel();
+        $this->OperatorModel = new OperatorModel();
+        $this->GuruModel = new GuruModel();
+        $this->SiswaModel = new SiswaModel();
+        $this->LoginModel = new LoginModel();
+        $this->TransaksiModel = new TransaksiModel();
+        $this->PelangganModel = new PelangganModel();
         helper(['form', 'date', 'inflector', 'text', 'number']);
     }
 
@@ -48,7 +49,7 @@ class Superadmin extends BaseController
         ];
         return view('fv_superadmin/v_depotair', $data);
     }
-    
+
     public function TambahDataDepotAir()
     {
         $PelangganModel = new PelangganModel();
@@ -60,7 +61,7 @@ class Superadmin extends BaseController
         session()->setFlashdata('tambah', 'Data Berhasil Di Tambah');
         return redirect()->to('Superadmin/DepotAir');
     }
-    
+
     public function DetailDepotAir($id_pelanggan)
     {
         $data = [
@@ -97,7 +98,7 @@ class Superadmin extends BaseController
             'status' => $this->request->getVar('status'),
         ];
         $this->TransaksiModel->update($id_transaksi, $data);
-        
+
         session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
         return redirect()->to('Superadmin/DepotAir');
     }
@@ -127,7 +128,7 @@ class Superadmin extends BaseController
             'deleted_at' =>  NULL,
         ];
         $this->TransaksiModel->update($id_transaksi, $data);
-        
+
         session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
         return redirect()->to('Superadmin/TransaksiTerhapus');
     }
@@ -139,6 +140,7 @@ class Superadmin extends BaseController
         return redirect()->to('Superadmin/DepotAir');
     }
 
+    //MANAGEMENT PENGGUNA//
     public function Pengguna()
     {
         $data = [
@@ -189,7 +191,7 @@ class Superadmin extends BaseController
             'nama_lengkap' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_lengkap'))), ' ', true),
         ];
         $this->PenggunaModel->update($id_pengguna, $data);
-        
+
         session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
         return redirect()->to('Superadmin/Pengguna');
     }
@@ -204,7 +206,7 @@ class Superadmin extends BaseController
         ];
         $this->LoginModel->update($id_pengguna, $data);
         //dd($id_pengguna, $data);
-        
+
         session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
         return redirect()->to('Superadmin/Pengguna');
     }
@@ -216,6 +218,39 @@ class Superadmin extends BaseController
         session()->setFlashdata('hapus', 'Data Berhasil Di Hapus');
         return redirect()->to('Superadmin/Pengguna');
     }
+
+
+    public function PenggunaTerhapus()
+    {
+        $data = [
+            'title' => 'Beranda',
+            'subtitle' => 'Depot Air',
+            'AmbilSemuaDataPenggunaTerhapus' => $this->PenggunaModel->onlyDeleted()->findAll(),
+            'AmbilSemuaDataLoginTerhapus' => $this->PenggunaModel->findAll(),
+        ];
+        return view('fv_superadmin/v_penggunaterhapus', $data);
+    }
+
+    public function KembalikanPenggunaTerhapus($id_pengguna)
+    {
+        $data = [
+            'id_pengguna' => $id_pengguna,
+            'deleted_at' =>  NULL,
+        ];
+        $this->PenggunaModel->update($id_pengguna, $data);
+
+        session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
+        return redirect()->to('Superadmin/PenggunaTerhapus');
+    }
+
+    public function HapusPenggunaTerhapus($id_pengguna)
+    {
+        $this->PenggunaModel->where('id_pengguna', $id_pengguna)->purgeDeleted();
+        session()->setFlashdata('hapus', 'Data Berhasil Di Hapus Permanen');
+        return redirect()->to('Superadmin/PenggunaTerhapus');
+    }
+
+    //MANAGEMENT PENGGUNA//
 
     public function Pelanggan()
     {
@@ -245,7 +280,7 @@ class Superadmin extends BaseController
             'nomor_wa' => $this->request->getVar('nomor_wa'),
         ];
         $this->PelangganModel->update($id_pelanggan, $data);
-        
+
         session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
         return redirect()->to('Superadmin/Pelanggan');
     }
@@ -273,7 +308,6 @@ class Superadmin extends BaseController
         ];
         $this->TransaksiModel->save($data);
         session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
-        return redirect()->to('Karyawan/DetailDepotAir/'.$uri);
+        return redirect()->to('Karyawan/DetailDepotAir/' . $uri);
     }
-    
 }
