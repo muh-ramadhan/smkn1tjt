@@ -11,6 +11,8 @@ use App\Models\LoginModel;
 use App\Models\TransaksiModel;
 use App\Models\PelangganModel;
 
+use App\Models\BeritaModel;
+
 class Superadmin extends BaseController
 {
     public function __construct()
@@ -23,6 +25,8 @@ class Superadmin extends BaseController
         $this->LoginModel = new LoginModel();
         $this->TransaksiModel = new TransaksiModel();
         $this->PelangganModel = new PelangganModel();
+
+        $this->BeritaModel = new BeritaModel();
         helper(['form', 'date', 'inflector', 'text', 'number']);
     }
 
@@ -39,6 +43,133 @@ class Superadmin extends BaseController
         ];
         return view('fv_superadmin/v_beranda', $data);
     }
+
+    //MANAGEMENT BERITA//
+    public function Berita()
+    {
+        $data = [
+            'title' => 'Master Data',
+            'subtitle' => 'Berita',
+            'AmbilSemuaBerita' => $this->BeritaModel->findAll(),
+        ];
+        return view('fv_superadmin/v_berita', $data);
+    }
+    //MANAGEMENT BERITA//
+
+    
+    //MANAGEMENT PENGGUNA//
+    public function Pengguna()
+    {
+        $data = [
+            'title' => 'Master Data',
+            'subtitle' => 'Pengguna',
+            'AmbilSemuaDataPengguna' => $this->PenggunaModel->findAll(),
+        ];
+        return view('fv_superadmin/v_karyawan', $data);
+    }
+
+    public function TambahDataPengguna()
+    {
+        $PenggunaModel = new PenggunaModel();
+        $data = [
+            'nama_lengkap' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_lengkap'))), ' ', true),
+        ];
+        $PenggunaModel->insert($data);
+        $last_insert_id = $PenggunaModel->getInsertID();
+
+        $data = [
+            'id_pengguna' => $last_insert_id,
+            'username' => $this->request->getVar('username'),
+            'password' => $this->request->getVar('password'),
+            'level' => 2,
+        ];
+        $LoginModel = new LoginModel();
+        $LoginModel->insert($data);
+
+        session()->setFlashdata('tambah', 'Data Berhasil Di Tambah');
+        return redirect()->to('Superadmin/Pengguna');
+    }
+
+    public function DetailPengguna($id_pengguna)
+    {
+        $data = [
+            'title' => 'Detail Data',
+            'subtitle' => 'Pengguna',
+            'AmbilDataDetailPengguna'  =>  $this->PenggunaModel->where('id_pengguna', $id_pengguna)->get()->getRowArray(),
+            'AmbilDataDetailLogin'  => $this->LoginModel->where('id_pengguna', $id_pengguna)->get()->getRowArray(),
+        ];
+        return view('fv_superadmin/v_detail_karyawan', $data);
+    }
+
+    public function UbahDataPengguna($id_pengguna)
+    {
+        $data = [
+            'id_pengguna' => $id_pengguna,
+            'nama_lengkap' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_lengkap'))), ' ', true),
+        ];
+        $this->PenggunaModel->update($id_pengguna, $data);
+
+        session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
+        return redirect()->to('Superadmin/Pengguna');
+    }
+
+    public function UbahDataLoginPengguna($id_pengguna)
+    {
+        $data = [
+            'id_login' => $id_pengguna, //Primary
+            'username' => $this->request->getVar('username'),
+            'password' => $this->request->getVar('password'),
+            'level' => 2,
+        ];
+        $this->LoginModel->update($id_pengguna, $data);
+        //dd($id_pengguna, $data);
+
+        session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
+        return redirect()->to('Superadmin/Pengguna');
+    }
+
+    public function HapusDataPengguna($id_pengguna)
+    {
+        $this->PenggunaModel->where('id_pengguna', $id_pengguna)->delete();
+        $this->LoginModel->where('id_pengguna', $id_pengguna)->delete();
+        session()->setFlashdata('hapus', 'Data Berhasil Di Hapus');
+        return redirect()->to('Superadmin/Pengguna');
+    }
+
+
+    public function PenggunaTerhapus()
+    {
+        $data = [
+            'title' => 'Beranda',
+            'subtitle' => 'Depot Air',
+            'AmbilSemuaDataLoginTerhapus' => $this->LoginModel->onlyDeleted()->findAll(),
+            'AmbilSemuaDataPengguna' => $this->PenggunaModel->onlyDeleted()->findAll(),
+        ];
+        return view('fv_superadmin/v_penggunaterhapus', $data);
+    }
+
+    public function KembalikanPenggunaTerhapus($id_pengguna)
+    {
+        //Ubah deleted_at menjadi null
+        $dataPengguna = [
+            'deleted_at' =>  NULL,
+        ];
+        $this->PenggunaModel->update($id_pengguna, $dataPengguna);
+        //Ubah deleted_at menjadi null
+        $this->LoginModel->set('deleted_at', null)->where('id_pengguna', $id_pengguna)->update();
+        //Info Jika Berhasil
+        session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
+        return redirect()->to('Superadmin/PenggunaTerhapus');
+    }
+    
+    public function HapusPenggunaTerhapus($id_pengguna)
+    {
+        $this->PenggunaModel->where('id_pengguna', $id_pengguna)->purgeDeleted();
+        $this->LoginModel->where('id_pengguna', $id_pengguna)->purgeDeleted();
+        session()->setFlashdata('hapus', 'Data Berhasil Di Hapus Permanen');
+        return redirect()->to('Superadmin/PenggunaTerhapus');
+    }
+    //MANAGEMENT PENGGUNA//
 
     public function DepotAir()
     {
@@ -140,122 +271,6 @@ class Superadmin extends BaseController
         return redirect()->to('Superadmin/DepotAir');
     }
 
-    //MANAGEMENT PENGGUNA//
-    public function Pengguna()
-    {
-        $data = [
-            'title' => 'Master Data',
-            'subtitle' => 'Pengguna',
-            'AmbilSemuaDataPengguna' => $this->PenggunaModel->findAll(),
-        ];
-        return view('fv_superadmin/v_karyawan', $data);
-    }
-
-    public function TambahDataPengguna()
-    {
-        $PenggunaModel = new PenggunaModel();
-        $data = [
-            'nama_lengkap' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_lengkap'))), ' ', true),
-        ];
-        $PenggunaModel->insert($data);
-        $last_insert_id = $PenggunaModel->getInsertID();
-
-        $data = [
-            'id_pengguna' => $last_insert_id,
-            'username' => $this->request->getVar('username'),
-            'password' => $this->request->getVar('password'),
-            'level' => 2,
-        ];
-        $LoginModel = new LoginModel();
-        $LoginModel->insert($data);
-
-        session()->setFlashdata('tambah', 'Data Berhasil Di Tambah');
-        return redirect()->to('Superadmin/Pengguna');
-    }
-
-    public function DetailPengguna($id_pengguna)
-    {
-        $data = [
-            'title' => 'Detail Data',
-            'subtitle' => 'Pengguna',
-            'AmbilDataDetailPengguna'  =>  $this->PenggunaModel->where('id_pengguna', $id_pengguna)->get()->getRowArray(),
-            'AmbilDataDetailLogin'  => $this->LoginModel->where('id_pengguna', $id_pengguna)->get()->getRowArray(),
-        ];
-        return view('fv_superadmin/v_detail_karyawan', $data);
-    }
-
-    public function UbahDataPengguna($id_pengguna)
-    {
-        $data = [
-            'id_pengguna' => $id_pengguna,
-            'nama_lengkap' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_lengkap'))), ' ', true),
-        ];
-        $this->PenggunaModel->update($id_pengguna, $data);
-
-        session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
-        return redirect()->to('Superadmin/Pengguna');
-    }
-
-    public function UbahDataLoginPengguna($id_pengguna)
-    {
-        $data = [
-            'id_login' => $id_pengguna, //Primary
-            'username' => $this->request->getVar('username'),
-            'password' => $this->request->getVar('password'),
-            'level' => 2,
-        ];
-        $this->LoginModel->update($id_pengguna, $data);
-        //dd($id_pengguna, $data);
-
-        session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
-        return redirect()->to('Superadmin/Pengguna');
-    }
-
-    public function HapusDataPengguna($id_pengguna)
-    {
-        $this->PenggunaModel->where('id_pengguna', $id_pengguna)->delete();
-        $this->LoginModel->where('id_pengguna', $id_pengguna)->delete();
-        session()->setFlashdata('hapus', 'Data Berhasil Di Hapus');
-        return redirect()->to('Superadmin/Pengguna');
-    }
-
-
-    public function PenggunaTerhapus()
-    {
-        $data = [
-            'title' => 'Beranda',
-            'subtitle' => 'Depot Air',
-            'AmbilSemuaDataLoginTerhapus' => $this->LoginModel->onlyDeleted()->findAll(),
-            'AmbilSemuaDataPengguna' => $this->PenggunaModel->onlyDeleted()->findAll(),
-        ];
-        return view('fv_superadmin/v_penggunaterhapus', $data);
-    }
-
-    public function KembalikanPenggunaTerhapus($id_pengguna)
-    {
-        $dataPengguna = [
-            'deleted_at' =>  NULL,
-        ];
-        $this->PenggunaModel->update($id_pengguna, $dataPengguna);
-    
-        $dataLogin = [
-            'deleted_at' =>  NULL,
-        ];
-        $this->LoginModel->update($id_pengguna, $dataLogin);
-    
-        session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
-        return redirect()->to('Superadmin/PenggunaTerhapus');
-    }
-    
-
-    public function HapusPenggunaTerhapus($id_pengguna)
-    {
-        $this->PenggunaModel->where('id_pengguna', $id_pengguna)->purgeDeleted();
-        session()->setFlashdata('hapus', 'Data Berhasil Di Hapus Permanen');
-        return redirect()->to('Superadmin/PenggunaTerhapus');
-    }
-
-    //MANAGEMENT PENGGUNA//
 
     public function Pelanggan()
     {
