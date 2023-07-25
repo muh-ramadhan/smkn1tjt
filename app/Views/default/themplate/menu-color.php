@@ -6,13 +6,13 @@
 
     <div class="card bg-transparent mb-0">
         <h1 class="text-center color-white mt-4 font-35 font-800">SMKN 1 TJT</h1>
-        <p class="text-center color-white font-12 mt-n1 pb-2 mb-3">Put a little color in your life</p>
+        <p class="text-center color-white font-12 mt-n1 pb-2 mb-3">Beri sedikit warna dalam hidup Anda</p>
     </div>
 
     <div class="card card-style">
         <div class="highlight-changer pt-3 pb-2">
             <p class="text-center">
-                SMKN 1 TJT is packed with a beautiful color scheme.<br>Tap on your favorite! The page will adapt!
+            SMKN 1 TJT dikemas dengan skema warna yang indah.<br>Pilih warna favorit Anda! Tampilannya akan berganti warna!
             </p>
             <a href="#" data-change-highlight="blue"><i class="fa fa-circle color-blue-dark"></i><span class="color-blue-light">Default</span></a>
             <a href="#" data-change-highlight="red"><i class="fa fa-circle color-red-dark"></i><span class="color-red-light">Red</span></a>
@@ -32,5 +32,5 @@
             <div class="clearfix"></div>
         </div>
     </div>
-    <a href="#" class="close-menu btn btn-full btn-margins rounded-sm shadow-l bg-highlight btn-m font-900 text-uppercase mb-0">Close color Menu</a>
+    <a href="#" class="close-menu btn btn-full btn-margins rounded-sm shadow-l bg-highlight btn-m font-900 text-uppercase mb-0">Tutup Menu Warna</a>
 </div>
