@@ -66,6 +66,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Username</th>
+                                    <th>Nama Lengkap</th>
                                     <th>Hak Akses</th>
                                     <th>Pilihan</th>
                                 </tr>
@@ -113,6 +114,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Username</th>
+                                    <th>Nama Lengkap</th>
                                     <th>Hak Akses</th>
                                     <th>Pilihan</th>
                                 </tr>
@@ -137,11 +139,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Apakah Anda Ingin Hapus Permanen <b><?= $valueLogin['username']; ?></b> ?
+                    Hapus Permanen <b><?= $valueLogin['username']; ?></b> ?
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Batal</button>
-                    <a href="<?= base_url('Superadmin/HapusPenggunaTerhapus/' . $valueLogin['id_pengguna']) ?>" class="btn btn-danger btn-sm">Hapus</a>
+                    <button type="button" class="btn btn-outline-success btn-sm" data-dismiss="modal">Batal</button>
+                    <a href="<?= base_url('Superadmin/PurgeUser/' . $valueLogin['id_pengguna']) ?>" class="btn btn-danger btn-sm">Purge</a>
                 </div>
             </div>
         </div>
@@ -155,17 +157,17 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Restore Transaksi</h4>
+                    <h4 class="modal-title">Kembalikan Data</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Batal">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    Apakah Anda Ingin Mengembalikan Pengguna <b>idpengguna <?= $valueLogin['id_pengguna']; ?> idlogin  <?= $valueLogin['id_login']; ?></b> ?
+                    Kembalikan Data <b><?= $valueLogin['username']; ?></b> ?
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Batal</button>
-                    <a href="<?= base_url('Superadmin/KembalikanPenggunaTerhapus/' . $valueLogin['id_pengguna']) ?>" class="btn btn-success btn-sm">Restore</a>
+                    <button type="button" class="btn btn-outline-success btn-sm" data-dismiss="modal">Batal</button>
+                    <a href="<?= base_url('Superadmin/RestoreUser/' . $valueLogin['id_pengguna']) ?>" class="btn btn-danger btn-sm">Restore</a>
                 </div>
             </div>
         </div>

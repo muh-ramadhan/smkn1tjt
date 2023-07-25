@@ -64,8 +64,10 @@ class Superadmin extends BaseController
             'title' => 'Master Data',
             'subtitle' => 'Pengguna',
             'AmbilSemuaDataPengguna' => $this->PenggunaModel->findAll(),
+            'AmbilSemuaDataLogin' => $this->LoginModel->findAll(),
         ];
-        return view('fv_superadmin/v_karyawan', $data);
+        //return view('fv_superadmin/v_karyawan', $data);
+        return view('fv_superadmin/v_pengguna', $data);
     }
 
     public function TambahDataPengguna()
@@ -148,7 +150,7 @@ class Superadmin extends BaseController
         return view('fv_superadmin/v_penggunaterhapus', $data);
     }
 
-    public function KembalikanPenggunaTerhapus($id_pengguna)
+    public function RestoreUser($id_pengguna)
     {
         //Ubah deleted_at menjadi null
         $dataPengguna = [
@@ -162,7 +164,7 @@ class Superadmin extends BaseController
         return redirect()->to('Superadmin/PenggunaTerhapus');
     }
     
-    public function HapusPenggunaTerhapus($id_pengguna)
+    public function PurgeUser($id_pengguna)
     {
         $this->PenggunaModel->where('id_pengguna', $id_pengguna)->purgeDeleted();
         $this->LoginModel->where('id_pengguna', $id_pengguna)->purgeDeleted();

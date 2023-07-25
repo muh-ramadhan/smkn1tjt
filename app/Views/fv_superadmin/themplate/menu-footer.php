@@ -2,7 +2,7 @@
     <div class="footer card card-style mx-0 mb-0">
         <a href="#" class="footer-title pt-4">SMKN 1 TJT</a>
         <p class="text-center font-12 mt-n1 mb-3 opacity-70">
-            Put a little <span class="color-highlight">color</span> in your life
+            <span>Dibuat dengan <i class="fa fa-heart color-highlight font-16 ps-2 pe-2"></i> oleh <a href="https://dalonet.com">dalonet</a></span>
         </p>
         <p class="boxed-text-l">
             Built to match the design trends and give your page the awesome facelift it deserves.
@@ -14,10 +14,9 @@
             <a href="#" data-menu="menu-share" class="icon icon-xs rounded-sm me-1 shadow-l bg-red-dark"><i class="fa fa-share-alt"></i></a>
             <a href="#" class="back-to-top icon icon-xs rounded-sm shadow-l bg-highlight color-white"><i class="fa fa-arrow-up"></i></a>
         </div>
-        <p class="footer-copyright pb-3 mb-1">Copyright &copy; SMKN 1 TJT <span id="copyright-year">2017</span>. All Rights Reserved.</p>
+        <p class="footer-copyright pb-3 mb-1">Copyright &copy; TKJ-Exp <span id="copyright-year">2017</span>. All Rights Reserved.</p>
     </div>
     <div class="footer-card card shape-rounded bg-20" style="height:230px">
         <div class="card-overlay bg-highlight opacity-90"></div>
     </div>
-
 </div>

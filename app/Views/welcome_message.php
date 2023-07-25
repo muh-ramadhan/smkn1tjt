@@ -203,22 +203,21 @@
 		</div>
 	</div>
 
-
 	<nav aria-label="pagination-demo">
-            <ul class="pagination pagination- justify-content-center">
-                <li class="page-item">
-                    <a class="page-link rounded-l line-height-s color-white bg-gray-dark shadow-xl border-0" href="#" tabindex="-1" aria-disabled="true"><i class="fa fa-angle-left"></i></a>
-                </li>
-                <li class="page-item"><a class="page-link rounded-l line-height-s bg-red-dark shadow-xl border-0" href="#">1</a></li>
-                <li class="page-item"><a class="page-link rounded-l line-height-s bg-green-dark bg-transparent shadow-xl border-0" href="#">2</a></li>
-                <li class="page-item"><a class="page-link rounded-l line-height-s bg-blue-dark shadow-xl border-0" href="#">3</a></li>
-                <li class="page-item"><a class="page-link rounded-l line-height-s bg-yellow-dark bg-transparent shadow-xl border-0" href="#">4</a></li>
-                <li class="page-item"><a class="page-link rounded-l line-height-s bg-red-dark shadow-xl border-0" href="#">5</a></li>
-                <li class="page-item">
-                    <a class="page-link rounded-l line-height-s color-white bg-gray-dark shadow-xl border-0" href="#"><i class="fa fa-angle-right"></i></a>
-                </li>
-            </ul>
-        </nav>
+		<ul class="pagination pagination- justify-content-center">
+			<li class="page-item">
+				<a class="page-link rounded-l line-height-s color-white bg-gray-dark shadow-xl border-0" href="#" tabindex="-1" aria-disabled="true"><i class="fa fa-angle-left"></i></a>
+			</li>
+			<li class="page-item"><a class="page-link rounded-l line-height-s bg-red-dark shadow-xl border-0" href="#">1</a></li>
+			<li class="page-item"><a class="page-link rounded-l line-height-s bg-green-dark bg-transparent shadow-xl border-0" href="#">2</a></li>
+			<li class="page-item"><a class="page-link rounded-l line-height-s bg-blue-dark shadow-xl border-0" href="#">3</a></li>
+			<li class="page-item"><a class="page-link rounded-l line-height-s bg-yellow-dark bg-transparent shadow-xl border-0" href="#">4</a></li>
+			<li class="page-item"><a class="page-link rounded-l line-height-s bg-red-dark shadow-xl border-0" href="#">5</a></li>
+			<li class="page-item">
+				<a class="page-link rounded-l line-height-s color-white bg-gray-dark shadow-xl border-0" href="#"><i class="fa fa-angle-right"></i></a>
+			</li>
+		</ul>
+	</nav>
 
 	<div class="card preload-img" data-src="images/pictures/20s.jpg">
 		<div class="card-body pt-4">
@@ -229,66 +228,66 @@
 			<div class="card card-style ms-0 me-0 bg-theme">
 
 
-            <div class="accordion mt-4" id="accordion-6">
-                <div class="card card-style shadow-0 bg-pink2-dark mb-1">
-                    <button class="btn accordion-btn  color-white no-effect" data-bs-toggle="collapse" data-bs-target="#collapse11">
-                        <i class="fa-solid fa-1 me-2"></i>
-                        Teknik Komputer dan Jaringan
-                        <i class="fa fa-chevron-down font-10 accordion-icon"></i>
-                    </button>
+				<div class="accordion mt-4" id="accordion-6">
+					<div class="card card-style shadow-0 bg-pink2-dark mb-1">
+						<button class="btn accordion-btn  color-white no-effect" data-bs-toggle="collapse" data-bs-target="#collapse11">
+							<i class="fa-solid fa-1 me-2"></i>
+							Teknik Komputer dan Jaringan
+							<i class="fa fa-chevron-down font-10 accordion-icon"></i>
+						</button>
 
-                    <div id="collapse11" class="collapse bg-theme" data-bs-parent="#accordion-6">
-                        <div class="pt-3 pb-3 color-theme">
-						Teknik Komputer dan Jaringan: Merancang dan mengelola sistem komputer dan jaringan, mengoptimalkan kinerja serta keamanannya. Peluang karier menjanjikan di era digital.<br>
-						Jelajahi dunia digital, raih kesempatan karier terbaik! Bergabunglah dengan kami dan menjadi pakar teknologi masa depan.
-                        </div>
-                    </div>
-                </div>
+						<div id="collapse11" class="collapse bg-theme" data-bs-parent="#accordion-6">
+							<div class="pt-3 pb-3 color-theme">
+								Teknik Komputer dan Jaringan: Merancang dan mengelola sistem komputer dan jaringan, mengoptimalkan kinerja serta keamanannya. Peluang karier menjanjikan di era digital.<br>
+								Jelajahi dunia digital, raih kesempatan karier terbaik! Bergabunglah dengan kami dan menjadi pakar teknologi masa depan.
+							</div>
+						</div>
+					</div>
 
-                <div class="card card-style bg-green-light mb-1">
-                    <button class="btn accordion-btn color-white no-effect" data-bs-toggle="collapse" data-bs-target="#collapse12">
-					<i class="fa-solid fa-2 me-2"></i>
-                        Teknik Kendaraan Ringan Otomotif
-                        <i class="fa fa-chevron-down font-10 accordion-icon"></i>
-                    </button>
-                    <div id="collapse12" class="collapse bg-theme" data-bs-parent="#accordion-6">
-                        <div class="pt-3 pb-3 color-theme">
-						Teknik Kendaraan Ringan Otomotif: Menguasai perawatan, perbaikan, dan diagnosis kendaraan bermotor. Menjadi ahli otomotif dengan teknologi terkini.<br>
-						Buka pintu menuju passion otomotif! Dapatkan keterampilan yang dibutuhkan industri, dan jadilah ahli perbaikan kendaraan favorit.
-                        </div>
-                    </div>
-                </div>
+					<div class="card card-style bg-green-light mb-1">
+						<button class="btn accordion-btn color-white no-effect" data-bs-toggle="collapse" data-bs-target="#collapse12">
+							<i class="fa-solid fa-2 me-2"></i>
+							Teknik Kendaraan Ringan Otomotif
+							<i class="fa fa-chevron-down font-10 accordion-icon"></i>
+						</button>
+						<div id="collapse12" class="collapse bg-theme" data-bs-parent="#accordion-6">
+							<div class="pt-3 pb-3 color-theme">
+								Teknik Kendaraan Ringan Otomotif: Menguasai perawatan, perbaikan, dan diagnosis kendaraan bermotor. Menjadi ahli otomotif dengan teknologi terkini.<br>
+								Buka pintu menuju passion otomotif! Dapatkan keterampilan yang dibutuhkan industri, dan jadilah ahli perbaikan kendaraan favorit.
+							</div>
+						</div>
+					</div>
 
-				
-                <div class="card card-style bg-orange-light mb-1">
-                    <button class="btn accordion-btn color-white no-effect" data-bs-toggle="collapse" data-bs-target="#collapse13">
-					<i class="fa-solid fa-3 me-2"></i>
-                        Nautika Kapal Penangkap Ikan
-                        <i class="fa fa-chevron-down font-10 accordion-icon"></i>
-                    </button>
-                    <div id="collapse13" class="collapse bg-theme" data-bs-parent="#accordion-6">
-                        <div class="pt-3 pb-3 color-theme">
-						Nautika Kapal Penangkap Ikan: Mengemban peran penting sebagai nakhoda, mengelola navigasi dan operasi kapal penangkap ikan. Menjadi bagian vital dalam industri perikanan.<br>
-						Petualangan di lautan menanti! Bergabunglah dengan nakhoda kapal penangkap ikan kami, raih pengalaman tak terlupakan di laut lepas.
-                        </div>
-                    </div>
-                </div>
 
-                <div class="card card-style bg-mint-light">
-                    <button class="btn accordion-btn color-white no-effect" data-bs-toggle="collapse" data-bs-target="#collapse14">
-					<i class="fa-solid fa-4 me-2"></i>
-                        Agribisnis Perikanan Air Tawar
-                        <i class="fa fa-chevron-down font-10 accordion-icon"></i>
-                    </button>
-                    <div id="collapse14" class="collapse bg-theme" data-bs-parent="#accordion-6">
-                        <div class="pt-3 pb-3 color-theme">
-						Agribisnis Perikanan Air Tawar: Menggabungkan keahlian pertanian dan manajemen untuk mengelola usaha perikanan air tawar. Kontribusi dalam ketahanan pangan dan kesejahteraan petani ikan.<br>
-						Suara ikan berbisik, bisnis menguntungkan! Sambut peluang baru di bidang agribisnis perikanan air tawar, dan raih kesuksesan bersama kami.
-                        </div>
-                    </div>
-                </div>
+					<div class="card card-style bg-orange-light mb-1">
+						<button class="btn accordion-btn color-white no-effect" data-bs-toggle="collapse" data-bs-target="#collapse13">
+							<i class="fa-solid fa-3 me-2"></i>
+							Nautika Kapal Penangkap Ikan
+							<i class="fa fa-chevron-down font-10 accordion-icon"></i>
+						</button>
+						<div id="collapse13" class="collapse bg-theme" data-bs-parent="#accordion-6">
+							<div class="pt-3 pb-3 color-theme">
+								Nautika Kapal Penangkap Ikan: Mengemban peran penting sebagai nakhoda, mengelola navigasi dan operasi kapal penangkap ikan. Menjadi bagian vital dalam industri perikanan.<br>
+								Petualangan di lautan menanti! Bergabunglah dengan nakhoda kapal penangkap ikan kami, raih pengalaman tak terlupakan di laut lepas.
+							</div>
+						</div>
+					</div>
 
-            </div>
+					<div class="card card-style bg-mint-light">
+						<button class="btn accordion-btn color-white no-effect" data-bs-toggle="collapse" data-bs-target="#collapse14">
+							<i class="fa-solid fa-4 me-2"></i>
+							Agribisnis Perikanan Air Tawar
+							<i class="fa fa-chevron-down font-10 accordion-icon"></i>
+						</button>
+						<div id="collapse14" class="collapse bg-theme" data-bs-parent="#accordion-6">
+							<div class="pt-3 pb-3 color-theme">
+								Agribisnis Perikanan Air Tawar: Menggabungkan keahlian pertanian dan manajemen untuk mengelola usaha perikanan air tawar. Kontribusi dalam ketahanan pangan dan kesejahteraan petani ikan.<br>
+								Suara ikan berbisik, bisnis menguntungkan! Sambut peluang baru di bidang agribisnis perikanan air tawar, dan raih kesuksesan bersama kami.
+							</div>
+						</div>
+					</div>
+
+				</div>
 
 
 			</div>
@@ -298,10 +297,6 @@
 		<div class="card-overlay dark-mode-tint"></div>
 	</div>
 
-
-
-
-	
 	<div class="content mb-0 pt-3">
 		<h5 class="float-start font-16 font-600">✌🏻 Kategori</h5>
 		<a class="float-end font-12 color-highlight mt-n1" href="#">Semua</a>
@@ -316,7 +311,7 @@
 					</h1>
 					<h4 class="color-theme font-600">Profil Sekolah</h4>
 					<p class="mt-n2 font-11 color-highlight mb-2">
-					Discover Excellence
+						Discover Excellence
 					</p>
 					<p class="font-10 opacity-30 mb-1">Cek Detailnya</p>
 				</div>
@@ -329,7 +324,7 @@
 					</h1>
 					<h4 class="color-theme font-600">Program Studi</h4>
 					<p class="mt-n2 font-11 color-highlight mb-2">
-					Future Focus
+						Future Focus
 					</p>
 					<p class="font-10 opacity-30 mb-1">Cek Detailnya</p>
 				</div>
@@ -342,7 +337,7 @@
 					</h1>
 					<h4 class="color-theme font-600">Ekstrakurikuler</h4>
 					<p class="mt-n2 font-11 color-highlight mb-2">
-					Passion Pursuit
+						Passion Pursuit
 					</p>
 					<p class="font-10 opacity-30 mb-1">Cek Detailnya</p>
 				</div>
@@ -355,7 +350,7 @@
 					</h1>
 					<h4 class="color-theme font-600">Fasilitas</h4>
 					<p class="mt-n2 font-11 color-highlight mb-2">
-					Premium Comfort
+						Premium Comfort
 					</p>
 					<p class="font-10 opacity-30 mb-1">Cek Detailnya</p>
 				</div>
@@ -413,13 +408,7 @@
 		</div>
 	</div>
 
-
-
-
-
-
 	<div class="mt-4"></div>
-
 
 	<div class="divider divider-small mt-3 mb-3 bg-highlight"></div>
 	<div class="card card-style text-center">
@@ -437,7 +426,6 @@
 		</div>
 	</div>
 	<!-- footer and footer card-->
-
 	<?= $this->include('default/themplate/menu-footer') ?>
 </div>
 <!-- end of page content-->

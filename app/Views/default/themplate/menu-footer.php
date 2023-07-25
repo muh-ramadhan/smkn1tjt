@@ -5,7 +5,7 @@
             <span>Dibuat dengan <i class="fa fa-heart color-highlight font-16 ps-2 pe-2"></i> oleh <a href="https://dalonet.com">dalonet</a></span>
         </p>
         <p class="boxed-text-l">
-            Built to match the design trends and give your page the awesome facelift it deserves.
+            Jl. Jemantan RT/RW 9/4, Kel. Talang Babat, Kab. Tanjung Jabung Timur, Jambi, 36561
         </p>
         <div class="text-center mb-3">
             <a href="#" class="icon icon-xs rounded-sm shadow-l me-1 bg-facebook"><i class="fab fa-facebook-f"></i></a>
