@@ -1,6 +1,12 @@
 # Selamat datang Di Project Pengembangan SMK Negeri 1 Tanjung Jabung Timur
-**Framework Codeigniter 4 https://www.codeigniter.com/**
-**Themplate Azures Mobile Template & PWA https://themeforest.net/item/azures-mobile-template/25555786**
+**Framework Codeigniter 4**
+```
+https://www.codeigniter.com/
+```
+**Themplate Azures Mobile Template & PWA**
+```
+https://themeforest.net/item/azures-mobile-template/25555786
+```
 
 ## Sedang Di Kerjakan
     Halaman Statis
