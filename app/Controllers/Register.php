@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\ModelAuth;
 
 class Register extends BaseController
@@ -8,7 +9,7 @@ class Register extends BaseController
     public function __construct()
     {
         helper('form');
-        $this->ModelAuth= new ModelAuth();
+        $this->ModelAuth = new ModelAuth();
     }
 
     public function index()
@@ -56,17 +57,17 @@ class Register extends BaseController
             $data = [
                 'nama_user' => $this->request->getPost('nama_user'),
                 'username' => $this->request->getPost('username'),
-                'password' => $this->request->getPost('password'),
+                'password' => password_hash($this->request->getPost('password'), PASSWORD_BCRYPT),
                 'level' => 1
             ];
             $this->ModelAuth->save_register($data);
-            session()->setFlashdata('success', 'Register Berhasil');
+            session()->setFlashdata('success', 'Registrasi berhasil! Silakan login dengan akun yang telah dibuat.');
+
             return redirect()->to(base_url('register'));
-        }else{
+        } else {
             //Jika Tidak Valid
             session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
             return redirect()->to(base_url('register'));
         }
     }
-
 }

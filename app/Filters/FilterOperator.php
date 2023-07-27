@@ -20,7 +20,10 @@ class FilterOperator implements FilterInterface
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
         // Do something here
-        if (session()->get('level') == 3) {
+        if (session()->get('level') == 3 && session()->get('status') == 2 && session()->get('deleted_at') == NULL) {
+            // Jika pengguna memiliki level 1 (Operator) dan status 2 (belum diblokir), biarkan mereka berada di halaman Operator.
+            // Tidak perlu mengarahkan mereka ke halaman lain.
+            //return;
             return redirect()->to(base_url('operator'));
         }
     }
