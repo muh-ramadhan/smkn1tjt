@@ -1,7 +1,7 @@
 # dalonet.com
 
 Halaman Statis
-    Beranda     70%
+    Beranda 70%
     Profil Sekolah 0%
     Program Studi 0%
     Ekstrakulikuler 0%
@@ -9,6 +9,8 @@ Halaman Statis
     Tenaga Ahli 0%
     Kurikulum 0%
     Prestasi 0%
+    FAQ 0%
+    Terms Of Service 0%
 
 Fitur
     Hak Akses
