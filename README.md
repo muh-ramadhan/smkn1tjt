@@ -39,10 +39,15 @@ https://themeforest.net/item/azures-mobile-template/25555786
 
         Superadmin
             Beranda 50%
-            Manajemen Pengguna 80%
+            Manajemen Pengguna
+                Add 100%
                 Edit 100%
-                Hapus 100%
-                Allow/Block 100%
+                Delete 100%
+                Paging 0%
+                Search 0%
+                View By Ascend/Descend 0%
+                Allow/Block Single 100%
+                Allow/Block Multiple 0%
             Logout 100%
 
         Admin

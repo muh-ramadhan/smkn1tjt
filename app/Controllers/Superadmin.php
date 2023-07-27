@@ -151,14 +151,14 @@ class Superadmin extends BaseController
     public function Block($id_pengguna)
     {
         $this->PenggunaModel->set('status', 1)->where('id_pengguna', $id_pengguna)->update();
-        session()->setFlashdata('hapus', 'Data Berhasil Di Hapus');
+        session()->setFlashdata('block', 'Data Berhasil Di Hapus');
         return redirect()->to('Superadmin/Pengguna');
     }
 
     public function Allow($id_pengguna)
     {
         $this->PenggunaModel->set('status', 2)->where('id_pengguna', $id_pengguna)->update();
-        session()->setFlashdata('hapus', 'Data Berhasil Di Hapus');
+        session()->setFlashdata('allow', 'Data Berhasil Di Hapus');
         return redirect()->to('Superadmin/Pengguna');
     }
 
