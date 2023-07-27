@@ -56,13 +56,12 @@ class Superadmin extends BaseController
     }
     //MANAGEMENT BERITA//
 
-    
     //MANAGEMENT PENGGUNA//
     public function Pengguna()
     {
         $data = [
-            'title' => 'Master Data',
-            'subtitle' => 'Pengguna',
+            'title' => 'Pengguna',
+            'subtitle' => 'Manajemen Pengguna',
             'AmbilSemuaDataPengguna' => $this->PenggunaModel->findAll(),
             'AmbilSemuaDataLogin' => $this->LoginModel->findAll(),
         ];
@@ -95,21 +94,32 @@ class Superadmin extends BaseController
     public function DetailPengguna($id_pengguna)
     {
         $data = [
-            'title' => 'Detail Data',
-            'subtitle' => 'Pengguna',
+            'title' => 'Pengguna',
+            'subtitle' => 'Ubah Data Pengguna',
             'AmbilDataDetailPengguna'  =>  $this->PenggunaModel->where('id_pengguna', $id_pengguna)->get()->getRowArray(),
             'AmbilDataDetailLogin'  => $this->LoginModel->where('id_pengguna', $id_pengguna)->get()->getRowArray(),
         ];
-        return view('fv_superadmin/v_detail_karyawan', $data);
+        //return view('fv_superadmin/v_detail_karyawan', $data);
+        return view('fv_superadmin/v_detail_pengguna', $data);
     }
 
     public function UbahDataPengguna($id_pengguna)
     {
-        $data = [
+        $dataPengguna = [
             'id_pengguna' => $id_pengguna,
             'nama_lengkap' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_lengkap'))), ' ', true),
         ];
-        $this->PenggunaModel->update($id_pengguna, $data);
+        $this->PenggunaModel->update($id_pengguna, $dataPengguna);
+        //dd($id_pengguna, $dataPengguna);
+
+        $dataLogin = [
+            'id_pengguna' => $id_pengguna, //Primary
+            'username' => $this->request->getVar('username'),
+            'password' => $this->request->getVar('password'),
+            'level' => $this->request->getVar('level'),
+        ];
+        $this->LoginModel->set($dataLogin, $dataLogin)->where('id_pengguna', $id_pengguna)->update();
+        //dd($id_pengguna, $dataLogin);
 
         session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
         return redirect()->to('Superadmin/Pengguna');
@@ -138,6 +148,19 @@ class Superadmin extends BaseController
         return redirect()->to('Superadmin/Pengguna');
     }
 
+    public function Block($id_pengguna)
+    {
+        $this->PenggunaModel->set('status', 1)->where('id_pengguna', $id_pengguna)->update();
+        session()->setFlashdata('hapus', 'Data Berhasil Di Hapus');
+        return redirect()->to('Superadmin/Pengguna');
+    }
+
+    public function Allow($id_pengguna)
+    {
+        $this->PenggunaModel->set('status', 2)->where('id_pengguna', $id_pengguna)->update();
+        session()->setFlashdata('hapus', 'Data Berhasil Di Hapus');
+        return redirect()->to('Superadmin/Pengguna');
+    }
 
     public function PenggunaTerhapus()
     {

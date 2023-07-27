@@ -6,7 +6,7 @@
 <div class="page-content">
 
     <div class="page-title page-title-small">
-        <h2><a href="#" data-back-button><i class="fa fa-arrow-left"></i></a><?= $subtitle; ?></h2>
+        <h2><a href="#" data-back-button><i class="fa fa-arrow-left"></i></a><?= $title; ?></h2>
         <a href="#" data-menu="menu-main" class="bg-fade-highlight-light shadow-xl preload-img" data-src="<?= base_url(); ?>themplate/code/images/avatars/5s.png"></a>
     </div>
     <div class="card header-card shape-rounded" data-card-height="150">
@@ -95,7 +95,13 @@
                                     </div>
                                     <div class="ms-auto">
                                         <a href="#" class="icon icon-xs rounded-circle shadow-l bg-red-dark" data-menu="menu-confirm-delete-<?= $value['id_pengguna'] ?>"><i class="fas fa-trash"></i></i></a>
-                                        <a href="#" class="icon icon-xs rounded-circle shadow-l bg-gray-dark me-2 ms-2" data-menu="menu-confirm-block"><i class="fas fa-ban"></i></a>
+
+                                        <?php if ($value['status'] == 1) : ?>
+                                            <a href="<?= base_url('Superadmin/Allow/' . $value['id_pengguna']) ?>" class="icon icon-xs rounded-circle shadow-l bg-gray-dark me-2 ms-2" data-menu="menu-confirm-block"><i class="fas fa-ban"></i></a>
+                                        <?php elseif ($value['status'] == 2) : ?>
+                                            <a href="<?= base_url('Superadmin/Block/' . $value['id_pengguna']) ?>"  class="icon icon-xs rounded-circle shadow-l bg-green-dark me-2 ms-2" data-menu="menu-confirm-allow"><i class="fas fa-check-circle"></i></a>
+                                        <?php endif; ?>
+
                                         <a href="<?= base_url('Superadmin/DetailPengguna/' . $value['id_pengguna']) ?>" class="icon icon-xs rounded-circle shadow-l bg-blue-dark"><i class="fas fa-edit"></i></a>
                                     </div>
                                 </div>
@@ -140,45 +146,6 @@
     </div>
 <?php } ?>
 
-<!---------------->
-<!---------------->
-<!--menu-confirm-block-->
-<!---------------->
-<!---------------->
-<div id="menu-confirm-block" class="menu menu-box-modal rounded-m" data-menu-height="200" data-menu-width="320">
-    <h1 class="text-center font-700 mt-3 pb-1">Are you sure?</h1>
-    <p class="boxed-text-l">
-        You can even use these boxes for confirmations. Any element can trigger them.
-    </p>
-    <div class="row me-3 ms-3 mb-0">
-        <div class="col-6">
-            <a href="#" class="close-menu btn btn-sm btn-full button-s shadow-l rounded-s text-uppercase font-900 bg-green-dark">IYA</a>
-        </div>
-        <div class="col-6">
-            <a href="#" class="close-menu btn btn-sm btn-full button-s shadow-l rounded-s text-uppercase font-900 bg-red-dark">TIDAK</a>
-        </div>
-    </div>
-</div>
-
-<!---------------->
-<!---------------->
-<!--menu-confirm-unblock-->
-<!---------------->
-<!---------------->
-<div id="menu-confirm-unblock" class="menu menu-box-modal rounded-m" data-menu-height="200" data-menu-width="320">
-    <h1 class="text-center font-700 mt-3 pb-1">Are you sure?</h1>
-    <p class="boxed-text-l">
-        You can even use these boxes for confirmations. Any element can trigger them.
-    </p>
-    <div class="row me-3 ms-3 mb-0">
-        <div class="col-6">
-            <a href="#" class="close-menu btn btn-sm btn-full button-s shadow-l rounded-s text-uppercase font-900 bg-green-dark">IYA</a>
-        </div>
-        <div class="col-6">
-            <a href="#" class="close-menu btn btn-sm btn-full button-s shadow-l rounded-s text-uppercase font-900 bg-red-dark">TIDAK</a>
-        </div>
-    </div>
-</div>
 <!-- end of page content-->
 
 <?= $this->include('fv_superadmin/themplate/menu-share') ?>

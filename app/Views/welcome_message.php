@@ -219,83 +219,118 @@
 		</ul>
 	</nav>
 
-	<div class="card preload-img" data-src="images/pictures/20s.jpg">
-		<div class="card-body pt-4">
-			<h4 class="color-white mb-0">Program Keahlian</h4>
-			<p class="color-white mb-3 font-12">
+
+
+
+	<div class="card preload-img" data-src="<?php base_url(); ?>themplate/code/images/pictures/20s.jpg">
+		<div class="card-body pt-4 mt-3 ">
+			<h2 class="font-24 color-white line-height-l">4 Program, <br>Keahlian</h2>
+			<p class="color-white opacity-70">
 				Temukan jurusan favoritmu dan capai kesuksesan bersama kami!
 			</p>
-			<div class="card card-style ms-0 me-0 bg-theme">
 
-
-				<div class="accordion mt-4" id="accordion-6">
-					<div class="card card-style shadow-0 bg-pink2-dark mb-1">
-						<button class="btn accordion-btn  color-white no-effect" data-bs-toggle="collapse" data-bs-target="#collapse11">
-							<i class="fa-solid fa-1 me-2"></i>
-							Teknik Komputer dan Jaringan
-							<i class="fa fa-chevron-down font-10 accordion-icon"></i>
-						</button>
-
-						<div id="collapse11" class="collapse bg-theme" data-bs-parent="#accordion-6">
-							<div class="pt-3 pb-3 color-theme">
-								Teknik Komputer dan Jaringan: Merancang dan mengelola sistem komputer dan jaringan, mengoptimalkan kinerja serta keamanannya. Peluang karier menjanjikan di era digital.<br>
-								Jelajahi dunia digital, raih kesempatan karier terbaik! Bergabunglah dengan kami dan menjadi pakar teknologi masa depan.
-							</div>
-						</div>
+			<a href="#" class="card card-style mb-3 mx-0" id="accordion-1">
+				<div class="d-flex pt-3 pb-3" data-bs-toggle="collapse" data-bs-target="#collapse1">
+					<div class="ps-3 ms-2 align-self-center">
+						<h1 class="center-text mb-0 pt-2">
+							01
+						</h1>
 					</div>
-
-					<div class="card card-style bg-green-light mb-1">
-						<button class="btn accordion-btn color-white no-effect" data-bs-toggle="collapse" data-bs-target="#collapse12">
-							<i class="fa-solid fa-2 me-2"></i>
-							Teknik Kendaraan Ringan Otomotif
-							<i class="fa fa-chevron-down font-10 accordion-icon"></i>
-						</button>
-						<div id="collapse12" class="collapse bg-theme" data-bs-parent="#accordion-6">
-							<div class="pt-3 pb-3 color-theme">
-								Teknik Kendaraan Ringan Otomotif: Menguasai perawatan, perbaikan, dan diagnosis kendaraan bermotor. Menjadi ahli otomotif dengan teknologi terkini.<br>
-								Buka pintu menuju passion otomotif! Dapatkan keterampilan yang dibutuhkan industri, dan jadilah ahli perbaikan kendaraan favorit.
-							</div>
-						</div>
+					<div class="align-self-center mt-1 ps-4">
+						<h4 class="color-theme font-600">Teknik Komputer dan Jaringan</h4>
 					</div>
-
-
-					<div class="card card-style bg-orange-light mb-1">
-						<button class="btn accordion-btn color-white no-effect" data-bs-toggle="collapse" data-bs-target="#collapse13">
-							<i class="fa-solid fa-3 me-2"></i>
-							Nautika Kapal Penangkap Ikan
-							<i class="fa fa-chevron-down font-10 accordion-icon"></i>
-						</button>
-						<div id="collapse13" class="collapse bg-theme" data-bs-parent="#accordion-6">
-							<div class="pt-3 pb-3 color-theme">
-								Nautika Kapal Penangkap Ikan: Mengemban peran penting sebagai nakhoda, mengelola navigasi dan operasi kapal penangkap ikan. Menjadi bagian vital dalam industri perikanan.<br>
-								Petualangan di lautan menanti! Bergabunglah dengan nakhoda kapal penangkap ikan kami, raih pengalaman tak terlupakan di laut lepas.
-							</div>
-						</div>
+					<div class="ms-auto align-self-center me-3">
+						<i class="fa fa-chevron-down font-10 accordion-icon"></i>
 					</div>
-
-					<div class="card card-style bg-mint-light">
-						<button class="btn accordion-btn color-white no-effect" data-bs-toggle="collapse" data-bs-target="#collapse14">
-							<i class="fa-solid fa-4 me-2"></i>
-							Agribisnis Perikanan Air Tawar
-							<i class="fa fa-chevron-down font-10 accordion-icon"></i>
-						</button>
-						<div id="collapse14" class="collapse bg-theme" data-bs-parent="#accordion-6">
-							<div class="pt-3 pb-3 color-theme">
-								Agribisnis Perikanan Air Tawar: Menggabungkan keahlian pertanian dan manajemen untuk mengelola usaha perikanan air tawar. Kontribusi dalam ketahanan pangan dan kesejahteraan petani ikan.<br>
-								Suara ikan berbisik, bisnis menguntungkan! Sambut peluang baru di bidang agribisnis perikanan air tawar, dan raih kesuksesan bersama kami.
-							</div>
-						</div>
-					</div>
-
 				</div>
-
-
+			</a>
+			<div class="card card-style collapse bg-theme" id="collapse1" data-bs-parent="#accordion-1">
+				<div class="card-body">
+					<p class="mb-1">
+						Teknik Komputer dan Jaringan: Merancang dan mengelola sistem komputer dan jaringan, mengoptimalkan kinerja serta keamanannya. Peluang karier menjanjikan di era digital.
+						Jelajahi dunia digital, raih kesempatan karier terbaik! Bergabunglah dengan kami dan menjadi pakar teknologi masa depan.
+					</p>
+				</div>
 			</div>
-			<a href="#" class="btn btn-full btn-sm text-uppercase font-700 bg-white color-black rounded-sm mt-n3">Daftar Sekarang</a>
+
+			<a href="#" class="card card-style mb-3 mx-0" id="accordion-2">
+				<div class="d-flex pt-3 pb-3" data-bs-toggle="collapse" data-bs-target="#collapse2">
+					<div class="ps-3 ms-2 align-self-center">
+						<h1 class="center-text mb-0 pt-2">
+							02
+						</h1>
+					</div>
+					<div class="align-self-center mt-1 ps-4">
+						<h4 class="color-theme font-600">Teknik Kendaraan Ringan Otomotif</h4>
+					</div>
+					<div class="ms-auto align-self-center me-3">
+						<i class="fa fa-chevron-down font-10 accordion-icon"></i>
+					</div>
+				</div>
+			</a>
+			<div class="card card-style collapse bg-theme" id="collapse2" data-bs-parent="#accordion-2">
+				<div class="card-body">
+					<p class="mb-1">
+
+						Teknik Kendaraan Ringan Otomotif: Menguasai perawatan, perbaikan, dan diagnosis kendaraan bermotor. Menjadi ahli otomotif dengan teknologi terkini.<br>
+						Buka pintu menuju passion otomotif! Dapatkan keterampilan yang dibutuhkan industri, dan jadilah ahli perbaikan kendaraan favorit.
+					</p>
+				</div>
+			</div>
+
+			<a href="#" class="card card-style mb-3 mx-0" id="accordion-3">
+				<div class="d-flex pt-3 pb-3" data-bs-toggle="collapse" data-bs-target="#collapse3">
+					<div class="ps-3 ms-2 align-self-center">
+						<h1 class="center-text mb-0 pt-2">
+							03
+						</h1>
+					</div>
+					<div class="align-self-center mt-1 ps-4">
+						<h4 class="color-theme font-600">Nautika Kapal Penangkap Ikan</h4>
+					</div>
+					<div class="ms-auto align-self-center me-3">
+						<i class="fa fa-chevron-down font-10 accordion-icon"></i>
+					</div>
+				</div>
+			</a>
+			<div class="card card-style collapse bg-theme" id="collapse3" data-bs-parent="#accordion-3">
+				<div class="card-body">
+					<p class="mb-1">
+						Nautika Kapal Penangkap Ikan: Mengemban peran penting sebagai nakhoda, mengelola navigasi dan operasi kapal penangkap ikan. Menjadi bagian vital dalam industri perikanan.<br>
+						Petualangan di lautan menanti! Bergabunglah dengan nakhoda kapal penangkap ikan kami, raih pengalaman tak terlupakan di laut lepas.
+					</p>
+				</div>
+			</div>
+
+			<a href="#" class="card card-style mb-3 mx-0" id="accordion-4">
+				<div class="d-flex pt-3 pb-3" data-bs-toggle="collapse" data-bs-target="#collapse4">
+					<div class="ps-3 ms-2 align-self-center">
+						<h1 class="center-text mb-0 pt-2">
+							04
+						</h1>
+					</div>
+					<div class="align-self-center mt-1 ps-4">
+						<h4 class="color-theme font-600">Agribisnis Perikanan Air Tawar</h4>
+					</div>
+					<div class="ms-auto align-self-center me-3">
+						<i class="fa fa-chevron-down font-10 accordion-icon"></i>
+					</div>
+				</div>
+			</a>
+			<div class="card card-style collapse bg-theme" id="collapse4" data-bs-parent="#accordion-4">
+				<div class="card-body">
+					<p class="mb-1">
+						Agribisnis Perikanan Air Tawar: Menggabungkan keahlian pertanian dan manajemen untuk mengelola usaha perikanan air tawar. Kontribusi dalam ketahanan pangan dan kesejahteraan petani ikan.<br>
+						Suara ikan berbisik, bisnis menguntungkan! Sambut peluang baru di bidang agribisnis perikanan air tawar, dan raih kesuksesan bersama kami.
+					</p>
+				</div>
+			</div>
+
 		</div>
 		<div class="card-overlay bg-highlight opacity-90"></div>
 		<div class="card-overlay dark-mode-tint"></div>
 	</div>
+
 
 	<div class="content mb-0 pt-3">
 		<h5 class="float-start font-16 font-600">✌🏻 Kategori</h5>

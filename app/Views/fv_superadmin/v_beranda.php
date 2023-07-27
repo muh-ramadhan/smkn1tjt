@@ -4,7 +4,7 @@
 <?= $this->include('fv_superadmin/themplate/footer-bar') ?>
 
 <div class="page-content">
-
+    
 	<div class="page-title page-title-large">
 		<h2 data-username="Word!" class="greeting-text"></h2>
 		<a href="#" data-menu="menu-main" class="bg-fade-highlight-light shadow-xl preload-img" data-src="<?= base_url(); ?>themplate/code/images/avatars/5s.png"></a>

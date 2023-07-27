@@ -14,7 +14,7 @@ class PenggunaModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_pengguna', 'nama_lengkap', 'deleted_at'];
+    protected $allowedFields    = ['id_pengguna', 'status', 'nama_lengkap', 'deleted_at'];
 
     // Dates
     protected $useTimestamps = true;
