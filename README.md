@@ -1,4 +1,4 @@
-# Selamat datang Di Project Pengembangan SMK Negeri 1 Tanjung Jabung Timur
+# Update/Upgrade SMK Negeri 1 Tanjung Jabung Timur
 **Framework Codeigniter 4**
 ```
 https://www.codeigniter.com/
