@@ -25,25 +25,25 @@
 
     Tampilan dan Fungsi
         Login
-        Tampilan 70%
-        Fungsi 80%
+            Tampilan 70%
+            Fungsi 80%
 
-    Superadmin
-        Beranda 50%
-        Manajemen Pengguna 80%
-            Edit 100%
-            Hapus 100%
-            Allow/Block 100%
-        Logout 100%
+        Superadmin
+            Beranda 50%
+            Manajemen Pengguna 80%
+                Edit 100%
+                Hapus 100%
+                Allow/Block 100%
+            Logout 100%
 
-    Admin
-        Beranda 0%
+        Admin
+            Beranda 0%
 
-    Operator
-        Beranda 0%
+        Operator
+            Beranda 0%
 
-    Guru
-        Beranda 0%
+        Guru
+            Beranda 0%
 
-    Siswa
-        Beranda 0%
+        Siswa
+            Beranda 0%
