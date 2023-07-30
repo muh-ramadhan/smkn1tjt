@@ -11,28 +11,6 @@
     <div class="card-bg preload-img" data-src="themplate/code/images/pictures/20s.jpg"></div>
   </div>
 
-  <?php $errors = session()->getFlashdata('errors');
-  //Pesan Validasi Error
-  if (!empty($errors)) { ?>
-    <?php foreach ($errors as $error) : ?>
-      <div class="ms-3 me-3 mb-1 alert alert-small rounded-s shadow-xl bg-red-dark" role="alert">
-        <span><i class="fa fa-times"></i></span>
-        <strong><?= esc($error); ?></strong>
-        <button type="button" class="close color-white opacity-60 font-16" data-bs-dismiss="alert" aria-label="Close">&times;</button>
-      </div>
-    <?php endforeach ?>
-  <?php }  ?>
-
-  <?php
-  if (session()->getFlashdata('pesan')) {
-    echo '<div class="ms-3 me-3 mb-1 alert alert-small rounded-s shadow-xl bg-green-dark" role="alert">';
-    echo '<span><i class="fa fa-check"></i></span>';
-    echo '<strong>';
-    echo session()->getFlashdata('pesan');
-    echo '</strong>';
-    echo '<button type="button" class="close color-white opacity-60 font-16" data-bs-dismiss="alert" aria-label="Close">&times;</button>';
-    echo '</div>';
-  }; ?>
   <div class="card card-style">
     <div class="content mt-2 mb-0">
 
@@ -60,13 +38,56 @@
       <?php echo form_close(); ?>
       <div class="divider"></div>
       <div class="d-flex">
-        <div class="w-50 font-11 pb-2 color-theme opacity-60 pb-3 text-start"><a href="system-signup-1.html" class="color-theme">Buat Akun</a></div>
-        <div class="w-50 font-11 pb-2 color-theme opacity-60 pb-3 text-end"><a href="system-forgot-1.html" class="color-theme">Lupa Kata Sandi?</a></div>
+        <div class="w-50 font-11 pb-2 color-theme opacity-60 pb-3 text-start"><a href="#" class="color-theme">Buat Akun</a></div>
+        <div class="w-50 font-11 pb-2 color-theme opacity-60 pb-3 text-end"><a href="#" class="color-theme">Lupa Kata Sandi?</a></div>
       </div>
     </div>
 
   </div>
   <!-- footer and footer card-->
+  
+  <?php $errors = session()->getFlashdata('errorValidation');
+  //Pesan Validasi Error
+  if (!empty($errors)) { ?>
+    <!-- Kotak pesan kesalahan yang akan muncul secara otomatis -->
+    <div id="overlay-error-validation" style="position: fixed;top: -100px;bottom: -100px; left: 0px;right: 0px;z-index: 100;background-color: rgba(0, 0, 0, 0.35);">
+      <div class="menu menu-box-bottom menu-box-detached rounded-m menu-active" data-menu-height="305" data-menu-effect="menu-over" style="display: block; height: 305px;">
+        <h1 class="text-center mt-4"><i class="fa fa-3x fa-times color-red-dark"></i></h1>
+        <h1 class="text-center mt-3 text-uppercase font-700">Oops!</h1>
+        <p class="boxed-text-l">
+          <?php foreach ($errors as $error) : ?>
+            <?= esc($error); ?><br>
+          <?php endforeach ?>
+        </p>
+        <a href="#" class="close-menu btn btn-m btn-center-m button-s shadow-l rounded-s text-uppercase font-900 bg-red-light" onclick="hideOverlayErrorValidation()">Kembali</a>
+      </div>
+    </div>
+  <?php }  ?>
+
+  <?php if (session()->getFlashdata('error')) : ?>
+    <!-- Kotak pesan kesalahan yang akan muncul secara otomatis -->
+    <div id="overlay-error" style="position: fixed;top: -100px;bottom: -100px; left: 0px;right: 0px;z-index: 100;background-color: rgba(0, 0, 0, 0.35);">
+      <div class="menu menu-box-bottom menu-box-detached rounded-m menu-active" data-menu-height="305" data-menu-effect="menu-over" style="display: block; height: 305px;">
+        <h1 class="text-center mt-4"><i class="fa fa-3x fa-times color-red-dark"></i></h1>
+        <h1 class="text-center mt-3 text-uppercase font-700">Oops!</h1>
+        <p class="boxed-text-l">
+          <?php echo session()->getFlashdata('error'); ?>
+        </p>
+        <a href="#" class="close-menu btn btn-m btn-center-m button-s shadow-l rounded-s text-uppercase font-900 bg-red-light" onclick="hideOverlayError()">Kembali</a>
+      </div>
+    </div>
+  <?php endif; ?>
+
+  <?php if (session()->getFlashdata('success')) : ?>
+  <div id="overlay-success" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-height="305" data-menu-effect="menu-over">
+    <h1 class="text-center mt-4"><i class="fa fa-3x fa-check-circle color-green-dark"></i></h1>
+    <h1 class="text-center mt-3 text-uppercase font-700">All's Good</h1>
+    <p class="boxed-text-l">
+    <?php echo session()->getFlashdata('success'); ?>
+    </p>
+    <a href="#" class="close-menu btn btn-m btn-center-m button-s shadow-l rounded-s text-uppercase font-900 bg-green-light" onclick="hideOverlaySuccess()">Great</a>
+  </div>
+  <?php endif; ?>
 
   <?= $this->include('default/themplate/menu-footer') ?>
 </div>

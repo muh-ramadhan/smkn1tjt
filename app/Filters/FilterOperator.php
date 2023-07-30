@@ -12,7 +12,7 @@ class FilterOperator implements FilterInterface
     {
         // Do something here
         if (session()->get('level') == "") {
-            session()->setFlashdata('pesan', 'Anda Belum Login');
+            session()->setFlashdata('error', 'Anda Belum Login');
             return redirect()->to(base_url('login'));
         }
     }

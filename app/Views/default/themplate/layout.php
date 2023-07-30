@@ -30,4 +30,18 @@
     <script type="text/javascript" src="<?= base_url(); ?>themplate/code/scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="<?= base_url(); ?>themplate/code/scripts/custom.js"></script>
 
+    <script>
+      function hideOverlayError() {
+        var overlay_error = document.getElementById('overlay-error');
+        overlay_error.style.display = 'none';
+      }
+      function hideOverlaySuccess() {
+        var overlay_success = document.getElementById('overlay-success');
+        overlay_success.style.display = 'none';
+      }
+      function hideOverlayErrorValidation() {
+        var overlay_validation = document.getElementById('overlay-error-validation');
+        overlay_validation.style.display = 'none';
+      }
+    </script>
 </body>

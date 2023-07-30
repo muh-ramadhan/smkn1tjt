@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-
+// Load helper yang diperlukan
 use App\Models\PenggunaModel;
 use App\Models\AdminModel;
 use App\Models\OperatorModel;
@@ -17,6 +17,7 @@ class Superadmin extends BaseController
 {
     public function __construct()
     {
+        // Load helper yang diperlukan
         $this->PenggunaModel = new PenggunaModel();
         $this->AdminModel = new AdminModel();
         $this->OperatorModel = new OperatorModel();
@@ -25,8 +26,9 @@ class Superadmin extends BaseController
         $this->LoginModel = new LoginModel();
         $this->TransaksiModel = new TransaksiModel();
         $this->PelangganModel = new PelangganModel();
-
         $this->BeritaModel = new BeritaModel();
+
+        // Load helper yang diperlukan
         helper(['form', 'date', 'inflector', 'text', 'number']);
     }
 

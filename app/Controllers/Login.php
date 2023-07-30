@@ -25,6 +25,7 @@ class Login extends BaseController
     public function auth()
     {
         if ($this->validate([
+            //NOTE : Validasi Masih Di Kerjakan
             'username' => [
                 'label' => 'Username',
                 'rules' => 'required',
@@ -40,10 +41,14 @@ class Login extends BaseController
                 ]
             ],
         ])) {
-            //Jika Valid
+            //Jika Validasi Berhasil
+
+            //NOTE : Username Dalam Bentuk Hash Satu Arah
             $username = $this->request->getVar('username');
+            //NOTE : Belum Ada Algoritma Kata Sandi
             $password = $this->request->getVar('password');
 
+            //Definisikan Jadi $dataLogin
             $dataLogin = $this->LoginModel->where([
                 'username' => $username,
                 'password' => $password
@@ -70,15 +75,14 @@ class Login extends BaseController
 
                     // Cek apakah akun telah dihapus berdasarkan kolom deleted_at
                     if ($dataPengguna['deleted_at'] != NULL) {
-                        session()->setFlashdata('pesan', 'Akun Anda telah dihapus. Silakan hubungi admin jika ini adalah kesalahan.');
+                        session()->setFlashdata('error', 'Akun Anda telah dihapus. Silakan hubungi admin jika ini adalah kesalahan.');
                         return redirect()->to(base_url('login'));
                     }
 
                     if ($dataPengguna['status'] == 1) {
                         // Akun pengguna diblokir
-                        // Lakukan tindakan sesuai kebijakan aplikasi Anda, seperti menampilkan pesan kesalahan atau mengarahkan ke halaman tertentu
-                        // Misalnya:
-                        session()->setFlashdata('pesan', 'Akun Anda telah diblokir. Silakan hubungi admin.');
+                        // Menampilkan pesan kesalahan atau mengarahkan ke halaman tertentu
+                        session()->setFlashdata('error', 'Akun Anda telah diblokir. Silakan hubungi admin.');
                         return redirect()->to(base_url('login'));
                     }
 
@@ -101,23 +105,23 @@ class Login extends BaseController
                             return redirect()->to(base_url('siswa'));
                             break;
                         default:
-                            session()->setFlashdata('pesan', 'Maaf Anda tidak memiliki akses apapun. Hubungi admin.');
+                            session()->setFlashdata('error', 'Maaf Anda tidak memiliki akses apapun. Hubungi admin.');
                             return redirect()->to(base_url('login'));
                             break;
                     }
                 } else {
                     // Jika data pengguna tidak ditemukan di tabel pengguna
-                    session()->setFlashdata('pesan', 'Data pengguna tidak ditemukan');
+                    session()->setFlashdata('error', 'Data pengguna tidak ditemukan');
                     return redirect()->to(base_url('login'));
                 }
             } else {
                 //Jika Periksa Gagal
-                session()->setFlashdata('pesan', 'Username atau Password Salah');
+                session()->setFlashdata('error', 'Username atau Password Salah');
                 return redirect()->to(base_url('login'));
             }
         } else {
-            //Jika Tidak Valid
-            session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
+            //Jika Tidak Valid Tampilkan Error Validasi
+            session()->setFlashdata('errorValidation', \Config\Services::validation()->getErrors());
             return redirect()->to(base_url('login'));
         }
     }
