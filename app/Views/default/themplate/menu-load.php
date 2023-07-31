@@ -1,0 +1,2 @@
+<div id="menu-highlights" class="menu menu-box-bottom menu-box-detached rounded-m" data-menu-load="<?= $this->view('default/themplate/menu-color') ?>" data-menu-height="510" data-menu-effect="menu-over">
+</div>

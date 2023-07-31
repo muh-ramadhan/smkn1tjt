@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Azures BootStrap</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+
+<body class="theme-light">
+
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+
+<div id="page">
+
+    <!-- header and footer bar go here-->
+    <div class="header header-fixed header-auto-show header-logo-app">
+        <a href="#" data-back-button class="header-title header-subtitle">Back to Events</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+    </div>
+    <div id="footer-bar" class="footer-bar-5">
+        <a href="index-components.html"><i data-feather="heart" data-feather-line="1" data-feather-size="21" data-feather-color="red-dark" data-feather-bg="red-fade-light"></i><span>Features</span></a>
+        <a href="index-media.html"><i data-feather="image" data-feather-line="1" data-feather-size="21" data-feather-color="green-dark" data-feather-bg="green-fade-light"></i><span>Media</span></a>
+        <a href="index.html"><i data-feather="home" data-feather-line="1" data-feather-size="21" data-feather-color="blue-dark" data-feather-bg="blue-fade-light"></i><span>Home</span></a>
+        <a href="index-pages.html" class="active-nav"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown-dark" data-feather-bg="brown-fade-light"></i><span>Pages</span></a>
+        <a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="dark-dark" data-feather-bg="gray-fade-light"></i><span>Settings</span></a>
+    </div>
+
+    <div class="page-content">
+
+        <div class="page-title page-title-small">
+            <h2><a href="#" data-back-button><i class="fa fa-arrow-left"></i></a>Event Cards</h2>
+            <a href="#" data-menu="menu-main" class="bg-fade-highlight-light shadow-xl preload-img" data-src="images/avatars/5s.png"></a>
+        </div>
+        <div class="card header-card shape-rounded" data-card-height="150">
+            <div class="card-overlay bg-highlight opacity-95"></div>
+            <div class="card-overlay dark-mode-tint"></div>
+            <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+        </div>
+
+        <div class="card card-style">
+            <div class="content">
+                <h3 class="font-600">New Product Release</h3>
+                <p class="font-11 mt-n2 color-highlight">We're happy to announce our latest product. Enjoy!</p>
+
+                <div class="float-start">
+                    <p class="font-10 opacity-80 mb-n1"><i class="far fa-calendar"></i> August 28 <i class="ms-4 far fa-clock"></i> 09:00 PM</p>
+                    <p class="font-10 opacity-80"><i class="fa fa-map-marker-alt"></i> Melbourne, Australia Collins Street</p>
+                </div>
+                <a href="#" class="float-end btn btn-s bg-highlight rounded-s shadow-xl text-uppercase font-900 font-11 mt-2">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="card card-style">
+            <div class="content mb-4">
+                <h3><i class="fa fa-exclamation-triangle me-3 mt-1 font-17 color-yellow-dark"></i>Staff Meeting</h3>
+                <p>
+                    Event aims to discuss and improve company workflow, brainstorming and customer aquisition.
+                    Attendence is mandatory.
+                </p>
+                <div class="row mb-0 pt-3 bg-highlight">
+                    <div class="col-4">
+                        <p class="text-start color-white mb-0 pb-3"><i class="fa fa-map-marker color-white me-2"></i>Room 401</p>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-center color-white mb-0 pb-3"><i class="fa fa-calendar-alt me-2 color-white"></i>15 May</p>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-end color-white mb-0 pb-3"><i class="fa fa-clock me-2 color-white"></i>09:00 AM</p>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="d-flex">
+                    <div class="w-35 border-right pe-3 border-highlight">
+                        <img src="images/empty.png" data-src="images/avatars/4s.png" width="80" class="rounded-circle bg-highlight preload-img">
+                        <h6 class="font-14 font-600 mt-2 text-center">Vincent M.</h6>
+                        <p class="color-highlight mt-n2 font-9 font-400 text-center mb-0 pb-0">Group Manager</p>
+                    </div>
+                    <div class="w-65 pt-2 ps-3">
+                        <h3>Attending Staff</h3>
+                        <p class="color-highlight mt-n2 font-10 mb-3">Meeting Presence Mandatory</p>
+                        <a href="#"><img src="images/empty.png" data-src="images/avatars/1s.png" width="40" class="rounded-circle bg-green-dark preload-img"></a>
+                        <a href="#"><img src="images/empty.png" data-src="images/avatars/2s.png" width="40" class="rounded-circle bg-red-dark preload-img"></a>
+                        <a href="#"><img src="images/empty.png" data-src="images/avatars/3s.png" width="40" class="rounded-circle bg-brown-dark preload-img"></a>
+                        <a href="#"><img src="images/empty.png" data-src="images/avatars/4s.png" width="40" class="rounded-circle bg-yellow-dark preload-img"></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div data-card-height="230" class="card card-style round-medium shadow-huge top-30">
+            <div class="card-top mt-3 ms-3">
+                <h2 class="color-white pt-3 pb-3">Gradient Event</h2>
+                <p class="color-white font-10 opacity-80 mb-n1"><i class="far fa-calendar"></i> August 28 <i class="ms-4 far fa-clock"></i> 09:00 PM</p>
+                <p class="color-white font-10 opacity-80"><i class="fa fa-map-marker-alt"></i> Melbourne, Victoria, Australia Collins Street</p>
+            </div>
+            <div class="card-top mt-3 me-3">
+                <a href="#" class="float-end bg-white color-black btn btn-s rounded-xl font-900 mt-2 text-uppercase font-11">Join Event</a>
+            </div>
+            <div class="card-bottom pb-3 pe-4">
+                <div class="float-end">
+                    <h4 class="font-12 color-white font-400 opacity-50">John, and 143 attending</h4>
+                    <img class="shadow-xl rounded-xl preload-img float-end" width="40" src="images/empty.png" data-src="images/pictures/faces/1s.png">
+                    <img class="shadow-xl rounded-xl preload-img float-end" width="40" src="images/empty.png" data-src="images/pictures/faces/2s.png">
+                    <img class="shadow-xl rounded-xl preload-img float-end" width="40" src="images/empty.png" data-src="images/pictures/faces/3s.png">
+                </div>
+            </div>
+            <div class="card-bottom ms-3 mb-3">
+                <img data-src="images/pictures/faces/4small.png" alt="img" width="40" class="pb-1 preload-img shadow-xl rounded-m">
+            </div>
+            <div class="card-bottom mb-n3 ps-5 ms-4">
+                <h5 class="font-13 color-white mb-n1">Jack's Cousin</h5>
+                <p class="color-white font-10 opacity-70">Event Creator</p>
+            </div>
+            <div class="card-overlay bg-highlight opacity-90"></div>
+            <div class="card-overlay bg-gradient"></div>
+        </div>
+
+        <div data-card-height="140" class="card card-style rounded-m shadow-xl bg-18">
+            <div class="card-center ms-3">
+                <h2 class="color-white">Small Event Card</h2>
+                <p class="color-white font-10 opacity-70 mt-2 mb-n1"><i class="far fa-calendar"></i> August 28 <i class="ms-3 far fa-clock"></i> 09:00 PM</p>
+                <p class="color-white font-10 opacity-70 mb-0"><i class="fa fa-map-marker-alt"></i> Melbourne, Australia Collins Street</p>
+            </div>
+            <div class="card-center me-3">
+                <a href="#" class="float-end bg-highlight btn btn-xs text-uppercase font-900 rounded-xl font-11">Join Event</a>
+            </div>
+            <div class="card-overlay bg-black opacity-80"></div>
+        </div>
+
+        <div class="card card-style">
+            <div data-card-height="200" class="card shadow-l mb-0 bg-18">
+                <div class="card-bottom ms-3">
+                    <p class="color-white font-10 opacity-80 mb-n1"><i class="far fa-calendar"></i> August 28 <i class="ms-3 far fa-clock"></i> 09:00 PM</p>
+                    <p class="color-white font-10 opacity-80 mb-2"><i class="fa fa-map-marker-alt"></i> Melbourne, Victoria, Australia Collins Street</p>
+                </div>
+                <div class="card-overlay bg-gradient opacity-90"></div>
+            </div>
+            <div class="content mb-0">
+                <div class="float-start">
+                    <h1 class="mb-n1">Classic Event</h1>
+                    <p class="font-10 mb-2 pb-1"><i class="fa fa-map-marker-alt me-2"></i>Melbourne Victoria, Collins Street</p>
+                </div>
+                <a href="#" class="float-end btn btn-s bg-highlight rounded-xl shadow-xl text-uppercase font-900 font-11 mt-2">View on Map</a>
+            </div>
+        </div>
+
+
+        <!-- footer and footer card-->
+        <div class="footer" data-menu-load="menu-footer.html"></div>
+    </div>
+    <!-- end of page content-->
+
+
+    <div id="menu-share"
+         class="menu menu-box-bottom menu-box-detached rounded-m"
+         data-menu-load="menu-share.html"
+         data-menu-height="420"
+         data-menu-effect="menu-over">
+    </div>
+
+    <div id="menu-highlights"
+         class="menu menu-box-bottom menu-box-detached rounded-m"
+         data-menu-load="menu-colors.html"
+         data-menu-height="510"
+         data-menu-effect="menu-over">
+    </div>
+
+    <div id="menu-main"
+         class="menu menu-box-right menu-box-detached rounded-m"
+         data-menu-width="260"
+         data-menu-load="menu-main.html"
+         data-menu-active="nav-pages"
+         data-menu-effect="menu-over">
+    </div>
+
+
+
+
+</div>
+
+
+
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</body>

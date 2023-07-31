@@ -1,0 +1,406 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Azures BootStrap</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+
+<body class="theme-light" data-highlight="blue2">
+
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+
+<div id="page">
+
+    <!-- header and footer bar go here-->
+    <div class="header header-fixed header-auto-show header-logo-app">
+        <a href="index.html" class="header-title">AZURES</a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-1"><i class="fas fa-bars"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a>
+    </div>
+    <div id="footer-bar" class="footer-bar-5">
+        <a href="index-components.html"><i data-feather="heart" data-feather-line="1" data-feather-size="21" data-feather-color="red-dark" data-feather-bg="red-fade-light"></i><span>Features</span></a>
+        <a href="index-media.html"><i data-feather="image" data-feather-line="1" data-feather-size="21" data-feather-color="green-dark" data-feather-bg="green-fade-light"></i><span>Media</span></a>
+        <a href="index.html"><i data-feather="home" data-feather-line="1" data-feather-size="21" data-feather-color="blue-dark" data-feather-bg="blue-fade-light"></i><span>Home</span></a>
+        <a href="index-pages.html"  class="active-nav"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown-dark" data-feather-bg="brown-fade-light"></i><span>Pages</span></a>
+        <a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="dark-dark" data-feather-bg="gray-fade-light"></i><span>Settings</span></a>
+    </div>
+
+    <div class="page-content">
+
+        <div class="page-title page-title-small">
+			<h2><a href="#" data-back-button><i class="fa fa-arrow-left"></i></a>Food Home 2</h2>
+			<a href="#" data-menu="menu-main" class="bg-fade-highlight-light shadow-xl preload-img" data-src="images/avatars/5s.png"></a>
+		</div>
+        <div class="card header-card shape-rounded" data-card-height="350">
+            <div class="card-overlay bg-highlight opacity-95"></div>
+            <div class="card-overlay dark-mode-tint"></div>
+            <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+        </div>
+
+		<div class="card card-style bg-transparent mx-0 mb-n2 mt-n3 shadow-0">
+			<div class="content mt-2">
+				<div class="search-box bg-theme color-theme rounded-m shadow-l">
+					<i class="fa fa-search"></i>
+					<input type="text" class="border-0" placeholder="Search our Menu... - try Burgers " data-search>
+					<a href="#" class="clear-search disabled mt-0"><i class="fa fa-times color-red-dark"></i></a>
+				</div>
+				<div class="search-results disabled-search-list mt-3">
+					<div class="card card-style mx-0 px-2 p-0 mb-0">
+						<a href="#" class="d-flex py-2" data-filter-item data-filter-name="all hamburger cheeseburger cheese burger">
+							<div class="align-self-center">
+								<img src="images/food/1s.jpg" class="rounded-sm me-3" width="35" alt="img">
+							</div>
+							<div class="align-self-center">
+								<strong class="color-theme font-16 d-block mb-0">Burgers</strong>
+							</div>
+							<div class="ms-auto text-center align-self-center pe-2">
+								<h5 class="line-height-xs font-16 font-600 mb-0">$29.<sup class="font-11 pt-1">05</sup></h5>
+							</div>
+						</a>
+						<a href="#" class="d-flex py-2" data-filter-item data-filter-name="all pizza">
+							<div class="align-self-center">
+								<img src="images/food/2s.jpg" class="rounded-sm me-3" width="35" alt="img">
+							</div>
+							<div class="align-self-center">
+								<strong class="color-theme font-16 d-block mb-0">Pizza</strong>
+							</div>
+							<div class="ms-auto text-center align-self-center pe-2">
+								<h5 class="line-height-xs font-16 font-600 mb-0">$19.<sup class="font-11 pt-1">99</sup></h5>
+							</div>
+						</a>
+						<a href="#" class="d-flex py-2" data-filter-item data-filter-name="all steak pork chicken beef meat">
+							<div class="align-self-center">
+								<img src="images/food/4s.jpg" class="rounded-sm me-3" width="35" alt="img">
+							</div>
+							<div class="align-self-center">
+								<strong class="color-theme font-16 d-block mb-0">Steaks</strong>
+							</div>
+							<div class="ms-auto text-center align-self-center pe-2">
+								<h5 class="line-height-xs font-16 font-600 mb-0">$39.<sup class="font-11 pt-1">99</sup></h5>
+							</div>
+						</a>
+						<a href="#" class="d-flex py-2" data-filter-item data-filter-name="all fruit salad">
+							<div class="align-self-center">
+								<img src="images/food/9s.jpg" class="rounded-sm me-3" width="35" alt="img">
+							</div>
+							<div class="align-self-center">
+								<strong class="color-theme font-16 d-block mb-0">Salads</strong>
+							</div>
+							<div class="ms-auto text-center align-self-center pe-2">
+								<h5 class="line-height-xs font-16 font-600 mb-0">$19.<sup class="font-11 pt-1">99</sup></h5>
+							</div>
+						</a>
+						<a href="#" class="d-flex py-2" data-filter-item data-filter-name="all fruit berry strawberry">
+							<div class="align-self-center">
+								<img src="images/food/7s.jpg" class="rounded-sm me-3" width="35" alt="img">
+							</div>
+							<div class="align-self-center">
+								<strong class="color-theme font-16 d-block mb-0">Fruit Cups</strong>
+							</div>
+							<div class="ms-auto text-center align-self-center pe-2">
+								<h5 class="line-height-xs font-16 font-600 mb-0">$25.<sup class="font-11 pt-1">99</sup></h5>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="search-no-results disabled mt-4">
+				<div class="card card-style">
+					<div class="content">
+						<h1>No Results</h1>
+						<p>
+							Your search brought up no results. Try using a different keyword. Or try typing all
+							to see all items in the demo. These can be linked to anything you want.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card card-style mx-0 shadow-0 mb-0 bg-transparent">
+			<div class="splide double-slider slider-no-dots visible-slider" id="double-slider-1a">
+				<div class="splide__track">
+					<div class="splide__list">
+						<div class="splide__slide">
+							<a href="#" class="mx-3">
+								<div class="card card-style me-0 mb-0" style="background-image:url(images/food/1.jpg);" data-card-height="250">
+									<div class="card-bottom p-2 px-3">
+										<h4 class="color-white">Burgers</h4>
+									</div>
+									<div class="card-overlay bg-gradient opacity-80"></div>
+								</div>
+							</a>
+						</div>
+						<div class="splide__slide">
+							<a href="#" class="mx-3">
+								<div class="card card-style me-0 mb-0" style="background-image:url(images/food/2.jpg);" data-card-height="250">
+									<div class="card-bottom p-2 px-3">
+										<h4 class="color-white">Pizza</h4>
+									</div>
+									<div class="card-overlay bg-gradient opacity-80"></div>
+								</div>
+							</a>
+						</div>
+						<div class="splide__slide">
+							<a href="#" class="mx-3">
+								<div class="card card-style me-0 mb-0" style="background-image:url(images/food/4.jpg);" data-card-height="250">
+									<div class="card-bottom p-2 px-3">
+										<h4 class="color-white">Steaks</h4>
+									</div>
+									<div class="card-overlay bg-gradient opacity-80"></div>
+								</div>
+							</a>
+						</div>
+						<div class="splide__slide">
+							<a href="#" class="mx-3">
+								<div class="card card-style me-0 mb-0" style="background-image:url(images/food/9.jpg);" data-card-height="250">
+									<div class="card-bottom p-2 px-3">
+										<h4 class="color-white">Salads</h4>
+									</div>
+									<div class="card-overlay bg-gradient opacity-80"></div>
+								</div>
+							</a>
+						</div>
+						<div class="splide__slide">
+							<a href="#" class="mx-3">
+								<div class="card card-style me-0 mb-0" style="background-image:url(images/food/7.jpg);" data-card-height="250">
+									<div class="card-bottom p-2 px-3">
+										<h4 class="color-white">Fruits</h4>
+									</div>
+									<div class="card-overlay bg-gradient opacity-80"></div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card card-style mt-2">
+			<div class="content mb-0">
+				<h4>Previous Orders</h4>
+				<p class="mb-2">Products you've recently viewed</p>
+				<div class="list-group list-custom-small">
+					<a href="#">
+						<img src="images/food/3s.jpg" alt="img">
+						<span>Chocolate Cookies</span>
+						<i class="fa fa-angle-right"></i>
+					</a>
+					<a href="#">
+						<img src="images/food/5s.jpg" alt="img">
+						<span>Gold Baked Fries</span>
+						<i class="fa fa-angle-right"></i>
+					</a>
+					<a href="#">
+						<img src="images/food/7s.jpg" alt="img">
+						<span>Strawberries Cups</span>
+						<i class="fa fa-angle-right"></i>
+					</a>
+					<a href="#" class="border-0">
+						<img src="images/food/1s.jpg" alt="img">
+						<span>American Burger</span>
+						<i class="fa fa-angle-right"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="card preload-img mt-2" data-src="images/pictures/20s.jpg">
+			<div class="card-body">
+				<h4 class="color-white pt-3 font-24">Today's Picks</h4>
+				<p class="color-white pt-1">
+					Carefully picked by our chef to make your taste buds loose their minds
+				</p>
+				<div class="card card-style bg-transparent m-0 shadow-0">
+					<div class="row mb-0">
+						<div class="col-6 pe-2">
+							<a href="#" class="card card-style mx-0 mb-3" data-menu="menu-product">
+								<img src="images/food/1.jpg" alt="img" class="img-fluid">
+								<div class="p-2">
+									<h4 class="mb-0 font-600">Burgers</h4>
+									<p class="mb-0 font-11 mt-n1">Freshly Cooked</p>
+								</div>
+								<div class="divider mb-0"></div>
+								<h5 class="py-3 pb-2 px-2 font-13 font-600">
+									$14.50
+									<span class="bg-blue-dark font-11 px-2 font-600 rounded-xs shadow-xxl float-end">10% OFF</span>
+								</h5>
+							</a>
+						</div>
+						<div class="col-6 ps-2">
+							<a href="#" class="card card-style mx-0 mb-3" data-menu="menu-product">
+								<img src="images/food/2.jpg" alt="img" class="img-fluid">
+								<div class="p-2">
+									<h4 class="mb-0 font-600">Pizzas</h4>
+									<p class="mb-0 font-11 mt-n1">Italian Original Recipe</p>
+								</div>
+								<div class="divider mb-0"></div>
+								<h5 class="py-3 pb-2 px-2 font-13 font-600">
+									$19.35
+									<span class="bg-blue-dark font-11 px-2 font-600 rounded-xs shadow-xxl float-end">25% OFF</span>
+								</h5>
+							</a>
+						</div>
+						<div class="col-6 pe-2">
+							<a href="#" class="card card-style mx-0 mb-3" data-menu="menu-product">
+								<img src="images/food/4.jpg" alt="img" class="img-fluid">
+								<div class="p-2">
+									<h4 class="mb-0 font-600">Grilled Steak</h4>
+									<p class="mb-0 font-11 mt-n1">Local meat, freshly served.</p>
+								</div>
+								<div class="divider mb-0"></div>
+								<h5 class="py-3 pb-2 px-2 font-13 font-600">
+									$29.15
+									<span class="bg-blue-dark font-11 px-2 font-600 rounded-xs shadow-xxl float-end">5% OFF</span>
+								</h5>
+							</a>
+						</div>
+						<div class="col-6 ps-2">
+							<a href="#" class="card card-style mx-0 mb-3" data-menu="menu-product">
+								<img src="images/food/7.jpg" alt="img" class="img-fluid">
+								<div class="p-2">
+									<h4 class="mb-0 font-600">Strawberry Cup</h4>
+									<p class="mb-0 font-11 mt-n1">Fresh and Sweet</p>
+								</div>
+								<div class="divider mb-0"></div>
+								<h5 class="py-3 pb-2 px-2 font-13 font-600">
+									$8.35
+									<span class="bg-blue-dark font-11 px-2 font-600 rounded-xs shadow-xxl float-end">3% OFF</span>
+								</h5>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-overlay bg-highlight opacity-90"></div>
+			<div class="card-overlay dark-mode-tint"></div>
+		</div>
+
+		<div class="d-flex px-3 mb-2">
+			<h4 class="mb-2 font-600">Recommended for You</h4>
+		</div>
+		<div class="splide single-slider slider-no-dots slider-no-arrows visible-slider" id="single-slider-3">
+			<div class="splide__track">
+				<div class="splide__list">
+					<div class="splide__slide">
+						<div class="card card-style">
+							<img src="images/food/2w.jpg" alt="img" class="img-fluid">
+							<div class="content mt-3">
+								<h2 class="font-17">Pizza <span class="float-end">$17.50</span></h2>
+								<p class="mb-3">
+									Baked with an original Italian recipe in a wood based oven for the best flavor.
+								</p>
+								<a href="#" class="btn btn-s rounded-s text-uppercase bg-blue-dark font-700 btn-full">Add to Bag</a>
+							</div>
+						</div>
+					</div>
+					<div class="splide__slide">
+						<div class="card card-style">
+							<img src="images/food/1w.jpg" alt="img" class="img-fluid">
+							<div class="content mt-3">
+								<h2 class="font-17">American Burger <span class="float-end">$19.30</span></h2>
+								<p class="mb-3">
+									Nothing compares to the American recipe for a burger. Juicy and tender.
+								</p>
+								<a href="#" class="btn btn-s rounded-s text-uppercase bg-blue-dark font-700 btn-full">Add to Bag</a>
+							</div>
+						</div>
+					</div>
+					<div class="splide__slide">
+						<div class="card card-style">
+							<img src="images/food/4w.jpg" alt="img" class="img-fluid">
+							<div class="content mt-3">
+								<h2 class="font-17">Grilled Steak <span class="float-end">$3.45</span></h2>
+								<p class="mb-3">
+									The fresh taste of a grilled steak with the flavor of a homemade bbq
+								</p>
+								<a href="#" class="btn btn-s rounded-s text-uppercase bg-blue-dark font-700 btn-full">Add to Bag</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+        <!-- footer and footer card-->
+        <div class="footer" data-menu-load="menu-footer.html"></div>
+    </div>
+    <!-- end of page content-->
+
+    <div id="menu-share"
+         class="menu menu-box-bottom menu-box-detached rounded-m"
+         data-menu-load="menu-share.html"
+         data-menu-height="420"
+         data-menu-effect="menu-over">
+    </div>
+
+    <div id="menu-highlights"
+         class="menu menu-box-bottom menu-box-detached rounded-m"
+         data-menu-load="menu-colors.html"
+         data-menu-height="510"
+         data-menu-effect="menu-over">
+    </div>
+
+    <div id="menu-main"
+         class="menu menu-box-right menu-box-detached rounded-m"
+         data-menu-width="260"
+         data-menu-load="menu-main.html"
+         data-menu-active="nav-pages"
+         data-menu-effect="menu-over">
+    </div>
+
+    <!-- Be sure this is on your main visiting page, for example, the index.html page-->
+    <!-- Install Prompt for Android -->
+    <div id="menu-install-pwa-android" class="menu menu-box-bottom menu-box-detached rounded-l"
+         data-menu-height="350"
+        data-menu-effect="menu-parallax">
+        <div class="boxed-text-l mt-4">
+            <img class="rounded-l mb-3" src="app/icons/icon-128x128.png" alt="img" width="90">
+            <h4 class="mt-3">Azures on your Home Screen</h4>
+            <p>
+                Install Azures on your home screen, and access it just like a regular app. It really is that simple!
+            </p>
+            <a href="#" class="pwa-install btn btn-s rounded-s shadow-l text-uppercase font-900 bg-highlight mb-2">Add to Home Screen</a><br>
+            <a href="#" class="pwa-dismiss close-menu color-gray2-light text-uppercase font-900 opacity-60 font-10">Maybe later</a>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <!-- Install instructions for iOS -->
+    <div id="menu-install-pwa-ios"
+        class="menu menu-box-bottom menu-box-detached rounded-l"
+         data-menu-height="320"
+        data-menu-effect="menu-parallax">
+        <div class="boxed-text-xl mt-4">
+            <img class="rounded-l mb-3" src="app/icons/icon-128x128.png" alt="img" width="90">
+            <h4 class="mt-3">Azures on your Home Screen</h4>
+            <p class="mb-0 pb-3">
+                Install Azures on your home screen, and access it just like a regular app.  Open your Safari menu and tap "Add to Home Screen".
+            </p>
+            <div class="clear"></div>
+            <a href="#" class="pwa-dismiss close-menu color-highlight font-800 opacity-80 text-center text-uppercase">Maybe later</a><br>
+            <i class="fa-ios-arrow fa fa-caret-down font-40"></i>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</body>

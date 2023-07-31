@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Azures BootStrap</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+
+<body class="theme-light">
+
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+
+<div id="page">
+
+    <!-- header and footer bar go here-->
+    <div class="header header-fixed header-auto-show header-logo-app">
+        <a href="#" data-back-button class="header-title header-subtitle">Back to Pages</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+    </div>
+    <div id="footer-bar" class="footer-bar-5">
+        <a href="index-components.html"><i data-feather="heart" data-feather-line="1" data-feather-size="21" data-feather-color="red-dark" data-feather-bg="red-fade-light"></i><span>Features</span></a>
+        <a href="index-media.html"><i data-feather="image" data-feather-line="1" data-feather-size="21" data-feather-color="green-dark" data-feather-bg="green-fade-light"></i><span>Media</span></a>
+        <a href="index.html"><i data-feather="home" data-feather-line="1" data-feather-size="21" data-feather-color="blue-dark" data-feather-bg="blue-fade-light"></i><span>Home</span></a>
+        <a href="index-pages.html" class="active-nav"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown-dark" data-feather-bg="brown-fade-light"></i><span>Pages</span></a>
+        <a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="dark-dark" data-feather-bg="gray-fade-light"></i><span>Settings</span></a>
+    </div>
+
+    <div class="page-content">
+
+        <div class="page-title page-title-small">
+            <h2><a href="#" data-back-button><i class="fa fa-arrow-left"></i></a>Actions</h2>
+            <a href="#" data-menu="menu-main" class="bg-fade-highlight-light shadow-xl preload-img" data-src="images/avatars/5s.png"></a>
+        </div>
+        <div class="card header-card shape-rounded" data-card-height="150">
+            <div class="card-overlay bg-highlight opacity-95"></div>
+            <div class="card-overlay dark-mode-tint"></div>
+            <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+        </div>
+
+        <div class="card card-style">
+            <div class="content mb-0">
+                <h4>What are Food Actions?</h4>
+                <p>
+                    Similar to action sheets you can create store actions for your store elements that will be triggered on specific buttons. For example, carts, wishlists and more.
+                </p>
+
+                <div class="list-group list-custom-large">
+                    <a href="#" data-menu="cart-item-list">
+                        <i class="fa fa-list font-20 color-teal-dark"></i>
+                        <span>Cart Item List - Sheet </span>
+                        <strong>A list of cart Items</strong>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+
+                    <a href="#" data-menu="cart-item-edit">
+                        <i class="fa fa-pen font-20 color-orange-dark"></i>
+                        <span>Cart Item Edit - Sheet</span>
+                        <strong>Edit Cart Item Options</strong>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+
+                    <a href="#" data-toast="added-to-cart">
+                        <i class="fa fa-shopping-cart font-20 color-highlight"></i>
+                        <span>Added to Cart</span>
+                        <strong>Confirmation for Add to Cart</strong>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                    <a href="#" data-toast="saved-to-favorites">
+                        <i class="fa fa-heart font-20 color-green-dark"></i>
+                        <span>Saved to Favorites</span>
+                        <strong>Confirmation for Favorites</strong>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                    <a href="#" data-toast="removed-action" class="border-0">
+                        <i class="fa fa-times font-20 color-red-dark"></i>
+                        <span>Removed Action</span>
+                        <strong>Confirmation of Removal</strong>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- footer and footer card-->
+        <div class="footer" data-menu-load="menu-footer.html"></div>
+    </div>
+    <!-- end of page content-->
+
+    <div id="added-to-cart" class="snackbar-toast bg-highlight color-white"  data-delay="3000" data-autohide="true"><i class="fa fa-shopping-cart me-3"></i>Successfully Added to Cart</div>
+    <div id="saved-to-favorites" class="snackbar-toast bg-green-dark color-white"  data-delay="3000" data-autohide="true"><i class="fa fa-heart me-3"></i>Added to your Wishlist</div>
+    <div id="removed-action" class="snackbar-toast bg-red-dark color-white"  data-delay="3000" data-autohide="true"><i class="fa fa-times me-3"></i>Product has been Removed</div>
+
+    <div id="cart-item-list"
+         class="menu menu-box-bottom menu-box-detached rounded-m"
+         data-menu-height="420"
+         data-menu-effect="menu-over">
+
+        <div class="content">
+            <h2 class="mb-4">Your Cart Items</h2>
+            <div class="d-flex mb-3">
+                <div class="me-auto">
+                    <img src="images/food/1s.jpg" class="rounded-m shadow-xl" width="90">
+                </div>
+                <div class="ms-auto w-100 ps-3">
+                    <h5 class="font-17 font-600 pb-0">American Burger</h5>
+					<p class="mb-0 mt-n2 color-highlight font-11">Ready in 15 Minutes</p>
+                    <div class="clearfix"></div>
+					<div class="d-flex">
+						<div>
+							<h1 class="font-20 font-700 pt-2 mt-1 ">$29<sup class="font-13 opacity-50">.99</sup></h1>
+						</div>
+						<div>
+							<div class="input-style float-end w-50 has-borders no-icon input-style-always-active validate-field mb-4 scale-switch">
+								<input type="number" class="form-control validate-number font-500 font-12" id="form2aa" placeholder="1">
+								<label for="form2aa" class="color-highlight">Qty</label>
+								<i class="fa fa-times disabled invalid color-red-dark"></i>
+								<i class="fa fa-check disabled valid color-green-dark"></i>
+								<em></em>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+            <div class="d-flex mb-3">
+                <div class="me-auto">
+                    <img src="images/food/2s.jpg" class="rounded-m shadow-xl" width="90">
+                </div>
+                <div class="ms-auto w-100 ps-3">
+                    <h5 class="font-17 font-600 pb-0">Italian Pizza</h5>
+					<p class="mb-0 mt-n2 color-highlight font-11">Ready in 15 Minutes</p>
+                    <div class="clearfix"></div>
+					<div class="d-flex">
+						<div>
+							<h1 class="font-20 font-700 pt-2 mt-1 ">$19<sup class="font-13 opacity-50">.99</sup></h1>
+						</div>
+						<div>
+							<div class="input-style float-end w-50 has-borders no-icon input-style-always-active validate-field mb-4 scale-switch">
+								<input type="number" class="form-control validate-number font-500 font-12" id="form2aa" placeholder="1">
+								<label for="form2aa" class="color-highlight">Qty</label>
+								<i class="fa fa-times disabled invalid color-red-dark"></i>
+								<i class="fa fa-check disabled valid color-green-dark"></i>
+								<em></em>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+            <div class="divider mt-n2 mb-4"></div>
+            <a href="#" class="btn btn-full btn-l rounded-sm shadow-xl mb-3 bg-highlight font-700 text-uppercase bg-highlight">VIEW CART</a>
+        </div>
+    </div>
+
+    <div id="cart-item-edit"
+         class="menu menu-box-bottom menu-box-detached rounded-m"
+         data-menu-height="440"
+         data-menu-effect="menu-over">
+
+        <div class="content">
+            <div class="d-flex">
+                <div class="me-auto">
+                    <img src="images/food/1s.jpg" class="rounded-m shadow-xl" width="110">
+                </div>
+                <div class="ms-auto w-100 ps-3">
+					<h5 class="font-17 font-600 pb-0">American Burger</h5>
+					<p class="mb-0 mt-n2 color-highlight font-11">Ready in 15 Minutes</p>
+					<div class="clearfix"></div>
+					<div class="d-flex">
+						<div>
+							<h1 class="font-20 font-700 pt-2 mt-1 ">$19<sup class="font-13 opacity-50">.99</sup></h1>
+						</div>
+						<div>
+							<div class="input-style float-end w-50 has-borders no-icon input-style-always-active validate-field mb-4 scale-switch">
+								<input type="number" class="form-control validate-number font-500 font-12" id="form2aa" placeholder="1">
+								<label for="form2aa" class="color-highlight">Qty</label>
+								<i class="fa fa-times disabled invalid color-red-dark"></i>
+								<i class="fa fa-check disabled valid color-green-dark"></i>
+								<em></em>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+            <div class="divider mt-4 mb-3"></div>
+            <div class="row mb-2">
+                <div class="col-12">
+                    <div class="input-style no-borders input-style-always-active no-icon mb-4">
+                        <label for="form5a" class="color-highlight font-10 font-500 mt-1">Main Filling</label>
+                        <select id="form5a">
+                            <option value="default" disabled>Select a Value</option>
+                            <option value="1" selected>Beef Filling</option>
+                            <option value="2">Chicken Filling</option>
+                            <option value="3">Vegan Filling</option>
+                        </select>
+                        <span><i class="fa fa-chevron-down"></i></span>
+                        <i class="fa fa-check disabled valid color-green-dark"></i>
+                        <i class="fa fa-check disabled invalid color-red-dark"></i>
+                        <em></em>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-style no-borders input-style-always-active no-icon mb-4">
+                        <label for="form5a1" class="color-highlight font-10 font-500 mt-1">Onions</label>
+                        <select id="form5a1">
+                            <option value="default" disabled>Select a Value</option>
+                            <option value="1" selected>Yes</option>
+                            <option value="2">No</option>
+                            <option value="2">Add Extra</option>
+                        </select>
+                        <span><i class="fa fa-chevron-down"></i></span>
+                        <i class="fa fa-check disabled valid color-green-dark"></i>
+                        <i class="fa fa-check disabled invalid color-red-dark"></i>
+                        <em></em>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-style no-borders input-style-always-active no-icon mb-4">
+                        <label for="form5a1bc" class="color-highlight font-10 font-500 mt-1">Tomatoes</label>
+                        <select id="form5a1bc">
+                            <option value="default" disabled>Select a Value</option>
+                            <option value="1" selected>Yes</option>
+                            <option value="2">No</option>
+                            <option value="2">Add Extra</option>
+                        </select>
+                        <span><i class="fa fa-chevron-down"></i></span>
+                        <i class="fa fa-check disabled valid color-green-dark"></i>
+                        <i class="fa fa-check disabled invalid color-red-dark"></i>
+                        <em></em>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="input-style no-borders input-style-always-active no-icon">
+                        <label for="form5a1bcd" class="color-highlight font-10 font-500 mt-1">Extra Options</label>
+                        <select id="form5a1bcd">
+                            <option value="default" disabled>Select a Value</option>
+                            <option value="1" selected>1x Fruit Cup Included - Free</option>
+                            <option value="2">1 Beverage Extra - $1.00</option>
+                            <option value="3">Family Pack - $9.00</option>
+                        </select>
+                        <span><i class="fa fa-chevron-down"></i></span>
+                        <i class="fa fa-check disabled valid color-green-dark"></i>
+                        <i class="fa fa-check disabled invalid color-red-dark"></i>
+                        <em></em>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn btn-full bg-highlight btn-m rounded-sm shadow-xl text-uppercase font-900 mb-4">Apply Changes</a>
+            <div class="divider mb-3"></div>
+            <a href="#" class="btn btn-full bg-gransparent color-red-dark btn-m  text-uppercase font-900 mb-2">Remove product</a>
+        </div>
+
+    </div>
+
+    <div id="menu-share"
+         class="menu menu-box-bottom menu-box-detached rounded-m"
+         data-menu-load="menu-share.html"
+         data-menu-height="420"
+         data-menu-effect="menu-over">
+    </div>
+
+    <div id="menu-highlights"
+         class="menu menu-box-bottom menu-box-detached rounded-m"
+         data-menu-load="menu-colors.html"
+         data-menu-height="510"
+         data-menu-effect="menu-over">
+    </div>
+
+    <div id="menu-main"
+         class="menu menu-box-right menu-box-detached rounded-m"
+         data-menu-width="260"
+         data-menu-load="menu-main.html"
+         data-menu-active="nav-pages"
+         data-menu-effect="menu-over">
+    </div>
+
+
+
+</div>
+
+
+
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</body>

@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Azures  BootStrap</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+
+<body class="theme-light">
+
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+
+<div id="page">
+
+    <!-- header and footer bar go here-->
+    <div class="header header-fixed header-auto-show header-logo-app">
+        <a href="#" data-back-button class="header-title header-subtitle">Back to Pages</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+    </div>
+    <div id="footer-bar" class="footer-bar-5">
+		<a href="index-components.html"><i data-feather="heart" data-feather-line="1" data-feather-size="21" data-feather-color="red-dark" data-feather-bg="red-fade-light"></i><span>Features</span></a>
+		<a href="index-media.html"><i data-feather="image" data-feather-line="1" data-feather-size="21" data-feather-color="green-dark" data-feather-bg="green-fade-light"></i><span>Media</span></a>
+		<a href="index.html" class="active-nav"><i data-feather="home" data-feather-line="1" data-feather-size="21" data-feather-color="blue-dark" data-feather-bg="blue-fade-light"></i><span>Home</span></a>
+		<a href="index-pages.html"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown-dark" data-feather-bg="brown-fade-light"></i><span>Pages</span></a>
+		<a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="dark-dark" data-feather-bg="gray-fade-light"></i><span>Settings</span></a>
+	</div>
+
+    <div class="page-content">
+
+        <div class="page-title page-title-large">
+			<h2 data-username="Enabled!" class="greeting-text"></h2>
+			<a href="#" data-menu="menu-main" class="bg-fade-highlight-light shadow-xl preload-img" data-src="images/avatars/5s.png"></a>
+		</div>
+		<div class="card header-card shape-rounded" data-card-height="230">
+			<div class="card-overlay bg-highlight opacity-95"></div>
+			<div class="card-overlay dark-mode-tint"></div>
+			<div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+		</div>
+
+		<div class="card card-style mb-3 mt-n2">
+			<div class="search-box bg-theme rounded-m border-0">
+				<i class="fa fa-search ms-n3"></i>
+				<input type="text" class="border-0" placeholder="Search here.. - try the name Alex " data-search>
+				<a href="#" class="clear-search disabled mt-0"><i class="fa fa-times color-red-dark"></i></a>
+			</div>
+		</div>
+
+		<!-- Search Area -->
+		<div class="card card-style search-results disabled-search-list mt-3">
+			<div class="content mt-0 mb-0 pb-0 mx-2">
+				<div class="list-group list-custom-small">
+					<a href="#" data-filter-item data-filter-name="all lisa short">
+						<img src="images/avatars/1s.png" alt="img" class="rounded-xl bg-fade-red-dark">
+						<span>Lisa Short</span>
+						<i class="fa fa-angle-right"></i>
+					</a>
+					<a href="#" data-filter-item data-filter-name="all alex beard">
+						<img src="images/avatars/5s.png" alt="img" class="rounded-xl bg-fade-blue-dark">
+						<span>Alex Beard</span>
+						<i class="fa fa-angle-right"></i>
+					</a>
+					<a href="#" data-filter-item data-filter-name="all dana light">
+						<img src="images/avatars/8s.png" alt="img" class="rounded-xl bg-fade-yellow-dark">
+						<span>Dana Light</span>
+						<i class="fa fa-angle-right"></i>
+					</a>
+					<a href="#" data-filter-item data-filter-name="all marry jogger">
+						<img src="images/avatars/13s.png" alt="img" class="rounded-xl bg-fade-magenta-dark">
+						<span>Marry Jogger</span>
+						<i class="fa fa-angle-right"></i>
+					</a>
+				</div>
+			</div>
+			<div class="search-no-results"><!-- use component-search for no results page --></div>
+
+		</div>
+
+		<div class="card card-style">
+			<div class="content mb-n2 pb-2">
+				<div class="d-flex position-relative mb-4">
+					<div class="align-self-center pe-3">
+						<img src="images/avatars/5s.png" width="45" class="rounded-xl bg-fade-blue-dark">
+						<i class="fa fa-circle color-green-dark position-absolute pt-4 mt-3 start-0 font-8"></i>
+					</div>
+					<div class="align-self-center me-auto">
+						<h5 class="mb-n1 pt-1 font-600 font-16">Alex Beard</h5>
+						<p class="mb-0 font-12">I need to shave and I'll call ...</p>
+					</div>
+					<div class="align-self-start ms-auto text-end">
+						<span class="opacity-40 font-11">25 min ago</span><br>
+						<span class="bg-green-dark font-10 badge float-end rounded-xl">1 New</span>
+					</div>
+				</div>
+				<div class="d-flex position-relative mb-4">
+					<div class="align-self-center pe-3">
+						<img src="images/avatars/1s.png" width="45" class="rounded-xl bg-fade-red-dark">
+						<i class="fa fa-circle color-yellow-dark position-absolute pt-4 mt-3 start-0 font-8"></i>
+					</div>
+					<div class="align-self-center me-auto">
+						<h5 class="mb-n1 pt-1 font-600 font-16">Jisa Short</h5>
+						<p class="mb-0 font-12">Great! See you there!</p>
+					</div>
+					<div class="align-self-center ms-auto pt-2 text-end">
+						<span class="opacity-40 font-11">1 hour ago</span><br>
+					</div>
+				</div>
+				<div class="d-flex position-relative mb-4">
+					<div class="align-self-center pe-3">
+						<img src="images/avatars/8s.png" width="45" class="rounded-xl bg-fade-yellow-dark">
+						<i class="fa fa-stop-circle color-red-dark position-absolute pt-4 mt-3 start-0 font-8"></i>
+					</div>
+					<div class="align-self-center me-auto">
+						<h5 class="mb-n1 pt-1 font-600 font-16">Dana Light</h5>
+						<p class="mb-0 font-12">In a meeting. Call you soon.</p>
+					</div>
+					<div class="align-self-center ms-auto text-end">
+						<span class="opacity-40 font-11">1 hour ago</span><br>
+						<span class="bg-red-dark font-10 badge float-end rounded-xl font-400">Offline</span>
+					</div>
+				</div>
+				<div class="d-flex position-relative mb-4">
+					<div class="align-self-center pe-3">
+						<img src="images/avatars/13s.png" width="45" class="rounded-xl bg-fade-magenta-dark">
+						<i class="fa fa-circle color-green-dark position-absolute pt-4 mt-3 start-0 font-8"></i>
+					</div>
+					<div class="align-self-center me-auto">
+						<h5 class="mb-n1 pt-1 font-600 font-16">Mary Jogger</h5>
+						<p class="mb-0 font-12">Ping in you in 15 minutes.</p>
+					</div>
+					<div class="align-self-center ms-auto text-end pt-2">
+						<span class="opacity-40 font-11">1 hour ago</span><br>
+					</div>
+				</div>
+				<div class="d-flex position-relative mb-4">
+					<div class="align-self-center pe-3">
+						<img src="images/avatars/5s.png" width="45" class="rounded-xl bg-fade-blue-dark">
+						<i class="fa fa-circle color-green-dark position-absolute pt-4 mt-3 start-0 font-8"></i>
+					</div>
+					<div class="align-self-center me-auto">
+						<h5 class="mb-n1 pt-1 font-600 font-16">Alex Beard</h5>
+						<p class="mb-0 font-12">I need to shave and I'll call ...</p>
+					</div>
+					<div class="align-self-start ms-auto text-end">
+						<span class="opacity-40 font-11">25 min ago</span><br>
+						<span class="bg-green-dark font-10 badge float-end rounded-xl">1 New</span>
+					</div>
+				</div>
+				<div class="d-flex position-relative mb-4">
+					<div class="align-self-center pe-3">
+						<img src="images/avatars/1s.png" width="45" class="rounded-xl bg-fade-red-dark">
+						<i class="fa fa-circle color-yellow-dark position-absolute pt-4 mt-3 start-0 font-8"></i>
+					</div>
+					<div class="align-self-center me-auto">
+						<h5 class="mb-n1 pt-1 font-600 font-16">Jisa Short</h5>
+						<p class="mb-0 font-12">Great! See you there!</p>
+					</div>
+					<div class="align-self-center ms-auto pt-2 text-end">
+						<span class="opacity-40 font-11">1 hour ago</span><br>
+					</div>
+				</div>
+				<div class="d-flex position-relative mb-4">
+					<div class="align-self-center pe-3">
+						<img src="images/avatars/8s.png" width="45" class="rounded-xl bg-fade-magenta-dark">
+						<i class="fa fa-stop-circle color-red-dark position-absolute pt-4 mt-3 start-0 font-8"></i>
+					</div>
+					<div class="align-self-center me-auto">
+						<h5 class="mb-n1 pt-1 font-600 font-16">Dana Light</h5>
+						<p class="mb-0 font-12">In a meeting. Call you soon.</p>
+					</div>
+					<div class="align-self-center ms-auto text-end">
+						<span class="opacity-40 font-11">1 hour ago</span><br>
+						<span class="bg-red-dark font-10 badge float-end rounded-xl font-400">Offline</span>
+					</div>
+				</div>
+				<div class="d-flex position-relative mb-4">
+					<div class="align-self-center pe-3">
+						<img src="images/avatars/13s.png" width="45" class="rounded-xl bg-fade-yellow-dark">
+						<i class="fa fa-circle color-green-dark position-absolute pt-4 mt-3 start-0 font-8"></i>
+					</div>
+					<div class="align-self-center me-auto">
+						<h5 class="mb-n1 pt-1 font-600 font-16">Mary Jogger</h5>
+						<p class="mb-0 font-12">Ping in you in 15 minutes.</p>
+					</div>
+					<div class="align-self-center ms-auto text-end pt-2">
+						<span class="opacity-40 font-11">1 hour ago</span><br>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+    </div>
+    <!-- end of page content-->
+
+
+    <div id="menu-share"
+         class="menu menu-box-bottom menu-box-detached rounded-m"
+         data-menu-load="menu-share.html"
+         data-menu-height="420"
+         data-menu-effect="menu-over">
+    </div>
+
+    <div id="menu-highlights"
+         class="menu menu-box-bottom menu-box-detached rounded-m"
+         data-menu-load="menu-colors.html"
+         data-menu-height="510"
+         data-menu-effect="menu-over">
+    </div>
+
+    <div id="menu-main"
+         class="menu menu-box-right menu-box-detached rounded-m"
+         data-menu-width="260"
+         data-menu-load="menu-main.html"
+         data-menu-active="nav-pages"
+         data-menu-effect="menu-over">
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</body>

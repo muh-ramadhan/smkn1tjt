@@ -1,5 +1,8 @@
 <?= $this->extend('default/themplate/layout') ?>
 <?= $this->section('content') ?>
+<?= $this->include('default/themplate/header') ?>
+<?= $this->include('default/themplate/footer-bar') ?>
+
 <div class="page-content">
   <div class="page-title page-title-small">
     <h2><a href="#" data-back-button><i class="fa fa-arrow-left"></i></a><?= $tittle; ?></h2>
@@ -92,5 +95,11 @@
   <?= $this->include('default/themplate/menu-footer') ?>
 </div>
 <!-- end of page content-->
+
+<?= $this->include('default/themplate/menu-share') ?>
+<?= $this->include('default/themplate/menu-color') ?>
+<?= $this->include('default/themplate/menu-main') ?>
+<?= $this->include('default/themplate/menu-install-android') ?>
+<?= $this->include('default/themplate/menu-install-ios') ?>
 
 <?= $this->endSection() ?>

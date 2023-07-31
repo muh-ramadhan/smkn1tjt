@@ -1,0 +1,511 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Azures BootStrap</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+
+<body class="theme-light">
+
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+
+<div id="page">
+
+    <!-- header and footer bar go here-->
+    <div class="header header-fixed header-auto-show header-logo-app">
+        <a href="#" data-back-button class="header-title header-subtitle">Back to Components</a>
+        <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-dark"><i class="fas fa-sun"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-2 show-on-theme-light"><i class="fas fa-moon"></i></a>
+        <a href="#" data-menu="menu-highlights" class="header-icon header-icon-3"><i class="fas fa-brush"></i></a>
+        <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+    </div>
+    <div id="footer-bar" class="footer-bar-5">
+        <a href="index-components.html" class="active-nav"><i data-feather="heart" data-feather-line="1" data-feather-size="21" data-feather-color="red-dark" data-feather-bg="red-fade-light"></i><span>Features</span></a>
+        <a href="index-media.html"><i data-feather="image" data-feather-line="1" data-feather-size="21" data-feather-color="green-dark" data-feather-bg="green-fade-light"></i><span>Media</span></a>
+        <a href="index.html"><i data-feather="home" data-feather-line="1" data-feather-size="21" data-feather-color="blue-dark" data-feather-bg="blue-fade-light"></i><span>Home</span></a>
+        <a href="index-pages.html"><i data-feather="file" data-feather-line="1" data-feather-size="21" data-feather-color="brown-dark" data-feather-bg="brown-fade-light"></i><span>Pages</span></a>
+        <a href="index-settings.html"><i data-feather="settings" data-feather-line="1" data-feather-size="21" data-feather-color="dark-dark" data-feather-bg="gray-fade-light"></i><span>Settings</span></a>
+    </div>
+
+    <div class="page-content" style="min-height:60vh!important">
+        <div class="page-title page-title-small">
+            <h2><a href="#" data-back-button><i class="fa fa-arrow-left"></i></a>Inputs</h2>
+            <a href="#" data-menu="menu-main" class="bg-fade-highlight-light shadow-xl preload-img" data-src="images/avatars/5s.png"></a>
+        </div>
+        <div class="card header-card shape-rounded" data-card-height="150">
+            <div class="card-overlay bg-highlight opacity-95"></div>
+            <div class="card-overlay dark-mode-tint"></div>
+            <div class="card-bg preload-img" data-src="images/pictures/20s.jpg"></div>
+        </div>
+
+        <div class="card card-style">
+            <p class="content">
+                Input fileds for text, email, password, website, text area, range sliders and much more.
+            </p>
+        </div>
+
+        <div class="card card-style">
+            <div class="content">
+                <h4>Checkboxes & Radios</h4>
+                <p>
+                    Default Checkboxes, styled with FontAwesome
+                </p>
+                <div class="row mb-0">
+                    <div class="col-6">
+                        <div class="fac fac-checkbox fac-default"><span></span>
+                            <input id="box1-fac-checkbox" type="checkbox" value="0" checked>
+                            <label for="box1-fac-checkbox">Simple</label>
+                        </div>
+                        <div class="fac fac-checkbox fac-blue"><span></span>
+                            <input id="box2-fac-checkbox" type="checkbox" value="0">
+                            <label for="box2-fac-checkbox">Primary</label>
+                        </div>
+                        <div class="fac fac-checkbox fac-green"><span></span>
+                            <input id="box3-fac-checkbox" type="checkbox" value="0">
+                            <label for="box3-fac-checkbox">Success</label>
+                        </div>
+                        <div class="fac fac-checkbox fac-orange"><span></span>
+                            <input id="box5-fac-checkbox" type="checkbox" value="0">
+                            <label for="box5-fac-checkbox">Warning</label>
+                        </div>
+                        <div class="fac fac-checkbox fac-red"><span></span>
+                            <input id="box6-fac-checkbox" type="checkbox" value="0">
+                            <label for="box6-fac-checkbox">Danger</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="fac fac-radio fac-default"><span></span>
+                            <input id="box1-fac-radio" type="radio" name="rad" value="1" checked>
+                            <label for="box1-fac-radio">Simple</label>
+                        </div>
+                        <div class="fac fac-radio fac-blue"><span></span>
+                            <input id="box2-fac-radio" type="radio" name="rad" value="1">
+                            <label for="box2-fac-radio">Primary</label>
+                        </div>
+                        <div class="fac fac-radio fac-green"><span></span>
+                            <input id="box3-fac-radio" type="radio" name="rad" value="1">
+                            <label for="box3-fac-radio">Success</label>
+                        </div>
+                        <div class="fac fac-radio fac-orange"><span></span>
+                            <input id="box5-fac-radio" type="radio" name="rad" value="1">
+                            <label for="box5-fac-radio">Warning</label>
+                        </div>
+                        <div class="fac fac-radio fac-red"><span></span>
+                            <input id="box6-fac-radio" type="radio" name="rad" value="1">
+                            <label for="box6-fac-radio">Danger</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider mt-4"></div>
+
+                <div class="row mb-0">
+                    <div class="col-6">
+                        <div class="form-check icon-check">
+                            <input class="form-check-input" type="checkbox" value="" id="check1" checked>
+                            <label class="form-check-label" for="check1">Checkbox 1</label>
+                            <i class="icon-check-1 fa fa-square color-gray-dark font-16"></i>
+                            <i class="icon-check-2 fa fa-check-square font-16 color-highlight"></i>
+                        </div>
+                        <div class="form-check icon-check">
+                            <input class="form-check-input" type="checkbox" value="" id="check2">
+                            <label class="form-check-label" for="check2">Checkbox 2</label>
+                            <i class="icon-check-1 fa fa-circle color-gray-dark font-16"></i>
+                            <i class="icon-check-2 fa fa-check-circle font-16 color-highlight"></i>
+                        </div>
+                        <div class="form-check icon-check">
+                            <input class="form-check-input" type="checkbox" value="" id="check3" checked>
+                            <label class="form-check-label" for="check3">Checkbox 3</label>
+                            <i class="icon-check-1 far fa-square color-gray-dark font-16"></i>
+                            <i class="icon-check-2 far fa-check-square font-16 color-highlight"></i>
+                        </div>
+                        <div class="form-check icon-check">
+                            <input class="form-check-input" type="checkbox" value="" id="check4">
+                            <label class="form-check-label" for="check4">Checkbox 4</label>
+                            <i class="icon-check-1 far fa-circle color-gray-dark font-16"></i>
+                            <i class="icon-check-2 far fa-check-circle font-16 color-highlight"></i>
+                        </div>
+                        <div class="form-check icon-check">
+                            <input class="form-check-input" type="checkbox" value="" id="check5" checked>
+                            <label class="form-check-label" for="check5">Checkbox 5</label>
+                            <i class="icon-check-1 fa fa-thumbs-down color-gray-dark font-16"></i>
+                            <i class="icon-check-2 fa fa-thumbs-up font-16 color-highlight"></i>
+                        </div>
+                        <div class="form-check icon-check">
+                            <input class="form-check-input" type="checkbox" value="" id="check6">
+                            <label class="form-check-label" for="check6">Checkbox 6</label>
+                            <i class="icon-check-1 far fa-frown color-gray-dark font-16"></i>
+                            <i class="icon-check-2 far fa-smile font-16 color-highlight"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-check icon-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="" id="radio1">
+                            <label class="form-check-label" for="radio1">Radio 1</label>
+                            <i class="icon-check-1 fa fa-square color-gray-dark font-16"></i>
+                            <i class="icon-check-2 fa fa-check-square font-16 color-highlight"></i>
+                        </div>
+                        <div class="form-check icon-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="" id="radio2">
+                            <label class="form-check-label" for="radio2">Radio 2</label>
+                            <i class="icon-check-1 fa fa-circle color-gray-dark font-16"></i>
+                            <i class="icon-check-2 fa fa-check-circle font-16 color-highlight"></i>
+                        </div>
+                        <div class="form-check icon-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="" id="radio3">
+                            <label class="form-check-label" for="radio3">Radio 3</label>
+                            <i class="icon-check-1 far fa-square color-gray-dark font-16"></i>
+                            <i class="icon-check-2 far fa-check-square font-16 color-highlight"></i>
+                        </div>
+                        <div class="form-check icon-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="" id="radio4">
+                            <label class="form-check-label" for="radio4">Radio 4</label>
+                            <i class="icon-check-1 far fa-circle color-gray-dark font-16"></i>
+                            <i class="icon-check-2 far fa-check-circle font-16 color-highlight"></i>
+                        </div>
+                        <div class="form-check icon-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="" id="radio5">
+                            <label class="form-check-label" for="radio5">Radio 5</label>
+                            <i class="icon-check-1 fa fa-thumbs-down color-gray-dark font-16"></i>
+                            <i class="icon-check-2 fa fa-thumbs-up font-16 color-highlight"></i>
+                        </div>
+                        <div class="form-check icon-check">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="" id="radio6">
+                            <label class="form-check-label" for="radio6">Radio 6</label>
+                            <i class="icon-check-1 far fa-frown color-gray-dark font-16"></i>
+                            <i class="icon-check-2 far fa-smile font-16 color-highlight"></i>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="card card-style">
+            <div class="content mb-0">
+                <h4>Modern Fields</h4>
+                <p>
+                    These boxes will react to them when you type or select a value.
+                </p>
+
+                <div class="input-style has-borders has-icon validate-field mb-4">
+                    <i class="fa fa-user"></i>
+                    <input type="name" class="form-control validate-name" id="form1" placeholder="Name">
+                    <label for="form1" class="color-highlight">Name</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+
+                <div class="input-style has-borders no-icon validate-field mb-4">
+                    <input type="email" class="form-control validate-text" id="form2" placeholder="Email">
+                    <label for="form2" class="color-highlight">Email</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+
+                <div class="input-style has-borders no-icon validate-field mb-4">
+                    <input type="password" class="form-control validate-text" id="form3" placeholder="Password">
+                    <label for="form3" class="color-highlight">Password</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+
+                <div class="input-style has-borders no-icon validate-field mb-4">
+                    <input type="url" class="form-control validate-text" id="form44" placeholder="Website">
+                    <label for="form44" class="color-highlight">Website</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+
+                <div class="input-style has-borders no-icon validate-field mb-4">
+                    <input type="tel" class="form-control validate-text" id="form4" placeholder="Phone">
+                    <label for="form4" class="color-highlight">Phone</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+
+                <div class="input-style has-borders no-icon mb-4">
+                    <label for="form5" class="color-highlight">Select A Value</label>
+                    <select id="form5">
+                        <option value="default" disabled selected>Select a Value</option>
+                        <option value="iOS">iOS</option>
+                        <option value="Linux">Linux</option>
+                        <option value="MacOS">MacOS</option>
+                        <option value="Android">Android</option>
+                        <option value="Windows">Windows</option>
+                    </select>
+                    <span><i class="fa fa-chevron-down"></i></span>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <i class="fa fa-check disabled invalid color-red-dark"></i>
+                    <em></em>
+                </div>
+
+                <div class="input-style has-borders no-icon mb-4">
+                    <input type="date" value="2030-12-31" value="2030-12-31" max="2030-01-01" min="2021-01-01" class="form-control validate-text" id="form6" placeholder="Phone">
+                    <label for="form6" class="color-highlight">Select Date</label>
+                    <i class="fa fa-check disabled valid me-4 pe-3 font-12 color-green-dark"></i>
+                    <i class="fa fa-check disabled invalid me-4 pe-3 font-12 color-red-dark"></i>
+                </div>
+
+                <div class="input-style has-borders no-icon mb-4">
+                    <textarea id="form7" placeholder="Enter your message"></textarea>
+                    <label for="form7" class="color-highlight">Enter your Message</label>
+                    <em class="mt-n3">(required)</em>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="card card-style">
+            <div class="content mb-0">
+                <h4 class="bolder">Minimalist Fields</h4>
+                <p>
+                    These boxes will react to them when you type or select a value.
+                </p>
+
+                <div class="input-style no-borders has-icon validate-field mb-4">
+                    <i class="fa fa-user"></i>
+                    <input type="name" class="form-control validate-name" id="form1a" placeholder="Name">
+                    <label for="form1a" class="color-highlight">Name</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+
+                <div class="input-style no-borders no-icon validate-field mb-4">
+                    <input type="email" class="form-control validate-text" id="form2a" placeholder="Email">
+                    <label for="form2a" class="color-highlight">Email</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+
+                <div class="input-style no-borders no-icon validate-field mb-4">
+                    <input type="password" class="form-control validate-text" id="form3a" placeholder="Password">
+                    <label for="form3a" class="color-highlight">Password</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+
+                <div class="input-style no-borders no-icon validate-field mb-4">
+                    <input type="url" class="form-control validate-text" id="form4a" placeholder="Website">
+                    <label for="form4a" class="color-highlight">Website</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+
+                <div class="input-style no-borders no-icon validate-field mb-4">
+                    <input type="tel" class="form-control validate-text" id="form4a" placeholder="Phone">
+                    <label for="form4aa" class="color-highlight">Phone</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+
+                <div class="input-style no-borders no-icon mb-4">
+                    <label for="form5a" class="color-highlight">Select A Value</label>
+                    <select id="form5a">
+                        <option value="default" disabled selected>Select a Value</option>
+                        <option value="iOS">iOS</option>
+                        <option value="Linux">Linux</option>
+                        <option value="MacOS">MacOS</option>
+                        <option value="Android">Android</option>
+                        <option value="Windows">Windows</option>
+                    </select>
+                    <span><i class="fa fa-chevron-down"></i></span>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <i class="fa fa-check disabled invalid color-red-dark"></i>
+                    <em></em>
+                </div>
+
+                <div class="input-style no-borders no-icon mb-4">
+                    <input type="date" value="2030-12-31" max="2030-01-01" min="2021-01-01" class="form-control validate-text" id="form6a" placeholder="Phone">
+                    <label for="form6a" class="color-highlight">Select Date</label>
+                    <i class="fa fa-check disabled valid me-4 pe-3 font-12 color-green-dark"></i>
+                    <i class="fa fa-check disabled invalid me-4 pe-3 font-12 color-red-dark"></i>
+                </div>
+
+                <div class="input-style no-borders no-icon mb-4">
+                    <textarea id="form7a" placeholder="Enter your message"></textarea>
+                    <label for="form7a" class="color-highlight">Enter your Message</label>
+                    <em class="mt-n3">(required)</em>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card card-style">
+            <div class="content mb-0">
+                <h4>Active & Colors</h4>
+                <p>
+                    These boxes will react to them when you type or select a value.
+                </p>
+
+                <div class="input-style input-style-always-active has-borders has-icon validate-field mb-4">
+                    <i class="fa fa-user color-blue-dark"></i>
+                    <input type="name" class="form-control validate-name" id="form1ab" placeholder="John">
+                    <label for="form1ab" class="color-theme opacity-50 text-uppercase font-700 font-10">First Name</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+
+                <div class="pb-3"></div>
+
+                <div class="input-style input-style-always-active has-borders no-icon validate-field mb-4">
+                    <input type="name" class="form-control validate-name" id="form1ab" placeholder="Doeson">
+                    <label for="form1ab" class="color-theme opacity-50 text-uppercase font-700 font-10">Last Name</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+
+                <div class="pb-3"></div>
+
+                <div class="input-style input-style-always-active no-borders has-icon validate-field mb-4">
+                    <i class="fa fa-at color-highlight"></i>
+                    <input type="mail" class="form-control validate-name" id="form1ac" placeholder="name@domain.com">
+                    <label for="form1ac" class="color-highlight text-uppercase font-700 font-10">Enter your Email</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+
+                <div class="pb-3"></div>
+
+                <div class="input-style input-style-always-active no-borders no-icon validate-field mb-4">
+                    <input type="tel" class="form-control validate-name" id="form1ac" placeholder="+1 234 567 8902">
+                    <label for="form1ac" class="color-green-dark text-uppercase font-700 font-10">Phone Number</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="card card-style">
+            <div class="content mb-0">
+                <h4>Stepper</h4>
+                <p>
+                    Great for shopping carts where or any place you want your user to increase the value by 1.
+                </p>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mx-auto">
+                            <div class="stepper rounded-s float-start">
+                                <a href="#" class="stepper-sub"><i class="fa fa-minus color-theme opacity-40"></i></a>
+                                <input type="number" min="1" max="99" value="5">
+                                <a href="#" class="stepper-add"><i class="fa fa-plus color-theme opacity-40"></i></a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mx-auto">
+                            <div class="stepper rounded-s float-end">
+                                <a href="#" class="stepper-sub"><i class="fa fa-minus color-red-dark"></i></a>
+                                <input type="number" min="1" max="99" value="10">
+                                <a href="#" class="stepper-add"><i class="fa fa-plus color-green-dark"></i></a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-style">
+            <div class="content mb-0">
+                <h4>Range Sliders</h4>
+                <p>
+                    Slide and increase or decrease their value.
+                </p>
+                <form class="range-slider bottom-15 range-slider-icons">
+                    <i class="fa fa-range-icon-1 fa-volume-down color-theme"></i>
+                    <i class="fa fa-range-icon-2 fa-volume-up color-theme"></i>
+                    <input class="ios-slider" type="range" value="50">
+                </form>
+                <form class="range-slider bottom-15 ">
+                    <input class="classic-slider" type="range" value="50">
+                </form>
+                <form class="range-slider">
+                    <input class="material-slider" type="range" value="50">
+                </form>
+            </div>
+        </div>
+
+
+
+        <!-- footer and footer card-->
+        <div class="footer" data-menu-load="menu-footer.html"></div>
+    </div>
+    <!-- end of page content-->
+
+    <div id="menu-share"
+         class="menu menu-box-bottom menu-box-detached rounded-m"
+         data-menu-load="menu-share.html"
+         data-menu-height="420"
+         data-menu-effect="menu-over">
+    </div>
+
+    <div id="menu-highlights"
+         class="menu menu-box-bottom menu-box-detached rounded-m"
+         data-menu-load="menu-colors.html"
+         data-menu-height="510"
+         data-menu-effect="menu-over">
+    </div>
+
+    <div id="menu-main"
+         class="menu menu-box-right menu-box-detached rounded-m"
+         data-menu-width="260"
+         data-menu-load="menu-main.html"
+         data-menu-active="nav-features"
+         data-menu-effect="menu-over">
+    </div>
+
+    <div id="menu-cookie-bottom" class="menu menu-box-bottom menu-box-detached rounded-m"
+         data-menu-height="230"
+         data-menu-effect="menu-over"
+         data-menu-select="page-components">
+        <!-- add data-cookie-activate above to auto-activate the menu on cookie detection -->
+        <div class="boxed-text-xl">
+            <h2 class="text-center mt-3 pt-1">We're using cookies</h2>
+            <p class="text-center mt-n2 mb-3 color-highlight">To make your experience awesome!</p>
+            <p>
+                Our page uses cookies to make your overall experience better, faster and smoother. It's awesome.
+            </p>
+            <!-- add hide-cookie to the class to delete the cookie-->
+            <a href="#" class="close-menu btn btn-sm btn-center-xl rounded-xs shadow-m bg-highlight text-uppercase font-900">Accept</a>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+</body>
