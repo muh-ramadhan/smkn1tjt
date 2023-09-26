@@ -45,6 +45,7 @@ class Filters extends BaseConfig
                 'except' =>
                 [
                     'login',    'login/*',
+                    'home',    'home/*',
                     '/', //Routing Ke Controller Home
                 ]
             ],
@@ -53,6 +54,7 @@ class Filters extends BaseConfig
                 'except' =>
                 [
                     'login',    'login/*',
+                    'home',    'home/*',
                     '/', //Routing Ke Controller Home
                 ]
             ],
@@ -61,6 +63,7 @@ class Filters extends BaseConfig
                 'except' =>
                 [
                     'login',    'login/*',
+                    'home',    'home/*',
                     '/', //Routing Ke Controller Home
                 ]
             ],
@@ -69,6 +72,7 @@ class Filters extends BaseConfig
                 'except' =>
                 [
                     'login',    'login/*',
+                    'home',    'home/*',
                     '/', //Routing Ke Controller Home
                 ]
             ],
@@ -77,6 +81,7 @@ class Filters extends BaseConfig
                 'except' =>
                 [
                     'login',    'login/*',
+                    'home',    'home/*',
                     '/', //Routing Ke Controller Home
                 ]
             ],

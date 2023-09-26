@@ -14,7 +14,7 @@ class PenggunaModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_pengguna', 'status', 'nama_lengkap', 'deleted_at'];
+    protected $allowedFields    = ['id_pengguna', 'status', 'nama_lengkap', 'is_top_1', 'is_top_2', 'is_top_3', 'deleted_at'];
 
     // Dates
     protected $useTimestamps = true;
@@ -40,7 +40,6 @@ class PenggunaModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    // Jointable
     function getAll()
     {
         $builder = $this->db->table('tbl_pengguna');
@@ -48,4 +47,18 @@ class PenggunaModel extends Model
         $query = $builder->get();
         return $query->getResultArray();
     }
+
+    public function getSiswa()
+    {
+        $builder = $this->db->table('tbl_pengguna');
+        $builder->join('tbl_login', 'tbl_login.id_pengguna = tbl_pengguna.id_pengguna');
+        $builder->where('tbl_login.level', 5);
+        $builder->orderBy('tbl_pengguna.is_top_1', 'DESC');
+        $builder->orderBy('tbl_pengguna.is_top_2', 'DESC');
+        $builder->orderBy('tbl_pengguna.is_top_3', 'DESC');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
+    
+    
 }

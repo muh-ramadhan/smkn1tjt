@@ -1,33 +1,123 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
-    <title>SMKN 1 TJT</title>
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>themplate/code/styles/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>themplate/code/styles/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>themplate/code/fonts/css/fontawesome-all.min.css">
-    <link rel="manifest" href="<?= base_url(); ?>themplate/code/_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url(); ?>themplate/code/app/icons/icon-192x192.png">
+  <title>Eduport - LMS, Education and Course Theme</title>
+
+  <!-- Meta Tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Webestica.com">
+  <meta name="description" content="Eduport- LMS, Education and Course Theme">
+
+  <!-- Dark mode -->
+  <script>
+    const storedTheme = localStorage.getItem('theme')
+
+    const getPreferredTheme = () => {
+      if (storedTheme) {
+        return storedTheme
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    }
+
+    const setTheme = function(theme) {
+      if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-bs-theme', 'dark')
+      } else {
+        document.documentElement.setAttribute('data-bs-theme', theme)
+      }
+    }
+
+    setTheme(getPreferredTheme())
+
+    window.addEventListener('DOMContentLoaded', () => {
+      var el = document.querySelector('.theme-icon-active');
+      if (el != 'undefined' && el != null) {
+        const showActiveTheme = theme => {
+          const activeThemeIcon = document.querySelector('.theme-icon-active use')
+          const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+          const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+          document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+            element.classList.remove('active')
+          })
+
+          btnToActive.classList.add('active')
+          activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+          if (storedTheme !== 'light' || storedTheme !== 'dark') {
+            setTheme(getPreferredTheme())
+          }
+        })
+
+        showActiveTheme(getPreferredTheme())
+
+        document.querySelectorAll('[data-bs-theme-value]')
+          .forEach(toggle => {
+            toggle.addEventListener('click', () => {
+              const theme = toggle.getAttribute('data-bs-theme-value')
+              localStorage.setItem('theme', theme)
+              setTheme(theme)
+              showActiveTheme(theme)
+            })
+          })
+
+      }
+    })
+  </script>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="<?= base_url(); ?>assets/images/favicon.ico">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+
+  <!-- Plugins CSS -->
+  <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/font-awesome/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/glightbox/css/glightbox.css">
+  <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/choices/css/choices.min.css">
+
+  <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/apexcharts/css/apexcharts.css">
+  <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/overlay-scrollbar/css/overlayscrollbars.min.css">
+
+  <!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/quill/css/quill.snow.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/stepper/css/bs-stepper.min.css">
+  <!-- Theme CSS -->
+  <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/style.css">
+
 </head>
 
-<body class="theme-light" data-highlight="blue2">
+<body>
 
-    <div id="preloader">
-        <div class="spinner-border color-highlight" role="status"></div>
-    </div>
+  <?= $this->renderSection('content') ?>
 
-    <div id="page">
-        <!--OPEN::PAGE-->
-        <?= $this->renderSection('content') ?>
-        <!--CLOSE::PAGE-->
-    </div>
 
-    <script type="text/javascript" src="<?= base_url(); ?>themplate/code/scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="<?= base_url(); ?>themplate/code/scripts/custom.js"></script>
+<!-- Template Functions -->
+<script src="assets/js/functions.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="<?= base_url(); ?>assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Vendors -->
+  
+<script src="<?= base_url(); ?>assets/vendor/quill/js/quill.min.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/stepper/js/bs-stepper.min.js"></script>
+  <script src="<?= base_url(); ?>assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+  <script src="<?= base_url(); ?>assets/vendor/apexcharts/js/apexcharts.min.js"></script>
+  <script src="<?= base_url(); ?>assets/vendor/overlay-scrollbar/js/overlayscrollbars.min.js"></script>
+  <script src="<?= base_url(); ?>assets/vendor/glightbox/js/glightbox.js"></script>
+  <script src="<?= base_url(); ?>assets/vendor/choices/js/choices.min.js"></script>
+
+  <!-- Template Functions -->
+  <script src="<?= base_url(); ?>assets/js/functions.js"></script>
+
 
 </body>
+
+</html>

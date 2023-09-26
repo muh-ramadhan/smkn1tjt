@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\LoginModel;
 use App\Models\PenggunaModel;
+use App\Models\PengaturanWebModel;
 
 class Login extends BaseController
 {
@@ -12,12 +13,14 @@ class Login extends BaseController
         helper('form');
         $this->LoginModel = new LoginModel();
         $this->PenggunaModel = new PenggunaModel();
+        $this->PengaturanWebModel = new PengaturanWebModel();
     }
 
     public function index()
     {
         $data   = [
             'tittle'    => 'Login',
+            'AmbilDataWeb' => $this->PengaturanWebModel->find()
         ];
         return view('v_login', $data);
     }

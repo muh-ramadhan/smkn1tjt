@@ -1,15 +1,20 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\PelangganModel;
-use App\Models\TransaksiModel;
+
+use App\Models\LoginModel;
+use App\Models\PenggunaModel;
+use App\Models\NewsAndBlogModel;
+use App\Models\PengaturanWebModel;
 
 class Admin extends BaseController
 {
     public function __construct()
     {
-		$this->PelangganModel = new PelangganModel();
-		$this->TransaksiModel = new TransaksiModel();
+        $this->LoginModel = new LoginModel();
+        $this->PenggunaModel = new PenggunaModel();
+        $this->NewsAndBlogModel = new NewsAndBlogModel();
+        $this->PengaturanWebModel = new PengaturanWebModel();
         helper(['form', 'date', 'inflector', 'text', 'number']);
     }
 
@@ -18,92 +23,134 @@ class Admin extends BaseController
         $data = [
             'title' => 'Beranda',
             'subtitle' => 'Admin',
-            'TotalGalonKeluar' => $this->TransaksiModel->selectSum('galon_keluar')->get()->getRowArray(),
-            'TotalGalonKosong' => $this->TransaksiModel->selectSum('galon_kosong')->get()->getRowArray(),
-            'TotalPelanggan' => $this->PelangganModel->where('deleted_at', NULL)->countAllResults(),
-            'TotalTransaksiBelumBayar' => $this->TransaksiModel->where('status', '1')->countAllResults(),
-            'TotalTransaksiKurangBayar' => $this->TransaksiModel->where('status', '2')->countAllResults(),
-            'TotalTransaksiLunas' => $this->TransaksiModel->where('status', '3')->countAllResults(),
-            
         ];
         return view('fv_admin/v_beranda', $data);
     }
-    
-    public function DepotAir()
+
+    public function NewsAndBlog()
     {
         $data = [
-            'title' => 'Beranda',
-            'subtitle' => 'Depot Air',
-            'AmbilSemuaDataDepotAir' => $this->PelangganModel->findAll(),
+            'title' => 'News And Blog',
+            'AmbilDataJoinKategoriNewsAndBlog' => $this->NewsAndBlogModel
+            ->where('deleted_at', null)
+            ->getNewsAndBlogWithCategory(),
         ];
-        return view('fv_admin/v_depotair', $data);
+        return view('fv_admin/v_news_and_blog', $data);
     }
 
-    
-    public function TambahDataDepotAir()
+    public function TambahNewsAndBlog()
     {
-      
-      
-        if ($this->validate([
-            'nomor_wa' => [
-                'label' => 'No HP',
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => '{field} Wajib Diisi'
-                ]
-            ],
-        ])) {
-            //Jika Valid
-                
-        $PelangganModel = new PelangganModel();
         $data = [
-            'nama_pelanggan' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_pelanggan'))), ' ', true),
-            'nomor_wa' => $this->request->getVar('nomor_wa'),
+            'title' => 'Tambah',
+            'subtitle' => 'News And Blog',
+            'AmbilDataJoinKategoriNewsAndBlog' => $this->NewsAndBlogModel
+            ->where('deleted_at', null)
+            ->getNewsAndBlogWithCategory(),
         ];
-        $PelangganModel->insert($data);
+        return view('fv_admin/v_tambah_news_and_blog', $data);
+    }
+
+    public function SimpanNewsAndBlog()
+    {
+        $PenggunaModel = new PenggunaModel();
+        $data = [
+            'judul_newsandblog' => reduce_multiples(ucwords(strtolower($this->request->getVar('judul_newsandblog'))), ' ', true),
+        ];
+        $PenggunaModel->insert($data);
+        $last_insert_id = $PenggunaModel->getInsertID();
+
+        $data = [
+            'id_pengguna' => $last_insert_id,
+            'username' => $this->request->getVar('username'),
+            'password' => $this->request->getVar('password'),
+            'level' => 2,
+        ];
+        $LoginModel = new LoginModel();
+        $LoginModel->insert($data);
+
         session()->setFlashdata('tambah', 'Data Berhasil Di Tambah');
-        return redirect()->to('Admin/DepotAir');
-          
-        } else {
-            //Jika Tidak Valid
-            session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
-            return redirect()->to('Admin/DepotAir');
-        }
-      
-
-    }
-    
-    
-    public function DetailDepotAir($id_pelanggan)
-    {
-        $data = [
-            'title' => 'Transaksi',
-            'subtitle' => 'Pelanggan',
-            'AmbilDataDetailDepotAir'  =>  $this->PelangganModel->where('id_pelanggan', $id_pelanggan)->get()->getRowArray(),
-            'AmbilDataDetailTransaksi'  => $this->TransaksiModel->where('id_pelanggan', $id_pelanggan)->get()->getResultArray(),
-            'AmbilSemuaDataDetailTransaksi' => $this->TransaksiModel->findAll(),
-        ];
-        return view('fv_admin/v_detail_depotair', $data);
+        return redirect()->to('Admin/NewsAndBlog');
     }
 
-    
-    public function TambahDataTransaksiPelanggan($id_pelanggan)
+    public function HapusNewsAndBlog($id_newsandblog)
     {
-        $uri = $this->request->uri->getSegment(3);
-        $data = [
-            'id_pelanggan' => $id_pelanggan,
-            'tanggal_transaksi' => $this->request->getVar('tanggal_transaksi'),
-            'galon_keluar' => $this->request->getVar('galon_keluar'),
-            'galon_kosong' => $this->request->getVar('galon_kosong'),
-            'plus_minus_galon' => $this->request->getVar('galon_keluar') - $this->request->getVar('galon_kosong'),
-            'total_harga' => $this->request->getVar('total_harga'),
-            'dibayar' => $this->request->getVar('dibayar'),
-            'keterangan' => reduce_multiples(ucwords(strtolower($this->request->getVar('keterangan'))), ' ', true),
-            'status' => $this->request->getVar('status'),
-        ];
-        $this->TransaksiModel->save($data);
-        session()->setFlashdata('ubah', 'Data Berhasil Di Ubah');
-        return redirect()->to('Admin/DetailDepotAir/'.$uri);
+        $this->NewsAndBlogModel->where('id_newsandblog', $id_newsandblog)->delete();
+        session()->setFlashdata('hapus', 'Berhasil Di Hapus');
+        return redirect()->to('Admin/NewsAndBlog');
     }
-    
+
+    public function AktifNewsAndBlog($id_newsandblog)
+    {
+        $this->NewsAndBlogModel->set('status_newsandblog', '1')->where('id_newsandblog', $id_newsandblog)->update();
+        session()->setFlashdata('aktif', 'Berhasil Di Aktifkan');
+        return redirect()->to('Admin/NewsAndBlog');
+    }
+
+    public function NonAktifNewsAndBlog($id_newsandblog)
+    {
+        $this->NewsAndBlogModel->set('status_newsandblog', NULL)->where('id_newsandblog', $id_newsandblog)->update();
+        session()->setFlashdata('nonaktif', 'Berhasil Di Nonaktifkan');
+        return redirect()->to('Admin/NewsAndBlog');
+    }
+
+    public function Pengaturan()
+    {
+        $data = [
+            'title' => 'Pengaturan',
+            'AmbilDataWeb' => $this->PengaturanWebModel->findAll(),
+        ];
+        return view('fv_admin/v_pengaturan', $data);
+    }
+
+    public function Siswa()
+    {
+        $data = [
+            'title' => 'Taruna/i',
+            'subtitle' => 'Manajemen Taruna/i',
+            'AmbilSemuaDataSiswa' => $this->PenggunaModel->getSiswa(),
+            //'AmbilSemuaDataLogin' => $this->LoginModel->findAll(),
+        ];
+        return view('fv_admin/v_siswa', $data);
+    }
+
+    public function TambahSiswa()
+    {
+        $data = [
+            'title' => 'Taruna/i',
+            'subtitle' => 'Manajemen Taruna/i',
+            'AmbilSemuaDataSiswa' => $this->PenggunaModel->getSiswa(),
+            //'AmbilSemuaDataLogin' => $this->LoginModel->findAll(),
+        ];
+        return view('fv_admin/v_tambah_siswa', $data);
+    }
+
+    public function UpdateSiswa()
+    {
+        $PenggunaModel = new PenggunaModel();
+        $data = [
+            'nama_lengkap' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_lengkap'))), ' ', true),
+        ];
+        $PenggunaModel->insert($data);
+        $last_insert_id = $PenggunaModel->getInsertID();
+
+        $data = [
+            'id_pengguna' => $last_insert_id,
+            'username' => $this->request->getVar('username'),
+            'password' => $this->request->getVar('password'),
+            'level' => 2,
+        ];
+        $LoginModel = new LoginModel();
+        $LoginModel->insert($data);
+
+        session()->setFlashdata('tambah', 'Data Berhasil Di Tambah');
+        return redirect()->to('fv_admin/v_siswa');
+    }
+
+    public function Jurusan()
+    {
+        $data = [
+            'title' => 'Jurusan',
+        ];
+        return view('fv_admin/v_jurusan', $data);
+    }
 }

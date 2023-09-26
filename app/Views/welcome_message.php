@@ -1,512 +1,603 @@
-<!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<?= $this->extend('default/themplate/layout') ?>
+<?= $this->section('content') ?>
+<?= $this->include('default/themplate/header') ?>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Judul Dokumen</title>
-	<meta name="description" content="Ini adalah contoh halaman HTML5 dengan deskripsi singkat.">
-	<link href="<?= base_url(); ?>assets/bootstrap-5.3.1.min.css" rel="stylesheet">
-	<link href="<?= base_url(); ?>assets/fontawesome/css/fontawesome.css" rel="stylesheet">
-	<link href="<?= base_url(); ?>assets/fontawesome/css/brands.css" rel="stylesheet">
-	<link href="<?= base_url(); ?>assets/fontawesome/css/solid.css" rel="stylesheet">
+<!-- MAIN CONTENT START -->
+<main>
+  <!-- Main Banner START -->
+  <section class="position-relative overflow-hidden pb-0 pb-sm-5">
+    <!-- Content START -->
+    <div class="container">
+      <div class="row d-lg-flex justify-content-lg-between g-4 g-md-5">
+        <!-- Left content START -->
+        <div class="col-lg-7 position-relative z-index-1 mb-2">
+          <!-- Title -->
+          <h1 class="mb-4 display-4">
+            <!-- Svg decoration -->
 
-	<style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
+            <span class="position-relative d-inline-block">SMK Negeri 1 Tanjung Jabung Timur "SMK Pusat Keunggulan"
+              <!-- SVG decoration -->
+              <span class="position-absolute top-50 start-50 translate-middle z-index-n1 d-none d-sm-block">
+                <svg class="fill-orange" width="303" height="86" viewBox="0 0 303 86">
+                  <path d="M288.197 19.3999C281.599 15.6998 273.654 13.03 265.424 10.926C256.533 8.64794 247.263 6.92124 237.946 5.4267C218.461 2.249 198.384 0.406219 178.237 0.0579769C158.609 -0.275755 138.888 0.8125 119.733 3.49686C108.17 5.10748 96.8189 7.2985 85.8466 10.0264C81.4955 11.0131 77.168 12.0723 72.9115 13.2331C56.382 17.7022 40.5146 23.4192 26.3972 30.355C12.9182 36.9861 0.716203 46.0404 0.999971 57.2131C1.14185 62.2772 4.16871 67.051 9.98595 70.693C15.4721 74.1319 22.6846 76.3809 29.9679 78.0206C38.7647 80.0085 48.0345 81.3289 57.257 82.4026C67.1179 83.5489 77.0734 84.2889 87.0762 84.6807C107.413 85.4642 127.892 84.7968 148.063 83.0266C168.399 81.2418 188.429 78.3543 208.127 74.8139C227.399 71.3459 246.436 67.2976 265.141 62.8285C278.927 59.5348 294.227 55.0802 300.446 46.2435C307.091 36.812 299.949 25.973 288.197 19.3999ZM298.862 46.7804C295.48 50.9593 289.592 54.0935 283.207 56.4876C276.633 58.9543 269.468 60.7391 262.279 62.4077C252.915 64.5843 243.503 66.6737 234.044 68.6616C215.174 72.6083 196.019 76.0762 176.534 78.7171C157.191 81.3289 137.54 83.0991 117.747 83.6505C97.9304 84.2019 77.9957 83.5634 58.4866 81.3289C49.5243 80.2987 40.5146 79.0363 31.907 77.1645C24.5764 75.5829 17.3403 73.4499 11.6649 70.1126C5.49296 66.4561 2.15869 61.5226 2.22963 56.2555C2.32422 50.7417 5.72943 45.489 10.9555 41.0489C16.1106 36.6959 22.7319 33.0974 29.6842 29.8472C36.2108 26.8145 43.0213 24.0141 50.0918 21.4748C48.4601 22.1278 46.8521 22.7953 45.2678 23.4772C37.7716 26.684 30.4409 30.1664 23.9615 34.1131C17.695 37.9438 12.1615 42.3839 9.30018 47.5785C6.55709 52.5554 6.10779 58.1853 9.77313 63.0462C13.0838 67.4427 19.303 70.7655 26.279 72.8985C34.6974 75.4813 44.2036 76.2358 53.497 76.381C63.8309 76.5406 74.2357 76.1488 84.5696 75.757C95.0454 75.3652 105.497 74.7993 115.926 74.0884C136.783 72.6664 157.545 70.6204 178.071 67.9361C187.956 66.6447 197.817 65.2227 207.583 63.6411C208.269 63.525 208.718 62.3642 208.009 62.4658C188.358 65.629 168.447 68.2118 148.394 70.2142C128.435 72.202 108.312 73.624 88.1404 74.4366C78.0666 74.8429 67.9219 75.1911 57.8008 75.2056C48.3419 75.2201 38.6465 74.7558 29.8261 72.5068C22.5427 70.6785 15.8032 67.6169 11.8777 63.3509C7.33745 58.4175 7.52663 52.4393 10.6481 47.2302C13.7695 41.9776 19.7523 37.581 26.3263 33.8084C32.7583 30.1083 39.8289 26.7855 47.1359 23.7529C59.2197 18.7034 72.2257 14.4955 85.7756 11.1292C90.7889 9.99737 95.8494 8.98167 100.981 8.08205C117.96 5.07846 135.553 3.32274 153.218 2.88744C161.754 2.66979 170.315 2.78587 178.851 3.19215C179.537 3.22117 180.128 2.06037 179.277 2.01684C167.69 1.45094 156.032 1.47996 144.468 2.06037C145.745 1.97331 146.999 1.88625 148.275 1.8137C167.879 0.6674 187.696 1.04466 207.157 2.78587C226.075 4.46904 245.111 7.25497 262.894 11.608C278.714 15.4677 294.085 21.6635 299.808 32.0092C302.456 36.812 302.574 42.1662 298.862 46.7804Z" />
+                </svg>
+              </span>
+            </span>
+          </h1>
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
+          <!-- Content -->
+          <p class="mb-3 col-lg-8">Sekolah yang menerapkan nilai-nilai Pancasila, dalam
+            pembelajaran, kehidupan sehari-hari dan memprioritaskan
+            penguasaan IPTEK dan Life Skill dalam mewujudkan Profil Pelajar
+            Pancasila</p>
 
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-    </style>
-</head>
-
-<body class="bg-body-tertiary">
-
-	<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-		<symbol id="check2" viewBox="0 0 16 16">
-			<path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-		</symbol>
-		<symbol id="circle-half" viewBox="0 0 16 16">
-			<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
-		</symbol>
-		<symbol id="moon-stars-fill" viewBox="0 0 16 16">
-			<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
-			<path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
-		</symbol>
-		<symbol id="sun-fill" viewBox="0 0 16 16">
-			<path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
-		</symbol>
-	</svg>
-
-	<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-		<button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
-			<svg class="bi my-1 theme-icon-active" width="1em" height="1em">
-				<use href="#circle-half"></use>
-			</svg>
-			<span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-		</button>
-		<ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-			<li>
-				<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-					<svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-						<use href="#sun-fill"></use>
-					</svg>
-					Light
-					<svg class="bi ms-auto d-none" width="1em" height="1em">
-						<use href="#check2"></use>
-					</svg>
-				</button>
-			</li>
-			<li>
-				<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-					<svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-						<use href="#moon-stars-fill"></use>
-					</svg>
-					Dark
-					<svg class="bi ms-auto d-none" width="1em" height="1em">
-						<use href="#check2"></use>
-					</svg>
-				</button>
-			</li>
-			<li>
-				<button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-					<svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
-						<use href="#circle-half"></use>
-					</svg>
-					Auto
-					<svg class="bi ms-auto d-none" width="1em" height="1em">
-						<use href="#check2"></use>
-					</svg>
-				</button>
-			</li>
-		</ul>
-	</div>
-
-
-	    
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Offcanvas navbar</a>
-    <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Notifications</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Switch account</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Settings</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-
-<div class="nav-scroller bg-body shadow-sm">
-  <nav class="nav" aria-label="Secondary navigation">
-    <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
-    <a class="nav-link" href="#">
-      Friends
-      <span class="badge text-bg-light rounded-pill align-text-bottom">27</span>
-    </a>
-    <a class="nav-link" href="#">Explore</a>
-    <a class="nav-link" href="#">Suggestions</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-  </nav>
-</div>
-
-
-
-
-
-<!-- MULAI -->
-
-
-<main class="container">
-  <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
-    <div class="col-lg-6 px-0">
-      <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>
-    </div>
-  </div>
-
-  <div class="row mb-2">
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
-          <h3 class="mb-0">Featured post</h3>
-          <div class="mb-1 text-body-secondary">Nov 12</div>
-          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-            Continue reading
-            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
-          </a>
+          <!-- Button -->
+          <a href="#" class="btn btn-lg btn-blue mb-0">Lihat Prestasi</a>
         </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-          <h3 class="mb-0">Post title</h3>
-          <div class="mb-1 text-body-secondary">Nov 11</div>
-          <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-            Continue reading
-            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
-          </a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-        </div>
-      </div>
-    </div>
-  </div>
+        <!-- Left content END -->
 
-  <div class="row g-5">
-    <div class="col-md-8">
-      <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        From the Firehose
-      </h3>
+        <!-- Right content START -->
+        <div class="col-lg-5 col-xxl-3 position-relative">
+          <!-- Title -->
+          <h4 class="mb-4">Kedisiplinan Terbaik Bulan Ini</h4>
 
-      <article class="blog-post">
-        <h2 class="display-5 link-body-emphasis mb-1">Sample blog post</h2>
-        <p class="blog-post-meta">January 1, 2021 by <a href="#">Mark</a></p>
-
-        <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, lists, tables, images, code, and more are all supported as expected.</p>
-        <hr>
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <h2>Blockquotes</h2>
-        <p>This is an example blockquote in action:</p>
-        <blockquote class="blockquote">
-          <p>Quoted text goes here.</p>
-        </blockquote>
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <h3>Example lists</h3>
-        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout. This is an example unordered list:</p>
-        <ul>
-          <li>First list item</li>
-          <li>Second list item with a longer description</li>
-          <li>Third list item to close it out</li>
-        </ul>
-        <p>And this is an ordered list:</p>
-        <ol>
-          <li>First list item</li>
-          <li>Second list item with a longer description</li>
-          <li>Third list item to close it out</li>
-        </ol>
-        <p>And this is a definition list:</p>
-        <dl>
-          <dt>HyperText Markup Language (HTML)</dt>
-          <dd>The language used to describe and define the content of a Web page</dd>
-          <dt>Cascading Style Sheets (CSS)</dt>
-          <dd>Used to describe the appearance of Web content</dd>
-          <dt>JavaScript (JS)</dt>
-          <dd>The programming language used to build advanced Web sites and applications</dd>
-        </dl>
-        <h2>Inline HTML elements</h2>
-        <p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
-        <ul>
-          <li><strong>To bold text</strong>, use <code class="language-plaintext highlighter-rouge">&lt;strong&gt;</code>.</li>
-          <li><em>To italicize text</em>, use <code class="language-plaintext highlighter-rouge">&lt;em&gt;</code>.</li>
-          <li>Abbreviations, like <abbr title="HyperText Markup Language">HTML</abbr> should use <code class="language-plaintext highlighter-rouge">&lt;abbr&gt;</code>, with an optional <code class="language-plaintext highlighter-rouge">title</code> attribute for the full phrase.</li>
-          <li>Citations, like <cite>— Mark Otto</cite>, should use <code class="language-plaintext highlighter-rouge">&lt;cite&gt;</code>.</li>
-          <li><del>Deleted</del> text should use <code class="language-plaintext highlighter-rouge">&lt;del&gt;</code> and <ins>inserted</ins> text should use <code class="language-plaintext highlighter-rouge">&lt;ins&gt;</code>.</li>
-          <li>Superscript <sup>text</sup> uses <code class="language-plaintext highlighter-rouge">&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>.</li>
-        </ul>
-        <p>Most of these elements are styled by browsers with few modifications on our part.</p>
-        <h2>Heading</h2>
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <h3>Sub-heading</h3>
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <pre><code>Example code block</code></pre>
-        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
-      </article>
-
-      <article class="blog-post">
-        <h2 class="display-5 link-body-emphasis mb-1">Another blog post</h2>
-        <p class="blog-post-meta">December 23, 2020 by <a href="#">Jacob</a></p>
-
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <blockquote>
-          <p>Longer quote goes here, maybe with some <strong>emphasized text</strong> in the middle of it.</p>
-        </blockquote>
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <h3>Example table</h3>
-        <p>And don't forget about tables in these posts:</p>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Upvotes</th>
-              <th>Downvotes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Alice</td>
-              <td>10</td>
-              <td>11</td>
-            </tr>
-            <tr>
-              <td>Bob</td>
-              <td>4</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>Charlie</td>
-              <td>7</td>
-              <td>9</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td>Totals</td>
-              <td>21</td>
-              <td>23</td>
-            </tr>
-          </tfoot>
-        </table>
-
-        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
-      </article>
-
-      <article class="blog-post">
-        <h2 class="display-5 link-body-emphasis mb-1">New feature</h2>
-        <p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p>
-
-        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-        <ul>
-          <li>First list item</li>
-          <li>Second list item with a longer description</li>
-          <li>Third list item to close it out</li>
-        </ul>
-        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
-      </article>
-
-      <nav class="blog-pagination" aria-label="Pagination">
-        <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
-        <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a>
-      </nav>
-
-    </div>
-
-    <div class="col-md-4">
-      <div class="position-sticky" style="top: 2rem;">
-        <div class="p-4 mb-3 bg-body-tertiary rounded">
-          <h4 class="fst-italic">About</h4>
-          <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
-        </div>
-
-        <div>
-          <h4 class="fst-italic">Recent posts</h4>
-          <ul class="list-unstyled">
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-                <div class="col-lg-8">
-                  <h6 class="mb-0">Example blog post title</h6>
-                  <small class="text-body-secondary">January 15, 2023</small>
+          <!-- Avatar -->
+          <?php foreach ($AmbilDataSiswa123 as $value) : ?>
+            <div class="d-flex align-items-center mb-3">
+              <div class="avatar avatar-xl">
+                <!-- Avatar image -->
+                <img class="avatar-img rounded-circle" src="<?= base_url(); ?>assets/images/avatar/01.jpg" alt="avatar">
+                <!-- Medal badge -->
+                <div class="position-absolute bottom-0 end-0">
+                  <img src="<?= base_url(); ?>assets/images/element/medal-badge.png" class="position-relative" alt="">
+                  <?php if ($value['is_top_1'] == 1) : ?>
+                    <span class="fw-bold text-dark smaller position-absolute top-50 start-50 translate-middle">1<sup>st</sup></span>
+                  <?php elseif ($value['is_top_2'] == 1) : ?>
+                    <span class="fw-bold text-dark smaller position-absolute top-50 start-50 translate-middle">2<sup>nd</sup></span>
+                  <?php elseif ($value['is_top_3'] == 1) : ?>
+                    <span class="fw-bold text-dark smaller position-absolute top-50 start-50 translate-middle">3<sup>rd</sup></span>
+                  <?php endif; ?>
                 </div>
-              </a>
+              </div>
+              <!-- Title -->
+              <div class="ms-3">
+                <h5 class="mb-1"><?= $value['nama_lengkap']; ?></h5>
+                <p class="mb-0"><?= $value['jurusan']; ?></p>
+              </div>
+            </div>
+          <?php endforeach; ?>
+
+        </div>
+        <!-- Right content END -->
+      </div> <!-- Row END -->
+
+      <div class="row g-lg-5 align-items-center mt-5 mt-lg-0">
+        <!-- Left content START -->
+        <div class="col-lg-6 col-xl-5">
+          <ul class="list-inline vstack gap-4 flex-wrap mb-4">
+            <!-- Item -->
+            <li class="list-inline-item border-bottom me-0">
+              <div class="d-sm-flex justify-content-between align-items-center mb-3">
+                <div class="d-sm-flex align-items-center">
+                  <!-- Image -->
+                  <img src="assets/images/element/medal.svg" class="me-3 mb-2 mb-sm-0 h-70px" alt="">
+                  <!-- Title -->
+                  <h5 class="mb-2 mb-sm-0">Juara 1 FLS2N Bidang Tari Kontemporer Tingkat Kabupaten</h5>
+                </div>
+
+                <!-- Year -->
+                <h5 class="mb-0">2023</h5>
+              </div>
             </li>
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-                <div class="col-lg-8">
-                  <h6 class="mb-0">This is another blog post title</h6>
-                  <small class="text-body-secondary">January 14, 2023</small>
+
+            <!-- Item -->
+            <li class="list-inline-item">
+              <div class="d-sm-flex justify-content-between align-items-center mb-3">
+                <div class="d-sm-flex align-items-center">
+                  <!-- Image -->
+                  <img src="assets/images/element/medal.svg" class="me-3 mb-2 mb-sm-0 h-70px" alt="">
+                  <!-- Title -->
+                  <h5 class="mb-2 mb-sm-0"> Juara 1 O2SN Cabang Atletik Putri Tingkat Kabupaten</h5>
                 </div>
-              </a>
-            </li>
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-                <div class="col-lg-8">
-                  <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
-                  <small class="text-body-secondary">January 13, 2023</small>
-                </div>
-              </a>
+
+                <!-- Year -->
+                <h5 class="mb-0">2023</h5>
+              </div>
             </li>
           </ul>
         </div>
+        <!-- Left content END -->
 
-        <div class="p-4">
-          <h4 class="fst-italic">Archives</h4>
-          <ol class="list-unstyled mb-0">
-            <li><a href="#">March 2021</a></li>
-            <li><a href="#">February 2021</a></li>
-            <li><a href="#">January 2021</a></li>
-            <li><a href="#">December 2020</a></li>
-            <li><a href="#">November 2020</a></li>
-            <li><a href="#">October 2020</a></li>
-            <li><a href="#">September 2020</a></li>
-            <li><a href="#">August 2020</a></li>
-            <li><a href="#">July 2020</a></li>
-            <li><a href="#">June 2020</a></li>
-            <li><a href="#">May 2020</a></li>
-            <li><a href="#">April 2020</a></li>
-          </ol>
+        <!-- Right content START -->
+        <div class="col-lg-6 col-xl-7 position-relative mt-5 mt-lg-0">
+          <!-- Svg decoration -->
+          <figure class="position-absolute top-0 start-0 translate-middle ms-3">
+            <svg class="fill-danger" width="79" height="99" viewBox="0 0 79 99">
+              <path d="M39.5002 97.4376C37.0579 73.3386 34.6156 49.1923 32.2202 25.0933C30.8581 25.3773 29.4961 25.6141 28.134 25.8981C43.6804 42.4692 59.2737 58.9928 74.8201 75.5639C75.8064 74.8537 76.8397 74.1435 77.826 73.4333C53.1679 65.9053 27.8992 61.2181 2.16076 59.3716C2.53651 60.3659 2.91225 61.3128 3.28799 62.307C25.0811 52.3644 46.8742 42.3745 68.6673 32.4319C67.587 31.8637 66.5068 31.2482 65.4265 30.6801C55.2345 52.175 45.0894 73.7174 34.8974 95.2123C33.958 97.2009 38.2791 97.8637 39.1245 96.0646C49.3165 74.5696 59.4616 53.0273 69.6536 31.5323C70.4521 29.8278 67.4461 29.307 66.4128 29.7805C44.6197 39.6284 22.8266 49.571 1.03353 59.561C-1.12699 60.5552 0.42295 62.3544 2.16076 62.4964C27.0537 64.2956 51.6649 68.8408 75.5716 76.132C76.6049 76.4634 80.2214 75.7532 78.5775 74.0014C63.0312 57.4304 47.4378 40.9068 31.8914 24.3357C30.9991 23.3888 27.6174 23.1047 27.8052 25.1406C30.2476 49.2396 32.6899 73.3859 35.0853 97.4849C35.3201 99.5208 39.6881 99.4735 39.5002 97.4376Z" />
+              <path d="M46.8741 1.18358C45.4181 5.39736 44.8075 9.70582 44.9484 14.1563C45.0424 16.3342 49.4104 16.3342 49.3165 14.1563C49.1756 9.9899 49.7392 6.01285 51.1012 2.03581C51.8527 -0.142097 47.5317 -0.804937 46.8741 1.18358Z" />
+              <path d="M15.8286 7.00718C17.9422 9.80058 20.6663 11.9311 23.8601 13.3515C24.7995 13.7776 26.2085 13.6356 26.8661 12.7834C27.5236 11.9311 26.96 10.9369 26.0676 10.5581C23.4844 9.42182 21.3239 7.67002 19.633 5.39743C18.4119 3.69298 14.3257 4.97131 15.8286 7.00718Z" />
+              <path d="M2.48911 34.0889C6.43441 35.5567 10.3797 37.0244 14.325 38.5394C16.1568 39.2023 19.2566 37.1664 16.5325 36.1248C12.5872 34.6571 8.6419 33.1894 4.6966 31.6743C2.91182 31.0115 -0.188063 33.0473 2.48911 34.0889Z" />
+            </svg>
+          </figure>
+          <!-- Image -->
+          <img src="assets/images/bg/06.jpg" class="rounded-3" alt="">
+        </div>
+        <!-- Right content END -->
+      </div>
+    </div>
+    <!-- Content END -->
+  </section>
+  <!-- Main Banner END -->
+
+  <!-- Subject START -->
+  <section>
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-sm-6 col-lg-3">
+          <!-- Card -->
+          <div class="card bg-warning bg-opacity-50 p-4 overflow-hidden h-100">
+            <!-- Card header -->
+            <div class="card-header bg-transparent p-0">
+              <h6>Sejak 2002</h6>
+            </div>
+            <!-- Card body -->
+            <div class="card-body p-0 mt-3">
+              <!-- Title -->
+              <h3 class="mb-2"><a href="#" class="stretched-link">Nautika Kapal Penangkap Ikan</a></h3>
+              <h6 class="lead">60 Taruna/i Saat Ini</h6>
+              <h6 class="lead">900 Alumni</h6>
+              <!-- Image -->
+              <img src="assets/images/element/primary-school.svg" class="opacity-5 mb-n5" alt="">
+            </div>
+          </div>
         </div>
 
-        <div class="p-4">
-          <h4 class="fst-italic">Elsewhere</h4>
-          <ol class="list-unstyled">
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Facebook</a></li>
-          </ol>
+        <div class="col-sm-6 col-lg-3">
+          <!-- Card -->
+          <div class="card bg-purple bg-opacity-50 p-4 overflow-hidden h-100">
+            <!-- Card header -->
+            <div class="card-header bg-transparent p-0">
+              <h6>Sejak 2002</h6>
+            </div>
+            <!-- Card body -->
+            <div class="card-body p-0 mt-3">
+              <!-- Title -->
+              <h3 class="mb-2"><a href="#" class="stretched-link">Agribisnis Perikanan Air Tawar</a></h3>
+              <h6 class="lead">40 Taruna/i Saat Ini</h6>
+              <h6 class="lead">895 Alumni</h6>
+              <!-- Image -->
+              <img src="assets/images/element/middle-school.svg" class="opacity-5 mb-n5" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <!-- Card -->
+          <div class="card bg-orange bg-opacity-50 p-4 overflow-hidden h-100">
+            <!-- Card header -->
+            <div class="card-header bg-transparent p-0">
+              <h6>Sejak 2006</h6>
+            </div>
+            <!-- Card body -->
+            <div class="card-body p-0 mt-3">
+              <!-- Title -->
+              <h3 class="mb-2"><a href="#" class="stretched-link">Teknik Komputer dan Jaringan</a></h3>
+              <h6 class="lead">60 Taruna/i Saat Ini</h6>
+              <h6 class="lead">800 Alumni</h6>
+              <!-- Image -->
+              <img src="assets/images/element/high-school.svg" class="opacity-5 mb-n5" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <!-- Card -->
+          <div class="card bg-info bg-opacity-50 p-4 overflow-hidden h-100">
+            <!-- Card header -->
+            <div class="card-header bg-transparent p-0">
+              <h6>Sejak 2007</h6>
+            </div>
+            <!-- Card body -->
+            <div class="card-body p-0 mt-3">
+              <!-- Title -->
+              <h3 class="mb-2"><a href="#" class="stretched-link">Teknik Kendaraan Ringan Otomotif</a></h3>
+              <h6 class="lead">58 Taruna/i Saat Ini</h6>
+              <h6 class="lead">800 Alumni</h6>
+              <!-- Image -->
+              <img src="assets/images/element/exam.svg" class="opacity-5 mb-n5" alt="">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Subject END -->
+
+  <!-- About START -->
+  <section class="pt-0 pt-md-5">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- Left side START -->
+        <div class="col-lg-5 col-xxl-6 position-relative">
+          <!-- Svg decoration -->
+          <figure class="position-absolute bottom-0 end-0 me-6 d-none d-xl-block">
+            <svg class="fill-primary opacity-4" width="107" height="105" viewBox="0 0 107 105">
+              <path d="M51.5677 53.2487C53.0958 52.6198 54.1745 52.3203 55.1034 51.7812C58.0698 50.0442 60.9763 48.2772 63.9127 46.4504C67.1488 44.4438 70.4448 42.5271 73.561 40.3408C76.2277 38.4541 78.6248 36.2079 81.2017 34.1714C83.8984 32.075 86.715 30.0685 89.4117 27.972C90.2507 27.3132 90.9998 26.5345 91.6889 25.696C93.0073 24.0787 92.9774 24.0488 95.5243 24.3782C95.5842 25.2168 95.6441 26.1152 95.7041 27.1335C91.0897 30.4578 86.5052 33.6922 81.9508 37.0465C79.5237 38.8434 77.3064 40.9698 74.7895 42.6469C70.5646 45.492 66.1899 48.1275 61.9051 50.8828C60.4969 51.7812 59.2084 52.8294 57.6503 53.9675C58.1597 54.2071 58.4893 54.4766 58.8788 54.5665C62.0849 55.1954 65.3509 55.7345 68.5571 56.3933C72.3624 57.172 76.1378 58.1004 79.9432 58.8791C81.1118 59.1187 82.3403 59.0588 83.5388 59.2983C85.3367 59.6577 87.0746 60.2268 88.8724 60.646C90.1308 60.9455 91.4193 61.2151 92.6777 61.4247C95.4644 61.8739 98.221 62.2633 101.008 62.6526C101.817 62.7724 102.686 62.8323 103.525 62.6825C105.772 62.3232 105.952 62.3831 107 64.779C105.232 66.7556 104.783 66.6957 102.296 66.0967C98.8203 65.2282 95.2546 64.6891 91.7189 64.0302C88.363 63.4013 85.0071 62.7724 81.6511 62.1435C79.7035 61.7841 77.7559 61.3948 75.8382 60.9755C72.7819 60.3166 69.7256 59.5978 66.6693 58.9989C63.703 58.4298 60.6766 57.9806 57.6803 57.4415C56.5117 57.2319 55.3431 56.9324 53.7251 56.573C54.2045 58.4298 54.3543 60.0471 54.9835 61.4247C57.081 65.917 59.4481 70.2895 61.5755 74.7519C62.6842 77.0879 63.5232 79.5436 64.6318 81.9096C65.7704 84.3953 66.939 86.8511 68.8267 88.9475C69.8155 90.0556 70.5347 91.4333 71.3736 92.6911C71.8531 93.4099 72.4224 94.1286 71.4635 94.8774C70.7744 95.4164 69.2462 95.3266 68.7069 94.6078C67.7181 93.2901 66.8192 91.8825 65.9203 90.5049C65.291 89.5465 64.5419 88.648 64.0326 87.6298C62.6243 84.6948 61.3358 81.7 59.9875 78.735C59.7777 78.2559 59.508 77.7767 59.2683 77.2975C57.8301 74.3625 56.3319 71.4575 54.9536 68.4926C53.6651 65.7373 52.5265 62.8922 51.328 60.077C51.1782 59.7176 51.0284 59.3582 50.8186 59.0588C50.3092 58.3999 49.5302 58.3999 49.1706 59.1786C48.6313 60.2567 48.0919 61.3948 47.7923 62.5628C46.7735 66.7556 45.0057 70.6189 43.3277 74.5722C42.6685 76.0995 42.249 77.7168 41.7097 79.2741C40.5111 82.6284 39.2826 85.9826 38.114 89.3668C37.0054 92.5114 35.9267 95.686 34.878 98.8605C34.6682 99.4895 34.7282 100.238 34.6383 100.897C34.5184 101.736 34.4285 102.574 34.1589 103.353C33.7693 104.551 32.9303 105.03 31.9116 104.85C31.0426 104.701 30.2336 103.712 30.2636 102.664C30.2636 102.155 30.4434 101.616 30.6231 101.137C32.8405 95.2068 35.2076 89.3369 37.1552 83.3172C37.7245 81.5802 38.4736 79.9629 39.1328 78.2858C39.762 76.6686 40.5111 75.1112 40.7209 73.3143C40.8407 72.1463 41.44 70.9783 42.0393 69.9301C43.1779 67.9236 43.927 65.7972 44.4663 63.581C44.5263 63.3115 44.4663 63.012 44.4663 62.5328C43.9869 62.5927 43.5674 62.5628 43.2977 62.7424C39.4324 65.2881 35.5971 67.8637 31.7318 70.4692C28.6455 72.5656 25.5593 74.662 22.4431 76.7285C20.4355 78.0762 18.368 79.3639 16.4204 80.8015C15.7312 81.3106 15.3417 82.269 14.7424 82.9578C14.263 83.5268 13.8136 84.0659 12.8547 84.006C11.8659 83.9461 10.997 83.9161 10.6974 82.7781C10.3977 81.7 11.027 81.0411 11.806 80.502C16.0908 77.597 20.3756 74.692 24.6304 71.8169C29.5445 68.4926 34.4884 65.1982 39.4025 61.814C41.7696 60.1669 44.0468 58.3699 46.3241 56.6329C46.5937 56.4233 46.7735 56.0639 47.0732 55.6446C45.9345 54.6264 44.6161 54.3868 43.2977 54.0873C37.335 52.7695 31.3423 51.6315 25.4095 50.1341C19.5366 48.6666 13.6038 47.828 7.64107 46.9296C6.53242 46.7499 5.36384 46.8996 4.22522 46.8397C3.32631 46.7798 2.36748 46.7499 1.5285 46.4504C0.719478 46.1209 -0.209393 45.6118 0.0602792 44.4139C0.240061 43.6352 1.64835 42.6169 2.51729 42.6768C2.90682 42.7068 3.35627 42.6768 3.62595 42.8865C5.24398 44.0844 7.13169 43.6951 8.9295 43.9946C13.3042 44.7433 17.6489 45.5819 22.0236 46.3905C25.769 47.0793 29.5445 47.7382 33.2599 48.5168C35.5072 48.996 37.6945 49.6848 39.9119 50.194C42.1891 50.733 44.4963 51.1523 47.2529 51.6914C46.9233 50.6731 46.7735 50.0143 46.5038 49.4752C45.0956 46.7798 43.5974 44.1144 42.1891 41.419C41.5299 40.1312 40.7508 38.8434 40.4212 37.4658C39.762 34.6207 38.0841 32.3745 36.6758 29.9487C34.7282 26.5944 32.8704 23.2102 30.8329 19.8859C30.0538 18.5981 28.9751 17.52 28.0163 16.322C27.6268 15.8428 27.2073 15.3936 26.9077 14.8845C26.2485 13.7464 26.4282 12.7282 27.3871 12.0394C28.3759 11.3206 29.6943 11.4104 30.4134 12.4287C31.1026 13.417 31.582 14.555 32.0914 15.6332C32.9603 17.49 33.8293 19.3468 34.6982 21.2037C34.848 21.563 35.0578 21.8925 35.2675 22.192C36.9455 24.8274 38.7133 27.403 40.2415 30.1284C41.7097 32.7039 43.3577 35.1597 44.0169 38.1546C44.2566 39.2926 45.0656 40.3408 45.6349 41.389C46.8634 43.6053 48.0919 45.8214 49.3204 48.0377C49.5002 48.0377 49.71 48.0077 49.8897 48.0077C50.9085 45.2524 51.9572 42.4972 52.976 39.7119C53.785 37.5257 54.624 35.3394 55.3731 33.1232C55.8225 31.7456 56.1521 30.338 56.5417 28.9304C57.7102 24.7376 58.8189 20.5448 60.0474 16.3819C60.8264 13.7464 61.6954 11.1409 62.6243 8.56532C63.3134 6.58871 63.8827 4.61209 63.5831 2.51569C63.4333 1.46749 63.8228 0.569026 64.6318 0.179693C65.3809 -0.149742 66.3697 -0.119793 67.2087 0.0598985C67.4184 0.119796 67.6282 1.28779 67.4784 1.85682C66.9091 4.16286 66.2199 6.40901 65.5607 8.68511C63.7629 14.8545 61.995 20.994 60.1972 27.1634C59.8676 28.2416 59.3582 29.2598 58.9987 30.338C57.081 36.0282 55.1633 41.7185 53.3056 47.4387C52.6763 49.2057 52.2269 50.9427 51.5677 53.2487Z" />
+            </svg>
+          </figure>
+
+          <!-- Title -->
+          <h2 class="h1">
+            <span class="position-relative z-index-9">Tentang Kami</span>
+            <span class="position-relative z-index-1">"SMK Negeri 1 Tanjung Jabung Timur"
+              <!-- SVG START -->
+              <span class="position-absolute top-50 start-50 translate-middle z-index-n1 d-none d-sm-block">
+                <svg class="fill-orange" width="180" height="86" viewBox="0 0 303 86">
+                  <path d="M288.197 19.3999C281.599 15.6998 273.654 13.03 265.424 10.926C256.533 8.64794 247.263 6.92124 237.946 5.4267C218.461 2.249 198.384 0.406219 178.237 0.0579769C158.609 -0.275755 138.888 0.8125 119.733 3.49686C108.17 5.10748 96.8189 7.2985 85.8466 10.0264C81.4955 11.0131 77.168 12.0723 72.9115 13.2331C56.382 17.7022 40.5146 23.4192 26.3972 30.355C12.9182 36.9861 0.716203 46.0404 0.999971 57.2131C1.14185 62.2772 4.16871 67.051 9.98595 70.693C15.4721 74.1319 22.6846 76.3809 29.9679 78.0206C38.7647 80.0085 48.0345 81.3289 57.257 82.4026C67.1179 83.5489 77.0734 84.2889 87.0762 84.6807C107.413 85.4642 127.892 84.7968 148.063 83.0266C168.399 81.2418 188.429 78.3543 208.127 74.8139C227.399 71.3459 246.436 67.2976 265.141 62.8285C278.927 59.5348 294.227 55.0802 300.446 46.2435C307.091 36.812 299.949 25.973 288.197 19.3999ZM298.862 46.7804C295.48 50.9593 289.592 54.0935 283.207 56.4876C276.633 58.9543 269.468 60.7391 262.279 62.4077C252.915 64.5843 243.503 66.6737 234.044 68.6616C215.174 72.6083 196.019 76.0762 176.534 78.7171C157.191 81.3289 137.54 83.0991 117.747 83.6505C97.9304 84.2019 77.9957 83.5634 58.4866 81.3289C49.5243 80.2987 40.5146 79.0363 31.907 77.1645C24.5764 75.5829 17.3403 73.4499 11.6649 70.1126C5.49296 66.4561 2.15869 61.5226 2.22963 56.2555C2.32422 50.7417 5.72943 45.489 10.9555 41.0489C16.1106 36.6959 22.7319 33.0974 29.6842 29.8472C36.2108 26.8145 43.0213 24.0141 50.0918 21.4748C48.4601 22.1278 46.8521 22.7953 45.2678 23.4772C37.7716 26.684 30.4409 30.1664 23.9615 34.1131C17.695 37.9438 12.1615 42.3839 9.30018 47.5785C6.55709 52.5554 6.10779 58.1853 9.77313 63.0462C13.0838 67.4427 19.303 70.7655 26.279 72.8985C34.6974 75.4813 44.2036 76.2358 53.497 76.381C63.8309 76.5406 74.2357 76.1488 84.5696 75.757C95.0454 75.3652 105.497 74.7993 115.926 74.0884C136.783 72.6664 157.545 70.6204 178.071 67.9361C187.956 66.6447 197.817 65.2227 207.583 63.6411C208.269 63.525 208.718 62.3642 208.009 62.4658C188.358 65.629 168.447 68.2118 148.394 70.2142C128.435 72.202 108.312 73.624 88.1404 74.4366C78.0666 74.8429 67.9219 75.1911 57.8008 75.2056C48.3419 75.2201 38.6465 74.7558 29.8261 72.5068C22.5427 70.6785 15.8032 67.6169 11.8777 63.3509C7.33745 58.4175 7.52663 52.4393 10.6481 47.2302C13.7695 41.9776 19.7523 37.581 26.3263 33.8084C32.7583 30.1083 39.8289 26.7855 47.1359 23.7529C59.2197 18.7034 72.2257 14.4955 85.7756 11.1292C90.7889 9.99737 95.8494 8.98167 100.981 8.08205C117.96 5.07846 135.553 3.32274 153.218 2.88744C161.754 2.66979 170.315 2.78587 178.851 3.19215C179.537 3.22117 180.128 2.06037 179.277 2.01684C167.69 1.45094 156.032 1.47996 144.468 2.06037C145.745 1.97331 146.999 1.88625 148.275 1.8137C167.879 0.6674 187.696 1.04466 207.157 2.78587C226.075 4.46904 245.111 7.25497 262.894 11.608C278.714 15.4677 294.085 21.6635 299.808 32.0092C302.456 36.812 302.574 42.1662 298.862 46.7804Z" />
+                </svg>
+              </span>
+              <!-- SVG END -->
+            </span>
+          </h2>
+
+          <p class="mt-4 mb-0">SMK Negeri 1 Tanjung Jabung Timur berdiri pada Tahun 2002 berdasarkan SK Dinas Pendidikan dan Kebudayaan Kabupaten Tanjung Jabung Timur Nomor : 420/574/Diknasbud tanggal 12 Juni 2002, dengan nama awal SMK Kelautan dan Perikanan membuka 2 (dua) program keahlian, yaitu Nautika Perikanan Laut dan Budidaya Perikanan.<br /><br />
+            Pada Tahun 2006, SMK Kelautan dan Perikanan menempati unit gedung baru yang terletak di Jalan Jemantan Kelurahan Talang Babat Kecamatan Muara Sabak dengan luas lokasi 30.000 m2.<br /><br />
+            SMK Kelautan dan Perikanan berubah menjadi SMK Negeri 1 Tanjung Jabung Timur berdasarkan Keputusan Bupati Tanjung Jabung Timur Nomor 42 Tahun 2004 tentang Penegerian SMK Negeri 1 Tanjung Jabung Timur Tanggal 27 Februari 2004</p>
+
+          <!-- List -->
+          <ul class="list-group list-group-borderless mt-4">
+            <li class="list-group-item h6 d-flex fw-normal mb-0"><i class="bi bi-patch-check-fill text-success me-2"></i>Berciri khas disiplin, karakter, mandiri</li>
+            <li class="list-group-item h6 d-flex fw-normal mb-0"><i class="bi bi-patch-check-fill text-success me-2"></i>Peluang Kerja dan melanjutkan ke perguruan tinggi/sekolah kedinasan</li>
+            <li class="list-group-item h6 d-flex fw-normal mb-0"><i class="bi bi-patch-check-fill text-success me-2"></i>Beragam Pilihan Kegiatan Ekstrakurikuler</li>
+          </ul>
+
+          <!-- Buttons -->
+          <div class="d-sm-flex align-items-center mt-4">
+            <!-- Button -->
+            <a href="#" class="btn btn-lg btn-dark me-2 mb-4 mb-sm-0">Selengkapnya</a>
+            <!-- Video button -->
+            <div class="d-flex align-items-center py-2 ms-0 ms-sm-4">
+              <a data-glightbox data-gallery="office-tour" href="https://www.youtube.com/embed/tXHviS-4ygo" class="btn btn-round btn-danger-shadow mb-0 overflow-visible me-7">
+                <i class="fas fa-play"></i>
+                <h6 class="mb-0 ms-3 fw-normal position-absolute start-100 top-50 translate-middle-y">Testimoni Alumni</h6>
+              </a>
+            </div>
+          </div>
+
+        </div>
+        <!-- Left side END -->
+
+        <!-- Right side START -->
+        <div class="col-lg-7 col-xxl-6 my-5 mt-lg-0">
+          <div class="row">
+
+            <div class="col-md-4">
+              <!-- Box item -->
+              <div class="bg-danger bg-opacity-10 p-4 p-xl-5 text-center rounded-3 mb-4">
+                <h6>Sejak</h6>
+                <span class="h2 text-danger mb-2">2002</span>
+              </div>
+
+              <!-- Box item -->
+              <div class="bg-light p-4 p-xl-5 text-center rounded-3">
+                <span class="h2 text-primary mb-2">30+</span>
+                <h6>Guru dan Tenaga Kependidikan</h6>
+              </div>
+            </div>
+
+            <div class="col-md-8 position-relative mt-5 mt-md-0">
+              <!-- Svg decoration -->
+              <figure class="position-absolute top-0 end-0 mt-n5">
+                <svg class="fill-warning" width="128" height="120" viewBox="0 0 128 120">
+                  <path d="M48.2571 3.45976C45.4114 8.86188 43.2921 10.2579 38.2666 9.40817C35.9658 9.04398 34.2098 9.46887 32.0906 10.2579C22.5845 13.8998 16.6507 21.0015 11.6252 29.4385C8.41608 34.8406 8.29498 40.5462 8.23444 46.434C8.17389 54.264 10.9591 61.4871 12.4123 69.0136C14.0471 77.39 18.1644 84.5523 22.4028 91.5933C26.0358 97.6024 31.364 102.215 37.6611 105.372C42.0812 107.557 46.6829 109.317 51.2846 111.138C52.6772 111.684 54.2515 111.806 55.7652 111.927C58.066 112.109 60.3669 111.806 62.6072 112.17C70.9629 113.445 79.2581 112.656 87.3716 110.774C99.1786 107.982 108.14 101.123 114.134 90.44C120.007 80.1214 121.279 69.0136 120.371 57.2989C119.947 52.0182 118.857 47.2837 116.072 42.8528C112.681 37.572 108.321 33.6267 102.751 30.5311C93.9714 25.6752 84.6469 26.0394 75.2619 26.3429C65.7557 26.7071 56.6734 34.5372 54.2515 43.8846C52.0112 52.5038 52.1323 61.1836 56.6734 69.135C58.9137 73.0804 61.6384 76.6616 66.3007 78.6646C68.9043 79.7572 71.4473 81.0318 74.1115 82.1244C74.6564 82.3672 75.4435 82.6707 75.8068 82.4886C78.1682 81.1532 80.2874 82.4279 82.225 83.1563C83.6781 82.1244 84.9497 81.2746 86.1606 80.4249C90.5807 77.2686 91.1862 73.1411 87.7349 68.8922C87.0689 68.0425 86.0395 67.4962 85.4946 66.5857C85.0102 65.7966 84.4653 64.4613 84.8286 63.7936C85.1919 63.1259 86.5239 62.5796 87.4927 62.5796C90.944 62.5796 97.7254 68.528 98.0887 71.9271C98.2704 73.2625 98.0887 74.7799 97.5438 75.9939C94.2136 83.3384 88.9459 88.3156 80.5296 89.2261C79.6819 89.3475 78.8342 90.1972 77.9866 90.1972C75.8674 90.2579 73.6271 90.5614 71.75 89.8938C68.0566 88.5584 64.6053 86.434 60.9118 84.9165C54.8569 82.4886 51.2846 77.9362 48.0755 72.352C43.4132 64.2185 44.4426 55.8422 45.3508 47.223C46.0168 40.9711 49.1654 35.8725 52.0112 30.5918C52.435 29.8634 53.2221 29.1957 53.9487 28.7101C56.9156 26.7678 59.8825 24.8862 62.9099 23.0045C68.2382 19.7268 74.172 19.1805 80.2269 19.484C81.014 19.5447 81.8011 19.7875 82.5277 19.6661C90.6412 18.8164 98.2098 21.6692 105.476 24.3399C113.286 27.1927 118.857 33.2625 123.156 40.607C127.394 47.9514 128.363 55.6601 127.758 63.7936C127.515 66.8892 127.515 69.9848 127.273 73.0804C126.486 82.8528 122.127 91.1077 116.617 98.8771C113.408 103.429 109.472 107.314 104.991 110.592C100.571 113.809 95.7879 115.69 90.3991 117.026C83.436 118.786 76.4728 119.636 69.4492 119.939C65.0291 120.121 60.5485 119.757 56.1285 119.332C52.6166 118.968 48.9837 118.483 45.6535 117.39C41.4757 115.994 37.3584 114.112 33.4833 111.988C29.487 109.742 25.3092 107.435 22.0395 104.279C18.5883 100.88 15.803 96.6919 13.26 92.4431C7.8106 83.3991 4.78316 73.3839 2.36121 63.1259C0.847492 56.5705 0.120907 50.0758 -0.00019051 43.3991C-0.121288 38.4218 1.21078 33.8695 3.26944 29.5599C5.0859 25.8573 6.84182 22.0334 9.20322 18.695C11.1408 16.0243 13.926 13.9605 16.4691 11.7147C18.5277 9.95445 20.8286 8.437 23.0083 6.73745C28.3972 2.60999 35.2392 2.67069 41.1729 0.121369C41.839 -0.182121 42.9894 0.121369 43.7765 0.546255C45.2297 1.33533 46.5618 2.3065 48.2571 3.45976Z" />
+                </svg>
+              </figure>
+
+              <!-- Svg decoration -->
+              <figure class="position-absolute bottom-0 start-0 ms-7 mb-n4">
+                <svg width="149" height="91" viewBox="0 0 149 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.3084 41.205C3.69943 47.3652 12.1599 50.2399 23.7031 50.0346C30.725 49.9319 38.8771 48.4945 47.6116 46.4069C61.621 43.053 77.1376 37.7484 91.8321 31.8962C101.937 27.8921 111.63 23.6141 120.159 19.5758C121.803 18.7886 123.413 18.07 124.92 17.2486C127.387 15.9139 129.682 14.5792 131.805 13.2445C134.956 11.2253 137.628 9.30876 140.026 7.49492C143.588 4.8255 146.123 2.6352 147.87 1.09515C148.144 0.924033 148.247 0.547575 148.075 0.273788C147.904 1.19675e-06 147.527 -0.102669 147.253 0.068448C145.095 0.821363 141.944 1.71117 137.731 3.01166C134.922 3.90147 131.805 4.8255 128.311 6.05754C125.982 6.8789 123.516 7.80293 120.947 8.82964C119.371 9.47988 117.796 10.1986 116.186 10.9515C107.691 14.7503 98.1346 18.8913 88.2355 22.9297C73.9521 28.7476 58.9836 34.3603 45.4537 38.0906C40.7953 39.3911 36.3082 40.452 32.0951 41.2734C28.9438 41.8894 25.9981 42.4028 23.1893 42.745C19.1132 43.2584 15.4482 43.4295 12.2969 43.053C8.42633 42.5739 5.34357 41.4787 3.45966 39.0831C2.87737 38.1933 1.71277 37.9537 0.822193 38.5355C-0.0341284 39.1516 -0.273899 40.3152 0.3084 41.205Z" fill="#6F42C1" />
+                  <path d="M27.3685 68.2757C26.9233 68.8917 26.1354 69.1997 25.3476 69.0286C24.32 68.7548 23.7377 67.7281 23.9775 66.7014C24.2173 65.0929 25.3476 64.5111 26.7862 64.3058C28.2249 64.0662 30.9308 65.2982 32.575 65.0929C36.103 64.7164 39.5968 64.1689 43.0906 63.5871C45.18 63.2448 47.2695 62.8684 49.3589 62.5261C52.4759 61.9786 55.5929 61.4652 58.7099 60.7808C71.0067 58.3167 83.1665 54.9628 95.0522 50.856C100.396 49.0079 105.636 46.9887 110.877 44.8669C116.083 42.745 121.187 40.3494 126.359 38.0564C127.455 37.5773 128.586 37.0982 129.682 36.6533C131.395 36.003 133.107 35.4212 134.854 34.8052C136.635 34.1892 138.314 33.5732 140.095 32.9914C142.835 32.0673 145.37 31.3144 148.11 30.3562C148.384 30.185 148.761 30.2535 148.932 30.5273C149.103 30.8011 149.035 31.1775 148.761 31.3486C146.397 33.7443 144.205 36.003 141.636 38.2275C139.136 40.4178 136.601 42.4028 133.861 44.2851C132.765 45.038 131.669 45.6882 130.504 46.3385C125.948 48.871 121.187 51.0271 116.392 53.0805C109.199 56.1606 101.834 58.7958 94.3672 61.0545C83.1665 64.4769 71.726 67.0436 60.2513 68.9601C55.6957 69.6446 51.14 70.2606 46.5159 70.466C41.8918 70.7055 37.3361 70.5344 32.712 70.2948C31.6502 70.2264 30.3143 69.7815 29.0127 69.1997C28.4989 68.9944 27.8138 68.4468 27.3685 68.2757ZM27.3343 68.2414C27.163 68.173 27.026 68.2072 27.026 68.3783C27.026 68.5837 27.163 68.4468 27.3343 68.2414Z" fill="#6F42C1" />
+                  <path d="M57.4765 89.4599C56.997 89.9733 56.2091 90.1786 55.4898 89.9391C54.291 89.7337 53.8799 89.0493 53.7087 88.8439C52.9894 87.9883 53.3661 87.167 53.9827 86.2772C54.154 86.0376 54.6678 85.7638 55.4898 85.5243C57.2367 85.0109 64.2243 84.566 66.9988 83.8131C68.6429 83.4709 70.2528 83.0602 71.9312 82.6837C74.3974 82.1361 76.8294 81.6228 79.2956 81.0068C82.0015 80.3223 84.7075 79.6036 87.3792 78.8165C94.0586 76.9 100.704 74.4701 107.28 71.8349C111.596 70.0895 115.843 68.0703 120.091 66.188C120.844 65.8458 121.564 65.572 122.351 65.2982C123.55 64.8875 124.681 64.6138 125.914 64.2715C127.181 63.9293 128.311 63.6213 129.579 63.3133C131.6 62.8341 133.278 62.5261 135.265 62.0128C135.539 61.8417 135.916 61.9101 136.121 62.1839C136.292 62.4577 136.224 62.8341 135.95 63.0395C134.682 64.7164 133.655 66.1196 132.251 67.7281C131.36 68.7548 130.469 69.6104 129.51 70.5344C128.551 71.4584 127.626 72.2798 126.565 73.1012C125.879 73.6145 125.16 74.0936 124.441 74.5043C120.193 77.0369 115.604 79.0218 110.979 80.8699C104.06 83.642 96.9015 85.798 89.7769 87.5777C85.4953 88.6044 81.1795 89.5284 76.7951 90.1444C73.8836 90.5551 70.9721 90.8289 68.0264 91.0342C66.5535 91.0685 64.0873 90.8631 61.6896 90.5209C60.251 90.2813 58.6068 89.6995 57.4765 89.4599ZM56.6544 89.3231C56.3461 89.3231 56.1749 89.3915 56.1749 89.6311C56.1749 89.9049 56.5174 89.4257 56.6544 89.3231ZM57.2367 86.5852C57.0655 86.1061 56.8257 85.7296 56.5174 86.1745C56.4832 86.243 56.6202 86.2772 56.7229 86.3456C56.9284 86.3798 57.0997 86.4825 57.2367 86.5852Z" fill="#6F42C1" />
+                </svg>
+              </figure>
+
+              <!-- Image -->
+              <img src="assets/images/about/25.jpg" class="rounded-3" alt="">
+              <!-- Image -->
+              <div class="col-10 position-absolute top-100 start-0 translate-middle mt-n6 ms-n3 d-none d-md-block">
+                <img src="assets/images/about/26.jpg" class="rounded-3" alt="">
+              </div>
+            </div>
+
+          </div> <!-- Row END -->
+        </div>
+        <!-- Right side END -->
+      </div>
+    </div>
+  </section>
+  <!-- About END -->
+
+  <!-- Action box START-->
+  <section class="pt-0 pt-md-6">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="bg-light p-4 p-sm-5 rounded-3 position-relative overflow-hidden">
+            <!-- SVG decoration -->
+            <figure class="position-absolute top-0 start-0 d-none d-lg-block ms-n7">
+              <svg width="294.5px" height="261.6px" viewBox="0 0 294.5 261.6" style="enable-background:new 0 0 294.5 261.6;">
+                <path class="fill-warning opacity-5" d="M280.7,84.9c-4.6-9.5-10.1-18.6-16.4-27.2c-18.4-25.2-44.9-45.3-76-54.2c-31.7-9.1-67.7-0.2-93.1,21.6 C82,36.4,71.9,50.6,65.4,66.3c-4.6,11.1-9.5,22.3-17.2,31.8c-6.8,8.3-15.6,15-22.8,23C10.4,137.6-0.1,157.2,0,179 c0.1,28,11.4,64.6,40.4,76.7c23.9,10,50.7-3.1,75.4-4.7c23.1-1.5,43.1,10.4,65.5,10.6c53.4,0.6,97.8-42,109.7-90.4 C298.5,140.9,293.4,111.5,280.7,84.9z"></path>
+              </svg>
+            </figure>
+            <!-- SVG decoration -->
+            <figure class="position-absolute top-50 start-50 translate-middle">
+              <svg width="453px" height="211px">
+                <path class="fill-orange" d="M16.002,8.001 C16.002,12.420 12.420,16.002 8.001,16.002 C3.582,16.002 -0.000,12.420 -0.000,8.001 C-0.000,3.582 3.582,-0.000 8.001,-0.000 C12.420,-0.000 16.002,3.582 16.002,8.001 Z"></path>
+                <path class="fill-warning" d="M176.227,203.296 C176.227,207.326 172.819,210.593 168.614,210.593 C164.409,210.593 161.000,207.326 161.000,203.296 C161.000,199.266 164.409,196.000 168.614,196.000 C172.819,196.000 176.227,199.266 176.227,203.296 Z"></path>
+                <path class="fill-primary" d="M453.002,65.001 C453.002,69.420 449.420,73.002 445.001,73.002 C440.582,73.002 437.000,69.420 437.000,65.001 C437.000,60.582 440.582,57.000 445.001,57.000 C449.420,57.000 453.002,60.582 453.002,65.001 Z"></path>
+              </svg>
+            </figure>
+            <!-- SVG decoration -->
+            <figure class="position-absolute top-0 end-0 mt-5 me-n5 d-none d-sm-block">
+              <svg width="285px" height="272px">
+                <path class="fill-info opacity-4" d="M142.500,-0.000 C221.200,-0.000 285.000,60.889 285.000,136.000 C285.000,211.111 221.200,272.000 142.500,272.000 C63.799,272.000 -0.000,211.111 -0.000,136.000 C-0.000,60.889 63.799,-0.000 142.500,-0.000 Z"></path>
+              </svg>
+            </figure>
+
+            <div class="col-11 mx-auto position-relative">
+              <div class="row align-items-center">
+                <!-- Title -->
+                <div class="col-lg-8">
+                  <h3>Batalyon Cendikia Utama</h3>
+                  <p class="mb-3 mb-lg-0">Belajar, Berlatih, Berprestasi, dan Berkarakter</p>
+                </div>
+                <!-- Content and input -->
+                <div class="col-lg-4 text-lg-end">
+                  <a href="#" class="btn btn-warning mb-0">Selengkapnya</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+  <!-- Action box END-->
+
+  <!-- Gallery START-->
+  <section class="pt-0 pt-md-5">
+    <div class="container">
+      <!-- Title -->
+      <div class="row mb-3 mb-sm-4">
+        <div class="col-12 mx-auto text-center">
+          <h2 class="fs-1 fw-bold">
+            <span class="position-relative z-index-9">Our Best</span>
+            <span class="position-relative z-index-1">Moments
+              <!-- SVG START -->
+              <span class="position-absolute top-50 start-50 translate-middle z-index-n1 d-none d-sm-block">
+                <svg class="fill-orange" width="250" height="86" viewBox="0 0 303 86">
+                  <path d="M288.197 19.3999C281.599 15.6998 273.654 13.03 265.424 10.926C256.533 8.64794 247.263 6.92124 237.946 5.4267C218.461 2.249 198.384 0.406219 178.237 0.0579769C158.609 -0.275755 138.888 0.8125 119.733 3.49686C108.17 5.10748 96.8189 7.2985 85.8466 10.0264C81.4955 11.0131 77.168 12.0723 72.9115 13.2331C56.382 17.7022 40.5146 23.4192 26.3972 30.355C12.9182 36.9861 0.716203 46.0404 0.999971 57.2131C1.14185 62.2772 4.16871 67.051 9.98595 70.693C15.4721 74.1319 22.6846 76.3809 29.9679 78.0206C38.7647 80.0085 48.0345 81.3289 57.257 82.4026C67.1179 83.5489 77.0734 84.2889 87.0762 84.6807C107.413 85.4642 127.892 84.7968 148.063 83.0266C168.399 81.2418 188.429 78.3543 208.127 74.8139C227.399 71.3459 246.436 67.2976 265.141 62.8285C278.927 59.5348 294.227 55.0802 300.446 46.2435C307.091 36.812 299.949 25.973 288.197 19.3999ZM298.862 46.7804C295.48 50.9593 289.592 54.0935 283.207 56.4876C276.633 58.9543 269.468 60.7391 262.279 62.4077C252.915 64.5843 243.503 66.6737 234.044 68.6616C215.174 72.6083 196.019 76.0762 176.534 78.7171C157.191 81.3289 137.54 83.0991 117.747 83.6505C97.9304 84.2019 77.9957 83.5634 58.4866 81.3289C49.5243 80.2987 40.5146 79.0363 31.907 77.1645C24.5764 75.5829 17.3403 73.4499 11.6649 70.1126C5.49296 66.4561 2.15869 61.5226 2.22963 56.2555C2.32422 50.7417 5.72943 45.489 10.9555 41.0489C16.1106 36.6959 22.7319 33.0974 29.6842 29.8472C36.2108 26.8145 43.0213 24.0141 50.0918 21.4748C48.4601 22.1278 46.8521 22.7953 45.2678 23.4772C37.7716 26.684 30.4409 30.1664 23.9615 34.1131C17.695 37.9438 12.1615 42.3839 9.30018 47.5785C6.55709 52.5554 6.10779 58.1853 9.77313 63.0462C13.0838 67.4427 19.303 70.7655 26.279 72.8985C34.6974 75.4813 44.2036 76.2358 53.497 76.381C63.8309 76.5406 74.2357 76.1488 84.5696 75.757C95.0454 75.3652 105.497 74.7993 115.926 74.0884C136.783 72.6664 157.545 70.6204 178.071 67.9361C187.956 66.6447 197.817 65.2227 207.583 63.6411C208.269 63.525 208.718 62.3642 208.009 62.4658C188.358 65.629 168.447 68.2118 148.394 70.2142C128.435 72.202 108.312 73.624 88.1404 74.4366C78.0666 74.8429 67.9219 75.1911 57.8008 75.2056C48.3419 75.2201 38.6465 74.7558 29.8261 72.5068C22.5427 70.6785 15.8032 67.6169 11.8777 63.3509C7.33745 58.4175 7.52663 52.4393 10.6481 47.2302C13.7695 41.9776 19.7523 37.581 26.3263 33.8084C32.7583 30.1083 39.8289 26.7855 47.1359 23.7529C59.2197 18.7034 72.2257 14.4955 85.7756 11.1292C90.7889 9.99737 95.8494 8.98167 100.981 8.08205C117.96 5.07846 135.553 3.32274 153.218 2.88744C161.754 2.66979 170.315 2.78587 178.851 3.19215C179.537 3.22117 180.128 2.06037 179.277 2.01684C167.69 1.45094 156.032 1.47996 144.468 2.06037C145.745 1.97331 146.999 1.88625 148.275 1.8137C167.879 0.6674 187.696 1.04466 207.157 2.78587C226.075 4.46904 245.111 7.25497 262.894 11.608C278.714 15.4677 294.085 21.6635 299.808 32.0092C302.456 36.812 302.574 42.1662 298.862 46.7804Z" />
+                </svg>
+              </span>
+              <!-- SVG END -->
+            </span>
+          </h2>
+        </div>
+      </div>
+
+      <!-- Image gallery START -->
+      <div class="row g-4">
+
+        <div class="col-lg-4">
+          <div class="row g-4">
+
+            <!-- Image -->
+            <div class="col-md-6">
+              <div class="card overflow-hidden">
+                <div class="card-overlay-hover">
+                  <!-- Image -->
+                  <img src="assets/images/event/11.jpg" class="rounded-3" alt="course image">
+                </div>
+                <!-- Full screen button -->
+                <a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="assets/images/event/11.jpg">
+                  <i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Image -->
+            <div class="col-md-6">
+              <div class="card overflow-hidden">
+                <div class="card-overlay-hover">
+                  <!-- Image -->
+                  <img src="assets/images/event/12.jpg" class="rounded-3" alt="course image">
+                </div>
+                <!-- Full screen button -->
+                <a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="assets/images/event/12.jpg">
+                  <i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Image -->
+            <div class="col-12">
+              <div class="card overflow-hidden">
+                <div class="card-overlay-hover">
+                  <!-- Image -->
+                  <img src="assets/images/event/14.jpg" class="rounded-3" alt="course image">
+                </div>
+                <!-- Full screen button -->
+                <a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="assets/images/event/14.jpg">
+                  <i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card overflow-hidden">
+            <div class="card-overlay-hover">
+              <!-- Image -->
+              <img src="assets/images/event/17.jpg" class="rounded-3" alt="course image">
+            </div>
+            <!-- Full screen button -->
+            <a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="assets/images/event/17.jpg">
+              <i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="row g-4">
+
+            <!-- Video -->
+            <div class="col-12">
+              <div class="card overflow-hidden">
+                <div class="card-overlay-hover">
+                  <!-- Image -->
+                  <img src="assets/images/event/16.jpg" class="rounded-3" alt="course image">
+                </div>
+                <!-- Full screen button -->
+                <a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="https://www.youtube.com/embed/tXHviS-4ygo">
+                  <span class="btn text-danger btn-round btn-white-shadow mb-0 position-absolute top-50 start-50 translate-middle">
+                    <i class="fas fa-play"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Image -->
+            <div class="col-md-6">
+              <div class="card overflow-hidden">
+                <div class="card-overlay-hover">
+                  <!-- Image -->
+                  <img src="assets/images/event/13.jpg" class="rounded-3" alt="course image">
+                </div>
+                <!-- Full screen button -->
+                <a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="assets/images/event/13.jpg">
+                  <i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Image -->
+            <div class="col-md-6">
+              <div class="card overflow-hidden">
+                <div class="card-overlay-hover">
+                  <!-- Image -->
+                  <img src="assets/images/event/15.jpg" class="rounded-3" alt="course image">
+                </div>
+                <!-- Full screen button -->
+                <a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="assets/images/event/15.jpg">
+                  <i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
+                </a>
+              </div>
+            </div>
+
+          </div> <!-- Row END -->
+        </div>
+      </div>
+      <!-- Image gallery END -->
+    </div>
+  </section>
+  <!-- Gallery START-->
+
+  <!-- Blog START-->
+  <section class="pt-0 pt-md-5">
+    <div class="container">
+      <!-- Title -->
+      <div class="row mb-3 mb-sm-4">
+        <div class="col-12 mx-auto text-center">
+          <h2 class="h1">
+            <span class="position-relative z-index-9">Headline</span>
+            <span class="position-relative z-index-1">News and Blogs
+              <!-- SVG START -->
+              <span class="position-absolute top-50 start-50 translate-middle z-index-n1 d-none d-sm-block">
+                <svg class="fill-orange" width="250" height="86" viewBox="0 0 303 86">
+                  <path d="M288.197 19.3999C281.599 15.6998 273.654 13.03 265.424 10.926C256.533 8.64794 247.263 6.92124 237.946 5.4267C218.461 2.249 198.384 0.406219 178.237 0.0579769C158.609 -0.275755 138.888 0.8125 119.733 3.49686C108.17 5.10748 96.8189 7.2985 85.8466 10.0264C81.4955 11.0131 77.168 12.0723 72.9115 13.2331C56.382 17.7022 40.5146 23.4192 26.3972 30.355C12.9182 36.9861 0.716203 46.0404 0.999971 57.2131C1.14185 62.2772 4.16871 67.051 9.98595 70.693C15.4721 74.1319 22.6846 76.3809 29.9679 78.0206C38.7647 80.0085 48.0345 81.3289 57.257 82.4026C67.1179 83.5489 77.0734 84.2889 87.0762 84.6807C107.413 85.4642 127.892 84.7968 148.063 83.0266C168.399 81.2418 188.429 78.3543 208.127 74.8139C227.399 71.3459 246.436 67.2976 265.141 62.8285C278.927 59.5348 294.227 55.0802 300.446 46.2435C307.091 36.812 299.949 25.973 288.197 19.3999ZM298.862 46.7804C295.48 50.9593 289.592 54.0935 283.207 56.4876C276.633 58.9543 269.468 60.7391 262.279 62.4077C252.915 64.5843 243.503 66.6737 234.044 68.6616C215.174 72.6083 196.019 76.0762 176.534 78.7171C157.191 81.3289 137.54 83.0991 117.747 83.6505C97.9304 84.2019 77.9957 83.5634 58.4866 81.3289C49.5243 80.2987 40.5146 79.0363 31.907 77.1645C24.5764 75.5829 17.3403 73.4499 11.6649 70.1126C5.49296 66.4561 2.15869 61.5226 2.22963 56.2555C2.32422 50.7417 5.72943 45.489 10.9555 41.0489C16.1106 36.6959 22.7319 33.0974 29.6842 29.8472C36.2108 26.8145 43.0213 24.0141 50.0918 21.4748C48.4601 22.1278 46.8521 22.7953 45.2678 23.4772C37.7716 26.684 30.4409 30.1664 23.9615 34.1131C17.695 37.9438 12.1615 42.3839 9.30018 47.5785C6.55709 52.5554 6.10779 58.1853 9.77313 63.0462C13.0838 67.4427 19.303 70.7655 26.279 72.8985C34.6974 75.4813 44.2036 76.2358 53.497 76.381C63.8309 76.5406 74.2357 76.1488 84.5696 75.757C95.0454 75.3652 105.497 74.7993 115.926 74.0884C136.783 72.6664 157.545 70.6204 178.071 67.9361C187.956 66.6447 197.817 65.2227 207.583 63.6411C208.269 63.525 208.718 62.3642 208.009 62.4658C188.358 65.629 168.447 68.2118 148.394 70.2142C128.435 72.202 108.312 73.624 88.1404 74.4366C78.0666 74.8429 67.9219 75.1911 57.8008 75.2056C48.3419 75.2201 38.6465 74.7558 29.8261 72.5068C22.5427 70.6785 15.8032 67.6169 11.8777 63.3509C7.33745 58.4175 7.52663 52.4393 10.6481 47.2302C13.7695 41.9776 19.7523 37.581 26.3263 33.8084C32.7583 30.1083 39.8289 26.7855 47.1359 23.7529C59.2197 18.7034 72.2257 14.4955 85.7756 11.1292C90.7889 9.99737 95.8494 8.98167 100.981 8.08205C117.96 5.07846 135.553 3.32274 153.218 2.88744C161.754 2.66979 170.315 2.78587 178.851 3.19215C179.537 3.22117 180.128 2.06037 179.277 2.01684C167.69 1.45094 156.032 1.47996 144.468 2.06037C145.745 1.97331 146.999 1.88625 148.275 1.8137C167.879 0.6674 187.696 1.04466 207.157 2.78587C226.075 4.46904 245.111 7.25497 262.894 11.608C278.714 15.4677 294.085 21.6635 299.808 32.0092C302.456 36.812 302.574 42.1662 298.862 46.7804Z" />
+                </svg>
+              </span>
+              <!-- SVG END -->
+            </span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="row g-4 justify-content-between">
+
+        <div class="col-md-5">
+          <?php foreach ($AmbilDataJoinKategoriNewsAndBlog1 as $key => $value) { ?>
+            <!-- Card START -->
+            <div class="card bg-transparent">
+              <!-- Image -->
+              <div class="card-img-overlay d-flex align-items-start p-3">
+                <!-- badge -->
+                <a href="#" class="badge text-bg-primary">BARU</a>
+                <a href="#" class="badge text-bg-<?= $value['warna_kategori']; ?>"><?= $value['judul_kategori']; ?></a>
+              </div>
+              <img src="assets/images/event/18.jpg" class="card-img" alt="">
+
+              <!-- Card body -->
+              <div class="card-body px-3">
+                <h4><a href="#" class="stretched-link"><?= (strlen($value['judul_newsandblog']) > 60) ? substr($value['judul_newsandblog'], 0, 60) . '...' : $value['judul_newsandblog']; ?></a></h4>
+
+                <p><?= (strlen($value['isi_newsandblog']) > 130) ? substr($value['isi_newsandblog'], 0, 130) . '...' : $value['isi_newsandblog']; ?></p>
+                <div class="d-flex justify-content-between">
+                  <h6><?= $value['penulis_newsandblog']; ?></h6>
+                  <?php
+                  $createdAt = $value['created_at'] !== null ? date_create($value['created_at']) : null;
+                  ?>
+                  <span><?= $createdAt !== null ? $createdAt->format('d M Y') : 'NA'; ?></span>
+                </div>
+              </div>
+            </div>
+            <!-- Card END -->
+          <?php } ?>
+        </div>
+
+        <div class="col-md-7">
+          <!-- Card START -->
+          <?php foreach ($AmbilDataJoinKategoriNewsAndBlog2 as $key => $value) { ?>
+            <div class="card bg-transparent">
+              <div class="row align-items-center">
+                <div class="col-sm-4 col-lg-3">
+                  <div class="bg-dark text-center p-3 rounded-2 mb-2 mb-sm-0">
+                    <?php
+                    $createdAt = $value['created_at'] !== null ? date_create($value['created_at']) : null;
+                    ?>
+                    <h2 class="text-white"><?= $createdAt !== null ? $createdAt->format('d') : 'NA'; ?></h2>
+                    <span class="text-white"><?= $createdAt !== null ? $createdAt->format('M Y') : 'NA'; ?></span>
+                  </div>
+                </div>
+                <div class="col-sm-8 col-lg-9">
+                  <div class="card-body p-0">
+                    <h5 class="card-title"><a href="#" class="stretched-link"><?= (strlen($value['judul_newsandblog']) > 60) ? substr($value['judul_newsandblog'], 0, 60) . '...' : $value['judul_newsandblog']; ?>
+                      </a></h5>
+                    <p class="mb-0"><?= $value['penulis_newsandblog']; ?></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card END -->
+            <hr class="my-4">
+          <?php } ?>
+        </div>
+      </div> <!-- Row END -->
+    </div>
+  </section>
+  <!-- Blog START-->
 
 </main>
+<!-- MAIN CONTENT END -->
 
+<?= $this->include('default/themplate/footer') ?>
+<?= $this->include('default/themplate/back-top') ?>
+<? //= $this->include('default/themplate/admision-open') 
+?>
 
-	<!-- Footer -->
-	<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-		<symbol id="bootstrap" viewBox="0 0 118 94">
-			<title>Bootstrap</title>
-			<path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
-		</symbol>
-		<symbol id="facebook" viewBox="0 0 16 16">
-			<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-		</symbol>
-		<symbol id="instagram" viewBox="0 0 16 16">
-			<path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
-		</symbol>
-		<symbol id="twitter" viewBox="0 0 16 16">
-			<path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-		</symbol>
-	</svg>
-
-	<div class="container">
-		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-			<p class="col-md-4 mb-0 text-body-secondary">&copy; 2023 Company, Inc</p>
-
-			<a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-				<svg class="bi me-2" width="40" height="32">
-					<use xlink:href="#bootstrap" />
-				</svg>
-			</a>
-
-			<ul class="nav col-md-4 justify-content-end">
-				<li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-				<li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-				<li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-				<li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-				<li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
-			</ul>
-		</footer>
-	</div>
-<script>(() => {
-  'use strict'
-
-  document.querySelector('#navbarSideCollapse').addEventListener('click', () => {
-    document.querySelector('.offcanvas-collapse').classList.toggle('open')
-  })
-})()</script>
-	<script src="<?= base_url(); ?>assets/jquery-3.7.0.min.js"></script>
-	<script src="<?= base_url(); ?>assets/popperjs-2.11.8.min.js"></script>
-	<script src="<?= base_url(); ?>assets/toggle-theme.js"></script>
-	<script src="<?= base_url(); ?>assets/bootstrap-5.3.1.min.js"></script>
-
-</body>
-
-</html>
+<?= $this->endSection() ?>
