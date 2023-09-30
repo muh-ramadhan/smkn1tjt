@@ -1,16 +1,12 @@
-<!-- Header START -->
 <header class="navbar-light navbar-sticky">
-    <!-- Nav START -->
     <nav class="navbar navbar-expand-xl z-index-9">
         <div class="container">
-            <!-- Logo START -->
+
             <a class="navbar-brand" href="index.html">
                 <img class="light-mode-item navbar-brand-item" src="<?= base_url(); ?>assets/images/logo.png" alt="logo">
                 <img class="dark-mode-item navbar-brand-item" src="<?= base_url(); ?>assets/images/logo-light.png" alt="logo">
             </a>
-            <!-- Logo END -->
 
-            <!-- Responsive navbar toggler -->
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-animation">
                     <span></span>
@@ -19,30 +15,16 @@
                 </span>
             </button>
 
-            <!-- Main navbar START -->
             <div class="navbar-collapse collapse" id="navbarCollapse">
 
-                <!-- Nav Main menu START -->
                 <ul class="navbar-nav navbar-nav-scroll">
-                    <!-- Nav item 1 Demos -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" id="demoMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-house me-2"></i>Beranda</a>
                         <ul class="dropdown-menu" aria-labelledby="demoMenu">
                             <li> <a class="dropdown-item" href="index.html">Home Default</a></li>
-                            <li> <a class="dropdown-item" href="index-2.html">Home Education</a></li>
-                            <li> <a class="dropdown-item" href="index-3.html">Home Academy</a></li>
-                            <li> <a class="dropdown-item" href="index-4.html">Home Course</a></li>
-                            <li> <a class="dropdown-item" href="index-5.html">Home University</a></li>
-                            <li> <a class="dropdown-item" href="index-6.html">Home Kindergarten</a></li>
-                            <li> <a class="dropdown-item" href="index-7.html">Home Landing</a></li>
-                            <li> <a class="dropdown-item" href="index-8.html">Home Tutor</a></li>
-                            <li> <a class="dropdown-item active" href="index-9.html">Home School</a></li>
-                            <li> <a class="dropdown-item" href="index-10.html">Home Abroad</a></li>
-                            <li> <a class="dropdown-item" href="index-11.html">Home Workshop</a></li>
                         </ul>
                     </li>
 
-                    <!-- Nav item 2 Pages -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-journals me-2"></i>Pages</a>
                         <ul class="dropdown-menu" aria-labelledby="pagesMenu">
@@ -234,14 +216,10 @@
                         </ul>
                     </li>
 
-                    <!-- Nav item 4 Component-->
                     <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-headset me-2"></i>Contact</a></li>
                 </ul>
-                <!-- Nav Main menu END -->
             </div>
-            <!-- Main navbar END -->
 
-            <!-- Profile and notification START -->
             <ul class="nav flex-row align-items-center list-unstyled ms-xl-auto">
                 <?php if (session()->get('level') != "") : ?>
                     <!-- Add to cart START -->
@@ -406,7 +384,7 @@
                             <li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i>Edit Profile</a></li>
                             <li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account Settings</a></li>
                             <li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Help</a></li>
-                            <li><a class="dropdown-item bg-danger-soft-hover" href="<?=base_url();?>Logout"><i class="bi bi-power fa-fw me-2"></i>Logout</a></li>
+                            <li><a class="dropdown-item bg-danger-soft-hover" href="<?=base_url();?>logout"><i class="bi bi-power fa-fw me-2"></i>Logout</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

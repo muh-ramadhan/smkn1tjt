@@ -18,78 +18,56 @@ class Login extends BaseController
 
     public function index()
     {
-        $data   = [
-            'tittle'    => 'Login',
-            'AmbilDataWeb' => $this->PengaturanWebModel->find()
+        $data = [
+            'title' => 'Login', // Ganti 'tittle' menjadi 'title'
+            'AmbilDataWeb' => $this->PengaturanWebModel->find(),
         ];
         return view('v_login', $data);
     }
 
     public function auth()
     {
-        if ($this->validate([
-            //NOTE : Validasi Masih Di Kerjakan
-            'username' => [
-                'label' => 'Username',
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Wajib Diisi'
-                ]
-            ],
-            'password' => [
-                'label' => 'Password',
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} Wajib Diisi'
-                ]
-            ],
-        ])) {
-            //Jika Validasi Berhasil
+        $rules = [
+            'username' => 'required',
+            'password' => 'required',
+        ];
 
-            //NOTE : Username Dalam Bentuk Hash Satu Arah
+        if ($this->validate($rules)) {
             $username = $this->request->getVar('username');
-            //NOTE : Belum Ada Algoritma Kata Sandi
             $password = $this->request->getVar('password');
 
-            //Definisikan Jadi $dataLogin
             $dataLogin = $this->LoginModel->where([
                 'username' => $username,
-                'password' => $password
-            ])->get()->getRowArray();
+                'password' => $password,
+            ])->first();
 
             if ($dataLogin) {
-                // Jika data login ditemukan, kita mengambil id_pengguna dari tabel login
                 $id_pengguna = $dataLogin['id_pengguna'];
 
-                // Melakukan query ke tabel pengguna berdasarkan id_pengguna dari tabel login
-                $dataPengguna = $this->PenggunaModel->where('id_pengguna', $id_pengguna)->get()->getRowArray();
+                $dataPengguna = $this->PenggunaModel->find($id_pengguna);
+
                 if ($dataPengguna) {
-                    // Periksa Data Jika Datanya Cocok Di Tabel Login dan Tabel Pengguna
-                    session()->set('log', true);
-                    session()->set('id_login', $dataLogin['id_login']);
-                    session()->set('id_pengguna', $dataLogin['id_pengguna']);
-                    session()->set('username', $dataLogin['username']);
-                    session()->set('level', $dataLogin['level']);
+                    session()->set([
+                        'log' => true,
+                        'id_login' => $dataLogin['id_login'],
+                        'id_pengguna' => $dataLogin['id_pengguna'],
+                        'username' => $dataLogin['username'],
+                        'level' => $dataLogin['level'],
+                        'status' => $dataPengguna['status'],
+                        'nama_lengkap' => $dataPengguna['nama_lengkap'],
+                        'deleted_at' => $dataPengguna['deleted_at'],
+                    ]);
 
-                    // Mengatur session berdasarkan data dari tabel pengguna
-                    session()->set('status', $dataPengguna['status']); // sesuaikan dengan kolom status yang sesuai di tabel pengguna
-                    session()->set('nama_lengkap', $dataPengguna['nama_lengkap']);
-                    session()->set('deleted_at', $dataPengguna['deleted_at']); // tambahkan session untuk kolom deleted_at
-
-                    // Cek apakah akun telah dihapus berdasarkan kolom deleted_at
                     if ($dataPengguna['deleted_at'] != NULL) {
                         session()->setFlashdata('gagal', 'Akun Anda telah dihapus. Silakan hubungi admin jika ini adalah kesalahan.');
                         return redirect()->to(base_url('login'));
                     }
 
                     if ($dataPengguna['status'] == 1) {
-                        // Akun pengguna diblokir
-                        // Menampilkan pesan kesalahan atau mengarahkan ke halaman tertentu
                         session()->setFlashdata('gagal', 'Akun Anda telah diblokir. Silakan hubungi admin.');
                         return redirect()->to(base_url('login'));
                     }
 
-                    //Login Direct Ke Halaman Beranda
                     $level = $dataLogin['level'];
                     switch ($level) {
                         case 1:
@@ -113,17 +91,14 @@ class Login extends BaseController
                             break;
                     }
                 } else {
-                    // Jika data pengguna tidak ditemukan di tabel pengguna
                     session()->setFlashdata('gagal', 'Data pengguna tidak ditemukan');
                     return redirect()->to(base_url('login'));
                 }
             } else {
-                //Jika Periksa Gagal
                 session()->setFlashdata('gagal', 'Username atau Password Salah');
                 return redirect()->to(base_url('login'));
             }
         } else {
-            //Jika Tidak Valid Tampilkan Error Validasi
             session()->setFlashdata('errorValidation', \Config\Services::validation()->getErrors());
             return redirect()->to(base_url('login'));
         }

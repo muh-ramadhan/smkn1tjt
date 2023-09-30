@@ -126,7 +126,7 @@
                             <li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i>Edit Profile</a></li>
                             <li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account Settings</a></li>
                             <li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Help</a></li>
-                            <li><a class="dropdown-item bg-danger-soft-hover" href="<?= base_url(); ?>Logout"><i class="bi bi-power fa-fw me-2"></i>Logout</a></li>
+                            <li><a class="dropdown-item bg-danger-soft-hover" href="<?= base_url(); ?>logout"><i class="bi bi-power fa-fw me-2"></i>Logout</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

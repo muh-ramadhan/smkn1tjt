@@ -14,7 +14,7 @@ class LoginModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_login', 'id_pengguna', 'username', 'password', 'level', 'deleted_at'];
+    protected $allowedFields    = ['id_pengguna', 'username', 'password', 'level', 'deleted_at'];
 
     // Dates
     protected $useTimestamps = true;

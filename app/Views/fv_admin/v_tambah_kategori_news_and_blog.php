@@ -10,7 +10,7 @@
                     <h1 class="h3 mb-2 mb-sm-0"><?= $title; ?> <?= $subtitle; ?></h1>
                 </div>
             </div>
-            <?= form_open_multipart('Admin/SimpanKategoriNewsAndBlog') ?>
+            <?= form_open_multipart('admin/simpan-kategori-news-and-blog') ?>
             <?= csrf_field() ?>
             <div class="row g-4">
 

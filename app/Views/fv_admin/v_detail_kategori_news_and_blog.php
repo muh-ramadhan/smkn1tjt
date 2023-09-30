@@ -10,7 +10,7 @@
                     <h1 class="h3 mb-2 mb-sm-0"><?= $title; ?> <?= $subtitle; ?></h1>
                 </div>
             </div>
-            <?= form_open_multipart('Admin/UpdateKategoriNewsAndBlog/' . $AmbilDetailKategoriNewsAndBlog['id_kategori_news_and_blog']); ?>
+            <?= form_open_multipart('admin/update-kategori-news-and-blog/' . $AmbilDetailKategoriNewsAndBlog['id_kategori_news_and_blog']); ?>
             <?= csrf_field() ?>
             <div class="row g-4">
 

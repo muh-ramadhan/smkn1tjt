@@ -1,124 +1,133 @@
 <?= $this->extend('fv_admin/themplate/layout') ?>
 <?= $this->section('content') ?>
-
-<!-- **************** MAIN CONTENT START **************** -->
 <main>
-
-    <!-- Sidebar START -->
     <?= $this->include('fv_admin/themplate/sidebar') ?>
-    <!-- Sidebar END -->
-
-    <!-- Page content START -->
     <div class="page-content">
-
-        <!-- Top bar START -->
         <?= $this->include('fv_admin/themplate/top-bar') ?>
-        <!-- Top bar END -->
-
-        <!-- Page main content START -->
         <div class="page-content-wrapper border">
-
-            <!-- Title -->
             <div class="row mb-3">
                 <div class="col-12 d-sm-flex justify-content-between align-items-center">
-                    <h1 class="h3 mb-2 mb-sm-0">Tambah Taruna/i</h1>
+                    <h1 class="h3 mb-2 mb-sm-0"><?= $title; ?> <?= $subtitle; ?></h1>
                 </div>
             </div>
-            <!-- Form -->
-            <form class="row g-4">
+            <?php echo form_open_multipart('admin/simpan-taruna-taruni') ?>
+            <?= csrf_field() ?>
+            <div class="row g-4">
 
-                <!-- Profile picture -->
-                <div class="col-12 justify-content-center align-items-center">
+                <!-- HTML Form -->
+                <div class="col-6 justify-content-center align-items-center">
                     <label class="form-label">Foto Profil</label>
                     <div class="d-flex align-items-center">
                         <label class="position-relative me-4" for="uploadfile-1" title="Replace this pic">
-                            <!-- Avatar place holder -->
                             <span class="avatar avatar-xl">
-                                <img id="uploadfile-1-preview" class="avatar-img rounded-circle border border-white border-3 shadow" src="<?=base_url();?>assets/images/avatar/07.jpg" alt="">
+                                <img id="uploadfile-1-preview" class="avatar-img rounded border border-white border-3 shadow" src="<?= base_url(); ?>assets/images/avatar/tidak-ada-gambar.png" alt="">
                             </span>
-                            <!-- Remove btn -->
-                            <button type="button" class="uploadremove"><i class="bi bi-x text-white"></i></button>
+                            <button type="button" class="uploadremove" onclick="removeImage()"><i class="bi bi-x text-white"></i></button>
                         </label>
-                        <!-- Upload button -->
                         <label class="btn btn-primary-soft mb-0" for="uploadfile-1">Upload Foto</label>
-                        <input id="uploadfile-1" class="form-control d-none" type="file">
+                        <input id="uploadfile-1" class="form-control d-none" type="file" name="foto" onchange="previewImage(this)">
                     </div>
                 </div>
 
-                <!-- Full name -->
-                <div class="col-12">
+                <!-- JavaScript -->
+                <script>
+                    function previewImage(input) {
+                        var preview = document.getElementById('uploadfile-1-preview');
+                        var file = input.files[0];
+                        var reader = new FileReader();
+
+                        reader.onloadend = function() {
+                            preview.src = reader.result;
+                        };
+
+                        if (file) {
+                            reader.readAsDataURL(file);
+                        } else {
+                            preview.src = "<?= base_url(); ?>assets/images/avatar/tidak-ada-gambar.png";
+                        }
+                    }
+
+                    function removeImage() {
+                        var preview = document.getElementById('uploadfile-1-preview');
+                        preview.src = "<?= base_url(); ?>assets/images/avatar/tidak-ada-gambar.png";
+
+                        // Reset input file
+                        var input = document.getElementById('uploadfile-1');
+                        input.value = null;
+                    }
+                </script>
+
+
+                <div class="col-6">
                     <label class="form-label">Nama Lengkap</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Nama Lengkap" value="">
+                        <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_lengkap">
                     </div>
                 </div>
 
-                <!-- Username -->
                 <div class="col-md-6">
                     <label class="form-label">NISN</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Nomor Induk Siswa Nasional" value="">
+                        <input type="text" class="form-control" placeholder="Nomor Induk Siswa Nasional" name="nisn">
                         <span class="input-group-text">@smkn1tanjabtimur.sch.id</span>
                     </div>
                 </div>
 
-                <!-- Phone number -->
                 <div class="col-md-6">
                     <label class="form-label">Nomor Handphone</label>
-                    <input type="text" class="form-control" value="" placeholder="Nomor Handphone">
+                    <input type="text" class="form-control" placeholder="Nomor Handphone" name="no_hp">
                 </div>
 
-                <!-- Phone number -->
                 <div class="col-md-6">
                     <label class="form-label">Tempat Lahir</label>
-                    <input type="text" class="form-control" value="" placeholder="Tempat Lahir">
+                    <input type="text" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir">
                 </div>
 
-                <!-- Location -->
                 <div class="col-md-6">
                     <label class="form-label">Tanggal Lahir</label>
-                    <input class="form-control" type="date" value="">
+                    <input class="form-control" type="date" name="tanggal_lahir">
                 </div>
 
-                <!-- Phone number -->
-                <div class="col-md-6">
-                    <label class="form-label">Kelas</label>
-                    <input type="text" class="form-control" value="" placeholder="Kelas">
+                <div class="col-lg-6">
+                    <label class="form-label">Pilih Kelas</label>
+                    <select class="form-select js-choice z-index-9 border-0 bg-light" aria-label=".form-select-sm" name="id_kelas" required>
+                        <option value="NULL" disabled selected>Pilih Kelas</option>
+                        <?php foreach ($AmbilDataKelas as $kelasItem) : ?>
+                            <option value="<?= $kelasItem['id_kelas']; ?>"><?= $kelasItem['nama_kelas_angka']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
 
-                <!-- Phone number -->
-                <div class="col-md-6">
-                    <label class="form-label">Jurusan</label>
-                    <input type="text" class="form-control" value="" placeholder="Jurusan">
+                <div class="col-lg-6">
+                    <label class="form-label">Pilih Jurusan</label>
+                    <select class="form-select js-choice z-index-9 border-0 bg-light" aria-label=".form-select-sm" name="id_jurusan" required>
+                        <option value="NULL" disabled selected>Pilih Jurusan</option>
+                        <?php foreach ($AmbilDataJurusan as $jurusanItem) : ?>
+                            <option value="<?= $jurusanItem['id_jurusan']; ?>"><?= $jurusanItem['alias_jurusan']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
 
-                <!-- Phone number -->
                 <div class="col-md-6">
                     <label class="form-label">Kata Sandi</label>
-                    <input type="password" class="form-control" placeholder="Kata Sandi">
+                    <input type="password" class="form-control" placeholder="Kata Sandi" name="password">
                 </div>
 
-                <!-- Phone number -->
                 <div class="col-md-6">
                     <label class="form-label">Ulangi Kata Sandi</label>
-                    <input type="password" class="form-control" placeholder="Ulangi Kata Sandi">
+                    <input type="password" class="form-control" placeholder="Ulangi Kata Sandi" name="confirm_password">
                 </div>
 
-                <!-- Save button -->
                 <div class="d-sm-flex justify-content-end">
-                    <button type="button" type="submit" class="btn btn-primary mb-0">Simpan</button>
+                    <button type="submit" class="btn btn-primary mb-0">Simpan</button>
                 </div>
-            </form>
 
+            </div>
+            <?php echo form_close() ?>
         </div>
-        <!-- Page main content END -->
-
     </div>
-    <!-- Page content END -->
-
 </main>
-<!-- **************** MAIN CONTENT END **************** -->
 
 <?= $this->include('fv_admin/themplate/back-top') ?>
-
+<?= $this->include('default/themplate/modal-informasi') ?>
 <?= $this->endSection() ?>

@@ -22,7 +22,7 @@
                 <ul class="navbar-nav flex-column" id="navbar-sidebar">
 
                     <!-- Menu item 1 -->
-                    <li class="nav-item"><a href="admin-dashboard.html" class="nav-link active"><i class="bi bi-house fa-fw me-2"></i>Dashboard</a></li>
+                    <li class="nav-item"><a href="admin-dashboard.html" class="nav-link active"><i class="bi bi-house fa-fw me-2"></i>Beranda</a></li>
 
                     <!-- Title -->
                     <li class="nav-item ms-2 my-2">Menu Utama</li>
@@ -328,7 +328,7 @@
             <!-- Title -->
             <div class="row">
                 <div class="col-12 mb-3">
-                    <h1 class="h3 mb-2 mb-sm-0">Dashboard</h1>
+                    <h1 class="h3 mb-2 mb-sm-0">Beranda</h1>
                 </div>
             </div>
 

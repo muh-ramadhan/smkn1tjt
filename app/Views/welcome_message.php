@@ -46,11 +46,10 @@
               </div>
               <div class="ms-3">
                 <h5 class="mb-1"><?= $value['nama_lengkap']; ?></h5>
-                <p class="mb-0"><?= $value['jurusan']; ?></p>
+                <p class="mb-0"><?= $value['nama_jurusan']; ?></p>
               </div>
             </div>
           <?php endforeach; ?>
-
         </div>
       </div>
 
@@ -541,5 +540,5 @@
 
 <?= $this->include('default/themplate/footer') ?>
 <?= $this->include('default/themplate/back-top') ?>
-
+<?= $this->include('default/themplate/modal-informasi') ?>
 <?= $this->endSection() ?>

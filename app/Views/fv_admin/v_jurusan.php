@@ -350,7 +350,7 @@
                     <div class="text-center">
                         <p class="mb-2">Apakah anda yakin?</p>
                         <div class="btn-group justify-content-center mb-2" role="group" aria-label="Pilihan">
-                            <a href="<?= base_url('Admin/HapusNewsAndBlog/' . $value['id_newsandblog']) ?>" class="btn btn-success mx-2">Iya</a>
+                            <a href="<?= base_url('Admin/HapusSementaraNewsAndBlog/' . $value['id_newsandblog']) ?>" class="btn btn-success mx-2">Iya</a>
                             <button type="button" class="btn btn-danger mx-2" data-bs-dismiss="modal">Tidak</button>
                         </div>
                     </div>

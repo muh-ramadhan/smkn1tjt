@@ -70,12 +70,22 @@ class NewsAndBlogModel extends Model
     {
         $builder = $this->db->table('tbl_pengguna');
         $builder->join('tbl_login', 'tbl_login.id_pengguna = tbl_pengguna.id_pengguna');
+        $builder->join('tbl_jurusan', 'tbl_jurusan.id_jurusan = tbl_pengguna.id_jurusan', 'left'); // Join dengan tbl_jurusan
         $builder->where('tbl_login.level', 5);
         $builder->orderBy('tbl_pengguna.is_top_1', 'DESC');
         $builder->orderBy('tbl_pengguna.is_top_2', 'DESC');
         $builder->orderBy('tbl_pengguna.is_top_3', 'DESC');
         $builder->limit(3); // Batasi hasil hingga 3 data
+    
+        // Pilih kolom-kolom yang ingin ditampilkan, termasuk kolom nama_jurusan
+        $builder->select('tbl_pengguna.*, tbl_jurusan.nama_jurusan');
+    
         $query = $builder->get();
+        
+        // Debug: Cetak hasil query
+        // echo $this->db->getLastQuery(); exit;
+    
         return $query->getResultArray();
     }
+    
 }

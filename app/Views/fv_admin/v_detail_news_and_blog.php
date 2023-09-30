@@ -1,23 +1,17 @@
 <?= $this->extend('fv_admin/themplate/layout') ?>
 <?= $this->section('content') ?>
-
 <main>
     <?= $this->include('fv_admin/themplate/sidebar') ?>
-
     <div class="page-content">
-
         <?= $this->include('fv_admin/themplate/top-bar') ?>
-
         <div class="page-content-wrapper border">
-
             <div class="row mb-3">
                 <div class="col-12 d-sm-flex justify-content-between align-items-center">
                     <h1 class="h3 mb-2 mb-sm-0"><?= $title; ?> <?= $subtitle; ?></h1>
                 </div>
             </div>
-            <?php echo form_open_multipart('Admin/UpdateNewsAndBlog/' . $detailData['id_newsandblog']); ?>
+            <?php echo form_open_multipart('admin/update-news-and-blog/' . $detailData['id_newsandblog']); ?>
             <?= csrf_field() ?>
-
             <div class="row g-4">
                 <div class="col-12">
                     <div class="bg-light border rounded p-4">
@@ -30,7 +24,7 @@
                 </div>
 
                 <div class="col-12">
-                    <h4>cover_newsandblog News and Blog*</h4>
+                    <h4>Cover News and Blog*</h4>
                     <hr>
                     <div class="row">
                         <div class="col-12">
@@ -49,7 +43,7 @@
                                 <img src="<?= $cover_newsandblogImage; ?>" class="h-250px" alt="<?= $detailData['judul_newsandblog']; ?>">
 
                                 <div>
-                                    <h6 class="my-2">Unggah cover_newsandblog gambar di sini, atau<a href="#!" class="text-primary"> Browse</a></h6>
+                                    <h6 class="my-2">Unggah Cover gambar di sini, atau<a href="#!" class="text-primary"> Browse</a></h6>
                                     <label style="cursor:pointer;">
                                         <span>
                                             <input class="form-control" type="file" name="cover_newsandblog" accept="image/jpg, image/jpeg, image/png" />

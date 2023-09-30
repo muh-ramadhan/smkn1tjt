@@ -22,51 +22,51 @@
                         <a class="nav-link active" href="<?= base_url(); ?>"><i class="bi bi-house me-2"></i>Home</a>
                     </li>
 
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-info-circle me-2"></i>Tentang Kami</a>
-						<ul class="dropdown-menu" aria-labelledby="pagesMenu">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-info-circle me-2"></i>Tentang Kami</a>
+                        <ul class="dropdown-menu" aria-labelledby="pagesMenu">
 
-							<li> <a class="dropdown-item" href="<?= base_url(); ?>">Berita Terkini <span class="badge bg-success ms-2 smaller">Baru</span></a></li>
-							<li> <a class="dropdown-item" href="<?= base_url(); ?>">Profil</a></li>
-							<li> <a class="dropdown-item" href="<?= base_url(); ?>">Sejarah</a></li>
-							<li> <a class="dropdown-item" href="<?= base_url(); ?>">Visi dan Misi</a></li>
-							<li> <a class="dropdown-item" href="<?= base_url(); ?>">Sasaran Mutu</a></li>
+                            <li> <a class="dropdown-item" href="<?= base_url(); ?>">Berita Terkini <span class="badge bg-success ms-2 smaller">Baru</span></a></li>
+                            <li> <a class="dropdown-item" href="<?= base_url(); ?>">Profil</a></li>
+                            <li> <a class="dropdown-item" href="<?= base_url(); ?>">Sejarah</a></li>
+                            <li> <a class="dropdown-item" href="<?= base_url(); ?>">Visi dan Misi</a></li>
+                            <li> <a class="dropdown-item" href="<?= base_url(); ?>">Sasaran Mutu</a></li>
 
-							<li class="dropdown-submenu dropend">
-								<a class="dropdown-item dropdown-toggle" href="#">Struktur Organisasi</a>
-								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-									<li> <a class="dropdown-item" href="<?= base_url(); ?>">Sekolah</a></li>
-									<li> <a class="dropdown-item" href="<?= base_url(); ?>">Unit Produksi TKJ</a></li>
-									<li> <a class="dropdown-item" href="<?= base_url(); ?>">Resimen</a></li>
-									<li> <a class="dropdown-item" href="<?= base_url(); ?>">Pramuka</a></li>
-									<li> <a class="dropdown-item" href="<?= base_url(); ?>">Komite</a></li>
-								</ul>
-							</li>
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#">Struktur Organisasi</a>
+                                <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+                                    <li> <a class="dropdown-item" href="<?= base_url(); ?>">Sekolah</a></li>
+                                    <li> <a class="dropdown-item" href="<?= base_url(); ?>">Unit Produksi TKJ</a></li>
+                                    <li> <a class="dropdown-item" href="<?= base_url(); ?>">Resimen</a></li>
+                                    <li> <a class="dropdown-item" href="<?= base_url(); ?>">Pramuka</a></li>
+                                    <li> <a class="dropdown-item" href="<?= base_url(); ?>">Komite</a></li>
+                                </ul>
+                            </li>
 
-						</ul>
-					</li>
-                    
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-book me-2"></i>Pembelajaran</a>
-						<ul class="dropdown-menu" aria-labelledby="pagesMenu">
-							<li class="dropdown-submenu dropend">
-								<a class="dropdown-item dropdown-toggle" href="#">Kurikulum</a>
-								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-									<li> <a class="dropdown-item" href="<?= base_url(); ?>">Struktur Kurikulum</a></li>
-									<li> <a class="dropdown-item" href="<?= base_url(); ?>">Jadwal Pembelajaran</a></li>
-								</ul>
-							</li>
+                        </ul>
+                    </li>
 
-							<li class="dropdown-submenu dropend">
-								<a class="dropdown-item dropdown-toggle" href="#">Kegiatan</a>
-								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-									<li> <a class="dropdown-item" href="<?= base_url(); ?>">Kegiatan Tahunan</a></li>
-									<li> <a class="dropdown-item" href="<?= base_url(); ?>">Extrakurikuler</a></li>
-									<li> <a class="dropdown-item" href="<?= base_url(); ?>">Organisasi Siswa</a></li>
-								</ul>
-							</li>
-						</ul>
-					</li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-book me-2"></i>Pembelajaran</a>
+                        <ul class="dropdown-menu" aria-labelledby="pagesMenu">
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#">Kurikulum</a>
+                                <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+                                    <li> <a class="dropdown-item" href="<?= base_url(); ?>">Struktur Kurikulum</a></li>
+                                    <li> <a class="dropdown-item" href="<?= base_url(); ?>">Jadwal Pembelajaran</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown-submenu dropend">
+                                <a class="dropdown-item dropdown-toggle" href="#">Kegiatan</a>
+                                <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+                                    <li> <a class="dropdown-item" href="<?= base_url(); ?>">Kegiatan Tahunan</a></li>
+                                    <li> <a class="dropdown-item" href="<?= base_url(); ?>">Extrakurikuler</a></li>
+                                    <li> <a class="dropdown-item" href="<?= base_url(); ?>">Organisasi Siswa</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-trophy me-2"></i>Prestasi</a>
@@ -142,10 +142,31 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i>Edit Profile</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account Settings</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Help</a></li>
-                            <li><a class="dropdown-item bg-danger-soft-hover" href="<?= base_url(); ?>Logout"><i class="bi bi-power fa-fw me-2"></i>Logout</a></li>
+                            <?php
+                            $levels = [
+                                '1' => 'superadmin',
+                                '2' => 'admin',
+                                '3' => 'operator',
+                                '4' => 'guru',
+                                '5' => 'siswa',
+                            ];
+
+                            $userLevel = session()->get('level');
+
+                            if (isset($levels[$userLevel])) :
+                            ?>
+                                <li>
+                                    <a class="dropdown-item" href="<?= base_url($levels[$userLevel]); ?>">
+                                        <i class="bi bi-person fa-fw me-2"></i>Beranda
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+
+                            <li>
+                                <a class="dropdown-item bg-danger-soft-hover" href="<?= base_url(); ?>logout">
+                                    <i class="bi bi-power fa-fw me-2"></i>Logout
+                                </a>
+                            </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -186,6 +207,7 @@
                                     <use href="#"></use>
                                 </svg>
                             </button>
+
                             <button type="button" class="btn btn-sm mb-0" data-bs-theme-value="dark">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars fa-fw mode-switch" viewBox="0 0 16 16">
                                     <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z" />
@@ -204,9 +226,7 @@
                     <li class="nav-item ms-2 d-none d-md-block">
                         <a href="<?= base_url('login'); ?>" class="btn btn-sm btn-dark mb-0">Login</a>
                     </li>
-
                 <?php endif; ?>
-
             </ul>
         </div>
     </nav>

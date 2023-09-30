@@ -15,7 +15,7 @@ class Home extends BaseController
         $this->PengaturanWebModel = new PengaturanWebModel();
         helper('form', 'url');
     }
-
+    
     public function index(): string
     {
         $data = [

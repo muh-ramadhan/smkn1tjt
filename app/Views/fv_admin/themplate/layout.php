@@ -10,7 +10,6 @@
   <meta name="author" content="Webestica.com">
   <meta name="description" content="Eduport- LMS, Education and Course Theme">
 
-  <!-- Dark mode -->
   <script>
     const storedTheme = localStorage.getItem('theme')
 
@@ -69,15 +68,12 @@
     })
   </script>
 
-  <!-- Favicon -->
   <link rel="shortcut icon" href="<?= base_url(); ?>assets/images/favicon.ico">
 
-  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
 
-  <!-- Plugins CSS -->
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/font-awesome/css/all.min.css">
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/bootstrap-icons/bootstrap-icons.css">
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/glightbox/css/glightbox.css">
@@ -85,10 +81,8 @@
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/apexcharts/css/apexcharts.css">
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/overlay-scrollbar/css/overlayscrollbars.min.css">
 
-  <!-- Plugins CSS -->
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/quill/css/quill.snow.css">
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/stepper/css/bs-stepper.min.css">
-  <!-- Theme CSS -->
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/style.css">
 
 </head>
@@ -97,10 +91,7 @@
 
   <?= $this->renderSection('content') ?>
 
-  <!-- Bootstrap JS -->
   <script src="<?= base_url(); ?>assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Vendors -->
   <script src="<?= base_url(); ?>assets/vendor/quill/js/quill.min.js"></script>
   <script src="<?= base_url(); ?>assets/vendor/stepper/js/bs-stepper.min.js"></script>
   <script src="<?= base_url(); ?>assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
