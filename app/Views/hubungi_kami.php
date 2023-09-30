@@ -4,7 +4,7 @@
 
 <!-- MAIN CONTENT START -->
 <main>
-  <section class="pt-5 pb-0" style="background-image:url(assets/images/element/map.svg); background-position: center left; background-size: cover;">
+  <section class="pt-5 pb-0" style="background-image:url(assets/images/element/map.svg); background-position: center left; background-size: cover_newsandblog;">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-xl-6 text-center mx-auto">

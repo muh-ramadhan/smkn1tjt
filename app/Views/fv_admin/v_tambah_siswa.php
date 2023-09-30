@@ -18,7 +18,6 @@
         <!-- Page main content START -->
         <div class="page-content-wrapper border">
 
-
             <!-- Title -->
             <div class="row mb-3">
                 <div class="col-12 d-sm-flex justify-content-between align-items-center">

@@ -78,14 +78,14 @@ class Login extends BaseController
 
                     // Cek apakah akun telah dihapus berdasarkan kolom deleted_at
                     if ($dataPengguna['deleted_at'] != NULL) {
-                        session()->setFlashdata('error', 'Akun Anda telah dihapus. Silakan hubungi admin jika ini adalah kesalahan.');
+                        session()->setFlashdata('gagal', 'Akun Anda telah dihapus. Silakan hubungi admin jika ini adalah kesalahan.');
                         return redirect()->to(base_url('login'));
                     }
 
                     if ($dataPengguna['status'] == 1) {
                         // Akun pengguna diblokir
                         // Menampilkan pesan kesalahan atau mengarahkan ke halaman tertentu
-                        session()->setFlashdata('error', 'Akun Anda telah diblokir. Silakan hubungi admin.');
+                        session()->setFlashdata('gagal', 'Akun Anda telah diblokir. Silakan hubungi admin.');
                         return redirect()->to(base_url('login'));
                     }
 
@@ -108,18 +108,18 @@ class Login extends BaseController
                             return redirect()->to(base_url('siswa'));
                             break;
                         default:
-                            session()->setFlashdata('error', 'Maaf Anda tidak memiliki akses apapun. Hubungi admin.');
+                            session()->setFlashdata('gagal', 'Maaf Anda tidak memiliki akses apapun. Hubungi admin.');
                             return redirect()->to(base_url('login'));
                             break;
                     }
                 } else {
                     // Jika data pengguna tidak ditemukan di tabel pengguna
-                    session()->setFlashdata('error', 'Data pengguna tidak ditemukan');
+                    session()->setFlashdata('gagal', 'Data pengguna tidak ditemukan');
                     return redirect()->to(base_url('login'));
                 }
             } else {
                 //Jika Periksa Gagal
-                session()->setFlashdata('error', 'Username atau Password Salah');
+                session()->setFlashdata('gagal', 'Username atau Password Salah');
                 return redirect()->to(base_url('login'));
             }
         } else {

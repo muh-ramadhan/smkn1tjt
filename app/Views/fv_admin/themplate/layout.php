@@ -82,13 +82,12 @@
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/bootstrap-icons/bootstrap-icons.css">
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/glightbox/css/glightbox.css">
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/choices/css/choices.min.css">
-
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/apexcharts/css/apexcharts.css">
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/overlay-scrollbar/css/overlayscrollbars.min.css">
 
   <!-- Plugins CSS -->
-	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/quill/css/quill.snow.css">
-	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/stepper/css/bs-stepper.min.css">
+  <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/quill/css/quill.snow.css">
+  <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/stepper/css/bs-stepper.min.css">
   <!-- Theme CSS -->
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/style.css">
 
@@ -98,26 +97,19 @@
 
   <?= $this->renderSection('content') ?>
 
-
-<!-- Template Functions -->
-<script src="assets/js/functions.js"></script>
   <!-- Bootstrap JS -->
   <script src="<?= base_url(); ?>assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Vendors -->
-  
-<script src="<?= base_url(); ?>assets/vendor/quill/js/quill.min.js"></script>
-<script src="<?= base_url(); ?>assets/vendor/stepper/js/bs-stepper.min.js"></script>
+  <script src="<?= base_url(); ?>assets/vendor/quill/js/quill.min.js"></script>
+  <script src="<?= base_url(); ?>assets/vendor/stepper/js/bs-stepper.min.js"></script>
   <script src="<?= base_url(); ?>assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
   <script src="<?= base_url(); ?>assets/vendor/apexcharts/js/apexcharts.min.js"></script>
   <script src="<?= base_url(); ?>assets/vendor/overlay-scrollbar/js/overlayscrollbars.min.js"></script>
   <script src="<?= base_url(); ?>assets/vendor/glightbox/js/glightbox.js"></script>
   <script src="<?= base_url(); ?>assets/vendor/choices/js/choices.min.js"></script>
-
-  <!-- Template Functions -->
+  <script src="<?= base_url(); ?>assets/vendor/aos/aos.js"></script>
   <script src="<?= base_url(); ?>assets/js/functions.js"></script>
-
-
 </body>
 
 </html>

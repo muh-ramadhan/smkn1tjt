@@ -45,9 +45,17 @@ class Entity implements JsonSerializable
      *  $datamap = [
      *      'class_property_name' => 'db_column_name'
      *  ];
+     *
+     * @var array<string, string>
      */
     protected $datamap = [];
 
+    /**
+     * The date fields.
+     *
+     * @var array<int, string>
+     * @phpstan-var list<string>
+     */
     protected $dates = [
         'created_at',
         'updated_at',
@@ -57,6 +65,8 @@ class Entity implements JsonSerializable
     /**
      * Array of field names and the type of value to cast them as when
      * they are accessed.
+     *
+     * @var array<string, string>
      */
     protected $casts = [];
 
@@ -126,7 +136,7 @@ class Entity implements JsonSerializable
      * properties, using any `setCamelCasedProperty()` methods
      * that may or may not exist.
      *
-     * @param array $data
+     * @param array<string, array|bool|float|int|object|string|null> $data
      *
      * @return $this
      */
@@ -279,13 +289,25 @@ class Entity implements JsonSerializable
      *
      * @return $this
      */
-    public function setAttributes(array $data)
+    public function injectRawData(array $data)
     {
         $this->attributes = $data;
 
         $this->syncOriginal();
 
         return $this;
+    }
+
+    /**
+     * Set raw data array without any mutations
+     *
+     * @return $this
+     *
+     * @deprecated Use injectRawData() instead.
+     */
+    public function setAttributes(array $data)
+    {
+        return $this->injectRawData($data);
     }
 
     /**
@@ -429,7 +451,7 @@ class Entity implements JsonSerializable
      *
      * @param array|bool|float|int|object|string|null $value
      *
-     * @return $this
+     * @return void
      *
      * @throws Exception
      */
@@ -444,15 +466,23 @@ class Entity implements JsonSerializable
 
         $value = $this->castAs($value, $dbColumn, 'set');
 
-        // if a set* method exists for this key, use that method to
+        // if a setter method exists for this key, use that method to
         // insert this value. should be outside $isNullable check,
         // so maybe wants to do sth with null value automatically
         $method = 'set' . str_replace(' ', '', ucwords(str_replace(['-', '_'], ' ', $dbColumn)));
 
-        if (method_exists($this, $method)) {
+        // If a "`_set` + $key" method exists, it is a setter.
+        if (method_exists($this, '_' . $method)) {
+            $this->{'_' . $method}($value);
+
+            return;
+        }
+
+        // If a "`set` + $key" method exists, it is also a setter.
+        if (method_exists($this, $method) && $method !== 'setAttributes') {
             $this->{$method}($value);
 
-            return $this;
+            return;
         }
 
         // Otherwise, just the value. This allows for creation of new
@@ -460,8 +490,6 @@ class Entity implements JsonSerializable
         // saved. Useful for grabbing values through joins, assigning
         // relationships, etc.
         $this->attributes[$dbColumn] = $value;
-
-        return $this;
     }
 
     /**
@@ -487,9 +515,13 @@ class Entity implements JsonSerializable
         // Convert to CamelCase for the method
         $method = 'get' . str_replace(' ', '', ucwords(str_replace(['-', '_'], ' ', $dbColumn)));
 
-        // if a get* method exists for this key,
+        // if a getter method exists for this key,
         // use that method to insert this value.
-        if (method_exists($this, $method)) {
+        if (method_exists($this, '_' . $method)) {
+            // If a "`_get` + $key" method exists, it is a getter.
+            $result = $this->{'_' . $method}();
+        } elseif (method_exists($this, $method)) {
+            // If a "`get` + $key" method exists, it is also a getter.
             $result = $this->{$method}();
         }
 

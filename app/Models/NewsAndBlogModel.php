@@ -14,7 +14,7 @@ class NewsAndBlogModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_newsandblog', 'id_kategori', 'judul_newsandblog', 'penulis_newsandblog', 'isi_newsandblog', 'status_newsandblog'];
+    protected $allowedFields    = ['id_newsandblog', 'id_kategori_news_and_blog', 'id_kategori_news_and_blog_tambahan', 'judul_newsandblog', 'slug_newsandblog', 'cover_newsandblog', 'penulis_newsandblog', 'deskripsi_singkat_newsandblog', 'isi_newsandblog', 'video_url_newsandblog', 'video_newsandblog', 'status_newsandblog'];
 
     // Dates
     protected $useTimestamps = true;
@@ -40,11 +40,12 @@ class NewsAndBlogModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    // Metode untuk mengambil data dengan JOIN tabel kategori
     public function getNewsAndBlogWithCategory()
     {
         $builder = $this->db->table('tbl_newsandblog');
-        $builder->join('tbl_kategori', 'tbl_kategori.id_kategori = tbl_newsandblog.id_kategori');
+        $builder->join('tbl_kategori_newsandblog',
+        'tbl_kategori_newsandblog.id_kategori_news_and_blog = tbl_newsandblog.id_kategori_news_and_blog');
+        $builder->where('tbl_newsandblog.deleted_at', null);
         $query = $builder->get();
         return $query->getResultArray();
     }
@@ -52,14 +53,19 @@ class NewsAndBlogModel extends Model
     public function getNewsAndBlogWithCategoryLimited($limit = 3, $offset = 1)
     {
         $builder = $this->db->table('tbl_newsandblog');
-        $builder->join('tbl_kategori', 'tbl_kategori.id_kategori = tbl_newsandblog.id_kategori');
-        $builder->where('deleted_at', null);
-        $builder->orderBy('created_at', 'desc');
+        $builder->join('tbl_kategori_newsandblog',
+        'tbl_kategori_newsandblog.id_kategori_news_and_blog = tbl_newsandblog.id_kategori_news_and_blog');
+        $builder->select('tbl_newsandblog.*, 
+        tbl_kategori_newsandblog.created_at AS kategori_created_at, 
+        tbl_kategori_newsandblog.warna_kategori_news_and_blog AS warna_kategori_news_and_blog, 
+        tbl_kategori_newsandblog.judul_kategori_news_and_blog AS judul_kategori_news_and_blog');
+        $builder->where('tbl_newsandblog.deleted_at', null);
+        $builder->orderBy('tbl_newsandblog.created_at', 'desc');
         $builder->limit($limit, $offset);
         $query = $builder->get();
         return $query->getResultArray();
     }
-
+    
     public function getSiswa123()
     {
         $builder = $this->db->table('tbl_pengguna');

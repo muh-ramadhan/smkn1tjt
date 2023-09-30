@@ -1,16 +1,12 @@
-<!-- Header START -->
 <header class="navbar-light navbar-sticky">
-    <!-- Nav START -->
     <nav class="navbar navbar-expand-xl z-index-9">
         <div class="container">
-            <!-- Logo START -->
+
             <a class="navbar-brand" href="<?= base_url(); ?>">
                 <img class="light-mode-item navbar-brand-item" src="<?= base_url(); ?>assets/images/logo.png" alt="logo">
                 <img class="dark-mode-item navbar-brand-item" src="<?= base_url(); ?>assets/images/logo-light.png" alt="logo">
             </a>
-            <!-- Logo END -->
 
-            <!-- Responsive navbar toggler -->
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-animation">
                     <span></span>
@@ -19,12 +15,9 @@
                 </span>
             </button>
 
-            <!-- Main navbar START -->
             <div class="navbar-collapse collapse" id="navbarCollapse">
 
-                <!-- Nav Main menu START -->
                 <ul class="navbar-nav navbar-nav-scroll">
-                    <!-- Nav item 1 Demos -->
                     <li class="nav-item">
                         <a class="nav-link active" href="<?= base_url(); ?>"><i class="bi bi-house me-2"></i>Home</a>
                     </li>
@@ -56,7 +49,6 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-book me-2"></i>Pembelajaran</a>
 						<ul class="dropdown-menu" aria-labelledby="pagesMenu">
-							<!-- Dropdown submenu -->
 							<li class="dropdown-submenu dropend">
 								<a class="dropdown-item dropdown-toggle" href="#">Kurikulum</a>
 								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -65,7 +57,6 @@
 								</ul>
 							</li>
 
-                            
 							<li class="dropdown-submenu dropend">
 								<a class="dropdown-item dropdown-toggle" href="#">Kegiatan</a>
 								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -87,26 +78,18 @@
                         </ul>
                     </li>
 
-                    <!-- Nav item 4 Component-->
                     <li class="nav-item"><a class="nav-link" href="<?= base_url(); ?>home/kontak"><i class="bi bi-headset me-2"></i>Hubungi Kami</a></li>
                 </ul>
-                <!-- Nav Main menu END -->
             </div>
-            <!-- Main navbar END -->
 
-            <!-- Profile and notification START -->
             <ul class="nav flex-row align-items-center list-unstyled ms-xl-auto">
                 <?php if (session()->get('level') != "") : ?>
-                    <!-- Notification dropdown START -->
                     <li class="nav-item ms-2 ms-sm-3 dropdown d-none d-sm-block">
-                        <!-- Notification button -->
                         <a class="btn btn-light btn-round mb-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
                             <i class="bi bi-bell fa-fw"></i>
                         </a>
-                        <!-- Notification dote -->
                         <span class="notif-badge animation-blink"></span>
 
-                        <!-- Notification dropdown menu START -->
                         <div class="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md p-0 shadow-lg border-0">
                             <div class="card bg-transparent">
                                 <div class="card-header bg-transparent border-bottom py-4 d-flex justify-content-between align-items-center">
@@ -115,7 +98,6 @@
                                 </div>
                                 <div class="card-body p-0">
                                     <ul class="list-group list-unstyled list-group-flush">
-                                        <!-- Notif item -->
                                         <li>
                                             <a href="#" class="list-group-item-action border-0 border-bottom d-flex p-3">
                                                 <div class="me-3">
@@ -132,29 +114,21 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <!-- Button -->
                                 <div class="card-footer bg-transparent border-0 py-3 text-center position-relative">
                                     <a href="#" class="stretched-link">See all incoming activity</a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Notification dropdown menu END -->
                     </li>
-                    <!-- Notification dropdown END -->
 
-                    <!-- Profile dropdown START -->
                     <li class="nav-item ms-3 dropdown">
-                        <!-- Avatar -->
                         <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
                             <img class="avatar-img rounded-circle" src="<?= base_url(); ?>assets/images/avatar/01.jpg" alt="avatar">
                         </a>
 
-                        <!-- Profile dropdown START -->
                         <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
-                            <!-- Profile info -->
                             <li class="px-3 mb-3">
                                 <div class="d-flex align-items-center">
-                                    <!-- Avatar -->
                                     <div class="avatar me-3">
                                         <img class="avatar-img rounded-circle shadow" src="<?= base_url(); ?>assets/images/avatar/01.jpg" alt="avatar">
                                     </div>
@@ -164,7 +138,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <!-- Links -->
+
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -175,7 +149,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <!-- Dark mode options START -->
+
                             <li>
                                 <div class="bg-light dark-mode-switch theme-icon-active d-flex align-items-center p-1 rounded mt-2">
                                     <button type="button" class="btn btn-sm mb-0" data-bs-theme-value="light">
@@ -199,16 +173,11 @@
                                     </button>
                                 </div>
                             </li>
-                            <!-- Dark mode options END-->
                         </ul>
-                        <!-- Profile dropdown END -->
                     </li>
                 <?php endif; ?>
 
                 <?php if (session()->get('level') == "") : ?>
-                    <!-- Sign In START -->
-
-                    <!-- Dark mode options START -->
                     <li>
                         <div class="bg-light dark-mode-switch theme-icon-active d-flex align-items-center p-1 rounded mt-2">
                             <button type="button" class="btn btn-sm mb-0" data-bs-theme-value="light">
@@ -235,13 +204,10 @@
                     <li class="nav-item ms-2 d-none d-md-block">
                         <a href="<?= base_url('login'); ?>" class="btn btn-sm btn-dark mb-0">Login</a>
                     </li>
-                    <!-- Sign In END -->
+
                 <?php endif; ?>
 
             </ul>
-            <!-- Profile and notification END -->
         </div>
     </nav>
-    <!-- Nav END -->
 </header>
-<!-- Header END -->

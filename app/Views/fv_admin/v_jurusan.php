@@ -192,7 +192,7 @@
                                         </div>
                                         <!-- Upload image END -->
 
-                                        <!-- Upload video START -->
+                                        <!-- Upload video_newsandblog START -->
                                         <div class="col-12">
                                             <h5>Unggah video</h5>
                                             <!-- Input -->
@@ -234,7 +234,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Upload video END -->
+                                        <!-- Upload video_newsandblog END -->
 
                                         <!-- Step 2 button -->
                                         <div class="d-flex justify-content-between mt-3">

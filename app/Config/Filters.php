@@ -8,6 +8,7 @@ use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
+use App\Filters\FilterPublik;
 use App\Filters\FilterSuperadmin;
 use App\Filters\FilterAdmin;
 use App\Filters\FilterOperator;
@@ -19,6 +20,9 @@ class Filters extends BaseConfig
     /**
      * Configures aliases for Filter classes to
      * make reading things nicer and simpler.
+     *
+     * @var array<string, string>
+     * @phpstan-var array<string, class-string>
      */
     public array $aliases = [
         'csrf'          => CSRF::class,
@@ -26,27 +30,41 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
-        'filtersuperadmin'  => FilterSuperadmin::class,
-        'filteradmin'    => FilterAdmin::class,
-        'filteroperator'    => FilterOperator::class,
-        'filterguru'    => FilterGuru::class,
-        'filtersiswa'    => FilterSiswa::class,
+        'filterpublik'      => FilterPublik::class, //Level = NULL Atau 0
+        'filtersuperadmin'  => FilterSuperadmin::class, //Level = 1
+        'filteradmin'       => FilterAdmin::class, //Level = 2
+        'filteroperator'    => FilterOperator::class, //Level = 3
+        'filterguru'        => FilterGuru::class, //Level = 4
+        'filtersiswa'       => FilterSiswa::class, //Level = 5
     ];
 
     /**
      * List of filter aliases that are always
      * applied before and after every request.
+     *
+     * @var array<string, array<string, array<string, string>>>|array<string, array<string>>
+     * @phpstan-var array<string, list<string>>|array<string, array<string, array<string, string>>>
      */
     public array $globals = [
         'before' => [
 
+            'filterpublik'    =>
+            [
+                'except' =>
+                [
+                    'register',    'register/*',
+                    'login',    'login/*',
+                    'home',    'home/*',
+                    '/',
+                ]
+            ],
             'filtersuperadmin'    =>
             [
                 'except' =>
                 [
                     'login',    'login/*',
                     'home',    'home/*',
-                    '/', //Routing Ke Controller Home
+                    '/',
                 ]
             ],
             'filteradmin'    =>
@@ -55,7 +73,7 @@ class Filters extends BaseConfig
                 [
                     'login',    'login/*',
                     'home',    'home/*',
-                    '/', //Routing Ke Controller Home
+                    '/',
                 ]
             ],
             'filteroperator'    =>
@@ -64,7 +82,7 @@ class Filters extends BaseConfig
                 [
                     'login',    'login/*',
                     'home',    'home/*',
-                    '/', //Routing Ke Controller Home
+                    '/',
                 ]
             ],
             'filterguru'    =>
@@ -73,7 +91,7 @@ class Filters extends BaseConfig
                 [
                     'login',    'login/*',
                     'home',    'home/*',
-                    '/', //Routing Ke Controller Home
+                    '/',
                 ]
             ],
             'filtersiswa'    =>
@@ -82,7 +100,7 @@ class Filters extends BaseConfig
                 [
                     'login',    'login/*',
                     'home',    'home/*',
-                    '/', //Routing Ke Controller Home
+                    '/',
                 ]
             ],
             // 'honeypot',
@@ -90,6 +108,7 @@ class Filters extends BaseConfig
             // 'invalidchars',
         ],
         'after' => [
+            
             'filtersuperadmin'    =>
             [
                 'except' =>
@@ -100,7 +119,7 @@ class Filters extends BaseConfig
                     'operator', 'operator/*',
                     'guru', 'guru/*',
                     'siswa', 'siswa/*',
-                    '/', //Routing Ke Controller Home
+                    '/',
                 ]
             ],
             'filteradmin'    =>
@@ -109,7 +128,7 @@ class Filters extends BaseConfig
                 [
                     'logout', 'logout/*',
                     'admin', 'admin/*',
-                    '/', //Routing Ke Controller Home
+                    '/',
                 ]
             ],
             'filteroperator'    =>
@@ -118,7 +137,7 @@ class Filters extends BaseConfig
                 [
                     'logout', 'logout/*',
                     'operator', 'operator/*',
-                    '/', //Routing Ke Controller Home
+                    '/',
                 ]
             ],
             'filterguru'    =>
@@ -127,7 +146,7 @@ class Filters extends BaseConfig
                 [
                     'logout', 'logout/*',
                     'guru', 'guru/*',
-                    '/', //Routing Ke Controller Home
+                    '/',
                 ]
             ],
             'filtersiswa'    =>
@@ -136,7 +155,7 @@ class Filters extends BaseConfig
                 [
                     'logout', 'logout/*',
                     'siswa', 'siswa/*',
-                    '/', //Routing Ke Controller Home
+                    '/',
                 ]
             ],
             'toolbar',
@@ -154,7 +173,7 @@ class Filters extends BaseConfig
      *
      * If you use this, you should disable auto-routing because auto-routing
      * permits any HTTP method to access a controller. Accessing the controller
-     * with a method you don’t expect could bypass the filter.
+     * with a method you don't expect could bypass the filter.
      */
     public array $methods = [];
 
