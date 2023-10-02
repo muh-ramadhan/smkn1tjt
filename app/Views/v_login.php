@@ -20,7 +20,7 @@
               <p class="mb-0 h6 fw-light">Mari belajar sesuatu yang baru hari ini!</p>
             </div>
             <!-- SVG Image -->
-            <img src="assets/images/element/02.svg" class="mt-5" alt="">
+            <img src="<?= base_url(); ?>assets/images/element/02.svg" class="mt-5" alt="">
             <!-- Info -->
             <div class="d-sm-flex mt-5 align-items-center justify-content-center">
               <!-- Avatar group -->
@@ -79,7 +79,7 @@
                   <label class="form-check-label" for="exampleCheck1">Ingat saya</label>
                 </div>
                 <div class="text-primary-hover">
-                  <a href="forgot-password.html" class="text-secondary">
+                  <a href="#" class="text-secondary">
                     <u>Tidak ingat kata sandi?</u>
                   </a>
                 </div>

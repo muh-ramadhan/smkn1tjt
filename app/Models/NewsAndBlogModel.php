@@ -43,8 +43,10 @@ class NewsAndBlogModel extends Model
     public function getNewsAndBlogWithCategory()
     {
         $builder = $this->db->table('tbl_newsandblog');
-        $builder->join('tbl_kategori_newsandblog',
-        'tbl_kategori_newsandblog.id_kategori_news_and_blog = tbl_newsandblog.id_kategori_news_and_blog');
+        $builder->join(
+            'tbl_kategori_newsandblog',
+            'tbl_kategori_newsandblog.id_kategori_news_and_blog = tbl_newsandblog.id_kategori_news_and_blog'
+        );
         $builder->where('tbl_newsandblog.deleted_at', null);
         $query = $builder->get();
         return $query->getResultArray();
@@ -53,8 +55,10 @@ class NewsAndBlogModel extends Model
     public function getNewsAndBlogWithCategoryLimited($limit = 3, $offset = 1)
     {
         $builder = $this->db->table('tbl_newsandblog');
-        $builder->join('tbl_kategori_newsandblog',
-        'tbl_kategori_newsandblog.id_kategori_news_and_blog = tbl_newsandblog.id_kategori_news_and_blog');
+        $builder->join(
+            'tbl_kategori_newsandblog',
+            'tbl_kategori_newsandblog.id_kategori_news_and_blog = tbl_newsandblog.id_kategori_news_and_blog'
+        );
         $builder->select('tbl_newsandblog.*, 
         tbl_kategori_newsandblog.created_at AS kategori_created_at, 
         tbl_kategori_newsandblog.warna_kategori_news_and_blog AS warna_kategori_news_and_blog, 
@@ -65,7 +69,7 @@ class NewsAndBlogModel extends Model
         $query = $builder->get();
         return $query->getResultArray();
     }
-    
+
     public function getSiswa123()
     {
         $builder = $this->db->table('tbl_pengguna');
@@ -76,16 +80,45 @@ class NewsAndBlogModel extends Model
         $builder->orderBy('tbl_pengguna.is_top_2', 'DESC');
         $builder->orderBy('tbl_pengguna.is_top_3', 'DESC');
         $builder->limit(3); // Batasi hasil hingga 3 data
-    
+
         // Pilih kolom-kolom yang ingin ditampilkan, termasuk kolom nama_jurusan
         $builder->select('tbl_pengguna.*, tbl_jurusan.nama_jurusan');
-    
+
         $query = $builder->get();
-        
+
         // Debug: Cetak hasil query
         // echo $this->db->getLastQuery(); exit;
-    
+
         return $query->getResultArray();
     }
-    
+
+
+    public function getNewsAndBlogBySlug($slug_newsandblog)
+    {
+        $builder = $this->db->table('tbl_newsandblog');
+        $builder->join('tbl_kategori_newsandblog', 'tbl_kategori_newsandblog.id_kategori_news_and_blog = tbl_newsandblog.id_kategori_news_and_blog');
+        $builder->where('tbl_newsandblog.slug_newsandblog', $slug_newsandblog);
+        $builder->where('tbl_newsandblog.deleted_at', null);
+        $query = $builder->get();
+        return $query->getRowArray();
+    }
+
+
+    public function getNewsAndBlogBySlug2($slug_newsandblog)
+    {
+        $builder = $this->db->table('tbl_newsandblog');
+        $builder->join('tbl_kategori_newsandblog', 'tbl_kategori_newsandblog.id_kategori_news_and_blog = tbl_newsandblog.id_kategori_news_and_blog_tambahan');
+        $builder->where('tbl_newsandblog.slug_newsandblog', $slug_newsandblog);
+        $builder->where('tbl_newsandblog.deleted_at', null);
+        $query = $builder->get();
+        return $query->getRowArray();
+    }
+
+    public function increaseViewCount($id_newsandblog)
+    {
+        $this->db->table('tbl_newsandblog')
+            ->where('id_newsandblog', $id_newsandblog)
+            ->set('jumlah_view', 'jumlah_view + 1', false)
+            ->update();
+    }
 }

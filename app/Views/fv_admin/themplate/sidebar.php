@@ -37,18 +37,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<?= base_url(); ?>admin/semua-taruna-taruni">Semua</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url(); ?>admin/">TKJ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url(); ?>admin/">TKRO</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url(); ?>admin/">NKPI</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url(); ?>admin/">APAT</a>
-                        </li>
                     </ul>
                 </li>
                 <li class="nav-item">

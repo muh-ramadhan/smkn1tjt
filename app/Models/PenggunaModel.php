@@ -47,7 +47,7 @@ class PenggunaModel extends Model
         $query = $builder->get();
         return $query->getResultArray();
     }
-
+    
     public function getSiswa()
     {
         $builder = $this->db->table('tbl_pengguna');

@@ -90,7 +90,7 @@
 <body>
 
   <?= $this->renderSection('content') ?>
-
+  
   <script src="<?= base_url(); ?>assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="<?= base_url(); ?>assets/vendor/quill/js/quill.min.js"></script>
   <script src="<?= base_url(); ?>assets/vendor/stepper/js/bs-stepper.min.js"></script>

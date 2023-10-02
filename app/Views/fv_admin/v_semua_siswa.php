@@ -61,7 +61,6 @@
                                                         }
                                                         ?>
                                                     </div>
-
                                                     <div class="ms-0 ms-sm-2 mt-2 mt-sm-0">
                                                         <h5 class="mb-0">
                                                             <a href="<?= base_url('admin/detail-taruna-taruni/' . $value['id_pengguna']) ?>"><?= $value['nama_lengkap']; ?></a>
@@ -102,7 +101,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <div class="card-footer bg-transparent border-top">
                                                 <div class="d-sm-flex justify-content-between align-items-center">
                                                     <h6 class="mb-2 mb-sm-0">
@@ -115,23 +113,30 @@
                                                         $status = $value['status'];
                                                         ?>
                                                         <?php if ($isTop1 == 1) : ?>
-                                                            <span class="badge text-bg-primary  rounded-circle ms-2">Top 1</span>
-                                                        <?php elseif ($isTop2 == 1) : ?>
-                                                            <span class="badge text-bg-orange  rounded-circle ms-2">Top 2</span>
-                                                        <?php elseif ($isTop3 == 1) : ?>
-                                                            <span class="badge text-bg-info rounded-circle ms-2">Top 3</span>
-                                                        <?php elseif ($status == 1) : ?>
+                                                            <a class="badge btn-success-soft" href="<?= base_url('admin/no-top/' . $value['id_pengguna']) ?>">Top 1</a>
+                                                        <?php else : ?>
+                                                            <a class="badge btn-secondary-soft" href="<?= base_url('admin/top-1/' . $value['id_pengguna']) ?>">Top 1</a>
+                                                        <?php endif; ?>
+                                                        <?php if ($isTop2 == 1) : ?>
+                                                            <a class="badge btn-success-soft" href="<?= base_url('admin/no-top/' . $value['id_pengguna']) ?>">Top 2</a>
+                                                        <?php else : ?>
+                                                            <a class="badge btn-secondary-soft" href="<?= base_url('admin/top-2/' . $value['id_pengguna']) ?>">Top 2</a>
+                                                        <?php endif; ?>
+                                                        <?php if ($isTop3 == 1) : ?>
+                                                            <a class="badge btn-success-soft" href="<?= base_url('admin/no-top/' . $value['id_pengguna']) ?>">Top 3</a>
+                                                        <?php else : ?>
+                                                            <a class="badge btn-secondary-soft" href="<?= base_url('admin/top-3/' . $value['id_pengguna']) ?>">Top 3</a>
+                                                        <?php endif; ?>
+                                                        <?php if ($status == 1) : ?>
                                                             <span class="text-success">Aktif </span>
                                                         <?php elseif (is_null($status)) : ?>
-                                                            <span class="text-danger">Non Aktif</span>
+                                                            <span class="text-danger">Tidak Aktif </span>
                                                         <?php endif; ?>
                                                     </h6>
-
                                                     <div class="text-end text-primary-hover">
                                                         <a href="#" class="btn btn-link text-body p-0 mb-0 me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Kirim Pesan" aria-label="Kirim Pesan">
                                                             <i class="bi bi-envelope-fill"></i>
                                                         </a>
-
                                                         <?php if ($value['status'] == 1) : ?>
                                                             <a href="<?= base_url('admin/nonaktif-taruna-taruni/' . $value['id_pengguna']) ?>" class="btn btn-link text-body p-0 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Nom Aktif" data-bs-original-title="Non Aktif" aria-label="Non Aktif">
                                                                 <i class="fas fa-ban"></i>
@@ -181,7 +186,6 @@
                                                             }
                                                             ?>
                                                         </div>
-
                                                         <div class="mb-0 ms-3">
                                                             <h6 class="mb-0">
                                                                 <a href="<?= base_url('admin/detail-taruna-taruni/' . $value['id_pengguna']) ?>" class="stretched-link"><?= $value['nama_lengkap']; ?></a>
@@ -208,7 +212,6 @@
                                                     <a href="<?= base_url('admin/detail-taruna-taruni/' . $value['id_pengguna']) ?>" class="btn btn-light btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="View">
                                                         <i class="fas fa-edit"></i>
                                                     </a>
-
                                                     <?php if ($value['status'] == 1) : ?>
                                                         <a href="<?= base_url('admin/nonaktif-taruna-taruni/' . $value['id_pengguna']) ?>" class="btn btn-light btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Non Aktif">
                                                             <i class="fas fa-ban"></i>
@@ -218,8 +221,6 @@
                                                             <i class="fas fa-check"></i>
                                                         </a>
                                                     <?php endif; ?>
-
-
                                                     <button class="btn btn-light btn-round mb-0" data-bs-placement="top" data-bs-toggle="modal" data-bs-target="#konfirmasiHapus<?= $value['id_pengguna']; ?>" title="Hapus">
                                                         <i class="fas fa-trash"></i>
                                                     </button>
@@ -250,7 +251,6 @@
         </div>
     </div>
 </main>
-
 
 <?php foreach ($AmbilSemuaDataSiswa as $key => $value) { ?>
     <div class="modal fade" id="konfirmasiHapus<?= $value['id_pengguna']; ?>" tabindex="-1" aria-labelledby="konfirmasiHapusLabel" aria-hidden="true">

@@ -28,6 +28,26 @@ class Home extends BaseController
         return view('welcome_message', $data);
     }
 
+    public function NewsAndBlog($slug_newsandblog)
+    { 
+        // Ambil data berita
+        $newsAndBlog1 = $this->NewsAndBlogModel->getNewsAndBlogBySlug($slug_newsandblog);
+    
+        $newsAndBlog2 = $this->NewsAndBlogModel->getNewsAndBlogBySlug2($slug_newsandblog);
+        
+        // Update jumlah view
+        $this->NewsAndBlogModel->increaseViewCount($newsAndBlog1['id_newsandblog']);
+        $data = [
+            'title' => 'News And Blog',
+            'AmbilDataWeb' => $this->PengaturanWebModel->find(),
+            'AmbilDataNewsAndBlog' => $newsAndBlog1,
+            'AmbilDataNewsAndBlog2' => $newsAndBlog2,
+        ];
+    
+        return view('news_and_blog', $data);
+    }
+    
+
     public function Kontak()
     {
         $data = [

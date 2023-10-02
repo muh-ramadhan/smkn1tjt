@@ -76,6 +76,7 @@
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/font-awesome/css/all.min.css">
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/bootstrap-icons/bootstrap-icons.css">
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/glightbox/css/glightbox.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/tiny-slider/tiny-slider.css">
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/vendor/choices/css/choices.min.css">
   <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/style.css">
 </head>
@@ -85,6 +86,9 @@
   <?= $this->renderSection('content') ?>
 
   <script src="<?= base_url(); ?>assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="<?= base_url(); ?>assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+  <script src="<?= base_url(); ?>assets/vendor/tiny-slider/tiny-slider.js"></script>
+
   <script src="<?= base_url(); ?>assets/vendor/glightbox/js/glightbox.js"></script>
   <script src="<?= base_url(); ?>assets/vendor/choices/js/choices.min.js"></script>
   <script src="<?= base_url(); ?>assets/js/functions.js"></script>

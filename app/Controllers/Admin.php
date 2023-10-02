@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\AdminModel;
 use App\Models\LoginModel;
 use App\Models\PenggunaModel;
 use App\Models\NewsAndBlogModel;
@@ -14,6 +15,7 @@ class Admin extends BaseController
 {
     public function __construct()
     {
+        $this->AdminModel = new AdminModel();
         $this->LoginModel = new LoginModel();
         $this->PenggunaModel = new PenggunaModel();
         $this->NewsAndBlogModel = new NewsAndBlogModel();
@@ -362,7 +364,6 @@ class Admin extends BaseController
             'password' => 'required|min_length[6]',
             'confirm_password' => 'matches[password]',
         ];
-
         // Pesan kesalahan validasi yang lebih spesifik
         $validationMessages = [
             'nama_lengkap' => [
@@ -386,17 +387,14 @@ class Admin extends BaseController
             // Tambahkan pesan kesalahan yang sesuai untuk aturan lainnya
             // ...
         ];
-
         if (!$this->validate($validationRules, $validationMessages)) {
             // Jika validasi gagal, atur pesan kesalahan validasi ke dalam session
             session()->setFlashdata('errorValidation', \Config\Services::validation()->getErrors());
             return redirect()->back()->withInput();
         }
-    
         $penggunaModel = new PenggunaModel();
         // Periksa apakah ada file gambar yang diunggah
         $foto = 'tidak-ada-gambar.png'; // Default
-
         $file = $this->request->getFile('foto');
         if ($file && $file->getName() !== '' && $file->getSize() > 0) {
             // Jika ada file yang diunggah, gunakan file yang diunggah
@@ -404,7 +402,6 @@ class Admin extends BaseController
             $file->move(FCPATH . 'assets/images/avatar/', $newName); // Sesuaikan dengan path folder tempat menyimpan gambar
             $foto = $newName;
         }
-
         $data = [
             'foto' => $foto,
             'nama_lengkap' => ucwords(strtolower($this->request->getVar('nama_lengkap'))),
@@ -416,10 +413,8 @@ class Admin extends BaseController
             'id_jurusan' => $this->request->getPost('id_jurusan'),
             'status' => 1,
         ];
-
         $penggunaModel->insert($data);
         $lastInsertId = $penggunaModel->getInsertID();
-
         // Gunakan nilai 'nisn' sebagai 'username'
         $data = [
             'id_pengguna' => $lastInsertId,
@@ -427,36 +422,118 @@ class Admin extends BaseController
             'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
             'level' => 5,
         ];
-
         $loginModel = new LoginModel();
         $loginModel->insert($data);
-
         // Tampilkan pesan sukses dan redirect ke halaman lain jika perlu
         session()->setFlashdata('berhasil', 'Data siswa berhasil disimpan.');
         return redirect()->to('admin/semua-taruna-taruni');
     }
 
-    public function UpdateSiswa()
+    public function DetailSiswa($id_pengguna)
     {
-        $PenggunaModel = new PenggunaModel();
         $data = [
-            'nama_lengkap' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_lengkap'))), ' ', true),
+            'title' => 'Detail',
+            'subtitle' => 'Taruna/Taruni',
+            'AmbilDataKelas' => $this->AdminModel->getAllKelas(),
+            'AmbilDataJurusan' => $this->AdminModel->getAllJurusan(),
+            'AmbilDetailPengguna' => $this->AdminModel->getDetailPengguna($id_pengguna),
+            'AmbilDataDetailLogin'  => $this->LoginModel->where('id_pengguna', $id_pengguna)->get()->getRowArray(),
         ];
-        $PenggunaModel->insert($data);
-        $last_insert_id = $PenggunaModel->getInsertID();
-
-        $data = [
-            'id_pengguna' => $last_insert_id,
-            'username' => $this->request->getVar('username'),
-            'password' => $this->request->getVar('password'),
-            'level' => 2,
-        ];
-        $LoginModel = new LoginModel();
-        $LoginModel->insert($data);
-
-        session()->setFlashdata('tambah', 'Data Berhasil Di Tambah');
-        return redirect()->to('fv_admin/v_semua_siswa');
+        return view('fv_admin/v_detail_siswa', $data);
     }
+
+    public function UpdateSiswa($id_pengguna)
+    {
+        $validationRules = [
+            'nama_lengkap' => 'required',
+            'nisn' => 'required|numeric',
+            'no_hp' => 'required|numeric',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'id_kelas' => 'required|numeric',
+            'id_jurusan' => 'required|numeric',
+            'password' => 'required|min_length[6]',
+            'confirm_password' => 'matches[password]',
+        ];
+    
+        // Pesan kesalahan validasi yang lebih spesifik
+        $validationMessages = [
+            'nama_lengkap' => [
+                'required' => 'Nama lengkap wajib diisi.'
+            ],
+            'nisn' => [
+                'required' => 'NISN wajib diisi.',
+                'numeric' => 'NISN wajib berupa angka.'
+            ],
+            'no_hp' => [
+                'required' => 'Nomor HP wajib diisi.',
+                'numeric' => 'Nomor HP wajib berupa angka.'
+            ],
+            'password' => [
+                'required' => 'Kata sandi wajib diisi.',
+                'min_length' => 'Kata sandi Minimal 6 karakter.'
+            ],
+            'confirm_password' => [
+                'matches' => 'Ulangi kata sandi wajib sama dengan kata sandi'
+            ],
+            // Tambahkan pesan kesalahan yang sesuai untuk aturan lainnya
+            // ...
+        ];
+    
+        if (!$this->validate($validationRules, $validationMessages)) {
+            // Jika validasi gagal, atur pesan kesalahan validasi ke dalam session
+            session()->setFlashdata('errorValidation', \Config\Services::validation()->getErrors());
+            return redirect()->back()->withInput();
+        }
+    
+        $PenggunaModel = new PenggunaModel();
+
+        // Dapatkan nilai foto yang ada dari database
+        $existingFoto = $PenggunaModel->find($id_pengguna)['foto'];
+    
+        // Periksa apakah ada file gambar yang diunggah
+        $file = $this->request->getFile('foto');
+        $foto = $existingFoto; // Use the existing photo value as the default
+    
+        if ($file && $file->getName() !== '' && $file->getSize() > 0) {
+            // Jika ada file yang diunggah, gunakan file yang diunggah
+            $newName = $file->getRandomName();
+            $file->move(FCPATH . 'assets/images/avatar/', $newName); // Sesuaikan dengan path folder tempat menyimpan gambar
+            $foto = $newName;
+        }
+    
+        $data1 = [
+            'id_kelas' => $this->request->getPost('id_kelas'),
+            'id_jurusan' => $this->request->getPost('id_jurusan'),
+            'status' => 1,
+            'foto' => $foto,
+            'nama_lengkap' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_lengkap'))), ' ', true),
+            'nisn' => $this->request->getPost('nisn'),
+            'no_hp' => $this->request->getPost('no_hp'),
+            'tempat_lahir' => reduce_multiples(ucwords(strtolower($this->request->getVar('tempat_lahir'))), ' ', true),
+            'tanggal_lahir' => $this->request->getVar('tanggal_lahir'),
+            'is_top_1' => NULL,
+            'is_top_2' => NULL,
+            'is_top_3' => NULL,
+            'deleted_at' => NULL,
+        ];
+        $PenggunaModel->update($id_pengguna, $data1);
+    
+        $LoginModel = new LoginModel();
+        
+        $data2 = [
+            'id_pengguna' => $id_pengguna,
+            'username' => $this->request->getVar('nisn'),
+            'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+            'level' => 5,
+        ];
+
+        $LoginModel->set($data2, $data2)->where('id_pengguna', $id_pengguna)->update();
+    
+        session()->setFlashdata('berhasil', 'Data Berhasil Di Ubah');
+        return redirect()->to('admin/semua-taruna-taruni');
+    }
+    
 
     public function HapusSementaraSiswa($id_pengguna)
     {
@@ -476,6 +553,94 @@ class Admin extends BaseController
     {
         $this->PenggunaModel->set('status', NULL)->where('id_pengguna', $id_pengguna)->update();
         session()->setFlashdata('berhasil', 'Berhasil Di Nonaktifkan');
+        return redirect()->to('admin/semua-taruna-taruni');
+    }
+
+    public function isTop1($id_pengguna)
+    {
+        // Periksa apakah sudah ada yang ditandai sebagai Top 1
+        $isTop1Exists = $this->PenggunaModel
+            ->where('is_top_1', 1)
+            ->where('id_pengguna !=', $id_pengguna)
+            ->countAllResults() > 0;
+
+        if ($isTop1Exists) {
+            session()->setFlashdata('gagal', 'Sudah ada taruna/i yang ditandai sebagai Top 1.');
+            return redirect()->to('admin/semua-taruna-taruni');
+        }
+
+        // Lanjutkan penandaan Top 1
+        $this->PenggunaModel
+            ->set('is_top_1', 1)
+            ->set('is_top_2', NULL)
+            ->set('is_top_3', NULL)
+            ->where('id_pengguna', $id_pengguna)
+            ->update();
+
+        session()->setFlashdata('berhasil', 'Top 1 Berhasil Diaktifkan');
+        return redirect()->to('admin/semua-taruna-taruni');
+    }
+
+    public function isTop2($id_pengguna)
+    {
+        // Periksa apakah sudah ada yang ditandai sebagai Top 2
+        $isTop2Exists = $this->PenggunaModel
+            ->where('is_top_2', 1)
+            ->where('id_pengguna !=', $id_pengguna)
+            ->countAllResults() > 0;
+
+        if ($isTop2Exists) {
+            session()->setFlashdata('gagal', 'Sudah ada taruna/i yang ditandai sebagai Top 2.');
+            return redirect()->to('admin/semua-taruna-taruni');
+        }
+
+        // Lanjutkan penandaan Top 2
+        $this->PenggunaModel
+            ->set('is_top_1', NULL)
+            ->set('is_top_2', 1)
+            ->set('is_top_3', NULL)
+            ->where('id_pengguna', $id_pengguna)
+            ->update();
+
+        session()->setFlashdata('berhasil', 'Top 2 Berhasil Diaktifkan');
+        return redirect()->to('admin/semua-taruna-taruni');
+    }
+
+    public function isTop3($id_pengguna)
+    {
+        // Periksa apakah sudah ada yang ditandai sebagai Top 3
+        $isTop3Exists = $this->PenggunaModel
+            ->where('is_top_3', 1)
+            ->where('id_pengguna !=', $id_pengguna)
+            ->countAllResults() > 0;
+
+        if ($isTop3Exists) {
+            session()->setFlashdata('gagal', 'Sudah ada taruna/i yang ditandai sebagai Top 3.');
+            return redirect()->to('admin/semua-taruna-taruni');
+        }
+
+        // Lanjutkan penandaan Top 3
+        $this->PenggunaModel
+            ->set('is_top_1', NULL)
+            ->set('is_top_2', NULL)
+            ->set('is_top_3', 1)
+            ->where('id_pengguna', $id_pengguna)
+            ->update();
+
+        session()->setFlashdata('berhasil', 'Top 3 Berhasil Diaktifkan');
+        return redirect()->to('admin/semua-taruna-taruni');
+    }
+
+    public function noTop($id_pengguna)
+    {
+        $this->PenggunaModel
+            ->set('is_top_1', NULL)
+            ->set('is_top_2', NULL)
+            ->set('is_top_3', NULL)
+            ->where('id_pengguna', $id_pengguna)
+            ->update();
+
+        session()->setFlashdata('berhasil', 'Status Top Dihapus');
         return redirect()->to('admin/semua-taruna-taruni');
     }
 

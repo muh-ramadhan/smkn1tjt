@@ -9,6 +9,7 @@ $routes->setDefaultController('Home');
 //Home
 $routes->get('/', 'Home::index');
 $routes->get('home/hubungi-kami', 'Home::Kontak');
+$routes->get('home/news-and-blog/(:segment)', 'Home::NewsAndBlog/$1');
 
 //Admin
 $routes->get('admin', 'Admin::index');
@@ -39,9 +40,13 @@ $routes->get('admin/tambah-taruna-taruni', 'Admin::TambahSiswa');
 $routes->post('admin/simpan-taruna-taruni', 'Admin::SimpanSiswa');
 $routes->get('admin/detail-taruna-taruni/(:num)', 'Admin::DetailSiswa/$1');
 $routes->match(['get', 'post'], 'admin/update-taruna-taruni/(:num)', 'Admin::UpdateSiswa/$1');
+$routes->match(['get', 'put'], 'admin/hapus-sementara-taruna-taruni/(:num)', 'Admin::HapusSementaraSiswa/$1');
 $routes->match(['get', 'put'], 'admin/aktif-taruna-taruni/(:num)', 'Admin::AktifSiswa/$1');
 $routes->match(['get', 'put'], 'admin/nonaktif-taruna-taruni/(:num)', 'Admin::NonaktifSiswa/$1');
-$routes->match(['get', 'put'], 'admin/hapus-sementara-taruna-taruni/(:num)', 'Admin::HapusSementaraSiswa/$1');
+$routes->match(['get', 'put'], 'admin/top-1/(:num)', 'Admin::isTop1/$1');
+$routes->match(['get', 'put'], 'admin/top-2/(:num)', 'Admin::isTop2/$1');
+$routes->match(['get', 'put'], 'admin/top-3/(:num)', 'Admin::isTop3/$1');
+$routes->match(['get', 'put'], 'admin/no-top/(:num)', 'Admin::noTop/$1');
 
 //Login, Register, dan Autentikasi
 $routes->get('/login', 'Login::index');

@@ -1,12 +1,10 @@
 <header class="navbar-light navbar-sticky">
     <nav class="navbar navbar-expand-xl z-index-9">
         <div class="container">
-
             <a class="navbar-brand" href="<?= base_url(); ?>">
                 <img class="light-mode-item navbar-brand-item" src="<?= base_url(); ?>assets/images/logo.png" alt="logo">
                 <img class="dark-mode-item navbar-brand-item" src="<?= base_url(); ?>assets/images/logo-light.png" alt="logo">
             </a>
-
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-animation">
                     <span></span>
@@ -16,7 +14,6 @@
             </button>
 
             <div class="navbar-collapse collapse" id="navbarCollapse">
-
                 <ul class="navbar-nav navbar-nav-scroll">
                     <li class="nav-item">
                         <a class="nav-link active" href="<?= base_url(); ?>"><i class="bi bi-house me-2"></i>Home</a>
@@ -78,7 +75,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="<?= base_url(); ?>home/kontak"><i class="bi bi-headset me-2"></i>Hubungi Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= base_url(); ?>home/hubungi-kami"><i class="bi bi-headset me-2"></i>Hubungi Kami</a></li>
                 </ul>
             </div>
 
