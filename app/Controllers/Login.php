@@ -5,6 +5,9 @@ namespace App\Controllers;
 use App\Models\LoginModel;
 use App\Models\PenggunaModel;
 use App\Models\PengaturanWebModel;
+use App\Models\MenuDinamisModel;
+use App\Models\MenuSubDinamisModel;
+use App\Models\MenuSubSubDinamisModel;
 
 class Login extends BaseController
 {
@@ -14,16 +17,40 @@ class Login extends BaseController
         $this->LoginModel = new LoginModel();
         $this->PenggunaModel = new PenggunaModel();
         $this->PengaturanWebModel = new PengaturanWebModel();
+        $this->MenuDinamisModel = new MenuDinamisModel();
+        $this->MenuSubDinamisModel = new MenuSubDinamisModel();
+        $this->MenuSubSubDinamisModel = new MenuSubSubDinamisModel();
     }
 
     public function index()
     {
         $data = [
-            'title' => 'Login', // Ganti 'tittle' menjadi 'title'
+            'title' => 'SMK Negeri 1 Tanjung Jabung Timur',
+            'subtitle' => '- Login',
             'AmbilDataWeb' => $this->PengaturanWebModel->find(),
+
+            'dynamicMenus1' => $this->MenuDinamisModel->findAll(),
+            'dynamicMenus2' => $this->MenuSubDinamisModel->findAll(),
+            'dynamicMenus3' => $this->MenuSubSubDinamisModel->findAll(),
+            'hasSubMenuLevel3' => [$this, 'hasSubMenuLevel3'],
         ];
         return view('v_login', $data);
     }
+    
+    //Render Menu Dinamis
+    public function hasSubMenuLevel3($idSubMenuDinamis)
+    {
+        $dynamicMenus3 = $this->MenuSubSubDinamisModel->findAll();
+
+        foreach ($dynamicMenus3 as $menu3) {
+            if ($menu3['id_sub_menu_dinamis'] == $idSubMenuDinamis) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 
     public function auth()
     {
@@ -31,21 +58,18 @@ class Login extends BaseController
             'username' => 'required',
             'password' => 'required',
         ];
-
+    
         if ($this->validate($rules)) {
             $username = $this->request->getVar('username');
             $password = $this->request->getVar('password');
-
-            $dataLogin = $this->LoginModel->where([
-                'username' => $username,
-                'password' => $password,
-            ])->first();
-
-            if ($dataLogin) {
+    
+            $dataLogin = $this->LoginModel->where('username', $username)->first();
+    
+            if ($dataLogin && password_verify($password, $dataLogin['password'])) {
                 $id_pengguna = $dataLogin['id_pengguna'];
-
+    
                 $dataPengguna = $this->PenggunaModel->find($id_pengguna);
-
+    
                 if ($dataPengguna) {
                     session()->set([
                         'log' => true,
@@ -57,17 +81,17 @@ class Login extends BaseController
                         'nama_lengkap' => $dataPengguna['nama_lengkap'],
                         'deleted_at' => $dataPengguna['deleted_at'],
                     ]);
-
+    
                     if ($dataPengguna['deleted_at'] != NULL) {
                         session()->setFlashdata('gagal', 'Akun Anda telah dihapus. Silakan hubungi admin jika ini adalah kesalahan.');
                         return redirect()->to(base_url('login'));
                     }
-
-                    if ($dataPengguna['status'] == 1) {
-                        session()->setFlashdata('gagal', 'Akun Anda telah diblokir. Silakan hubungi admin.');
+    
+                    if ($dataPengguna['status'] == NULL) {
+                        session()->setFlashdata('gagal', 'Akun Anda telah dihapus. Silakan hubungi admin.');
                         return redirect()->to(base_url('login'));
                     }
-
+    
                     $level = $dataLogin['level'];
                     switch ($level) {
                         case 1:
@@ -91,7 +115,7 @@ class Login extends BaseController
                             break;
                     }
                 } else {
-                    session()->setFlashdata('gagal', 'Data pengguna tidak ditemukan');
+                    session()->setFlashdata('gagal', 'Akun Tidak Terdaftar');
                     return redirect()->to(base_url('login'));
                 }
             } else {
@@ -103,4 +127,5 @@ class Login extends BaseController
             return redirect()->to(base_url('login'));
         }
     }
+    
 }

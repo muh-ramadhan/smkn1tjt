@@ -1,4 +1,22 @@
 <?= $this->extend('default/themplate/layout') ?>
+<!-- HEAD DESCRIPTION -->
+<?= $this->section('head-description') ?>
+<?= $this->include('default/themplate/head-description') ?>
+<?= $this->endSection() ?>
+<!-- HEAD DESCRIPTION -->
+
+<!-- HEAD SCRIPT -->
+<?= $this->section('head-script') ?>
+<?= $this->include('default/themplate/head-script') ?>
+<?= $this->endSection() ?>
+<!-- HEAD SCRIPT -->
+
+<!-- HEAD CSS -->
+<?= $this->section('head-css') ?>
+<?= $this->include('default/themplate/head-css') ?>
+<?= $this->endSection() ?>
+<!-- HEAD CSS -->
+
 <?= $this->section('content') ?>
 <?= $this->include('default/themplate/header') ?>
 
@@ -20,7 +38,7 @@
             pembelajaran, kehidupan sehari-hari dan memprioritaskan
             penguasaan IPTEK dan Life Skill dalam mewujudkan Profil Pelajar
             Pancasila</p>
-          <a href="#" class="btn btn-lg btn-blue mb-0">Lihat Prestasi</a>
+          <a href="<?=base_url();?>home/hubungi-kami" class="btn btn-lg btn-blue mb-0">Hubungi Kami</a>
         </div>
         <div class="col-lg-5 col-xxl-3 position-relative">
           <h4 class="mb-4">Kedisiplinan Terbaik Bulan Ini</h4>
@@ -93,7 +111,7 @@
               <path d="M2.48911 34.0889C6.43441 35.5567 10.3797 37.0244 14.325 38.5394C16.1568 39.2023 19.2566 37.1664 16.5325 36.1248C12.5872 34.6571 8.6419 33.1894 4.6966 31.6743C2.91182 31.0115 -0.188063 33.0473 2.48911 34.0889Z" />
             </svg>
           </figure>
-          <img src="<?= base_url(); ?>assets/images/bg/06.jpg" class="rounded-3" alt="">
+          <img src="<?= base_url(); ?>assets/images/about/cover-3.jpg" class="rounded-3" alt="">
         </div>
       </div>
     </div>
@@ -185,9 +203,9 @@
             <li class="list-group-item h6 d-flex fw-normal mb-0"><i class="bi bi-patch-check-fill text-success me-2"></i>Beragam Pilihan Kegiatan Ekstrakurikuler</li>
           </ul>
           <div class="d-sm-flex align-items-center mt-4">
-            <a href="#" class="btn btn-lg btn-dark me-2 mb-4 mb-sm-0">Selengkapnya</a>
+            <a href="<?=base_url();?>home/news-and-blog/sejarah-smk-negeri-1-tanjung-jabung-timur" class="btn btn-lg btn-dark me-2 mb-4 mb-sm-0">Selengkapnya</a>
             <div class="d-flex align-items-center py-2 ms-0 ms-sm-4">
-              <a data-glightbox data-gallery="office-tour" href="https://www.youtube.com/embed/tXHviS-4ygo" class="btn btn-round btn-danger-shadow mb-0 overflow-visible me-7">
+              <a data-glightbox data-gallery="office-tour" href="https://www.youtube.com/embed/#" class="btn btn-round btn-danger-shadow mb-0 overflow-visible me-7">
                 <i class="fas fa-play"></i>
                 <h6 class="mb-0 ms-3 fw-normal position-absolute start-100 top-50 translate-middle-y">Testimoni Alumni</h6>
               </a>
@@ -219,9 +237,9 @@
                   <path d="M57.4765 89.4599C56.997 89.9733 56.2091 90.1786 55.4898 89.9391C54.291 89.7337 53.8799 89.0493 53.7087 88.8439C52.9894 87.9883 53.3661 87.167 53.9827 86.2772C54.154 86.0376 54.6678 85.7638 55.4898 85.5243C57.2367 85.0109 64.2243 84.566 66.9988 83.8131C68.6429 83.4709 70.2528 83.0602 71.9312 82.6837C74.3974 82.1361 76.8294 81.6228 79.2956 81.0068C82.0015 80.3223 84.7075 79.6036 87.3792 78.8165C94.0586 76.9 100.704 74.4701 107.28 71.8349C111.596 70.0895 115.843 68.0703 120.091 66.188C120.844 65.8458 121.564 65.572 122.351 65.2982C123.55 64.8875 124.681 64.6138 125.914 64.2715C127.181 63.9293 128.311 63.6213 129.579 63.3133C131.6 62.8341 133.278 62.5261 135.265 62.0128C135.539 61.8417 135.916 61.9101 136.121 62.1839C136.292 62.4577 136.224 62.8341 135.95 63.0395C134.682 64.7164 133.655 66.1196 132.251 67.7281C131.36 68.7548 130.469 69.6104 129.51 70.5344C128.551 71.4584 127.626 72.2798 126.565 73.1012C125.879 73.6145 125.16 74.0936 124.441 74.5043C120.193 77.0369 115.604 79.0218 110.979 80.8699C104.06 83.642 96.9015 85.798 89.7769 87.5777C85.4953 88.6044 81.1795 89.5284 76.7951 90.1444C73.8836 90.5551 70.9721 90.8289 68.0264 91.0342C66.5535 91.0685 64.0873 90.8631 61.6896 90.5209C60.251 90.2813 58.6068 89.6995 57.4765 89.4599ZM56.6544 89.3231C56.3461 89.3231 56.1749 89.3915 56.1749 89.6311C56.1749 89.9049 56.5174 89.4257 56.6544 89.3231ZM57.2367 86.5852C57.0655 86.1061 56.8257 85.7296 56.5174 86.1745C56.4832 86.243 56.6202 86.2772 56.7229 86.3456C56.9284 86.3798 57.0997 86.4825 57.2367 86.5852Z" fill="#6F42C1" />
                 </svg>
               </figure>
-              <img src="<?= base_url(); ?>assets/images/about/25.jpg" class="rounded-3" alt="">
+              <img src="<?= base_url(); ?>assets/images/bg/cover-1.jpg" class="rounded-3" alt="">
               <div class="col-10 position-absolute top-100 start-0 translate-middle mt-n6 ms-n3 d-none d-md-block">
-                <img src="<?= base_url(); ?>assets/images/about/26.jpg" class="rounded-3" alt="">
+                <img src="<?= base_url(); ?>assets/images/about/cover-2.jpg" class="rounded-3" alt="">
               </div>
             </div>
 
@@ -259,7 +277,7 @@
                   <p class="mb-3 mb-lg-0">Belajar, Berlatih, Berprestasi, dan Berkarakter</p>
                 </div>
                 <div class="col-lg-4 text-lg-end">
-                  <a href="#" class="btn btn-warning mb-0">Selengkapnya</a>
+                  <a href="<?=base_url();?>home/news-and-blog/batalyon-cendikia-utama" class="btn btn-warning mb-0">Selengkapnya</a>
                 </div>
               </div>
             </div>
@@ -456,3 +474,16 @@
 <?= $this->include('default/themplate/footer') ?>
 <?= $this->include('default/themplate/back-top') ?>
 <?= $this->endSection() ?>
+
+
+<!-- SCRIPT EXTRA -->
+<?= $this->section('script-extra') ?>
+<?= $this->include('default/themplate/modal-informasi') ?>
+<?= $this->endSection() ?>
+<!-- SCRIPT EXTRA -->
+
+<!-- SCRIPT ESSENTIAL -->
+<?= $this->section('script-essential') ?>
+<?= $this->include('default/themplate/script-essential') ?>
+<?= $this->endSection() ?>
+<!-- SCRIPT ESSENTIAL -->

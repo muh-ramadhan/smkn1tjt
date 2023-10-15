@@ -1,6 +1,25 @@
 <?= $this->extend('default/themplate/layout') ?>
+<!-- HEAD DESCRIPTION -->
+<?= $this->section('head-description') ?>
+<?= $this->include('default/themplate/head-description') ?>
+<?= $this->endSection() ?>
+<!-- HEAD DESCRIPTION -->
+
+<!-- HEAD SCRIPT -->
+<?= $this->section('head-script') ?>
+<?= $this->include('default/themplate/head-script') ?>
+<?= $this->endSection() ?>
+<!-- HEAD SCRIPT -->
+
+<!-- HEAD CSS -->
+<?= $this->section('head-css') ?>
+<?= $this->include('default/themplate/head-css') ?>
+<?= $this->endSection() ?>
+<!-- HEAD CSS -->
+
 <?= $this->section('content') ?>
 <?= $this->include('default/themplate/header') ?>
+
 
 <!-- MAIN CONTENT START -->
 <main>
@@ -104,5 +123,17 @@
 
 <?= $this->include('default/themplate/footer') ?>
 <?= $this->include('default/themplate/back-top') ?>
+<?= $this->endSection() ?>
+
+
+<!-- SCRIPT EXTRA -->
+<?= $this->section('script-extra') ?>
 <?= $this->include('default/themplate/modal-informasi') ?>
 <?= $this->endSection() ?>
+<!-- SCRIPT EXTRA -->
+
+<!-- SCRIPT ESSENTIAL -->
+<?= $this->section('script-essential') ?>
+<?= $this->include('default/themplate/script-essential') ?>
+<?= $this->endSection() ?>
+<!-- SCRIPT ESSENTIAL -->

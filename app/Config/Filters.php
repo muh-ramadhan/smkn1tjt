@@ -58,106 +58,107 @@ class Filters extends BaseConfig
                     '/',
                 ]
             ],
-            'filtersuperadmin'    =>
-            [
-                'except' =>
-                [
-                    'login',    'login/*',
-                    'home',    'home/*',
-                    '/',
-                ]
-            ],
+            // 'filtersuperadmin'    =>
+           //  [
+                //    'except' =>
+                //    [
+                //        'login',    'login/*',
+                //        'home',    'home/*',
+                //        '/',
+                //    ]
+            // ],
             'filteradmin'    =>
-            [
-                'except' =>
-                [
-                    'login',    'login/*',
-                    'home',    'home/*',
-                    '/',
-                ]
-            ],
-            'filteroperator'    =>
-            [
-                'except' =>
-                [
-                    'login',    'login/*',
-                    'home',    'home/*',
-                    '/',
-                ]
-            ],
-            'filterguru'    =>
-            [
-                'except' =>
-                [
-                    'login',    'login/*',
-                    'home',    'home/*',
-                    '/',
-                ]
-            ],
-            'filtersiswa'    =>
-            [
-                'except' =>
-                [
-                    'login',    'login/*',
-                    'home',    'home/*',
-                    '/',
-                ]
-            ],
+             [
+                    'except' =>
+                    [
+                        'login',    'login/*',
+                        'home',    'home/*',
+                        '/',
+                    ]
+             ],
+            // 'filteroperator'    =>
+            // [
+                //    'except' =>
+                //    [
+                //        'login',    'login/*',
+                //        'home',    'home/*',
+                //        '/',
+                //    ]
+          //   ],
+            // 'filterguru'    =>
+           //  [
+                //    'except' =>
+                //    [
+                //        'login',    'login/*',
+                //        'home',    'home/*',
+                //        '/',
+                //    ]
+            // ],
+             //'filtersiswa'    =>
+           //  [
+            //    'except' =>
+            //    [
+            //        'login',    'login/*',
+            //        'home',    'home/*',
+            //        '/',
+            //    ]
+            // ],
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
         ],
         'after' => [
             
-            'filtersuperadmin'    =>
-            [
-                'except' =>
-                [
-                    'logout', 'logout/*',
-                    'superadmin', 'superadmin/*',
-                    'admin', 'admin/*',
-                    'operator', 'operator/*',
-                    'guru', 'guru/*',
-                    'siswa', 'siswa/*',
-                    '/',
-                ]
-            ],
+            // 'filtersuperadmin'    =>
+             //[
+                //'except' =>
+                //[
+                    //'logout', 'logout/*',
+                    //'superadmin', 'superadmin/*',
+                    //'admin', 'admin/*',
+                    //'operator', 'operator/*',
+                    //'guru', 'guru/*',
+                    //'siswa', 'siswa/*',
+                    //'/',
+                //]
+             //],
             'filteradmin'    =>
             [
                 'except' =>
                 [
                     'logout', 'logout/*',
+                    'home', 'home/*',
                     'admin', 'admin/*',
                     '/',
                 ]
             ],
-            'filteroperator'    =>
-            [
-                'except' =>
-                [
-                    'logout', 'logout/*',
-                    'operator', 'operator/*',
-                    '/',
-                ]
-            ],
-            'filterguru'    =>
-            [
-                'except' =>
-                [
-                    'logout', 'logout/*',
-                    'guru', 'guru/*',
-                    '/',
-                ]
-            ],
-            'filtersiswa'    =>
-            [
-                'except' =>
-                [
-                    'logout', 'logout/*',
-                    'siswa', 'siswa/*',
-                    '/',
-                ]
-            ],
+             //'filteroperator'    =>
+            // [
+                //'except' =>
+                //[
+                    //'logout', 'logout/*',
+                    //'operator', 'operator/*',
+                    //'/',
+                //]
+            // ],
+            // 'filterguru'    =>
+            // [
+                //'except' =>
+                //[
+                    //'logout', 'logout/*',
+                    //'guru', 'guru/*',
+                    //'/',
+                //]
+             //],
+            // 'filtersiswa'    =>
+            // [
+                //'except' =>
+                //[
+                    //'logout', 'logout/*',
+                    //'siswa', 'siswa/*',
+                    //'/',
+                //]
+            // ],
             'toolbar',
             // 'honeypot',
             // 'secureheaders',

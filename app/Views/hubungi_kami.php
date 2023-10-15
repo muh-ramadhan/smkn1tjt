@@ -1,8 +1,26 @@
 <?= $this->extend('default/themplate/layout') ?>
+<!-- HEAD DESCRIPTION -->
+<?= $this->section('head-description') ?>
+<?= $this->include('default/themplate/head-description') ?>
+<?= $this->endSection() ?>
+<!-- HEAD DESCRIPTION -->
+
+<!-- HEAD SCRIPT -->
+<?= $this->section('head-script') ?>
+<?= $this->include('default/themplate/head-script') ?>
+<?= $this->endSection() ?>
+<!-- HEAD SCRIPT -->
+
+<!-- HEAD CSS -->
+<?= $this->section('head-css') ?>
+<?= $this->include('default/themplate/head-css') ?>
+<?= $this->endSection() ?>
+<!-- HEAD CSS -->
+
+<!-- CONTENT -->
 <?= $this->section('content') ?>
 <?= $this->include('default/themplate/header') ?>
 
-<!-- MAIN CONTENT START -->
 <main>
   <section class="pt-5 pb-0" style="background-image:url(assets/images/element/map.svg); background-position: center left; background-size: cover_newsandblog;">
     <div class="container">
@@ -20,12 +38,8 @@
         <div class="col-lg-4 mt-lg-0">
           <div class="card card-body bg-primary shadow py-5 text-center h-100">
             <!-- Title -->
-            <h5 class="text-white mb-3">Official</h5>
+            <h5 class="text-white mb-3">Administrasi </h5>
             <ul class="list-inline mb-0">
-              <!-- Address -->
-              <li class="list-item mb-3">
-                <a href="#" class="text-white"> <i class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>Chicago HQ Estica Cop. Macomb, MI 48042 </a>
-              </li>
               <!-- Phone number -->
               <li class="list-item mb-3">
                 <a href="#" class="text-white"> <i class="fas fa-fw fa-phone-alt me-2"></i>(423) 733-8222 </a>
@@ -42,12 +56,8 @@
         <div class="col-lg-4 mt-lg-0">
           <div class="card card-body shadow py-5 text-center h-100">
             <!-- Title -->
-            <h5 class="mb-3">Kemitraan dan Bisnis</h5>
+            <h5 class="mb-3">Kerjasama dan Kemitraan</h5>
             <ul class="list-inline mb-0">
-              <!-- Address -->
-              <li class="list-item mb-3 h6 fw-light">
-                <a href="#"> <i class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>2492 Centennial NW, Acworth, GA, 30102 </a>
-              </li>
               <!-- Phone number -->
               <li class="list-item mb-3 h6 fw-light">
                 <a href="#"> <i class="fas fa-fw fa-phone-alt me-2"></i>+896-789-546 </a>
@@ -64,12 +74,8 @@
         <div class="col-lg-4 mt-lg-0">
           <div class="card card-body shadow py-5 text-center h-100">
             <!-- Title -->
-            <h5 class="mb-3">Pengembangan / Laporan Error</h5>
+            <h5 class="mb-3">Akademik</h5>
             <ul class="list-inline mb-0">
-              <!-- Address -->
-              <li class="list-item mb-3 h6 fw-light">
-                <a href="https://dalonet.com/"> <i class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>PT. Dalahas Local Network </a>
-              </li>
               <!-- Phone number -->
               <li class="list-item mb-3 h6 fw-light">
                 <a href="#"> <i class="fas fa-fw fa-phone-alt me-2"></i>(+62) 740-7371182 </a>
@@ -153,7 +159,17 @@
 
 <?= $this->include('default/themplate/footer') ?>
 <?= $this->include('default/themplate/back-top') ?>
-<? //= $this->include('default/themplate/admision-open') 
-?>
-
 <?= $this->endSection() ?>
+<!-- CONTENT -->
+
+<!-- SCRIPT EXTRA -->
+<?= $this->section('script-extra') ?>
+<?= $this->include('default/themplate/modal-informasi') ?>
+<?= $this->endSection() ?>
+<!-- SCRIPT EXTRA -->
+
+<!-- SCRIPT ESSENTIAL -->
+<?= $this->section('script-essential') ?>
+<?= $this->include('default/themplate/script-essential') ?>
+<?= $this->endSection() ?>
+<!-- SCRIPT ESSENTIAL -->

@@ -29,72 +29,47 @@
                     <h1 class="h3 mb-2 mb-sm-0"><?= $title; ?> <?= $subtitle; ?></h1>
                 </div>
             </div>
-            <?= form_open_multipart('admin/simpan-kategori-news-and-blog') ?>
+            <?= form_open_multipart('admin/simpan-kelas') ?>
             <?= csrf_field() ?>
             <div class="row g-4">
 
-                <div class="col-md-12">
-                    <label class="form-label">Judul Kategori News And Blog</label>
-                    <input class="form-control" type="text" placeholder="Judul Kategori News And Blog" name="judul_kategori_news_and_blog">
+                <div class="col-md-6">
+                    <label class="form-label">Kelas Dalam Huruf</label>
+                    <input class="form-control" type="text" placeholder="Masukkan Kelas Dalam Huruf" name="nama_kelas_huruf">
                     <span class="small">Maksimal 150 karakter termasuk spasi dan tanda baca</span>
                 </div>
 
                 <div class="col-md-6">
-                    <label class="form-label">Isi Kategori News And Blog</label>
-                    <textarea class="form-control" type="text" rows="2" placeholder="Isi Kategori News And Blog" name="isi_kategori_news_and_blog"></textarea>
+                    <label class="form-label">Kelas Dalam Romawi</label>
+                    <input class="form-control" type="text" placeholder="Masukkan Kelas Dalam Romawi" name="nama_kelas_romawi">
                     <span class="small">Maksimal 150 karakter termasuk spasi dan tanda baca</span>
                 </div>
 
                 <div class="col-md-6">
-                    <label class="form-label">Slug Kategori News And Blog</label>
-                    <input class="form-control" type="text"  name="slug_kategori_news_and_blog" disabled>
+                    <label class="form-label">Kelas Dalam Angka</label>
+                    <input class="form-control" type="text" placeholder="Masukkan Kelas Dalam Angka" name="nama_kelas_angka">
                     <span class="small">Maksimal 150 karakter termasuk spasi dan tanda baca</span>
                 </div>
 
                 <div class="col-lg-6">
-                    <label class="form-label">Warna Kategori News And Blog</label>
-                    <select class="form-select js-choice z-index-9 border-0 bg-light" aria-label=".form-select-sm" name="warna_kategori_news_and_blog" required>
-                        <option value="NULL" disabled selected>Pilih Warna</option>
-                        <?php
-                        $warnaOptions = [
-                            "primary"   => "Primary",
-                            "white"     => "White",
-                            "secondary" => "Secondary",
-                            "success"   => "Success",
-                            "info"      => "Info",
-                            "warning"   => "Warning",
-                            "danger"    => "Danger",
-                            "light"     => "Light",
-                            "dark"      => "Dark",
-                            "orange"    => "Orange",
-                            "purple"    => "Purple",
-                            "blue"      => "Blue",
-                        ];
-
-                        foreach ($warnaOptions as $value => $label) {
-                            echo "<option value=\"$value\">$label</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-
-                <div class="col-lg-6">
-                    <label class="form-label">Status Kategori News And Blog</label>
+                    <label class="form-label">Status Kelas</label>
                     <div class="d-sm-flex">
                         <div class="form-check radio-bg-light me-4">
-                            <input class="form-check-input" type="radio" value="1" name="status_kategori_news_and_blog" checked>
+                            <input class="form-check-input" type="radio" value="1" name="status_kelas" checked>
                             <label class="form-check-label" for="flexRadioDefault1">
                                 <p class="text-success">Aktif</p>
                             </label>
                         </div>
                         <div class="form-check radio-bg-light me-4">
-                            <input class="form-check-input" type="radio" value="" name="status_kategori_news_and_blog">
+                            <input class="form-check-input" type="radio" value="" name="status_kelas">
                             <label class="form-check-label" for="flexRadioDefault2">
                                 <p class="text-danger">Non Aktif</p>
                             </label>
                         </div>
                     </div>
+                    <span class="small">Pilih Status Kelas Apakah Akan Aktif atau Non Aktif</span>
                 </div>
+
                 <div class="d-sm-flex justify-content-end">
                     <button type="submit" class="btn btn-primary mb-0">Simpan</button>
                 </div>

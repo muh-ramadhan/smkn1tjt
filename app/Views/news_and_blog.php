@@ -1,4 +1,22 @@
 <?= $this->extend('default/themplate/layout') ?>
+<!-- HEAD DESCRIPTION -->
+<?= $this->section('head-description') ?>
+<?= $this->include('default/themplate/head-description') ?>
+<?= $this->endSection() ?>
+<!-- HEAD DESCRIPTION -->
+
+<!-- HEAD SCRIPT -->
+<?= $this->section('head-script') ?>
+<?= $this->include('default/themplate/head-script') ?>
+<?= $this->endSection() ?>
+<!-- HEAD SCRIPT -->
+
+<!-- HEAD CSS -->
+<?= $this->section('head-css') ?>
+<?= $this->include('default/themplate/head-css') ?>
+<?= $this->endSection() ?>
+<!-- HEAD CSS -->
+
 <?= $this->section('content') ?>
 <?= $this->include('default/themplate/header') ?>
 
@@ -9,27 +27,16 @@
         <div class="row">
           <div class="col-12">
             <div class="row">
-              <div class="col-lg-3 align-items-center mt-4 mt-lg-5 order-2 order-lg-1">
-                <div class="text-lg-center">
-                  <div class="position-relative">
-                    <div class="avatar avatar-xxl">
-                      <img class="avatar-img rounded" src="<?= base_url(); ?>assets/images/avatar/09.jpg" alt="avatar">
-                    </div>
-                  </div>
 
-                  <ul class="list-inline list-unstyled">
-                    <li class="list-inline-item d-lg-block my-lg-2"><?= date('d F Y', strtotime($AmbilDataNewsAndBlog['created_at'])); ?></li>
-                    <li class="list-inline-item badge text-bg-orange"><i class="far text-white fa-heart me-1"></i>266</li>
-                    <li class="list-inline-item badge text-bg-info"><i class="far fa-eye me-1"></i><?= number_format($AmbilDataNewsAndBlog['jumlah_view'], 0, ',', '.'); ?>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="col-lg-9 order-1">
-                <!-- Pre title -->
+              <div class="col-lg-12 order-1">
                 <span><?= date('d F Y', strtotime($AmbilDataNewsAndBlog['created_at'])); ?></span>
                 <span class="mx-2">|</span>
+
+                <div class="badge text-bg-orange"><i class="far fa-eye me-1"></i>266
+                </div>
+
+                <div class="badge text-bg-info"><i class="far text-white fa-heart me-1"></i><?= number_format($AmbilDataNewsAndBlog['jumlah_view'], 0, ',', '.'); ?>
+                </div>
 
                 <div class="badge text-bg-<?= $AmbilDataNewsAndBlog['warna_kategori_news_and_blog']; ?>">
                   <?= $AmbilDataNewsAndBlog['judul_kategori_news_and_blog']; ?>
@@ -40,12 +47,12 @@
                     <?= $AmbilDataNewsAndBlog2['judul_kategori_news_and_blog']; ?>
                   </div>
                 <?php endif; ?>
-                <!-- Title -->
-                <h1 class="mt-2 mb-0 display-5"><?= $AmbilDataNewsAndBlog['judul_newsandblog']; ?></h1>
-                <!-- Info -->
-                <p class="mt-2"><?= $AmbilDataNewsAndBlog['deskripsi_singkat_newsandblog']; ?></p>
+
+                <h2 class="mt-2 mb-0 display-5"><?= $AmbilDataNewsAndBlog['judul_newsandblog']; ?></h2>
+
               </div>
             </div>
+
 
             <div class="row mt-4">
               <div class="col-12 mt-4 mt-lg-0 mb-4">
@@ -152,9 +159,27 @@
     </section>
   </main>
 <?php else : ?>
-  <p>Data tidak tersedia.</p>
+  <div class="col-lg-10 col-xl-8 mx-auto mt-4">
+    <div class="bg-light rounded-3 p-3 p-md-4">
+      <!-- Content -->
+      <q class="lead">Data tidak tersedia.</q>
+    </div>
+  </div>
 <?php endif; ?>
 
 <?= $this->include('default/themplate/footer') ?>
 <?= $this->include('default/themplate/back-top') ?>
 <?= $this->endSection() ?>
+
+
+<!-- SCRIPT EXTRA -->
+<?= $this->section('script-extra') ?>
+<?= $this->include('default/themplate/modal-informasi') ?>
+<?= $this->endSection() ?>
+<!-- SCRIPT EXTRA -->
+
+<!-- SCRIPT ESSENTIAL -->
+<?= $this->section('script-essential') ?>
+<?= $this->include('default/themplate/script-essential') ?>
+<?= $this->endSection() ?>
+<!-- SCRIPT ESSENTIAL -->

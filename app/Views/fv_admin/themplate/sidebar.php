@@ -28,6 +28,18 @@
                     </ul>
                 </li>
 
+                <li class="nav-item ms-2 my-2">Galeri Foto & Video</li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#collapseourbestmoment" role="button" aria-expanded="false" aria-controls="collapseourbestmoment">
+                        <i class="fas fa-user-tie fa-fw me-2"></i>Our Best Moment
+                    </a>
+                    <ul class="nav collapse flex-column" id="collapseourbestmoment" data-bs-parent="#navbar-sidebar">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url(); ?>admin/semua-galeri">Semua</a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="nav-item ms-2 my-2">Manajemen Sekolah</li>
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#collapseinstructors" role="button" aria-expanded="false" aria-controls="collapseinstructors">
@@ -40,14 +52,24 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url(); ?>admin/kelas">
+                    <a class="nav-link" href="<?= base_url(); ?>admin/semua-kelas">
                         <i class="fas fa-user-cog fa-fw me-2"></i>Kelas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url(); ?>admin/jurusan">
+                    <a class="nav-link" href="<?= base_url(); ?>admin/semua-jurusan">
                         <i class="fas fa-user-cog fa-fw me-2"></i>Jurusan</a>
                 </li>
                 
+                <li class="nav-item ms-2 my-2">Manajemen Menu Dinamis</li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#collapsenewsandblog" role="button" aria-expanded="false" aria-controls="collapsenewsandblog">
+                        <i class="bi bi-basket fa-fw me-2"></i>Menu Dinamis
+                    </a>
+                    <ul class="nav collapse flex-column" id="collapsenewsandblog" data-bs-parent="#navbar-sidebar">
+                        <li class="nav-item"> <a class="nav-link" href="<?= base_url(); ?>admin/semua-menu-dinamis">Semua</a></li>
+                    </ul>
+                </li>
+
 
                 <li class="nav-item ms-2 my-2">Manajemen Website</li>
                 <li class="nav-item">

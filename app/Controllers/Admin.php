@@ -10,6 +10,9 @@ use App\Models\PengaturanWebModel;
 use App\Models\KategoriNewsAndBlogModel;
 use App\Models\KelasModel;
 use App\Models\JurusanModel;
+use App\Models\MenuDinamisModel;
+use App\Models\MenuSubDinamisModel;
+use App\Models\MenuSubSubDinamisModel;
 
 class Admin extends BaseController
 {
@@ -23,6 +26,9 @@ class Admin extends BaseController
         $this->KategoriNewsAndBlogModel = new KategoriNewsAndBlogModel();
         $this->KelasModel = new KelasModel();
         $this->JurusanModel = new JurusanModel();
+        $this->MenuDinamisModel = new MenuDinamisModel();
+        $this->MenuSubDinamisModel = new MenuSubDinamisModel();
+        $this->MenuSubSubDinamisModel = new MenuSubSubDinamisModel();
         helper(['form', 'date', 'inflector', 'text', 'number']);
     }
 
@@ -34,6 +40,10 @@ class Admin extends BaseController
         ];
         return view('fv_admin/v_beranda', $data);
     }
+
+    //
+    // NEWS AND BLOG
+    //
 
     public function SemuaNewsAndBlog()
     {
@@ -73,16 +83,29 @@ class Admin extends BaseController
         ];
 
         $validationMessages = [
+            'judul_newsandblog' => [
+                'required' => 'Judul Utama  Wajib Diisi',
+            ],
+            'id_kategori_news_and_blog' => [
+                'required' => 'Kategori Utama  Wajib Pilih',
+            ],
             'cover_newsandblog' => [
                 'uploaded' => 'Pilih gambar untuk diunggah.',
                 'max_size' => 'Ukuran gambar terlalu besar. Maksimal 1MB.',
                 'ext_in' => 'Format gambar tidak valid. Hanya izinkan jpg, jpeg, png.',
             ],
+            'penulis_newsandblog' => [
+                'required' => 'Penulis Wajib Diisi',
+            ],
+            'deskripsi_singkat_newsandblog' => [
+                'required' => 'Deskripsi Singkat Wajib Diisi',
+            ],
         ];
 
         if (!$this->validate($validationRules, $validationMessages)) {
             // Jika validasi gagal, kembali ke halaman sebelumnya dengan pesan kesalahan
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            session()->setFlashdata('errorValidation', \Config\Services::validation()->getErrors());
+            return redirect()->back()->withInput();
         }
 
         // Proses Unggah Gambar
@@ -225,6 +248,10 @@ class Admin extends BaseController
         return redirect()->to('admin/semua-news-and-blog');
     }
 
+    //
+    // KATEGORI NEWS AND BLOG
+    //
+
     public function SemuaKategoriNewsAndBlog()
     {
         $data = [
@@ -320,6 +347,200 @@ class Admin extends BaseController
         return redirect()->to('admin/semua-kategori-news-and-blog');
     }
 
+    //
+    // KELAS
+    //
+
+    public function SemuaKelas()
+    {
+        $data = [
+            'title' => 'Semua',
+            'subtitle' => 'Kelas',
+            'AmbilDataKelas' => $this->KelasModel->findAll(),
+        ];
+
+        return view('fv_admin/v_semua_kelas', $data);
+    }
+
+    public function TambahKelas()
+    {
+        $data = [
+            'title' => 'Tambah',
+            'subtitle' => 'Kelas',
+        ];
+        return view('fv_admin/v_tambah_kelas', $data);
+    }
+
+    public function SimpanKelas()
+    {
+        $KelasModel = new KelasModel();
+
+        $status_kelas = $this->request->getVar('status_kelas') ? $this->request->getVar('status_kelas') : NULL;
+
+        $data = [
+            'nama_kelas_huruf' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_kelas_huruf'))), ' ', true),
+            'nama_kelas_romawi' => $this->request->getVar('nama_kelas_romawi'),
+            'nama_kelas_angka' => $this->request->getVar('nama_kelas_angka'),
+            'status_kelas' => $status_kelas,
+        ];
+
+        $KelasModel->insert($data);
+
+        return redirect()->to('admin/semua-kelas')->with('berhasil', 'Data berhasil di tambah.');
+    }
+
+    public function DetailKelas($id_kelas)
+    {
+        $data = [
+            'title' => 'Detail',
+            'subtitle' => 'Kelas',
+            'AmbilDetailKelas' => $this->KelasModel
+                ->find($id_kelas),
+        ];
+        return view('fv_admin/v_detail_kelas', $data);
+    }
+
+    public function UpdateKelas($id_kelas)
+    {
+        $KelasModel = new KelasModel();
+
+        // Periksa apakah radio button "Non Aktif" dicentang
+        $status_kelas = $this->request->getVar('status_kelas');
+        if ($status_kelas == "NULL") {
+            $status_kelas = NULL;
+        }
+
+        $data = [
+            'nama_kelas_huruf' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_kelas_huruf'))), ' ', true),
+            'nama_kelas_romawi' => $this->request->getVar('nama_kelas_romawi'),
+            'nama_kelas_angka' => $this->request->getVar('nama_kelas_angka'),
+            'status_kelas' => $status_kelas,
+        ];
+
+        $KelasModel->update($id_kelas, $data);
+
+        return redirect()->to('admin/semua-kelas')->with('berhasil', 'Data berhasil di tambah.');
+    }
+
+    public function HapusSementaraKelas($id_kelas)
+    {
+        $this->KelasModel->where('id_kelas', $id_kelas)->delete();
+        session()->setFlashdata('berhasil', 'Berhasil Di Hapus');
+        return redirect()->to('admin/semua-kelas');
+    }
+
+    public function AktifKelas($id_kelas)
+    {
+        $this->KelasModel->set('status_kelas', '1')->where('id_kelas', $id_kelas)->update();
+        session()->setFlashdata('berhasil', 'Berhasil Di Aktifkan');
+        return redirect()->to('admin/semua-kelas');
+    }
+
+    public function NonAktifKelas($id_kelas)
+    {
+        $this->KelasModel->set('status_kelas', NULL)->where('id_kelas', $id_kelas)->update();
+        session()->setFlashdata('berhasil', 'Berhasil Di Nonaktifkan');
+        return redirect()->to('admin/semua-kelas');
+    }
+
+    //
+    // JURUSAN
+    //
+
+    public function SemuaJurusan()
+    {
+        $data = [
+            'title' => 'Semua',
+            'subtitle' => 'Jurusan',
+            'AmbilDataJurusan' => $this->JurusanModel->findAll(),
+        ];
+
+        return view('fv_admin/v_semua_jurusan', $data);
+    }
+    
+    public function TambahJurusan()
+    {
+        $data = [
+            'title' => 'Tambah',
+            'subtitle' => 'Jurusan',
+        ];
+        return view('fv_admin/v_tambah_jurusan', $data);
+    }
+
+    public function SimpanJurusan()
+    {
+        $JurusanModel = new JurusanModel();
+
+        $status_jurusan = $this->request->getVar('status_jurusan') ? $this->request->getVar('status_jurusan') : NULL;
+
+        $data = [
+            'nama_jurusan' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_jurusan'))), ' ', true),
+            'alias_jurusan' => $this->request->getVar('alias_jurusan'),
+            'status_jurusan' => $status_jurusan,
+        ];
+
+        $JurusanModel->insert($data);
+
+        return redirect()->to('admin/semua-jurusan')->with('berhasil', 'Data berhasil di tambah.');
+    }
+
+    public function DetailJurusan($id_jurusan)
+    {
+        $data = [
+            'title' => 'Detail',
+            'subtitle' => 'Jurusan',
+            'AmbilDetailKelas' => $this->JurusanModel
+                ->find($id_jurusan),
+        ];
+        return view('fv_admin/v_detail_jurusan', $data);
+    }
+
+    public function UpdateJurusan($id_jurusan)
+    {
+        $JurusanModel = new JurusanModel();
+
+        // Periksa apakah radio button "Non Aktif" dicentang
+        $status_jurusan = $this->request->getVar('status_jurusan');
+        if ($status_jurusan == "NULL") {
+            $status_jurusan = NULL;
+        }
+
+        $data = [
+            'nama_jurusan' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_jurusan'))), ' ', true),
+            'alias_jurusan' => $this->request->getVar('alias_jurusan'),
+            'status_jurusan' => $status_jurusan,
+        ];
+
+        $JurusanModel->update($id_jurusan, $data);
+
+        return redirect()->to('admin/semua-jurusan')->with('berhasil', 'Data berhasil di tambah.');
+    }
+
+    public function HapusSementaraJurusan($id_jurusan)
+    {
+        $this->JurusanModel->where('id_jurusan', $id_jurusan)->delete();
+        session()->setFlashdata('berhasil', 'Berhasil Di Hapus');
+        return redirect()->to('admin/semua-jurusan');
+    }
+
+    public function AktifJurusan($id_jurusan)
+    {
+        $this->JurusanModel->set('status_jurusan', '1')->where('id_jurusan', $id_jurusan)->update();
+        session()->setFlashdata('berhasil', 'Berhasil Di Aktifkan');
+        return redirect()->to('admin/semua-jurusan');
+    }
+
+    public function NonAktifJurusan($id_jurusan)
+    {
+        $this->JurusanModel->set('status_jurusan', NULL)->where('id_jurusan', $id_jurusan)->update();
+        session()->setFlashdata('berhasil', 'Berhasil Di Nonaktifkan');
+        return redirect()->to('admin/semua-jurusan');
+    }
+
+    //
+    // PENGATURAN
+    //
+
     public function Pengaturan()
     {
         $data = [
@@ -328,6 +549,10 @@ class Admin extends BaseController
         ];
         return view('fv_admin/v_pengaturan', $data);
     }
+
+    //
+    // SISWA
+    //
 
     public function SemuaSiswa()
     {
@@ -455,7 +680,7 @@ class Admin extends BaseController
             'password' => 'required|min_length[6]',
             'confirm_password' => 'matches[password]',
         ];
-    
+
         // Pesan kesalahan validasi yang lebih spesifik
         $validationMessages = [
             'nama_lengkap' => [
@@ -479,29 +704,29 @@ class Admin extends BaseController
             // Tambahkan pesan kesalahan yang sesuai untuk aturan lainnya
             // ...
         ];
-    
+
         if (!$this->validate($validationRules, $validationMessages)) {
             // Jika validasi gagal, atur pesan kesalahan validasi ke dalam session
             session()->setFlashdata('errorValidation', \Config\Services::validation()->getErrors());
             return redirect()->back()->withInput();
         }
-    
+
         $PenggunaModel = new PenggunaModel();
 
         // Dapatkan nilai foto yang ada dari database
         $existingFoto = $PenggunaModel->find($id_pengguna)['foto'];
-    
+
         // Periksa apakah ada file gambar yang diunggah
         $file = $this->request->getFile('foto');
         $foto = $existingFoto; // Use the existing photo value as the default
-    
+
         if ($file && $file->getName() !== '' && $file->getSize() > 0) {
             // Jika ada file yang diunggah, gunakan file yang diunggah
             $newName = $file->getRandomName();
             $file->move(FCPATH . 'assets/images/avatar/', $newName); // Sesuaikan dengan path folder tempat menyimpan gambar
             $foto = $newName;
         }
-    
+
         $data1 = [
             'id_kelas' => $this->request->getPost('id_kelas'),
             'id_jurusan' => $this->request->getPost('id_jurusan'),
@@ -518,9 +743,9 @@ class Admin extends BaseController
             'deleted_at' => NULL,
         ];
         $PenggunaModel->update($id_pengguna, $data1);
-    
+
         $LoginModel = new LoginModel();
-        
+
         $data2 = [
             'id_pengguna' => $id_pengguna,
             'username' => $this->request->getVar('nisn'),
@@ -529,11 +754,10 @@ class Admin extends BaseController
         ];
 
         $LoginModel->set($data2, $data2)->where('id_pengguna', $id_pengguna)->update();
-    
+
         session()->setFlashdata('berhasil', 'Data Berhasil Di Ubah');
         return redirect()->to('admin/semua-taruna-taruni');
     }
-    
 
     public function HapusSementaraSiswa($id_pengguna)
     {
@@ -644,11 +868,118 @@ class Admin extends BaseController
         return redirect()->to('admin/semua-taruna-taruni');
     }
 
-    public function Jurusan()
-    {
-        $data = [
-            'title' => 'Jurusan',
-        ];
-        return view('fv_admin/v_jurusan', $data);
+//
+// MENU DINAMIS
+//
+
+public function SemuaMenuDinamis()
+{
+    $data = [
+        'title' => 'Semua',
+        'subtitle' => 'Menu Dinamis',
+        'AmbilMenuDinamisModel' => $this->MenuDinamisModel->findAll(),
+        'AmbilMenuSubDinamisModel' => $this->MenuSubDinamisModel->findAll(),
+        'AmbilMenuSubSubDinamisModel' => $this->MenuSubSubDinamisModel->findAll(),
+    ];
+
+    return view('fv_admin/v_semua_menu_dinamis', $data);
+}
+
+public function TambahMenuDinamis()
+{
+    $data = [
+        'title' => 'Tambah',
+        'subtitle' => 'Menu Dinamis',
+    ];
+    return view('fv_admin/v_tambah_menu_dinamis', $data);
+}
+
+public function SimpanMenuDinamis()
+{
+    $MenuDinamisModel = new MenuDinamisModel();
+
+    $status_kelas = $this->request->getVar('status_menu_dinamis') ? $this->request->getVar('status_menu_dinamis') : NULL;
+
+    $data = [
+        'nama_kelas_huruf' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_kelas_huruf'))), ' ', true),
+        'nama_kelas_romawi' => $this->request->getVar('nama_kelas_romawi'),
+        'nama_kelas_angka' => $this->request->getVar('nama_kelas_angka'),
+        'status_kelas' => $status_kelas,
+    ];
+
+    $MenuDinamisModel->insert($data);
+
+    return redirect()->to('admin/semua-menu-dinamis')->with('berhasil', 'Data berhasil di tambah.');
+}
+
+public function DetailMenuDinamis($id_menu_dinamis)
+{
+    $data = [
+        'title' => 'Detail',
+        'subtitle' => 'Menu Dinamis',
+        'AmbilDetailMenuDinamis' => $this->MenuDinamisModel
+            ->find($id_menu_dinamis),
+    ];
+    return view('fv_admin/v_detail_kelas', $data);
+}
+
+public function UpdateMenuDinamis($id_menu_dinamis)
+{
+    $MenuDinamisModel = new MenuDinamisModel();
+
+    // Periksa apakah radio button "Non Aktif" dicentang
+    $status_kelas = $this->request->getVar('status_kelas');
+    if ($status_kelas == "NULL") {
+        $status_kelas = NULL;
     }
+
+    $data = [
+        'nama_kelas_huruf' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_kelas_huruf'))), ' ', true),
+        'nama_kelas_romawi' => $this->request->getVar('nama_kelas_romawi'),
+        'nama_kelas_angka' => $this->request->getVar('nama_kelas_angka'),
+        'status_kelas' => $status_kelas,
+    ];
+
+    $MenuDinamisModel->update($id_menu_dinamis, $data);
+
+    return redirect()->to('admin/semua-menu-dinamis')->with('berhasil', 'Data berhasil di tambah.');
+}
+
+public function HapusSementaraMenuDinamis($id_menu_dinamis)
+{
+    $this->MenuDinamisModel->where('id_menu_dinamis', $id_menu_dinamis)->delete();
+    session()->setFlashdata('berhasil', 'Berhasil Di Hapus');
+    return redirect()->to('admin/semua-menu-dinamis');
+}
+
+public function AktifMenuDinamis($id_menu_dinamis)
+{
+    $this->MenuDinamisModel->set('status_kelas', '1')->where('id_menu_dinamis', $id_menu_dinamis)->update();
+    session()->setFlashdata('berhasil', 'Berhasil Di Aktifkan');
+    return redirect()->to('admin/semua-menu-dinamis');
+}
+
+public function NonAktifMenuDinamis($id_menu_dinamis)
+{
+    $this->MenuDinamisModel->set('status_kelas', NULL)->where('id_menu_dinamis', $id_menu_dinamis)->update();
+    session()->setFlashdata('berhasil', 'Berhasil Di Nonaktifkan');
+    return redirect()->to('admin/semua-menu-dinamis');
+}
+
+//SUB MENU
+public function HapusSementaraMenuSubDinamis($id_sub_menu_dinamis)
+{
+    $this->MenuSubDinamisModel->where('id_sub_menu_dinamis', $id_sub_menu_dinamis)->delete();
+    session()->setFlashdata('berhasil', 'Berhasil Di Hapus');
+    return redirect()->to('admin/semua-menu-dinamis');
+}
+
+//SUB SUB MENU
+public function HapusSementaraMenuSubSubDinamis($id_sub_sub_menu_dinamis)
+{
+    $this->MenuSubSubDinamisModel->where('id_sub_sub_menu_dinamis', $id_sub_sub_menu_dinamis)->delete();
+    session()->setFlashdata('berhasil', 'Berhasil Di Hapus');
+    return redirect()->to('admin/semua-menu-dinamis');
+}
+    
 }

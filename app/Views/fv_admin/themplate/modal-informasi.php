@@ -63,22 +63,23 @@ if (!empty($errors)) { ?>
         </div>
     </div>
 <?php }  ?>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        <?php if (session()->getFlashdata('berhasil')) : ?>
+            var modalBerhasil = new bootstrap.Modal(document.getElementById("modalBerhasil"));
+            modalBerhasil.show();
+        <?php endif; ?>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var modal = new bootstrap.Modal(document.getElementById("modalBerhasil"));
-        modal.show();
-    })
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var modal = new bootstrap.Modal(document.getElementById("modalGagal"));
-        modal.show();
-    })
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var modal = new bootstrap.Modal(document.getElementById("modalGagalValidasi"));
-        modal.show();
-    })
+        <?php if (session()->getFlashdata('gagal')) : ?>
+            var modalGagal = new bootstrap.Modal(document.getElementById("modalGagal"));
+            modalGagal.show();
+        <?php endif; ?>
+
+        <?php
+        $errors = session()->getFlashdata('errorValidation');
+        if (!empty($errors)) : ?>
+            var modalGagalValidasi = new bootstrap.Modal(document.getElementById("modalGagalValidasi"));
+            modalGagalValidasi.show();
+        <?php endif; ?>
+    });
 </script>

@@ -1,6 +1,24 @@
 <?= $this->extend('fv_admin/themplate/layout') ?>
-<?= $this->section('content') ?>
+<!-- HEAD DESCRIPTION -->
+<?= $this->section('head-description') ?>
+<?= $this->include('fv_admin/themplate/head-description') ?>
+<?= $this->endSection() ?>
+<!-- HEAD DESCRIPTION -->
 
+<!-- HEAD SCRIPT -->
+<?= $this->section('head-script') ?>
+<?= $this->include('fv_admin/themplate/head-script') ?>
+<?= $this->endSection() ?>
+<!-- HEAD SCRIPT -->
+
+<!-- HEAD CSS -->
+<?= $this->section('head-css') ?>
+<?= $this->include('fv_admin/themplate/head-css') ?>
+<?= $this->endSection() ?>
+<!-- HEAD CSS -->
+
+<!-- CONTENT -->
+<?= $this->section('content') ?>
 <main>
     <?= $this->include('fv_admin/themplate/sidebar') ?>
 
@@ -16,6 +34,7 @@
             <?php echo form_open_multipart('admin/simpan-news-and-blog') ?>
             <?= csrf_field() ?>
             <div class="row g-4">
+
                 <div class="col-12">
                     <div class="bg-light border rounded p-4">
                         <h5 class="mb-0">Judul*</h5>
@@ -94,6 +113,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-12">
                     <h5>Upload video</h5>
                     <div class="col-12 mt-4 mb-5">
@@ -118,18 +138,21 @@
         </div>
     </div>
 </main>
+<?= $this->endSection() ?>
+<!-- CONTENT -->
 
-<script src="<?= base_url(); ?>assets/ckeditor5-build-classic-39.0.2/ckeditor.js"></script>
+<!-- SCRIPT EXTRA -->
+<?= $this->section('script-extra') ?>
 
-<script>
-    ClassicEditor
-        .create(document.querySelector('#editor'))
-        .catch(error => {
-            console.error(error);
-        });
-</script>
-
-<?= $this->include('fv_admin/themplate/back-top') ?>
+<?= $this->include('fv_admin/themplate/ckeditor') ?>
 <?= $this->include('default/themplate/modal-informasi') ?>
 
 <?= $this->endSection() ?>
+<!-- SCRIPT EXTRA -->
+
+<!-- SCRIPT ESSENTIAL -->
+<?= $this->section('script-essential') ?>
+<?= $this->include('fv_admin/themplate/back-top') ?>
+<?= $this->include('fv_admin/themplate/script-essential') ?>
+<?= $this->endSection() ?>
+<!-- SCRIPT ESSENTIAL -->

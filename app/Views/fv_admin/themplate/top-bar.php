@@ -101,7 +101,7 @@
                     <li class="nav-item ms-2 ms-md-3 dropdown">
                         <!-- Avatar -->
                         <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img class="avatar-img rounded-circle" src="<?= base_url(); ?>assets/images/avatar/01.jpg" alt="avatar">
+                            <img class="avatar-img rounded-circle" src="<?= base_url(); ?>assets/images/avatar/01.jpg" alt="<?= esc(session('nama_lengkap')); ?>">
                         </a>
 
                         <!-- Profile dropdown START -->
@@ -114,15 +114,14 @@
                                         <img class="avatar-img rounded-circle shadow" src="<?= base_url(); ?>assets/images/avatar/01.jpg" alt="avatar">
                                     </div>
                                     <div>
-                                        <a class="h6 mt-2 mt-sm-0" href="#">Lori Ferguson</a>
-                                        <p class="small m-0">example@gmail.com</p>
+                                        <a class="h6 mt-2 mt-sm-0" href="#"><?= esc(session('nama_lengkap')); ?></a>
+                                        <p class="small m-0"><?= esc(session('username')); ?></p>
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <!-- Links -->
                             <li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i>Edit Profile</a></li>
                             <li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account Settings</a></li>
                             <li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Help</a></li>

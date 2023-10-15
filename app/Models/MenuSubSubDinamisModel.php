@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class KelasModel extends Model
+class MenuSubSubDinamisModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'tbl_kelas';
-    protected $primaryKey       = 'id_kelas';
+    protected $table            = 'tbl_sub_sub_menu_dinamis';
+    protected $primaryKey       = 'id_sub_sub_menu_dinamis ';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_kelas_huruf', 'nama_kelas_romawi', 'nama_kelas_angka', 'status_kelas'];
+    protected $allowedFields    = ['nama_sub_sub_menu_dinamis', 'url_sub_sub_menu_dinamis', 'status_sub_sub_menu_dinamis', 'deleted_at'];
 
     // Dates
     protected $useTimestamps = true;
@@ -39,5 +39,4 @@ class KelasModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
 }

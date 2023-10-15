@@ -14,7 +14,7 @@ class JurusanModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_jurusan', 'alias_jurusan'];
+    protected $allowedFields    = ['nama_jurusan', 'alias_jurusan', 'status_jurusan'];
 
     // Dates
     protected $useTimestamps = true;
