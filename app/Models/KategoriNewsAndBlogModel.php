@@ -48,4 +48,18 @@ class KategoriNewsAndBlogModel extends Model
         $query = $builder->get();
         return $query->getResultArray();
     }
+
+    public function getKategoryLimitNewsAndBlog($limit = 3)
+    {
+        $builder = $this->db->table('tbl_kategori_newsandblog');
+        $builder->where('tbl_kategori_newsandblog.deleted_at', null);
+        $builder->orderBy('tbl_kategori_newsandblog.created_at', 'desc');
+        $builder->limit($limit); // Tambahkan batasan limit di sini
+        $query = $builder->get();
+
+        // Debug: Cetak hasil query
+        // echo $this->db->getLastQuery(); exit;
+
+        return $query->getResultArray();
+    }
 }

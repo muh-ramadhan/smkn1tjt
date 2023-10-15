@@ -72,6 +72,8 @@ class Home extends BaseController
             'AmbilDataWeb' => $this->PengaturanWebModel->find(),
             'AmbilDataNewsAndBlog' => $newsAndBlog1,
             'AmbilDataNewsAndBlog2' => $newsAndBlog2,
+            'AmbilSemuaNewsAndBlog' => $this->NewsAndBlogModel->findAll(),
+            'AmbilSemuaKategoriNewsAndBlog' => $this->KategoriNewsAndBlogModel->getKategoryLimitNewsAndBlog(3),
 
             'dynamicMenus1' => $this->MenuDinamisModel->findAll(),
             'dynamicMenus2' => $this->MenuSubDinamisModel->findAll(),
@@ -98,7 +100,7 @@ class Home extends BaseController
             'title' => 'SMK Negeri 1 Tanjung Jabung Timur',
             'subtitle' => '- Hubungi Kami',
             'AmbilDataWeb' => $this->PengaturanWebModel->find(),
-            
+
             'dynamicMenus1' => $this->MenuDinamisModel->findAll(),
             'dynamicMenus2' => $this->MenuSubDinamisModel->findAll(),
             'dynamicMenus3' => $this->MenuSubSubDinamisModel->findAll(),

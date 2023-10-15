@@ -74,13 +74,14 @@
               <div class="align-items-center">
                 <h6 class="mb-2 me-4 d-inline-block">Kategori Populer:</h6>
                 <ul class="list-inline mb-0 social-media-btn">
-                  <li class="list-inline-item"> <a class="btn btn-outline-light btn-sm mb-lg-0" href="#">blog</a> </li>
-                  <li class="list-inline-item"> <a class="btn btn-outline-light btn-sm mb-lg-0" href="#">business</a> </li>
-                  <li class="list-inline-item"> <a class="btn btn-outline-light btn-sm mb-lg-0" href="#">bootstrap</a> </li>
-                  <li class="list-inline-item"> <a class="btn btn-outline-light btn-sm mb-lg-0" href="#">data science</a> </li>
-                  <li class="list-inline-item"> <a class="btn btn-outline-light btn-sm mb-lg-0" href="#">deep learning</a> </li>
+                  <?php foreach ($AmbilSemuaKategoriNewsAndBlog as $valuex) : ?>
+                    <li class="list-inline-item">
+                      <a class="btn btn-outline-light btn-sm mb-lg-0" href="#"><?= $valuex['judul_kategori_news_and_blog']; ?></a>
+                    </li>
+                  <?php endforeach; ?>
                 </ul>
               </div>
+
             </div>
           </div>
         </div>
@@ -98,65 +99,38 @@
         <div class="tiny-slider arrow-round arrow-hover arrow-dark">
           <div class="tiny-slider-inner" data-autoplay="false" data-arrow="true" data-edge="2" data-dots="false" data-items="3" data-items-lg="2" data-items-sm="1">
 
-            <div class="card bg-transparent">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="<?= base_url(); ?>assets/images/event/06.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h6 class="card-title"><a href="#">Dirty little secrets about the business industry</a></h6>
-                    <span class="small">July 21, 2021</span>
+            <?php foreach ($AmbilSemuaNewsAndBlog as $value) : ?>
+              <div class="card bg-transparent">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <?php
+                    if ($value['cover_newsandblog'] == NULL || $value['cover_newsandblog'] == '0') {
+                      $cover_newsandblogImage = base_url('assets/images/NewsAndBlog/tidak-ada-gambar.png');
+                    } else {
+                      $cover_newsandblogPath = FCPATH . 'assets/images/NewsAndBlog/' . $value['cover_newsandblog'];
+                      $cover_newsandblogImage = file_exists($cover_newsandblogPath) ? base_url('assets/images/NewsAndBlog/' . $value['cover_newsandblog']) : base_url('assets/images/NewsAndBlog/tidak-ada-gambar.png');
+                    }
+                    ?>
+                    <img src="<?= $cover_newsandblogImage; ?>" class="img-fluid rounded-start" alt="<?= $value['judul_newsandblog']; ?>">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h6 class="card-title"><a href="<?= base_url('home/news-and-blog/' . $value['slug_newsandblog']); ?>"><?= $value['judul_newsandblog']; ?></a></h6>
+                      <?php
+                      $createdAt = $value['created_at'] !== null ? date_create($value['created_at']) : null;
+                      ?>
+                      <span class="small"><?= $createdAt !== null ? $createdAt->format('d M Y') : 'NA'; ?></span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="card bg-transparent">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="<?= base_url(); ?>assets/images/event/04.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h6 class="card-title"><a href="#">This is why this year will be the year of startups</a></h6>
-                    <span class="small">50min ago</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card bg-transparent">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="<?= base_url(); ?>assets/images/event/03.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h6 class="card-title"><a href="#">Covid-19 and the college experienced</a></h6>
-                    <span class="small">Aug 31, 2021</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card bg-transparent">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="<?= base_url(); ?>assets/images/event/05.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h6 class="card-title"><a href="#">This is why this year will be the year of startups</a></h6>
-                    <span class="small">50min ago</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <?php endforeach; ?>
           </div>
         </div>
       </div>
     </section>
+
   </main>
 <?php else : ?>
   <div class="col-lg-10 col-xl-8 mx-auto mt-4">

@@ -18,30 +18,28 @@
                 <div class="col-lg-6">
                     <div class="row g-4">
                         <div class="col-6 col-md-4">
-                            <h5 class="mb-2 mb-md-4">Company</h5>
+                            <h5 class="mb-2 mb-md-4">Tentang Kami</h5>
                             <ul class="nav flex-column">
-                                <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Contact us</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">News and Blogs</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Library</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Career</a></li>
+                                <li class="nav-item"><a class="nav-link" href="<?=base_url();?>home/news-and-blog/profil-smk-negeri-1-tanjung-jabung-timur">Profil</a></li>
+                                <li class="nav-item"><a class="nav-link" href="<?=base_url();?>home/news-and-blog/sejarah-smk-negeri-1-tanjung-jabung-timur">Sejarah</a></li>
+                                <li class="nav-item"><a class="nav-link" href="<?=base_url();?>home/news-and-blog/visi-dan-misi-smk-negeri-1-tanjung-jabung-timur">Visi dan Misi</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Hubungi Kami</a></li>
                             </ul>
                         </div>
                         <div class="col-6 col-md-4">
-                            <h5 class="mb-2 mb-md-4">Community</h5>
+                            <h5 class="mb-2 mb-md-4">Komunitas</h5>
                             <ul class="nav flex-column">
-                                <li class="nav-item"><a class="nav-link" href="#">Documentation</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Faq</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Dokumentasi</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#">Forum</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#">Sitemap</a></li>
                             </ul>
                         </div>
                         <div class="col-6 col-md-4">
-                            <h5 class="mb-2 mb-md-4">Teaching</h5>
+                            <h5 class="mb-2 mb-md-4">Bantuan</h5>
                             <ul class="nav flex-column">
-                                <li class="nav-item"><a class="nav-link" href="#">Become a teacher</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">How to guide</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">Terms &amp; Conditions</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Buku Pedoman</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Syarat &amp; Ketentuan</a></li>
                             </ul>
                         </div>
                     </div>
@@ -50,7 +48,7 @@
                     <h5 class="mb-2 mb-md-4">Hubungi Kami</h5>
                     <p class="mb-2">
                         Telephone:<span class="h6 fw-light ms-2"><?= $value['kontak_hp_web']; ?></span>
-                        <span class="d-block small">(07:30 AM -15:30 PM GMT+7)</span>
+                        <span class="d-block small"><?= $value['alamat_web']; ?></span>
                     </p>
 
                     <p class="mb-0">Email:<span class="h6 fw-light ms-2"><?= $value['email_bantuan_web']; ?></span></p>
@@ -84,8 +82,8 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="list-inline-item"><a class="nav-link" href="#">Terms of use</a></li>
-                                <li class="list-inline-item"><a class="nav-link pe-0" href="#">Privacy policy</a></li>
+                                <li class="list-inline-item"><a class="nav-link" href="#">Syarat Penggunaan</a></li>
+                                <li class="list-inline-item"><a class="nav-link pe-0" href="#">Kebijakan Privasi</a></li>
                             </ul>
                         </div>
                     </div>

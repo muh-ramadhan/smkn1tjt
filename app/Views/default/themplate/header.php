@@ -31,7 +31,7 @@
                                         <?php if ($menu2['id_menu_dinamis'] == $menu1['id_menu_dinamis']) : ?>
                                             <?php if ($hasSubMenuLevel3($menu2['id_sub_menu_dinamis'])) : ?>
                                                 <li class="dropdown-submenu dropend">
-                                                    <a class="dropdown-item dropdown-toggle" href="<?= base_url($menu2['url_sub_menu_dinamis']); ?>">
+                                                    <a class="dropdown-item dropdown-toggle" href="<?= esc($menu2['url_sub_menu_dinamis']); ?>">
                                                         <?= esc($menu2['nama_sub_menu_dinamis']); ?>
                                                     </a>
                                                     <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
