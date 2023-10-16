@@ -43,7 +43,7 @@ class Login extends BaseController
         $dynamicMenus3 = $this->MenuSubSubDinamisModel->findAll();
 
         foreach ($dynamicMenus3 as $menu3) {
-            if ($menu3['id_sub_menu_dinamis'] == $idSubMenuDinamis) {
+            if ($menu3['id_menu_sub_dinamis'] == $idSubMenuDinamis) {
                 return true;
             }
         }

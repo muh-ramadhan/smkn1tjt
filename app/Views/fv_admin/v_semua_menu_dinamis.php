@@ -34,13 +34,6 @@
 
         <div class="page-content-wrapper border">
 
-
-
-
-
-
-
-
             <!-- Title -->
             <div class="row mb-3">
                 <div class="col-12 d-sm-flex justify-content-between align-items-center">
@@ -78,32 +71,32 @@
                                     <?php if ($submenu['id_menu_dinamis'] == $menu['id_menu_dinamis']) : ?>
                                         <div class="d-flex justify-content-between align-items-center mb-3">
                                             <div class="d-flex align-items-center">
-                                                <h5 class="mb-0 ms-2 fw-light"><a href="<?= $submenu['url_sub_menu_dinamis']; ?>">+ <?= $submenu['nama_sub_menu_dinamis']; ?></a></h5>
+                                                <h5 class="mb-0 ms-2 fw-light"><a href="<?= $submenu['url_menu_sub_dinamis']; ?>">+ <?= $submenu['nama_menu_sub_dinamis']; ?></a></h5>
                                             </div>
                                             <div class="dropdown text-end">
                                                 <a href="#" class="btn btn-sm btn-light btn-round small mb-0" role="button" id="dropdownMenuSubDinamis" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="bi bi-three-dots fa-fw"></i>
                                                 </a>
                                                 <ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownMenuSubDinamis">
-                                                    <li><a class="dropdown-item" href="<?= base_url('admin/detail-menu-sub-dinamis/' . $submenu['id_sub_menu_dinamis']) ?>"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit</a></li>
-                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#konfirmasiHapusSub<?= $submenu['id_sub_menu_dinamis']; ?>"><i class="bi bi-trash fa-fw me-2"></i>Hapus</a></li>
+                                                    <li><a class="dropdown-item" href="<?= base_url('admin/detail-menu-sub-dinamis/' . $submenu['id_menu_sub_dinamis']) ?>"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit</a></li>
+                                                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#konfirmasiHapusSub<?= $submenu['id_menu_sub_dinamis']; ?>"><i class="bi bi-trash fa-fw me-2"></i>Hapus</a></li>
                                                 </ul>
                                             </div>
                                         </div>
 
                                         <?php foreach ($AmbilMenuSubSubDinamisModel as $subsubmenu) : ?>
-                                            <?php if ($subsubmenu['id_sub_menu_dinamis'] == $submenu['id_sub_menu_dinamis']) : ?>
+                                            <?php if ($subsubmenu['id_menu_sub_dinamis'] == $submenu['id_menu_sub_dinamis']) : ?>
                                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                                     <div class="d-flex align-items-center">
-                                                        <h6 class="mb-0 ms-2 fw-light"><a href="#">--- <?= $subsubmenu['nama_sub_sub_menu_dinamis']; ?></a></h6>
+                                                        <h6 class="mb-0 ms-2 fw-light"><a href="#">--- <?= $subsubmenu['nama_menu_sub_sub_dinamis']; ?></a></h6>
                                                     </div>
                                                     <div class="dropdown text-end">
                                                         <a href="#" class="btn btn-sm btn-light btn-round small mb-0" role="button" id="dropdownMenuSubSubDinamis" data-bs-toggle="dropdown" aria-expanded="false">
                                                             <i class="bi bi-three-dots fa-fw"></i>
                                                         </a>
                                                         <ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownMenuSubSubDinamis">
-                                                            <li><a class="dropdown-item" href="<?= base_url('admin/detail-menu-sub-sub-dinamis/' . $subsubmenu['id_sub_sub_menu_dinamis']) ?>"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit</a></li>
-                                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#konfirmasiHapusSubSub<?= $subsubmenu['id_sub_sub_menu_dinamis']; ?>"><i class="bi bi-trash fa-fw me-2"></i>Hapus</a></li>
+                                                            <li><a class="dropdown-item" href="<?= base_url('admin/detail-menu-sub-sub-dinamis/' . $subsubmenu['id_menu_sub_sub_dinamis']) ?>"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit</a></li>
+                                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#konfirmasiHapusSubSub<?= $subsubmenu['id_menu_sub_sub_dinamis']; ?>"><i class="bi bi-trash fa-fw me-2"></i>Hapus</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -149,7 +142,7 @@
 
 
 <?php foreach ($AmbilMenuSubDinamisModel as $key => $submenu) { ?>
-    <div class="modal fade" id="konfirmasiHapusSub<?= $submenu['id_sub_menu_dinamis']; ?>" tabindex="-1" aria-labelledby="konfirmasiHapusLabelSubMenu" aria-hidden="true">
+    <div class="modal fade" id="konfirmasiHapusSub<?= $submenu['id_menu_sub_dinamis']; ?>" tabindex="-1" aria-labelledby="konfirmasiHapusLabelSubMenu" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-danger">
@@ -160,7 +153,7 @@
                     <div class="text-center">
                         <p class="mb-2">Apakah anda yakin?</p>
                         <div class="btn-group justify-content-center mb-2" role="group" aria-label="Pilihan">
-                            <a href="<?= base_url('admin/hapus-sementara-menu-sub-dinamis/' . $submenu['id_sub_menu_dinamis']) ?>" class="btn btn-success mx-2">Iya</a>
+                            <a href="<?= base_url('admin/hapus-sementara-menu-sub-dinamis/' . $submenu['id_menu_sub_dinamis']) ?>" class="btn btn-success mx-2">Iya</a>
                             <button type="button" class="btn btn-danger mx-2" data-bs-dismiss="modal">Tidak</button>
                         </div>
                     </div>
@@ -173,7 +166,7 @@
 
 
 <?php foreach ($AmbilMenuSubSubDinamisModel as $key => $subsubmenu) { ?>
-    <div class="modal fade" id="konfirmasiHapusSubSub<?= $subsubmenu['id_sub_sub_menu_dinamis']; ?>" tabindex="-1" aria-labelledby="konfirmasiHapusLabelSubSubMenu" aria-hidden="true">
+    <div class="modal fade" id="konfirmasiHapusSubSub<?= $subsubmenu['id_menu_sub_sub_dinamis']; ?>" tabindex="-1" aria-labelledby="konfirmasiHapusLabelSubSubMenu" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-danger">
@@ -184,7 +177,7 @@
                     <div class="text-center">
                         <p class="mb-2">Apakah anda yakin?</p>
                         <div class="btn-group justify-content-center mb-2" role="group" aria-label="Pilihan">
-                            <a href="<?= base_url('admin/hapus-sementara-menu-sub-sub-dinamis/' . $subsubmenu['id_sub_sub_menu_dinamis']) ?>" class="btn btn-success mx-2">Iya</a>
+                            <a href="<?= base_url('admin/hapus-sementara-menu-sub-sub-dinamis/' . $subsubmenu['id_menu_sub_sub_dinamis']) ?>" class="btn btn-success mx-2">Iya</a>
                             <button type="button" class="btn btn-danger mx-2" data-bs-dismiss="modal">Tidak</button>
                         </div>
                     </div>

@@ -14,7 +14,7 @@ class MenuDinamisModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['kolom_menu_dinamis', 'nama_menu_dinamis', 'url_menu_dinamis', 'status_menu_dinamis', 'deleted_at'];
+    protected $allowedFields    = ['kolom_menu_dinamis', 'icon_menu_dinamis', 'nama_menu_dinamis', 'url_menu_dinamis', 'status_menu_dinamis', 'deleted_at'];
 
     // Dates
     protected $useTimestamps = true;

@@ -457,7 +457,7 @@ class Admin extends BaseController
 
         return view('fv_admin/v_semua_jurusan', $data);
     }
-    
+
     public function TambahJurusan()
     {
         $data = [
@@ -868,118 +868,151 @@ class Admin extends BaseController
         return redirect()->to('admin/semua-taruna-taruni');
     }
 
-//
-// MENU DINAMIS
-//
+    //
+    // MENU DINAMIS
+    //
 
-public function SemuaMenuDinamis()
-{
-    $data = [
-        'title' => 'Semua',
-        'subtitle' => 'Menu Dinamis',
-        'AmbilMenuDinamisModel' => $this->MenuDinamisModel->findAll(),
-        'AmbilMenuSubDinamisModel' => $this->MenuSubDinamisModel->findAll(),
-        'AmbilMenuSubSubDinamisModel' => $this->MenuSubSubDinamisModel->findAll(),
-    ];
+    public function SemuaMenuDinamis()
+    {
+        $data = [
+            'title' => 'Semua',
+            'subtitle' => 'Menu Dinamis',
+            'AmbilMenuDinamisModel' => $this->MenuDinamisModel->findAll(),
+            'AmbilMenuSubDinamisModel' => $this->MenuSubDinamisModel->findAll(),
+            'AmbilMenuSubSubDinamisModel' => $this->MenuSubSubDinamisModel->findAll(),
+        ];
 
-    return view('fv_admin/v_semua_menu_dinamis', $data);
-}
-
-public function TambahMenuDinamis()
-{
-    $data = [
-        'title' => 'Tambah',
-        'subtitle' => 'Menu Dinamis',
-    ];
-    return view('fv_admin/v_tambah_menu_dinamis', $data);
-}
-
-public function SimpanMenuDinamis()
-{
-    $MenuDinamisModel = new MenuDinamisModel();
-
-    $status_kelas = $this->request->getVar('status_menu_dinamis') ? $this->request->getVar('status_menu_dinamis') : NULL;
-
-    $data = [
-        'nama_kelas_huruf' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_kelas_huruf'))), ' ', true),
-        'nama_kelas_romawi' => $this->request->getVar('nama_kelas_romawi'),
-        'nama_kelas_angka' => $this->request->getVar('nama_kelas_angka'),
-        'status_kelas' => $status_kelas,
-    ];
-
-    $MenuDinamisModel->insert($data);
-
-    return redirect()->to('admin/semua-menu-dinamis')->with('berhasil', 'Data berhasil di tambah.');
-}
-
-public function DetailMenuDinamis($id_menu_dinamis)
-{
-    $data = [
-        'title' => 'Detail',
-        'subtitle' => 'Menu Dinamis',
-        'AmbilDetailMenuDinamis' => $this->MenuDinamisModel
-            ->find($id_menu_dinamis),
-    ];
-    return view('fv_admin/v_detail_kelas', $data);
-}
-
-public function UpdateMenuDinamis($id_menu_dinamis)
-{
-    $MenuDinamisModel = new MenuDinamisModel();
-
-    // Periksa apakah radio button "Non Aktif" dicentang
-    $status_kelas = $this->request->getVar('status_kelas');
-    if ($status_kelas == "NULL") {
-        $status_kelas = NULL;
+        return view('fv_admin/v_semua_menu_dinamis', $data);
     }
 
-    $data = [
-        'nama_kelas_huruf' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_kelas_huruf'))), ' ', true),
-        'nama_kelas_romawi' => $this->request->getVar('nama_kelas_romawi'),
-        'nama_kelas_angka' => $this->request->getVar('nama_kelas_angka'),
-        'status_kelas' => $status_kelas,
-    ];
+    public function TambahMenuDinamis()
+    {
+        $data = [
+            'title' => 'Tambah',
+            'subtitle' => 'Menu Dinamis',
+        ];
+        return view('fv_admin/v_tambah_menu_dinamis', $data);
+    }
 
-    $MenuDinamisModel->update($id_menu_dinamis, $data);
+    public function SimpanMenuDinamis()
+    {
+        $MenuDinamisModel = new MenuDinamisModel();
 
-    return redirect()->to('admin/semua-menu-dinamis')->with('berhasil', 'Data berhasil di tambah.');
-}
+        $status_kelas = $this->request->getVar('status_menu_dinamis') ? $this->request->getVar('status_menu_dinamis') : NULL;
 
-public function HapusSementaraMenuDinamis($id_menu_dinamis)
-{
-    $this->MenuDinamisModel->where('id_menu_dinamis', $id_menu_dinamis)->delete();
-    session()->setFlashdata('berhasil', 'Berhasil Di Hapus');
-    return redirect()->to('admin/semua-menu-dinamis');
-}
+        $data = [
+            'nama_kelas_huruf' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_kelas_huruf'))), ' ', true),
+            'nama_kelas_romawi' => $this->request->getVar('nama_kelas_romawi'),
+            'nama_kelas_angka' => $this->request->getVar('nama_kelas_angka'),
+            'status_kelas' => $status_kelas,
+        ];
 
-public function AktifMenuDinamis($id_menu_dinamis)
-{
-    $this->MenuDinamisModel->set('status_kelas', '1')->where('id_menu_dinamis', $id_menu_dinamis)->update();
-    session()->setFlashdata('berhasil', 'Berhasil Di Aktifkan');
-    return redirect()->to('admin/semua-menu-dinamis');
-}
+        $MenuDinamisModel->insert($data);
 
-public function NonAktifMenuDinamis($id_menu_dinamis)
-{
-    $this->MenuDinamisModel->set('status_kelas', NULL)->where('id_menu_dinamis', $id_menu_dinamis)->update();
-    session()->setFlashdata('berhasil', 'Berhasil Di Nonaktifkan');
-    return redirect()->to('admin/semua-menu-dinamis');
-}
+        return redirect()->to('admin/semua-menu-dinamis')->with('berhasil', 'Data berhasil di tambah.');
+    }
 
-//SUB MENU
-public function HapusSementaraMenuSubDinamis($id_sub_menu_dinamis)
-{
-    $this->MenuSubDinamisModel->where('id_sub_menu_dinamis', $id_sub_menu_dinamis)->delete();
-    session()->setFlashdata('berhasil', 'Berhasil Di Hapus');
-    return redirect()->to('admin/semua-menu-dinamis');
-}
+    public function DetailMenuDinamis($id_menu_dinamis)
+    {
+        $data = [
+            'title' => 'Detail',
+            'subtitle' => 'Menu Dinamis',
+            'AmbilDetailMenuDinamis' => $this->MenuDinamisModel
+                ->find($id_menu_dinamis),
+        ];
+        return view('fv_admin/v_detail_kelas', $data);
+    }
 
-//SUB SUB MENU
-public function HapusSementaraMenuSubSubDinamis($id_sub_sub_menu_dinamis)
-{
-    $this->MenuSubSubDinamisModel->where('id_sub_sub_menu_dinamis', $id_sub_sub_menu_dinamis)->delete();
-    session()->setFlashdata('berhasil', 'Berhasil Di Hapus');
-    return redirect()->to('admin/semua-menu-dinamis');
-}
-    
+    public function UpdateMenuDinamis($id_menu_dinamis)
+    {
+        $MenuDinamisModel = new MenuDinamisModel();
+
+        // Periksa apakah radio button "Non Aktif" dicentang
+        $status_kelas = $this->request->getVar('status_kelas');
+        if ($status_kelas == "NULL") {
+            $status_kelas = NULL;
+        }
+
+        $data = [
+            'nama_kelas_huruf' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_kelas_huruf'))), ' ', true),
+            'nama_kelas_romawi' => $this->request->getVar('nama_kelas_romawi'),
+            'nama_kelas_angka' => $this->request->getVar('nama_kelas_angka'),
+            'status_kelas' => $status_kelas,
+        ];
+
+        $MenuDinamisModel->update($id_menu_dinamis, $data);
+
+        return redirect()->to('admin/semua-menu-dinamis')->with('berhasil', 'Data berhasil di tambah.');
+    }
+
+    public function HapusSementaraMenuDinamis($id_menu_dinamis)
+    {
+        $this->MenuDinamisModel->where('id_menu_dinamis', $id_menu_dinamis)->delete();
+        session()->setFlashdata('berhasil', 'Berhasil Di Hapus');
+        return redirect()->to('admin/semua-menu-dinamis');
+    }
+
+    public function AktifMenuDinamis($id_menu_dinamis)
+    {
+        $this->MenuDinamisModel->set('status_kelas', '1')->where('id_menu_dinamis', $id_menu_dinamis)->update();
+        session()->setFlashdata('berhasil', 'Berhasil Di Aktifkan');
+        return redirect()->to('admin/semua-menu-dinamis');
+    }
+
+    public function NonAktifMenuDinamis($id_menu_dinamis)
+    {
+        $this->MenuDinamisModel->set('status_kelas', NULL)->where('id_menu_dinamis', $id_menu_dinamis)->update();
+        session()->setFlashdata('berhasil', 'Berhasil Di Nonaktifkan');
+        return redirect()->to('admin/semua-menu-dinamis');
+    }
+
+    //MENU SUB DINAMIS
+    public function DetailMenuSubDinamis($id_menu_sub_dinamis)
+    {
+        $data = [
+            'title' => 'Detail',
+            'subtitle' => 'Menu Dinamis',
+            'AmbilMenuDinamisModel' => $this->MenuDinamisModel->where('status_menu_dinamis', '1')->findAll(), //Level 1
+            'AmbilDetailMenuSubDinamis' => $this->MenuSubDinamisModel->find($id_menu_sub_dinamis), //Level 2
+            'AmbilMenuSubSubDinamisModel' => $this->MenuSubSubDinamisModel->where('status_menu_sub_sub_dinamis', '1')->findAll(), //Level 3
+        ];
+        return view('fv_admin/v_detail_menu_sub_dinamis', $data);
+    }
+
+    public function UpdateMenuSubDinamis($id_menu_sub_dinamis)
+    {
+        $MenuSubDinamisModel = new MenuSubDinamisModel();
+
+        // Periksa apakah radio button "Non Aktif" dicentang
+        $status_menu_sub_dinamis = $this->request->getPost('status_menu_sub_dinamis');
+        if ($status_menu_sub_dinamis == "NULL") {
+            $status_menu_sub_dinamis = NULL;
+        }
+
+        $data = [
+            'id_menu_dinamis' => $this->request->getPost('id_menu_dinamis'),
+            'nama_menu_sub_dinamis' => reduce_multiples(ucwords(strtolower($this->request->getVar('nama_menu_sub_dinamis'))), ' ', true),
+            'url_menu_sub_dinamis' => $this->request->getPost('url_menu_sub_dinamis'),
+            'status_menu_sub_dinamis' => $status_menu_sub_dinamis,
+        ];
+
+        $MenuSubDinamisModel->update($id_menu_sub_dinamis, $data);
+
+        return redirect()->to('admin/semua-menu-dinamis')->with('berhasil', 'Data berhasil di tambah.');
+    }
+
+    public function HapusSementaraMenuSubDinamis($id_menu_sub_dinamis)
+    {
+        $this->MenuSubDinamisModel->where('id_menu_sub_dinamis', $id_menu_sub_dinamis)->delete();
+        session()->setFlashdata('berhasil', 'Berhasil Di Hapus');
+        return redirect()->to('admin/semua-menu-dinamis');
+    }
+
+    //SUB SUB MENU
+    public function HapusSementaraMenuSubSubDinamis($id_menu_sub_sub_dinamis)
+    {
+        $this->MenuSubSubDinamisModel->where('id_menu_sub_sub_dinamis', $id_menu_sub_sub_dinamis)->delete();
+        session()->setFlashdata('berhasil', 'Berhasil Di Hapus');
+        return redirect()->to('admin/semua-menu-dinamis');
+    }
 }

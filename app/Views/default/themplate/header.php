@@ -29,17 +29,17 @@
                                 <ul class="dropdown-menu" aria-labelledby="pagesMenu<?= esc($menu1['id_menu_dinamis']); ?>">
                                     <?php foreach ($dynamicMenus2 as $menu2) : ?>
                                         <?php if ($menu2['id_menu_dinamis'] == $menu1['id_menu_dinamis']) : ?>
-                                            <?php if ($hasSubMenuLevel3($menu2['id_sub_menu_dinamis'])) : ?>
+                                            <?php if ($hasSubMenuLevel3($menu2['id_menu_sub_dinamis'])) : ?>
                                                 <li class="dropdown-submenu dropend">
-                                                    <a class="dropdown-item dropdown-toggle" href="<?= esc($menu2['url_sub_menu_dinamis']); ?>">
-                                                        <?= esc($menu2['nama_sub_menu_dinamis']); ?>
+                                                    <a class="dropdown-item dropdown-toggle" href="<?= esc($menu2['url_menu_sub_dinamis']); ?>">
+                                                        <?= esc($menu2['nama_menu_sub_dinamis']); ?>
                                                     </a>
                                                     <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
                                                         <?php foreach ($dynamicMenus3 as $menu3) : ?>
-                                                            <?php if ($menu3['id_sub_menu_dinamis'] == $menu2['id_sub_menu_dinamis']) : ?>
+                                                            <?php if ($menu3['id_menu_sub_dinamis'] == $menu2['id_menu_sub_dinamis']) : ?>
                                                                 <li>
-                                                                    <a class="dropdown-item" href="<?= base_url($menu3['url_sub_sub_menu_dinamis']); ?>">
-                                                                        <?= esc($menu3['nama_sub_sub_menu_dinamis']); ?>
+                                                                    <a class="dropdown-item" href="<?= base_url($menu3['url_menu_sub_sub_dinamis']); ?>">
+                                                                        <?= esc($menu3['nama_menu_sub_sub_dinamis']); ?>
                                                                     </a>
                                                                 </li>
                                                             <?php endif; ?>
@@ -48,8 +48,8 @@
                                                 </li>
                                             <?php else : ?>
                                                 <li>
-                                                    <a class="dropdown-item" href="<?= base_url($menu2['url_sub_menu_dinamis']); ?>">
-                                                        <?= esc($menu2['nama_sub_menu_dinamis']); ?>
+                                                    <a class="dropdown-item" href="<?= base_url($menu2['url_menu_sub_dinamis']); ?>">
+                                                        <?= esc($menu2['nama_menu_sub_dinamis']); ?>
                                                     </a>
                                                 </li>
                                             <?php endif; ?>
