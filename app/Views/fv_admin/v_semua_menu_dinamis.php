@@ -33,16 +33,39 @@
         <!-- Top bar END -->
 
         <div class="page-content-wrapper border">
-
             <!-- Title -->
             <div class="row mb-3">
                 <div class="col-12 d-sm-flex justify-content-between align-items-center">
                     <h1 class="h3 mb-2 mb-sm-0"><?= $title; ?> <?= $subtitle; ?></h1>
-                    <a href="#" class="btn btn-sm btn-primary mb-0">Tambah</a>
                 </div>
             </div>
 
             <!-- Course boxes START -->
+
+
+            <div class="row g-4 mb-4">
+                <!-- Course item -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="text-center p-4 bg-primary bg-opacity-10 border border-primary rounded-3">
+                        <h6><a href="<?= base_url(); ?>admin/tambah-menu-dinamis">Tambah Menu Level 1</a></h6>
+                    </div>
+                </div>
+
+                <!-- Course item -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="text-center p-4 bg-success bg-opacity-10 border border-success rounded-3">
+                        <h6><a href="<?= base_url(); ?>admin/tambah-menu-sub-dinamis">Tambah Menu Level 2</a></h6>
+                    </div>
+                </div>
+
+                <!-- Course item -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="text-center p-4  bg-warning bg-opacity-15 border border-warning rounded-3">
+                        <h6><a href="<?= base_url(); ?>admin/tambah-menu-sub-sub-dinamis">Tambah Menu Level 3</a></h6>
+                    </div>
+                </div>
+            </div>
+
             <div class="row g-4 mb-4">
 
                 <?php foreach ($AmbilMenuDinamisModel as $menu) : ?>
