@@ -989,8 +989,8 @@ class Admin extends BaseController
     public function TambahMenuSubDinamis()
     {
         $data = [
-            'title' => 'Tambah',
-            'subtitle' => 'Menu Sub Dinamis',
+            'title' => 'Tambah Menu',
+            'subtitle' => 'Level 2',
             'AmbilMenuDinamisModel' => $this->MenuDinamisModel->where('status_menu_dinamis', '1')->findAll(), //Level 1
         ];
         return view('fv_admin/v_tambah_menu_sub_dinamis', $data);
@@ -1064,8 +1064,8 @@ class Admin extends BaseController
     public function TambahMenuSubSubDinamis()
     {
         $data = [
-            'title' => 'Tambah',
-            'subtitle' => 'Menu Sub Sub Dinamis',
+            'title' => 'Tambah Menu',
+            'subtitle' => 'Level 3',
             'AmbilMenuSubDinamisModel' => $this->MenuSubDinamisModel->where('status_menu_sub_dinamis', '1')->findAll(), //Level 2
         ];
         return view('fv_admin/v_tambah_menu_sub_sub_dinamis', $data);
@@ -1126,7 +1126,7 @@ class Admin extends BaseController
 
         return redirect()->to('admin/semua-menu-dinamis')->with('berhasil', 'Data berhasil di tambah.');
     }
-    
+
     public function HapusSementaraMenuSubSubDinamis($id_menu_sub_sub_dinamis)
     {
         $this->MenuSubSubDinamisModel->where('id_menu_sub_sub_dinamis', $id_menu_sub_sub_dinamis)->delete();

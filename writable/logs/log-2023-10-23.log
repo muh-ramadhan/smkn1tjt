@@ -4801,3 +4801,171 @@ WARNING - 2023-10-23 18:08:09 --> [DEPRECATED] Creation of dynamic property App\
  2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
  3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-10-23 18:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-10-23 18:09:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$AdminModel is deprecated in APPPATH\Controllers\Admin.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:09:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$LoginModel is deprecated in APPPATH\Controllers\Admin.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:09:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$PenggunaModel is deprecated in APPPATH\Controllers\Admin.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:09:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$NewsAndBlogModel is deprecated in APPPATH\Controllers\Admin.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:09:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$PengaturanWebModel is deprecated in APPPATH\Controllers\Admin.php on line 25.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:09:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$KategoriNewsAndBlogModel is deprecated in APPPATH\Controllers\Admin.php on line 26.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:09:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$KelasModel is deprecated in APPPATH\Controllers\Admin.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:09:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$JurusanModel is deprecated in APPPATH\Controllers\Admin.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:09:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$MenuDinamisModel is deprecated in APPPATH\Controllers\Admin.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:09:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$MenuSubDinamisModel is deprecated in APPPATH\Controllers\Admin.php on line 30.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:09:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$MenuSubSubDinamisModel is deprecated in APPPATH\Controllers\Admin.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-10-23 18:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-10-23 18:11:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$AdminModel is deprecated in APPPATH\Controllers\Admin.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$LoginModel is deprecated in APPPATH\Controllers\Admin.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$PenggunaModel is deprecated in APPPATH\Controllers\Admin.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$NewsAndBlogModel is deprecated in APPPATH\Controllers\Admin.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$PengaturanWebModel is deprecated in APPPATH\Controllers\Admin.php on line 25.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$KategoriNewsAndBlogModel is deprecated in APPPATH\Controllers\Admin.php on line 26.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$KelasModel is deprecated in APPPATH\Controllers\Admin.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$JurusanModel is deprecated in APPPATH\Controllers\Admin.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$MenuDinamisModel is deprecated in APPPATH\Controllers\Admin.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$MenuSubDinamisModel is deprecated in APPPATH\Controllers\Admin.php on line 30.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$MenuSubSubDinamisModel is deprecated in APPPATH\Controllers\Admin.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-10-23 18:11:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2023-10-23 18:11:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$AdminModel is deprecated in APPPATH\Controllers\Admin.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$LoginModel is deprecated in APPPATH\Controllers\Admin.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$PenggunaModel is deprecated in APPPATH\Controllers\Admin.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$NewsAndBlogModel is deprecated in APPPATH\Controllers\Admin.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$PengaturanWebModel is deprecated in APPPATH\Controllers\Admin.php on line 25.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$KategoriNewsAndBlogModel is deprecated in APPPATH\Controllers\Admin.php on line 26.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$KelasModel is deprecated in APPPATH\Controllers\Admin.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$JurusanModel is deprecated in APPPATH\Controllers\Admin.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$MenuDinamisModel is deprecated in APPPATH\Controllers\Admin.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$MenuSubDinamisModel is deprecated in APPPATH\Controllers\Admin.php on line 30.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-10-23 18:11:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\Admin::$MenuSubSubDinamisModel is deprecated in APPPATH\Controllers\Admin.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Admin->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

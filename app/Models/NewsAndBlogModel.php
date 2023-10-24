@@ -51,7 +51,24 @@ class NewsAndBlogModel extends Model
         $query = $builder->get();
         return $query->getResultArray();
     }
-
+    
+    public function getNewsAndBlogWithCategoryLatest()
+    {
+        $builder = $this->db->table('tbl_newsandblog');
+        $builder->join(
+            'tbl_kategori_newsandblog',
+            'tbl_kategori_newsandblog.id_kategori_news_and_blog = tbl_newsandblog.id_kategori_news_and_blog'
+        );
+        $builder->select('tbl_newsandblog.*, 
+            tbl_kategori_newsandblog.created_at AS kategori_created_at, 
+            tbl_kategori_newsandblog.warna_kategori_news_and_blog AS warna_kategori_news_and_blog, 
+            tbl_kategori_newsandblog.judul_kategori_news_and_blog AS judul_kategori_news_and_blog');
+        $builder->where('tbl_newsandblog.deleted_at', null);
+        $builder->orderBy('tbl_newsandblog.created_at', 'desc');
+        $query = $builder->get();
+        return $query->getResultArray();
+    }
+    
     public function getNewsAndBlogWithCategoryLimited($limit = 3, $offset = 1)
     {
         $builder = $this->db->table('tbl_newsandblog');

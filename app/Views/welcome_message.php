@@ -21,7 +21,9 @@
 <?= $this->include('default/themplate/header') ?>
 
 <main>
-  <section class="position-relative overflow-hidden pb-0 pb-sm-5">
+
+
+  <section class="position-relative overflow-hidden pb-0">
     <div class="container">
       <div class="row d-lg-flex justify-content-lg-between g-4 g-md-5">
         <div class="col-lg-7 position-relative z-index-1 mb-2">
@@ -38,7 +40,7 @@
             pembelajaran, kehidupan sehari-hari dan memprioritaskan
             penguasaan IPTEK dan Life Skill dalam mewujudkan Profil Pelajar
             Pancasila</p>
-          <a href="<?=base_url();?>home/hubungi-kami" class="btn btn-lg btn-blue mb-0">Hubungi Kami</a>
+          <a href="<?= base_url(); ?>home/hubungi-kami" class="btn btn-lg btn-blue mb-0">Hubungi Kami</a>
         </div>
         <div class="col-lg-5 col-xxl-3 position-relative">
           <h4 class="mb-4">Kedisiplinan Terbaik Bulan Ini</h4>
@@ -79,47 +81,60 @@
         </div>
       </div>
 
-      <div class="row g-lg-5 align-items-center mt-5 mt-lg-0">
-        <div class="col-lg-6 col-xl-5">
-          <ul class="list-inline vstack gap-4 flex-wrap mb-4">
-            <li class="list-inline-item border-bottom me-0">
-              <div class="d-sm-flex justify-content-between align-items-center mb-3">
-                <div class="d-sm-flex align-items-center">
-                  <img src="<?= base_url(); ?>assets/images/element/medal.svg" class="me-3 mb-2 mb-sm-0 h-70px" alt="">
-                  <h5 class="mb-2 mb-sm-0">Juara 1 FLS2N Bidang Tari Kontemporer Tingkat Kabupaten</h5>
+    </div>
+  </section>
+
+  
+  <section class="pb-0 pt-0 pt-lg-5">
+    <div class="container">
+      <div class="row">
+        <!-- Slider START -->
+        <div class="tiny-slider arrow-round arrow-blur arrow-hover">
+          <div class="tiny-slider-inner pb-1" data-autoplay="true" data-arrow="true" data-edge="2" data-dots="false" data-items="2" data-items-lg="2" data-items-sm="1">
+            <!-- Card item START -->
+            <?php foreach ($AmbilDataNewsAndBlogTerbaru as $key => $value) { ?>
+              <div>
+                <div class="card action-trigger-hover border bg-transparent">
+                  <!-- Image -->
+                  <?php
+                  if ($value['cover_newsandblog'] == NULL || $value['cover_newsandblog'] == '0') {
+                    $cover_newsandblogImage = base_url('assets/images/NewsAndBlog/tidak-ada-gambar.png');
+                  } else {
+                    $cover_newsandblogPath = FCPATH . 'assets/images/NewsAndBlog/' . $value['cover_newsandblog'];
+                    $cover_newsandblogImage = file_exists($cover_newsandblogPath) ? base_url('assets/images/NewsAndBlog/' . $value['cover_newsandblog']) : base_url('assets/images/NewsAndBlog/tidak-ada-gambar.png');
+                  }
+                  ?>
+
+                  <img src="<?= $cover_newsandblogImage; ?>" class="card-img-top" alt="course image">
+                  <div class="card-body pb-0">
+                    <div class="d-flex justify-content-between mb-3">
+                      <span class="hstack gap-2">
+                        <a href="<?= base_url('home/kategori/'); ?>" class="badge text-bg-<?= $value['warna_kategori_news_and_blog']; ?>"><?= $value['judul_kategori_news_and_blog']; ?></a>
+                      </span>
+                    </div>
+                    <h5 class="card-title"><a href="<?= base_url('home/news-and-blog/' . $value['slug_newsandblog']); ?>"><?= $value['judul_newsandblog']; ?></a></h5>
+                  </div>
                 </div>
-                <h5 class="mb-0">2023</h5>
               </div>
-            </li>
-            <li class="list-inline-item">
-              <div class="d-sm-flex justify-content-between align-items-center mb-3">
-                <div class="d-sm-flex align-items-center">
-                  <img src="<?= base_url(); ?>assets/images/element/medal.svg" class="me-3 mb-2 mb-sm-0 h-70px" alt="">
-                  <h5 class="mb-2 mb-sm-0"> Juara 1 O2SN Cabang Atletik Putri Tingkat Kabupaten</h5>
-                </div>
-                <h5 class="mb-0">2023</h5>
-              </div>
-            </li>
-          </ul>
+            <?php } ?>
+            <!-- Card item END -->
+
+          </div>
         </div>
-        <div class="col-lg-6 col-xl-7 position-relative mt-5 mt-lg-0">
-          <figure class="position-absolute top-0 start-0 translate-middle ms-3">
-            <svg class="fill-danger" width="79" height="99" viewBox="0 0 79 99">
-              <path d="M39.5002 97.4376C37.0579 73.3386 34.6156 49.1923 32.2202 25.0933C30.8581 25.3773 29.4961 25.6141 28.134 25.8981C43.6804 42.4692 59.2737 58.9928 74.8201 75.5639C75.8064 74.8537 76.8397 74.1435 77.826 73.4333C53.1679 65.9053 27.8992 61.2181 2.16076 59.3716C2.53651 60.3659 2.91225 61.3128 3.28799 62.307C25.0811 52.3644 46.8742 42.3745 68.6673 32.4319C67.587 31.8637 66.5068 31.2482 65.4265 30.6801C55.2345 52.175 45.0894 73.7174 34.8974 95.2123C33.958 97.2009 38.2791 97.8637 39.1245 96.0646C49.3165 74.5696 59.4616 53.0273 69.6536 31.5323C70.4521 29.8278 67.4461 29.307 66.4128 29.7805C44.6197 39.6284 22.8266 49.571 1.03353 59.561C-1.12699 60.5552 0.42295 62.3544 2.16076 62.4964C27.0537 64.2956 51.6649 68.8408 75.5716 76.132C76.6049 76.4634 80.2214 75.7532 78.5775 74.0014C63.0312 57.4304 47.4378 40.9068 31.8914 24.3357C30.9991 23.3888 27.6174 23.1047 27.8052 25.1406C30.2476 49.2396 32.6899 73.3859 35.0853 97.4849C35.3201 99.5208 39.6881 99.4735 39.5002 97.4376Z" />
-              <path d="M46.8741 1.18358C45.4181 5.39736 44.8075 9.70582 44.9484 14.1563C45.0424 16.3342 49.4104 16.3342 49.3165 14.1563C49.1756 9.9899 49.7392 6.01285 51.1012 2.03581C51.8527 -0.142097 47.5317 -0.804937 46.8741 1.18358Z" />
-              <path d="M15.8286 7.00718C17.9422 9.80058 20.6663 11.9311 23.8601 13.3515C24.7995 13.7776 26.2085 13.6356 26.8661 12.7834C27.5236 11.9311 26.96 10.9369 26.0676 10.5581C23.4844 9.42182 21.3239 7.67002 19.633 5.39743C18.4119 3.69298 14.3257 4.97131 15.8286 7.00718Z" />
-              <path d="M2.48911 34.0889C6.43441 35.5567 10.3797 37.0244 14.325 38.5394C16.1568 39.2023 19.2566 37.1664 16.5325 36.1248C12.5872 34.6571 8.6419 33.1894 4.6966 31.6743C2.91182 31.0115 -0.188063 33.0473 2.48911 34.0889Z" />
-            </svg>
-          </figure>
-          <img src="<?= base_url(); ?>assets/images/about/cover-3.jpg" class="rounded-3" alt="">
-        </div>
+        <!-- Slider END -->
       </div>
     </div>
   </section>
+
   <section>
     <div class="container">
+		<div class="row mb-4">
+			<div class="col-lg-8 mx-auto text-center">
+				<h2 class="fs-1">Program Keahlian</h2>
+				<p class="mb-0">Pilih program keahlianmu sekarang juga! 🔥</p>
+			</div>
+		</div>
       <div class="row g-4">
-
         <div class="col-sm-6 col-lg-3">
           <div class="card bg-warning bg-opacity-50 p-4 overflow-hidden h-100">
             <div class="card-header bg-transparent p-0">
@@ -175,6 +190,8 @@
       </div>
     </div>
   </section>
+
+
   <section class="pt-0 pt-md-5">
     <div class="container">
       <div class="row align-items-center">
@@ -203,7 +220,7 @@
             <li class="list-group-item h6 d-flex fw-normal mb-0"><i class="bi bi-patch-check-fill text-success me-2"></i>Beragam Pilihan Kegiatan Ekstrakurikuler</li>
           </ul>
           <div class="d-sm-flex align-items-center mt-4">
-            <a href="<?=base_url();?>home/news-and-blog/sejarah-smk-negeri-1-tanjung-jabung-timur" class="btn btn-lg btn-dark me-2 mb-4 mb-sm-0">Selengkapnya</a>
+            <a href="<?= base_url(); ?>home/news-and-blog/sejarah-smk-negeri-1-tanjung-jabung-timur" class="btn btn-lg btn-dark me-2 mb-4 mb-sm-0">Selengkapnya</a>
             <div class="d-flex align-items-center py-2 ms-0 ms-sm-4">
               <a data-glightbox data-gallery="office-tour" href="https://www.youtube.com/embed/#" class="btn btn-round btn-danger-shadow mb-0 overflow-visible me-7">
                 <i class="fas fa-play"></i>
@@ -248,6 +265,122 @@
       </div>
     </div>
   </section>
+
+
+
+  <section>
+	<div class="container">
+		<!-- Title -->
+		<div class="row g-4">
+			<!-- Item -->
+			<div class="col-sm-6 col-md-4 col-xl-3">
+				<div class="card card-body bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
+					<!-- Image -->
+					<div class="icon-xl bg-body mx-auto rounded-circle mb-3">
+						<img src="<?=base_url();?>assets/images/element/data-science.svg" alt="">
+					</div>
+					<!-- Title -->
+					<h5 class="mb-2"><a href="<?=base_url();?>perpustakaan" class="stretched-link">e Perpus</a></h5>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="col-sm-6 col-md-4 col-xl-3">
+				<div class="card card-body bg-orange bg-opacity-10 text-center position-relative btn-transition p-4">
+					<!-- Image -->
+					<div class="icon-xl bg-body mx-auto rounded-circle mb-3">
+						<img src="<?=base_url();?>assets/images/element/online.svg" alt="">
+					</div>
+					<!-- Title -->
+					<h5 class="mb-2"><a href="<?=base_url();?>rapor" class="stretched-link">e Rapor</a></h5>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="col-sm-6 col-md-4 col-xl-3">
+				<div class="card card-body bg-info bg-opacity-10 text-center position-relative btn-transition p-4">
+					<!-- Image -->
+					<div class="icon-xl bg-body mx-auto rounded-circle mb-3">
+						<img src="<?=base_url();?>assets/images/element/profit.svg" alt="">
+					</div>
+					<!-- Title -->
+					<h5 class="mb-2"><a href="<?=base_url();?>belajar" class="stretched-link">e Learning</a></h5>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="col-sm-6 col-md-4 col-xl-3">
+				<div class="card card-body bg-primary bg-opacity-10 text-center position-relative btn-transition p-4">
+					<!-- Image -->
+					<div class="icon-xl bg-body mx-auto rounded-circle mb-3">
+						<img src="<?=base_url();?>assets/images/element/account.svg" alt="">
+					</div>
+					<!-- Title -->
+					<h5 class="mb-2"><a href="<?=base_url();?>dapodik" class="stretched-link">Dapodik</a></h5>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="col-sm-6 col-md-4 col-xl-3">
+				<div class="card card-body bg-danger bg-opacity-10 text-center position-relative btn-transition p-4">
+					<!-- Image -->
+					<div class="icon-xl bg-body mx-auto rounded-circle mb-3">
+						<img src="<?=base_url();?>assets/images/element/music.svg" alt="">
+					</div>
+					<!-- Title -->
+					<h5 class="mb-2"><a href="<?=base_url();?>presensi" class="stretched-link">Presensi</a></h5>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="col-sm-6 col-md-4 col-xl-3">
+				<div class="card card-body bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
+					<!-- Image -->
+					<div class="icon-xl bg-body mx-auto rounded-circle mb-3">
+						<img src="<?=base_url();?>assets/images/element/marketing.svg" alt="">
+					</div>
+					<!-- Title -->
+					<h5 class="mb-2"><a href="<?=base_url();?>up" class="stretched-link">Unit Produksi</a></h5>
+				</div>
+			</div>
+
+
+			<!-- Item -->
+			<div class="col-sm-6 col-md-4 col-xl-3">
+				<div class="card card-body bg-warning bg-opacity-15 text-center position-relative btn-transition p-4">
+					<!-- Image -->
+					<div class="icon-xl bg-body mx-auto rounded-circle mb-3">
+						<img src="<?=base_url();?>assets/images/element/home.svg" alt="">
+					</div>
+					<!-- Title -->
+					<h5 class="mb-2"><a href="<?=base_url();?>bk" class="stretched-link">Bimbingan Konseling</a></h5>
+				</div>
+			</div>
+
+			<!-- Item -->
+			<div class="col-sm-6 col-md-4 col-xl-3">
+				<div class="card card-body bg-danger bg-opacity-10 text-center position-relative btn-transition p-4">
+					<!-- Image -->
+					<div class="icon-xl bg-body mx-auto rounded-circle mb-3">
+						<img src="<?=base_url();?>assets/images/element/engineering.svg" alt="">
+					</div>
+					<!-- Title -->
+					<h5 class="mb-2"><a href="<?=base_url();?>prakerin" class="stretched-link">Praktik Kerja Industri</a></h5>
+				</div>
+			</div>
+
+
+
+
+
+
+
+		</div>
+	</div>
+</section>
+
+
+
   <section class="pt-0 pt-md-6">
     <div class="container">
       <div class="row">
@@ -277,7 +410,7 @@
                   <p class="mb-3 mb-lg-0">Belajar, Berlatih, Berprestasi, dan Berkarakter</p>
                 </div>
                 <div class="col-lg-4 text-lg-end">
-                  <a href="<?=base_url();?>home/news-and-blog/batalyon-cendikia-utama" class="btn btn-warning mb-0">Selengkapnya</a>
+                  <a href="<?= base_url(); ?>home/news-and-blog/batalyon-cendikia-utama" class="btn btn-warning mb-0">Selengkapnya</a>
                 </div>
               </div>
             </div>
@@ -286,106 +419,11 @@
       </div>
     </div>
   </section>
-  <section class="pt-0 pt-md-5">
-    <div class="container">
-      <div class="row mb-3 mb-sm-4">
-        <div class="col-12 mx-auto text-center">
-          <h2 class="fs-1 fw-bold">
-            <span class="position-relative z-index-9">Our Best</span>
-            <span class="position-relative z-index-1">Moments
-              <span class="position-absolute top-50 start-50 translate-middle z-index-n1 d-none d-sm-block">
-                <svg class="fill-orange" width="250" height="86" viewBox="0 0 303 86">
-                  <path d="M288.197 19.3999C281.599 15.6998 273.654 13.03 265.424 10.926C256.533 8.64794 247.263 6.92124 237.946 5.4267C218.461 2.249 198.384 0.406219 178.237 0.0579769C158.609 -0.275755 138.888 0.8125 119.733 3.49686C108.17 5.10748 96.8189 7.2985 85.8466 10.0264C81.4955 11.0131 77.168 12.0723 72.9115 13.2331C56.382 17.7022 40.5146 23.4192 26.3972 30.355C12.9182 36.9861 0.716203 46.0404 0.999971 57.2131C1.14185 62.2772 4.16871 67.051 9.98595 70.693C15.4721 74.1319 22.6846 76.3809 29.9679 78.0206C38.7647 80.0085 48.0345 81.3289 57.257 82.4026C67.1179 83.5489 77.0734 84.2889 87.0762 84.6807C107.413 85.4642 127.892 84.7968 148.063 83.0266C168.399 81.2418 188.429 78.3543 208.127 74.8139C227.399 71.3459 246.436 67.2976 265.141 62.8285C278.927 59.5348 294.227 55.0802 300.446 46.2435C307.091 36.812 299.949 25.973 288.197 19.3999ZM298.862 46.7804C295.48 50.9593 289.592 54.0935 283.207 56.4876C276.633 58.9543 269.468 60.7391 262.279 62.4077C252.915 64.5843 243.503 66.6737 234.044 68.6616C215.174 72.6083 196.019 76.0762 176.534 78.7171C157.191 81.3289 137.54 83.0991 117.747 83.6505C97.9304 84.2019 77.9957 83.5634 58.4866 81.3289C49.5243 80.2987 40.5146 79.0363 31.907 77.1645C24.5764 75.5829 17.3403 73.4499 11.6649 70.1126C5.49296 66.4561 2.15869 61.5226 2.22963 56.2555C2.32422 50.7417 5.72943 45.489 10.9555 41.0489C16.1106 36.6959 22.7319 33.0974 29.6842 29.8472C36.2108 26.8145 43.0213 24.0141 50.0918 21.4748C48.4601 22.1278 46.8521 22.7953 45.2678 23.4772C37.7716 26.684 30.4409 30.1664 23.9615 34.1131C17.695 37.9438 12.1615 42.3839 9.30018 47.5785C6.55709 52.5554 6.10779 58.1853 9.77313 63.0462C13.0838 67.4427 19.303 70.7655 26.279 72.8985C34.6974 75.4813 44.2036 76.2358 53.497 76.381C63.8309 76.5406 74.2357 76.1488 84.5696 75.757C95.0454 75.3652 105.497 74.7993 115.926 74.0884C136.783 72.6664 157.545 70.6204 178.071 67.9361C187.956 66.6447 197.817 65.2227 207.583 63.6411C208.269 63.525 208.718 62.3642 208.009 62.4658C188.358 65.629 168.447 68.2118 148.394 70.2142C128.435 72.202 108.312 73.624 88.1404 74.4366C78.0666 74.8429 67.9219 75.1911 57.8008 75.2056C48.3419 75.2201 38.6465 74.7558 29.8261 72.5068C22.5427 70.6785 15.8032 67.6169 11.8777 63.3509C7.33745 58.4175 7.52663 52.4393 10.6481 47.2302C13.7695 41.9776 19.7523 37.581 26.3263 33.8084C32.7583 30.1083 39.8289 26.7855 47.1359 23.7529C59.2197 18.7034 72.2257 14.4955 85.7756 11.1292C90.7889 9.99737 95.8494 8.98167 100.981 8.08205C117.96 5.07846 135.553 3.32274 153.218 2.88744C161.754 2.66979 170.315 2.78587 178.851 3.19215C179.537 3.22117 180.128 2.06037 179.277 2.01684C167.69 1.45094 156.032 1.47996 144.468 2.06037C145.745 1.97331 146.999 1.88625 148.275 1.8137C167.879 0.6674 187.696 1.04466 207.157 2.78587C226.075 4.46904 245.111 7.25497 262.894 11.608C278.714 15.4677 294.085 21.6635 299.808 32.0092C302.456 36.812 302.574 42.1662 298.862 46.7804Z" />
-                </svg>
-              </span>
-            </span>
-          </h2>
-        </div>
-      </div>
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <div class="row g-4">
-            <div class="col-md-6">
-              <div class="card overflow-hidden">
-                <div class="card-overlay-hover">
-                  <img src="<?= base_url(); ?>assets/images/event/11.jpg" class="rounded-3" alt="course image">
-                </div>
-                <a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="<?= base_url(); ?>assets/images/event/11.jpg">
-                  <i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card overflow-hidden">
-                <div class="card-overlay-hover">
-                  <img src="<?= base_url(); ?>assets/images/event/12.jpg" class="rounded-3" alt="course image">
-                </div>
-                <a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="<?= base_url(); ?>assets/images/event/12.jpg">
-                  <i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
-                </a>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="card overflow-hidden">
-                <div class="card-overlay-hover">
-                  <img src="<?= base_url(); ?>assets/images/event/14.jpg" class="rounded-3" alt="course image">
-                </div>
-                <a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="<?= base_url(); ?>assets/images/event/14.jpg">
-                  <i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="card overflow-hidden">
-            <div class="card-overlay-hover">
-              <img src="<?= base_url(); ?>assets/images/event/17.jpg" class="rounded-3" alt="course image">
-            </div>
-            <a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="<?= base_url(); ?>assets/images/event/17.jpg">
-              <i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="row g-4">
-            <div class="col-12">
-              <div class="card overflow-hidden">
-                <div class="card-overlay-hover">
-                  <img src="<?= base_url(); ?>assets/images/event/16.jpg" class="rounded-3" alt="course image">
-                </div>
-                <a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="https://www.youtube.com/embed/tXHviS-4ygo">
-                  <span class="btn text-danger btn-round btn-white-shadow mb-0 position-absolute top-50 start-50 translate-middle">
-                    <i class="fas fa-play"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card overflow-hidden">
-                <div class="card-overlay-hover">
-                  <img src="<?= base_url(); ?>assets/images/event/13.jpg" class="rounded-3" alt="course image">
-                </div>
-                <a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="<?= base_url(); ?>assets/images/event/13.jpg">
-                  <i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card overflow-hidden">
-                <div class="card-overlay-hover">
-                  <img src="<?= base_url(); ?>assets/images/event/15.jpg" class="rounded-3" alt="course image">
-                </div>
-                <a class="card-element-hover position-absolute w-100 h-100" data-glightbox data-gallery="gallery" href="<?= base_url(); ?>assets/images/event/15.jpg">
-                  <i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-3 p-2 lh-1"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
+
+
+
+
   <section class="pt-0 pt-md-5">
     <div class="container">
       <div class="row mb-3 mb-sm-4">
@@ -419,8 +457,8 @@
               <div class="overflow-hidden rounded-3">
                 <img src="<?= $cover_newsandblogImage; ?>" class="card-img" alt="<?= $value['judul_newsandblog']; ?>">
                 <div class="card-img-overlay d-flex align-items-start p-3">
-                  <a href="<?= base_url('home/kategori/');?>" class="badge text-bg-primary">BARU</a>
-                  <a href="<?= base_url('home/kategori/');?>" class="badge text-bg-<?= $value['warna_kategori_news_and_blog']; ?>"><?= $value['judul_kategori_news_and_blog']; ?></a>
+                  <a href="<?= base_url('home/kategori/'); ?>" class="badge text-bg-primary">BARU</a>
+                  <a href="<?= base_url('home/kategori/'); ?>" class="badge text-bg-<?= $value['warna_kategori_news_and_blog']; ?>"><?= $value['judul_kategori_news_and_blog']; ?></a>
                 </div>
               </div>
 
@@ -469,6 +507,8 @@
       </div>
     </div>
   </section>
+
+
 </main>
 
 <?= $this->include('default/themplate/footer') ?>

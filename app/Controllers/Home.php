@@ -29,6 +29,7 @@ class Home extends BaseController
             'title' => 'SMK Negeri 1 Tanjung Jabung Timur',
             'subtitle' => '',
             'AmbilDataSiswa123' => $this->NewsAndBlogModel->getSiswa123(),
+            'AmbilDataNewsAndBlogTerbaru' => $this->NewsAndBlogModel->getNewsAndBlogWithCategoryLatest(),
             'AmbilDataJoinKategoriNewsAndBlog1' => $this->NewsAndBlogModel->getNewsAndBlogWithCategoryLimited(1, 0),
             'AmbilDataJoinKategoriNewsAndBlog2' => $this->NewsAndBlogModel->getNewsAndBlogWithCategoryLimited(3, 1),
             'AmbilDataWeb' => $this->PengaturanWebModel->find(),

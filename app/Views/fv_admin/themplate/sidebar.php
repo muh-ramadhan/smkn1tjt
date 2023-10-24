@@ -17,7 +17,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item ms-2 my-2">News and Blogs</li>
+                <li class="nav-item ms-2 my-2">Manajemen Website</li>
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#collapsenewsandblog" role="button" aria-expanded="false" aria-controls="collapsenewsandblog">
                         <i class="bi bi-basket fa-fw me-2"></i>News and Blogs
@@ -28,7 +28,7 @@
                     </ul>
                 </li>
 
-                <li class="nav-item ms-2 my-2">Galeri Foto & Video</li>
+                
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#collapseourbestmoment" role="button" aria-expanded="false" aria-controls="collapseourbestmoment">
                         <i class="fas fa-user-tie fa-fw me-2"></i>Our Best Moment
@@ -39,8 +39,22 @@
                         </li>
                     </ul>
                 </li>
+   
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#collapsemenudinamis" role="button" aria-expanded="false" aria-controls="collapsemenudinamis">
+                        <i class="bi bi-basket fa-fw me-2"></i>Menu Dinamis
+                    </a>
+                    <ul class="nav collapse flex-column" id="collapsemenudinamis" data-bs-parent="#navbar-sidebar">
+                        <li class="nav-item"> <a class="nav-link" href="<?= base_url(); ?>admin/semua-menu-dinamis">Semua</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url(); ?>Admin/Pengaturan">
+                        <i class="fas fa-user-cog fa-fw me-2"></i>Pengaturan Web</a>
+                </li>
 
-                <li class="nav-item ms-2 my-2">Manajemen Sekolah</li>
+                <li class="nav-item ms-2 my-2">Manajemen Data Sekolah</li>
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#collapseinstructors" role="button" aria-expanded="false" aria-controls="collapseinstructors">
                         <i class="fas fa-user-tie fa-fw me-2"></i>Taruna/Taruni
@@ -58,23 +72,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url(); ?>admin/semua-jurusan">
                         <i class="fas fa-user-cog fa-fw me-2"></i>Jurusan</a>
-                </li>
-                
-                <li class="nav-item ms-2 my-2">Manajemen Menu Dinamis</li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#collapsenewsandblog" role="button" aria-expanded="false" aria-controls="collapsenewsandblog">
-                        <i class="bi bi-basket fa-fw me-2"></i>Menu Dinamis
-                    </a>
-                    <ul class="nav collapse flex-column" id="collapsenewsandblog" data-bs-parent="#navbar-sidebar">
-                        <li class="nav-item"> <a class="nav-link" href="<?= base_url(); ?>admin/semua-menu-dinamis">Semua</a></li>
-                    </ul>
-                </li>
-
-
-                <li class="nav-item ms-2 my-2">Manajemen Website</li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url(); ?>Admin/Pengaturan">
-                        <i class="fas fa-user-cog fa-fw me-2"></i>Pengaturan</a>
                 </li>
 
                 <div class="px-3 mt-auto pt-3">
