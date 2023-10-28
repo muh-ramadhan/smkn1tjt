@@ -105,7 +105,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <?= date_create($value['created_at'])->format('d M Y'); ?>
+                                        <?= date('d M Y', strtotime($value['created_at'])); ?>
                                         </td>
                                         <td>
                                             <span class="badge text-bg-<?= $value['warna_kategori_news_and_blog']; ?>"><?= $value['judul_kategori_news_and_blog']; ?></span>

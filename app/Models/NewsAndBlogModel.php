@@ -14,7 +14,7 @@ class NewsAndBlogModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_newsandblog', 'id_kategori_news_and_blog', 'id_kategori_news_and_blog_tambahan', 'judul_newsandblog', 'slug_newsandblog', 'cover_newsandblog', 'penulis_newsandblog', 'deskripsi_singkat_newsandblog', 'isi_newsandblog', 'video_url_newsandblog', 'video_newsandblog', 'status_newsandblog'];
+    protected $allowedFields    = ['id_newsandblog', 'id_kategori_news_and_blog', 'id_kategori_news_and_blog_tambahan', 'judul_newsandblog', 'slug_newsandblog', 'cover_newsandblog', 'penulis_newsandblog', 'deskripsi_singkat_newsandblog', 'isi_newsandblog', 'video_url_newsandblog', 'video_newsandblog', 'status_newsandblog', 'created_at'];
 
     // Dates
     protected $useTimestamps = true;
@@ -47,11 +47,16 @@ class NewsAndBlogModel extends Model
             'tbl_kategori_newsandblog',
             'tbl_kategori_newsandblog.id_kategori_news_and_blog = tbl_newsandblog.id_kategori_news_and_blog'
         );
+        $builder->select('tbl_newsandblog.*, 
+        tbl_kategori_newsandblog.created_at AS kategori_created_at, 
+        tbl_kategori_newsandblog.warna_kategori_news_and_blog AS warna_kategori_news_and_blog, 
+        tbl_kategori_newsandblog.judul_kategori_news_and_blog AS judul_kategori_news_and_blog,
+        tbl_newsandblog.created_at AS created_at');
         $builder->where('tbl_newsandblog.deleted_at', null);
         $query = $builder->get();
         return $query->getResultArray();
     }
-    
+
     public function getNewsAndBlogWithCategoryLatest()
     {
         $builder = $this->db->table('tbl_newsandblog');
@@ -68,7 +73,7 @@ class NewsAndBlogModel extends Model
         $query = $builder->get();
         return $query->getResultArray();
     }
-    
+
     public function getNewsAndBlogWithCategoryLimited($limit = 3, $offset = 1)
     {
         $builder = $this->db->table('tbl_newsandblog');
@@ -116,6 +121,12 @@ class NewsAndBlogModel extends Model
         $builder->join('tbl_kategori_newsandblog', 'tbl_kategori_newsandblog.id_kategori_news_and_blog = tbl_newsandblog.id_kategori_news_and_blog');
         $builder->where('tbl_newsandblog.slug_newsandblog', $slug_newsandblog);
         $builder->where('tbl_newsandblog.deleted_at', null);
+        // Tambahkan created_at ke pemilihan kolom
+        $builder->select('tbl_newsandblog.*, 
+        tbl_kategori_newsandblog.created_at AS kategori_created_at, 
+        tbl_kategori_newsandblog.warna_kategori_news_and_blog AS warna_kategori_news_and_blog, 
+        tbl_kategori_newsandblog.judul_kategori_news_and_blog AS judul_kategori_news_and_blog,
+        tbl_newsandblog.created_at AS created_at');
         $query = $builder->get();
         return $query->getRowArray();
     }

@@ -32,10 +32,7 @@
                 <span><?= date('d F Y', strtotime($AmbilDataNewsAndBlog['created_at'])); ?></span>
                 <span class="mx-2">|</span>
 
-                <div class="badge text-bg-orange"><i class="far fa-eye me-1"></i>266
-                </div>
-
-                <div class="badge text-bg-info"><i class="far text-white fa-heart me-1"></i><?= number_format($AmbilDataNewsAndBlog['jumlah_view'], 0, ',', '.'); ?>
+                <div class="badge text-bg-info"><i class="far text-white fa-eye me-1"></i><?= number_format($AmbilDataNewsAndBlog['jumlah_view'], 0, ',', '.'); ?>
                 </div>
 
                 <div class="badge text-bg-<?= $AmbilDataNewsAndBlog['warna_kategori_news_and_blog']; ?>">
@@ -47,12 +44,9 @@
                     <?= $AmbilDataNewsAndBlog2['judul_kategori_news_and_blog']; ?>
                   </div>
                 <?php endif; ?>
-
                 <h2 class="mt-2 mb-0 display-5"><?= $AmbilDataNewsAndBlog['judul_newsandblog']; ?></h2>
-
               </div>
             </div>
-
 
             <div class="row mt-4">
               <div class="col-12 mt-4 mt-lg-0 mb-4">

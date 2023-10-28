@@ -55,7 +55,7 @@ class Admin extends BaseController
         ];
         return view('fv_admin/v_semua_news_and_blog', $data);
     }
-
+    
     public function TambahNewsAndBlog()
     {
         $data = [
@@ -126,7 +126,7 @@ class Admin extends BaseController
         $video_newsandblog = $this->request->getVar('video_newsandblog_newsandblog') ? $this->request->getVar('video_newsandblog') : NULL;
 
         $data = [
-            'judul_newsandblog' => reduce_multiples(ucwords(strtolower($this->request->getVar('judul_newsandblog'))), ' ', true),
+            'judul_newsandblog' => reduce_multiples($this->request->getVar('judul_newsandblog'), ' ', true),
             'id_kategori_news_and_blog' => $this->request->getVar('id_kategori_news_and_blog'),
             'id_kategori_news_and_blog_tambahan' => $id_kategori_news_and_blog_tambahan,
             'slug_newsandblog' => preg_replace('/-+/', '-', str_replace(' ', '-', strtolower(preg_replace('/[^a-zA-Z0-9\s-]/', '', trim($this->request->getVar('judul_newsandblog')))))),
@@ -208,14 +208,15 @@ class Admin extends BaseController
         $video_newsandblog = $this->request->getVar('video_newsandblog') ? $this->request->getVar('video_newsandblog') : NULL;
 
         $data = [
-            'judul_newsandblog' => reduce_multiples(ucwords(strtolower($this->request->getVar('judul_newsandblog'))), ' ', true),
-            'id_kategori_news_and_blog' => $this->request->getVar('id_kategori_news_and_blog'),
+            'judul_newsandblog' => reduce_multiples($this->request->getVar('judul_newsandblog'), ' ', true),
+            'id_kategori_news_and_blog' => $this->request->getPost('id_kategori_news_and_blog'),
             'id_kategori_news_and_blog_tambahan' => $id_kategori_news_and_blog_tambahan,
             'slug_newsandblog' => preg_replace('/-+/', '-', str_replace(' ', '-', strtolower(preg_replace('/[^a-zA-Z0-9\s-]/', '', trim($this->request->getVar('judul_newsandblog')))))),
+            'created_at' => $this->request->getPost('created_at'),
             'cover_newsandblog' => $newName,
-            'penulis_newsandblog' => $this->request->getVar('penulis_newsandblog'),
-            'deskripsi_singkat_newsandblog' => $this->request->getVar('deskripsi_singkat_newsandblog'),
-            'isi_newsandblog' => $this->request->getVar('isi_newsandblog'),
+            'penulis_newsandblog' => $this->request->getPost('penulis_newsandblog'),
+            'deskripsi_singkat_newsandblog' => $this->request->getPost('deskripsi_singkat_newsandblog'),
+            'isi_newsandblog' => $this->request->getPost('isi_newsandblog'),
             'video_url_newsandblog' => $video_url_newsandblog,
             'video_newsandblog' => $video_newsandblog,
             'status_newsandblog' => 1,

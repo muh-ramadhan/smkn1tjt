@@ -31,10 +31,11 @@
             </div>
             <?php echo form_open_multipart('admin/update-news-and-blog/' . $detailData['id_newsandblog']); ?>
             <?= csrf_field() ?>
+
             <div class="row g-4">
                 <div class="col-12">
                     <div class="bg-light border rounded p-4">
-                        <h5 class="mb-0">Judul*</h5>
+                        <h5 class="mb-0">Judul News and Blog *</h5>
                         <div class="mt-3">
                             <input type="text" class="form-control" name="judul_newsandblog" value="<?= $detailData['judul_newsandblog']; ?>">
                             <span class="small">Maksimal 70 karakter termasuk spasi dan tanda baca</span>
@@ -42,8 +43,56 @@
                     </div>
                 </div>
 
+                <div class="col-6">
+                    <div class="bg-light border rounded p-4">
+                        <h5 class="mb-0">Penulis *</h5>
+                        <div class="mt-3">
+                            <input type="text" class="form-control" name="penulis_newsandblog" value="<?= $detailData['penulis_newsandblog']; ?>">
+                            <span class="small">Masukkan nama penulis contoh: Admin Web</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="bg-light border rounded p-4">
+                        <h5 class="mb-0">Tanggal Dibuat</h5>
+                        <div class="mt-3">
+                            <input type="text" class="form-control" name="created_at" value="<?= $detailData['created_at']; ?>">
+                            <span class="small">Ganti tanggal news and blog dibuat</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="bg-light border rounded p-4">
+                        <h5 class="mb-0">Kategori Utama *</h5>
+                        <select class="form-select js-choice border-0 z-index-9 bg-transparent" aria-label=".form-select-sm" data-search-enabled="true" name="id_kategori_news_and_blog">
+                            <option disabled selected>Pilih Kategori</option>
+                            <?php foreach ($kategoriData as $kategori) : ?>
+                                <option value="<?= $kategori['id_kategori_news_and_blog']; ?>" <?= ($kategori['id_kategori_news_and_blog'] == $detailData['id_kategori_news_and_blog']) ? 'selected' : ''; ?>>
+                                    <?= $kategori['judul_kategori_news_and_blog']; ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="bg-light border rounded p-4">
+                        <h5 class="mb-0">Kategori Tambahan</h5>
+                        <select class="form-select js-choice border-0 z-index-9 bg-transparent" aria-label=".form-select-sm" data-search-enabled="true" name="id_kategori_news_and_blog_tambahan">
+                            <option value="" <?= ($detailData['id_kategori_news_and_blog_tambahan'] == '') ? 'selected' : ''; ?>>Pilih Kategori Tambahan</option>
+                            <?php foreach ($kategoriData as $kategori) : ?>
+                                <option value="<?= $kategori['id_kategori_news_and_blog']; ?>" <?= ($kategori['id_kategori_news_and_blog'] == $detailData['id_kategori_news_and_blog_tambahan']) ? 'selected' : ''; ?>>
+                                    <?= $kategori['judul_kategori_news_and_blog']; ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+
                 <div class="col-12">
-                    <h4>Cover News and Blog*</h4>
+                    <h4>Cover News and Blog *</h4>
                     <hr>
                     <div class="row">
                         <div class="col-12">
@@ -68,7 +117,7 @@
                                             <input class="form-control" type="file" name="cover_newsandblog" accept="image/jpg, image/jpeg, image/png" />
                                         </span>
                                     </label>
-                                    <p class="small mb-0 mt-2"><b>Catatan:</b> Hanya JPG, JPEG dan PNG. Dimensi yang kami sarankan adalah 600px * 450px. Gambar yang lebih besar akan dipotong menjadi 4:3 agar sesuai dengan thumbnail/pratinjau.</p>
+                                    <p class="small mb-0 mt-2"><b>Catatan:</b> Hanya JPG, JPEG dan PNG. Pastikan dimensi Foto Cover 16:9, Maksimal Ukuran 1 Mb / 1024 kb</p>
                                 </div>
                             </div>
                         </div>
@@ -77,45 +126,7 @@
 
                 <div class="col-12">
                     <div class="bg-light border rounded p-4">
-                        <h5 class="mb-0">Penulis*</h5>
-                        <div class="mt-3">
-                            <input type="text" class="form-control" name="penulis_newsandblog" value="<?= $detailData['penulis_newsandblog']; ?>">
-                            <span class="small">Masukkan nama penulis contoh: Admin Web</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="bg-light border rounded p-4">
-                        <h5 class="mb-0">Kategori Utama*</h5>
-                        <select class="form-select js-choice border-0 z-index-9 bg-transparent" aria-label=".form-select-sm" data-search-enabled="true" name="id_kategori_news_and_blog">
-                            <option disabled selected>Pilih Kategori</option>
-                            <?php foreach ($kategoriData as $kategori) : ?>
-                                <option value="<?= $kategori['id_kategori_news_and_blog']; ?>" <?= ($kategori['id_kategori_news_and_blog'] == $detailData['id_kategori_news_and_blog']) ? 'selected' : ''; ?>>
-                                    <?= $kategori['judul_kategori_news_and_blog']; ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="col-12">
-                    <div class="bg-light border rounded p-4">
-                        <h5 class="mb-0">Kategori Tambahan</h5>
-                        <select class="form-select js-choice border-0 z-index-9 bg-transparent" aria-label=".form-select-sm" data-search-enabled="true" name="id_kategori_news_and_blog_tambahan">
-                            <option value="" <?= ($detailData['id_kategori_news_and_blog_tambahan'] == '') ? 'selected' : ''; ?>>Pilih Kategori Tambahan</option>
-                            <?php foreach ($kategoriData as $kategori) : ?>
-                                <option value="<?= $kategori['id_kategori_news_and_blog']; ?>" <?= ($kategori['id_kategori_news_and_blog'] == $detailData['id_kategori_news_and_blog_tambahan']) ? 'selected' : ''; ?>>
-                                    <?= $kategori['judul_kategori_news_and_blog']; ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="bg-light border rounded p-4">
-                        <h5 class="mb-0">Deskripsi Singkat*</h5>
+                        <h5 class="mb-0">Deskripsi Singkat *</h5>
                         <div class="mt-3">
                             <textarea type="text" class="form-control" rows="2" name="deskripsi_singkat_newsandblog"><?= $detailData['deskripsi_singkat_newsandblog']; ?></textarea>
                             <span class="small">Maksimal 150 karakter termasuk spasi dan tanda baca</span>
@@ -125,7 +136,7 @@
 
                 <div class="col-12">
                     <div class="bg-light border rounded p-4">
-                        <h5 class="mb-0">Isi News and Blogs*</h5>
+                        <h5 class="mb-0">Isi News and Blogs *</h5>
                         <div class="mt-3">
                             <textarea id="editor" name="isi_newsandblog"><?= $detailData['isi_newsandblog']; ?></textarea>
                             <span class="small">Masukkan isi konten utama</span>

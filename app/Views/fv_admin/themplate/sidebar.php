@@ -27,18 +27,6 @@
                         <li class="nav-item"> <a class="nav-link" href="<?= base_url(); ?>admin/semua-kategori-news-and-blog">Kategori</a></li>
                     </ul>
                 </li>
-
-                
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#collapseourbestmoment" role="button" aria-expanded="false" aria-controls="collapseourbestmoment">
-                        <i class="fas fa-user-tie fa-fw me-2"></i>Our Best Moment
-                    </a>
-                    <ul class="nav collapse flex-column" id="collapseourbestmoment" data-bs-parent="#navbar-sidebar">
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url(); ?>admin/semua-galeri">Semua</a>
-                        </li>
-                    </ul>
-                </li>
    
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="collapse" href="#collapsemenudinamis" role="button" aria-expanded="false" aria-controls="collapsemenudinamis">
