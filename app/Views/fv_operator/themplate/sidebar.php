@@ -12,59 +12,14 @@
             <ul class="navbar-nav flex-column" id="navbar-sidebar">
 
                 <li class="nav-item">
-                    <a href="<?= base_url('admin'); ?>" class="nav-link">
+                    <a href="<?= base_url('operator'); ?>" class="nav-link">
                         <i class="bi bi-house fa-fw me-2"></i>Beranda
                     </a>
                 </li>
 
-                <li class="nav-item ms-2 my-2">Manajemen Website</li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#collapsenewsandblog" role="button" aria-expanded="false" aria-controls="collapsenewsandblog">
-                        <i class="bi bi-basket fa-fw me-2"></i>News and Blogs
-                    </a>
-                    <ul class="nav collapse flex-column" id="collapsenewsandblog" data-bs-parent="#navbar-sidebar">
-                        <li class="nav-item"> <a class="nav-link" href="<?= base_url(); ?>admin/semua-news-and-blog">Semua</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="<?= base_url(); ?>admin/semua-kategori-news-and-blog">Kategori</a></li>
-                    </ul>
-                </li>
-   
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#collapsemenudinamis" role="button" aria-expanded="false" aria-controls="collapsemenudinamis">
-                        <i class="bi bi-basket fa-fw me-2"></i>Menu Dinamis
-                    </a>
-                    <ul class="nav collapse flex-column" id="collapsemenudinamis" data-bs-parent="#navbar-sidebar">
-                        <li class="nav-item"> <a class="nav-link" href="<?= base_url(); ?>admin/semua-menu-dinamis">Semua</a></li>
-                    </ul>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url(); ?>Admin/Pengaturan">
-                        <i class="fas fa-user-cog fa-fw me-2"></i>Pengaturan Web</a>
-                </li>
-
-                <li class="nav-item ms-2 my-2">Manajemen Data Sekolah</li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#collapseinstructors" role="button" aria-expanded="false" aria-controls="collapseinstructors">
-                        <i class="fas fa-user-tie fa-fw me-2"></i>Taruna/Taruni
-                    </a>
-                    <ul class="nav collapse flex-column" id="collapseinstructors" data-bs-parent="#navbar-sidebar">
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url(); ?>admin/semua-taruna-taruni">Semua</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url(); ?>admin/semua-kelas">
-                        <i class="fas fa-user-cog fa-fw me-2"></i>Kelas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url(); ?>admin/semua-jurusan">
-                        <i class="fas fa-user-cog fa-fw me-2"></i>Jurusan</a>
-                </li>
-
                 <div class="px-3 mt-auto pt-3">
                     <div class="d-flex align-items-center justify-content-between text-primary-hover">
-                        <a class="h5 mb-0 text-body" href="<?= base_url(); ?>admin/pengaturan-web" data-bs-toggle="tooltip" data-bs-placement="top" title="Settings">
+                        <a class="h5 mb-0 text-body" href="<?= base_url(); ?>operator/pengaturan-web" data-bs-toggle="tooltip" data-bs-placement="top" title="Settings">
                             <i class="bi bi-gear-fill"></i>
                         </a>
                         <a class="h5 mb-0 text-body" href="<?= base_url(); ?>" data-bs-toggle="tooltip" data-bs-placement="top" title="Home">
@@ -75,6 +30,7 @@
                         </a>
                     </div>
                 </div>
+                
             </ul>
         </div>
     </div>

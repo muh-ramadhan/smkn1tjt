@@ -28,7 +28,6 @@ class Login extends BaseController
             'title' => 'SMK Negeri 1 Tanjung Jabung Timur',
             'subtitle' => '- Login',
             'AmbilDataWeb' => $this->PengaturanWebModel->where('id_web', 1)->first(),
-
             'dynamicMenus1' => $this->MenuDinamisModel->findAll(),
             'dynamicMenus2' => $this->MenuSubDinamisModel->findAll(),
             'dynamicMenus3' => $this->MenuSubSubDinamisModel->findAll(),

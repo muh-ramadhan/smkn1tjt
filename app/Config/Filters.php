@@ -59,43 +59,43 @@ class Filters extends BaseConfig
                 ]
             ],
             // 'filtersuperadmin'    =>
-           //  [
-                //    'except' =>
-                //    [
-                //        'login',    'login/*',
-                //        'home',    'home/*',
-                //        '/',
-                //    ]
+            //  [
+            //    'except' =>
+            //    [
+            //        'login',    'login/*',
+            //        'home',    'home/*',
+            //        '/',
+            //    ]
             // ],
             'filteradmin'    =>
-             [
-                    'except' =>
-                    [
-                        'login',    'login/*',
-                        'home',    'home/*',
-                        '/',
-                    ]
-             ],
-            // 'filteroperator'    =>
-            // [
-                //    'except' =>
-                //    [
-                //        'login',    'login/*',
-                //        'home',    'home/*',
-                //        '/',
-                //    ]
-          //   ],
+            [
+                'except' =>
+                [
+                    'login',    'login/*',
+                    'home',    'home/*',
+                    '/',
+                ]
+            ],
+            'filteroperator'    =>
+            [
+                'except' =>
+                [
+                    'login',    'login/*',
+                    'home',    'home/*',
+                    '/',
+                ]
+            ],
             // 'filterguru'    =>
-           //  [
-                //    'except' =>
-                //    [
-                //        'login',    'login/*',
-                //        'home',    'home/*',
-                //        '/',
-                //    ]
+            //  [
+            //    'except' =>
+            //    [
+            //        'login',    'login/*',
+            //        'home',    'home/*',
+            //        '/',
+            //    ]
             // ],
-             //'filtersiswa'    =>
-           //  [
+            //'filtersiswa'    =>
+            //  [
             //    'except' =>
             //    [
             //        'login',    'login/*',
@@ -108,20 +108,20 @@ class Filters extends BaseConfig
             // 'invalidchars',
         ],
         'after' => [
-            
+
             // 'filtersuperadmin'    =>
-             //[
-                //'except' =>
-                //[
-                    //'logout', 'logout/*',
-                    //'superadmin', 'superadmin/*',
-                    //'admin', 'admin/*',
-                    //'operator', 'operator/*',
-                    //'guru', 'guru/*',
-                    //'siswa', 'siswa/*',
-                    //'/',
-                //]
-             //],
+            //[
+            //'except' =>
+            //[
+            //'logout', 'logout/*',
+            //'superadmin', 'superadmin/*',
+            //'admin', 'admin/*',
+            //'operator', 'operator/*',
+            //'guru', 'guru/*',
+            //'siswa', 'siswa/*',
+            //'/',
+            //]
+            //],
             'filteradmin'    =>
             [
                 'except' =>
@@ -132,32 +132,32 @@ class Filters extends BaseConfig
                     '/',
                 ]
             ],
-             //'filteroperator'    =>
-            // [
-                //'except' =>
-                //[
-                    //'logout', 'logout/*',
-                    //'operator', 'operator/*',
-                    //'/',
-                //]
-            // ],
+            'filteroperator'    =>
+            [
+                'except' =>
+                [
+                    'logout', 'logout/*',
+                    'operator', 'operator/*',
+                    '/',
+                ]
+            ],
             // 'filterguru'    =>
             // [
-                //'except' =>
-                //[
-                    //'logout', 'logout/*',
-                    //'guru', 'guru/*',
-                    //'/',
-                //]
-             //],
+            //'except' =>
+            //[
+            //'logout', 'logout/*',
+            //'guru', 'guru/*',
+            //'/',
+            //]
+            //],
             // 'filtersiswa'    =>
             // [
-                //'except' =>
-                //[
-                    //'logout', 'logout/*',
-                    //'siswa', 'siswa/*',
-                    //'/',
-                //]
+            //'except' =>
+            //[
+            //'logout', 'logout/*',
+            //'siswa', 'siswa/*',
+            //'/',
+            //]
             // ],
             'toolbar',
             // 'honeypot',

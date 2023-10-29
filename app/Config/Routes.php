@@ -104,6 +104,14 @@ $routes->match(['get', 'put'], 'admin/aktif-menu-sub-sub-dinamis/(:num)', 'Admin
 $routes->match(['get', 'put'], 'admin/nonaktif-menu-sub-sub-dinamis/(:num)', 'Admin::NonAktifMenuSubSubDinamis/$1');
 $routes->match(['get', 'put'], 'admin/hapus-sementara-menu-sub-sub-dinamis/(:num)', 'Admin::HapusSementaraMenuSubSubDinamis/$1');
 
+//OPERATOR BERANDA
+$routes->get('operator', 'Operator::index');
+//OPERATOR PINJAM BUKU
+$routes->get('operator/pinjam-buku/(:any)', 'Operator::pinjamBuku/$1');
+
+//OPERATOR AJAX NFC
+$routes->get('operator/ambil-detail-nfc-pengguna/(:any)', 'Operator::ambilDetailNfcPengguna/$1');
+$routes->get('operator/ambil-detail-nfc-buku/(:any)', 'Operator::ambilDetailNfcBuku/$1');
 
 //Login, Register, dan Autentikasi
 $routes->get('login', 'Login::index');

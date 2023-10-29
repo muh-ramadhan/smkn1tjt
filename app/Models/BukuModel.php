@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class OperatorModel extends Model
+class BukuModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'tbl_pengguna';
-    protected $primaryKey       = 'id_pengguna';
+    protected $table            = 'tbl_buku';
+    protected $primaryKey       = 'id_buku';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_pengguna', 'nama_pengguna'];
+    protected $allowedFields    = ['id_nfc_buku', 'judul_buku', 'pengarang_buku', 'penerbit_buku', 'tahun_terbit_buku', 'sinopsis_buku', 'stok_buku', 'deleted_at'];
 
     // Dates
     protected $useTimestamps = true;
@@ -40,23 +40,4 @@ class OperatorModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    // Jointable
-    function getAll()
-    {
-        $builder = $this->db->table('tbl_pengguna');
-        $builder->join('tbl_login', 'tbl_login.id_pengguna = tbl_pengguna.id_pengguna');
-        $query = $builder->get();
-        return $query->getResultArray();
-    }
-
-    public function getKelasJurusanById($id_kelas, $id_jurusan)
-    {
-        $kelas = $this->db->table('tbl_kelas')->where('id_kelas', $id_kelas)->get()->getRowArray();
-        $jurusan = $this->db->table('tbl_jurusan')->where('id_jurusan', $id_jurusan)->get()->getRowArray();
-
-        return [
-            'nama_kelas_romawi' => $kelas['nama_kelas_romawi'] ?? '',
-            'alias_jurusan' => $jurusan['alias_jurusan'] ?? '',
-        ];
-    }
 }
