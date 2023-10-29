@@ -9,10 +9,10 @@ class PengaturanWebModel extends Model
     protected $DBGroup          = 'default';
     protected $table            = 'tbl_web';
     protected $primaryKey       = 'id_web ';
-    protected $useAutoIncrement = true;
+    protected $useAutoIncrement = false;
     protected $insertID         = 0;
     protected $returnType       = 'array';
-    protected $useSoftDeletes   = true;
+    protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = ['nama_web', 'hak_cipta_web', 'email_web', 'email_web', 'kontak_hp_web', 'email_bantuan_web', 'email_bantuan_web'];
 

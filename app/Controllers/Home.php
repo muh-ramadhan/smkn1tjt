@@ -32,8 +32,7 @@ class Home extends BaseController
             'AmbilDataNewsAndBlogTerbaru' => $this->NewsAndBlogModel->getNewsAndBlogWithCategoryLatest(),
             'AmbilDataJoinKategoriNewsAndBlog1' => $this->NewsAndBlogModel->getNewsAndBlogWithCategoryLimited(1, 0),
             'AmbilDataJoinKategoriNewsAndBlog2' => $this->NewsAndBlogModel->getNewsAndBlogWithCategoryLimited(3, 1),
-            'AmbilDataWeb' => $this->PengaturanWebModel->find(),
-
+            'AmbilDataWeb' => $this->PengaturanWebModel->where('id_web', 1)->first(),
             'dynamicMenus1' => $this->MenuDinamisModel->findAll(),
             'dynamicMenus2' => $this->MenuSubDinamisModel->findAll(),
             'dynamicMenus3' => $this->MenuSubSubDinamisModel->findAll(),
@@ -70,12 +69,11 @@ class Home extends BaseController
         $data = [
             'title' => 'SMK Negeri 1 Tanjung Jabung Timur',
             'subtitle' => ' - News And Blog',
-            'AmbilDataWeb' => $this->PengaturanWebModel->find(),
+            'AmbilDataWeb' => $this->PengaturanWebModel->where('id_web', 1)->first(),
             'AmbilDataNewsAndBlog' => $newsAndBlog1,
             'AmbilDataNewsAndBlog2' => $newsAndBlog2,
             'AmbilSemuaNewsAndBlog' => $this->NewsAndBlogModel->findAll(),
             'AmbilSemuaKategoriNewsAndBlog' => $this->KategoriNewsAndBlogModel->getKategoryLimitNewsAndBlog(3),
-
             'dynamicMenus1' => $this->MenuDinamisModel->findAll(),
             'dynamicMenus2' => $this->MenuSubDinamisModel->findAll(),
             'dynamicMenus3' => $this->MenuSubSubDinamisModel->findAll(),
@@ -100,8 +98,7 @@ class Home extends BaseController
         $data = [
             'title' => 'SMK Negeri 1 Tanjung Jabung Timur',
             'subtitle' => '- Hubungi Kami',
-            'AmbilDataWeb' => $this->PengaturanWebModel->find(),
-
+            'AmbilDataWeb' => $this->PengaturanWebModel->where('id_web', 1)->first(),
             'dynamicMenus1' => $this->MenuDinamisModel->findAll(),
             'dynamicMenus2' => $this->MenuSubDinamisModel->findAll(),
             'dynamicMenus3' => $this->MenuSubSubDinamisModel->findAll(),

@@ -1,7 +1,7 @@
 <?= $this->extend('default/themplate/layout') ?>
 <!-- HEAD DESCRIPTION -->
 <?= $this->section('head-description') ?>
-<?= $this->include('default/themplate/head-description') ?>
+<?= $this->include('default/themplate/head-description-news-and-blog') ?>
 <?= $this->endSection() ?>
 <!-- HEAD DESCRIPTION -->
 
@@ -29,6 +29,10 @@
             <div class="row">
 
               <div class="col-lg-12 order-1">
+
+                <span><?= $AmbilDataNewsAndBlog['penulis_newsandblog']; ?></span>
+                <span class="mx-2">-</span>
+
                 <span><?= date('d F Y', strtotime($AmbilDataNewsAndBlog['created_at'])); ?></span>
                 <span class="mx-2">|</span>
 
@@ -55,15 +59,35 @@
             </div>
 
             <div class="d-lg-flex justify-content-lg-between mb-4">
+
+
               <div class="align-items-center mb-3 mb-lg-0">
-                <h6 class="mb-2 me-4 d-inline-block">Share on:</h6>
+                <h6 class="mb-2 me-4 d-inline-block">Bagikan Ke:</h6>
                 <ul class="list-inline mb-0 mb-2 mb-sm-0">
-                  <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-facebook" href="#"><i class="fab fa-fw fa-facebook-f"></i></a> </li>
-                  <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-instagram-gradient" href="#"><i class="fab fa-fw fa-instagram"></i></a> </li>
-                  <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-twitter" href="#"><i class="fab fa-fw fa-twitter"></i></a> </li>
-                  <li class="list-inline-item"> <a class="btn px-2 btn-sm bg-linkedin" href="#"><i class="fab fa-fw fa-linkedin-in"></i></a> </li>
+                  <li class="list-inline-item">
+                    <a class="btn px-2 btn-sm bg-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?= (base_url('home/news-and-blog/')); ?><?= $AmbilDataNewsAndBlog['slug_newsandblog']; ?>" target="_blank" rel="nofollow">
+                      <i class="fab fa-fw fa-facebook-f"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="btn px-2 btn-sm text-white bg-#25D366" style="background-color: #25D366;"  href="https://api.whatsapp.com/send?text=<?= (base_url('home/news-and-blog/')); ?><?= $AmbilDataNewsAndBlog['slug_newsandblog']; ?>" target="_blank" rel="nofollow">
+                      <i class="fab fa-fw fa-whatsapp"></i>
+                    </a>
+                  </li>
+
+                  <li class="list-inline-item">
+                    <a class="btn px-2 btn-sm bg-twitter" href="https://twitter.com/intent/tweet?url=<?= (base_url('home/news-and-blog/')); ?><?= $AmbilDataNewsAndBlog['slug_newsandblog']; ?>" target="_blank" rel="nofollow">
+                      <i class="fab fa-fw fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="btn px-2 btn-sm bg-linkedin" href="https://www.linkedin.com/shareArticle?url=<?= (base_url('home/news-and-blog/')); ?><?= $AmbilDataNewsAndBlog['slug_newsandblog']; ?>" target="_blank" rel="nofollow">
+                      <i class="fab fa-fw fa-linkedin-in"></i>
+                    </a>
+                  </li>
                 </ul>
               </div>
+
 
               <div class="align-items-center">
                 <h6 class="mb-2 me-4 d-inline-block">Kategori Populer:</h6>

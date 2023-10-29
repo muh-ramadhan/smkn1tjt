@@ -22,7 +22,6 @@
 
 <main>
 
-
   <section class="position-relative overflow-hidden pb-0">
     <div class="container">
       <div class="row d-lg-flex justify-content-lg-between g-4 g-md-5">
@@ -88,39 +87,40 @@
   <section class="pb-0 pt-0 pt-lg-5">
     <div class="container">
       <div class="row">
-        <!-- Slider START -->
-        <div class="tiny-slider arrow-round arrow-blur arrow-hover">
-          <div class="tiny-slider-inner pb-1" data-autoplay="true" data-arrow="true" data-edge="2" data-dots="false" data-items="2" data-items-lg="2" data-items-sm="1">
+        <!-- Slider START --><div class="tns-item tns-slide-cloned" aria-hidden="true">
+    <div class="tiny-slider arrow-round arrow-blur arrow-hover">
+        <div class="tiny-slider-inner pb-1" data-autoplay="true" data-arrow="true" data-edge="2" data-dots="false" data-items="2" data-items-lg="2" data-items-sm="1">
             <!-- Card item START -->
             <?php foreach ($AmbilDataNewsAndBlogTerbaru as $key => $value) { ?>
-              <div>
-                <div class="card action-trigger-hover border bg-transparent">
-                  <!-- Image -->
-                  <?php
-                  if ($value['cover_newsandblog'] == NULL || $value['cover_newsandblog'] == '0') {
-                    $cover_newsandblogImage = base_url('assets/images/NewsAndBlog/tidak-ada-gambar.png');
-                  } else {
-                    $cover_newsandblogPath = FCPATH . 'assets/images/NewsAndBlog/' . $value['cover_newsandblog'];
-                    $cover_newsandblogImage = file_exists($cover_newsandblogPath) ? base_url('assets/images/NewsAndBlog/' . $value['cover_newsandblog']) : base_url('assets/images/NewsAndBlog/tidak-ada-gambar.png');
-                  }
-                  ?>
+                <div>
+                    <div class="card action-trigger-hover border bg-transparent">
+                        <!-- Image -->
+                        <?php
+                        if ($value['cover_newsandblog'] == NULL || $value['cover_newsandblog'] == '0') {
+                            $cover_newsandblogImage = base_url('assets/images/NewsAndBlog/tidak-ada-gambar.png');
+                        } else {
+                            $cover_newsandblogPath = FCPATH . 'assets/images/NewsAndBlog/' . $value['cover_newsandblog'];
+                            $cover_newsandblogImage = file_exists($cover_newsandblogPath) ? base_url('assets/images/NewsAndBlog/' . $value['cover_newsandblog']) : base_url('assets/images/NewsAndBlog/tidak-ada-gambar.png');
+                        }
+                        ?>
 
-                  <img src="<?= $cover_newsandblogImage; ?>" class="card-img-top" alt="course image">
-                  <div class="card-body pb-0">
-                    <div class="d-flex justify-content-between mb-3">
-                      <span class="hstack gap-2">
-                        <a href="<?= base_url('home/kategori/'); ?>" class="badge text-bg-<?= $value['warna_kategori_news_and_blog']; ?>"><?= $value['judul_kategori_news_and_blog']; ?></a>
-                      </span>
+                        <img src="<?= $cover_newsandblogImage; ?>" class="card-img-top" alt="<?= $value['judul_newsandblog']; ?>">
+                        <div class="card-body pb-0">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="hstack gap-2">
+                                    <a href="<?= base_url('home/kategori/'); ?>" class="badge text-bg-<?= $value['warna_kategori_news_and_blog']; ?>"><?= $value['judul_kategori_news_and_blog']; ?></a>
+                                </span>
+                            </div>
+                            <h5 class="card-title"><a href="<?= base_url('home/news-and-blog/' . $value['slug_newsandblog']); ?>"><?= $value['judul_newsandblog']; ?></a></h5>
+                        </div>
                     </div>
-                    <h5 class="card-title"><a href="<?= base_url('home/news-and-blog/' . $value['slug_newsandblog']); ?>"><?= $value['judul_newsandblog']; ?></a></h5>
-                  </div>
                 </div>
-              </div>
             <?php } ?>
             <!-- Card item END -->
-
-          </div>
         </div>
+    </div>
+</div>
+
         <!-- Slider END -->
       </div>
     </div>
@@ -368,13 +368,6 @@
 					<h5 class="mb-2"><a href="<?=base_url();?>prakerin" class="stretched-link">Praktik Kerja Industri</a></h5>
 				</div>
 			</div>
-
-
-
-
-
-
-
 		</div>
 	</div>
 </section>

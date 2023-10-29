@@ -1,7 +1,7 @@
 <?= $this->extend('default/themplate/layout') ?>
 <!-- HEAD DESCRIPTION -->
 <?= $this->section('head-description') ?>
-<?= $this->include('default/themplate/head-description') ?>
+<?= $this->include('default/themplate/head-description-hubungi-kami') ?>
 <?= $this->endSection() ?>
 <!-- HEAD DESCRIPTION -->
 
@@ -103,13 +103,11 @@
           <div class="d-sm-flex align-items-center justify-content-center mt-2 mt-sm-4">
             <h5 class="mb-0">Ikuti kami di:</h5>
             <ul class="list-inline mb-0 ms-sm-2">
-              <?php foreach ($AmbilDataWeb as $value) : ?>
-                <li class="list-inline-item"> <a class="fs-5 me-1 text-facebook" href="https://facebook.com/<?= $value['facebook_web']; ?>"><i class="fab fa-fw fa-facebook-square"></i></a> </li>
-                <li class="list-inline-item"> <a class="fs-5 me-1 text-instagram" href="https://instagram.com/<?= $value['instagram_web']; ?>"><i class="fab fa-fw fa-instagram"></i></a> </li>
-                <li class="list-inline-item"> <a class="fs-5 me-1 text-twitter" href="https://twitter.com/<?= $value['twitter_web']; ?>"><i class="fab fa-fw fa-twitter"></i></a> </li>
-                <li class="list-inline-item"> <a class="fs-5 me-1 text-youtube" href="https://youtube.com/channel/<?= $value['youtube_web']; ?>"><i class="fab fa-fw fa-youtube"></i></a> </li>
+                <li class="list-inline-item"> <a class="fs-5 me-1 text-facebook" href="https://facebook.com/<?= $AmbilDataWeb['facebook_web']; ?>"><i class="fab fa-fw fa-facebook-square"></i></a> </li>
+                <li class="list-inline-item"> <a class="fs-5 me-1 text-instagram" href="https://instagram.com/<?= $AmbilDataWeb['instagram_web']; ?>"><i class="fab fa-fw fa-instagram"></i></a> </li>
+                <li class="list-inline-item"> <a class="fs-5 me-1 text-twitter" href="https://twitter.com/<?= $AmbilDataWeb['twitter_web']; ?>"><i class="fab fa-fw fa-twitter"></i></a> </li>
+                <li class="list-inline-item"> <a class="fs-5 me-1 text-youtube" href="https://youtube.com/channel/<?= $AmbilDataWeb['youtube_web']; ?>"><i class="fab fa-fw fa-youtube"></i></a> </li>
             </ul>
-          <?php endforeach; ?>
           </div>
         </div>
 
